@@ -6,8 +6,8 @@
         "hooks": [
           {
             "type": "command",
-            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); case \"$f\" in *.html) npx prettier --write \"$f\" 2>/dev/null || true ;; esac",
-            "statusMessage": "Formatting HTML with Prettier..."
+            "command": "f=$(jq -r '.tool_input.file_path // .tool_response.filePath // empty'); case \"$f\" in *.ts|*.tsx|*.js|*.jsx|*.css|*.json|*.md) npx prettier --write \"$f\" 2>/dev/null || true ;; esac",
+            "statusMessage": "Formatting with Prettier..."
           }
         ]
       }

@@ -1,65 +1,129 @@
-import Image from "next/image";
+"use client";
+import { useEffect, useRef } from "react";
+import { useGame } from "@/lib/use-game";
+import { Join } from "@/components/Join";
+import { Lobby } from "@/components/Lobby";
+import { Play } from "@/components/Play";
+import { HostBoard } from "@/components/HostBoard";
+import { FinalBoard } from "@/components/FinalBoard";
 
 export default function Home() {
+  const game = useGame();
+  const {
+    ready,
+    phase,
+    teams,
+    me,
+    isHost,
+    hostUnlocked,
+    timeLeftMs,
+    current,
+    answeredCount,
+    lastResult,
+    join,
+    submit,
+    next,
+    unlockHost,
+    startGame,
+    endGame,
+    resetGame,
+  } = game;
+
+  // ---- HOST UNLOCK: keyboard "host" sequence ----
+  const comboBufRef = useRef("");
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key && e.key.length === 1) {
+        comboBufRef.current = (comboBufRef.current + e.key.toLowerCase()).slice(-6);
+      }
+      if (comboBufRef.current.endsWith("host")) {
+        comboBufRef.current = "";
+        promptHostUnlock(unlockHost);
+      }
+    }
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [unlockHost]);
+
+  // ---- HOST UNLOCK: 5-tap on .eyebrow ----
+  const eyebrowTapsRef = useRef(0);
+  const eyebrowTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      const target = e.target as Element | null;
+      if (!target?.closest(".eyebrow")) return;
+      eyebrowTapsRef.current += 1;
+      if (eyebrowTimerRef.current) clearTimeout(eyebrowTimerRef.current);
+      eyebrowTimerRef.current = setTimeout(() => {
+        eyebrowTapsRef.current = 0;
+      }, 1200);
+      if (eyebrowTapsRef.current >= 5) {
+        eyebrowTapsRef.current = 0;
+        promptHostUnlock(unlockHost);
+      }
+    }
+    document.addEventListener("click", handleClick);
+    return () => document.removeEventListener("click", handleClick);
+  }, [unlockHost]);
+
+  if (!ready) {
+    return (
+      <div className="wrap">
+        <div className="eyebrow" style={{ marginTop: "40px", textAlign: "center" }}>
+          Connecting…
+        </div>
+      </div>
+    );
+  }
+
+  // Host in live phase sees the host board, not the play view
+  const showHostBoard = isHost && phase === "live";
+  const showPlay = !isHost && phase === "live";
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {hostUnlocked && (
+        <div className="role-toggle" style={{ color: "var(--color-acid)" }}>
+          HOST MODE ✓
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      )}
+
+      <div className="wrap">
+        {phase === "lobby" && !me && !isHost && <Join onJoin={join} />}
+
+        {phase === "lobby" && (me || isHost) && (
+          <Lobby teamName={me?.name ?? "Host"} teams={teams} isHost={isHost} onStart={startGame} />
+        )}
+
+        {showPlay && (
+          <Play
+            current={current}
+            answeredCount={answeredCount}
+            lastResult={lastResult}
+            timeLeftMs={timeLeftMs}
+            me={me}
+            onSubmit={submit}
+            onNext={next}
+          />
+        )}
+
+        {showHostBoard && (
+          <HostBoard teams={teams} timeLeftMs={timeLeftMs} onEnd={endGame} onReset={resetGame} />
+        )}
+
+        {phase === "ended" && (
+          <FinalBoard teams={teams} myId={me?.id ?? null} isHost={isHost} onReset={resetGame} />
+        )}
+      </div>
+    </>
   );
+}
+
+async function promptHostUnlock(unlockHost: (token: string) => Promise<boolean>) {
+  const token = window.prompt("Host passphrase:");
+  if (!token) return;
+  const ok = await unlockHost(token);
+  if (!ok) {
+    window.alert("Wrong passphrase.");
+  }
 }

@@ -6,7 +6,7 @@ import { FULL_QUESTIONS } from "../lib/questions.server";
 const esc = (s: string) => JSON.stringify(s);
 const rows = FULL_QUESTIONS.map(
   (q) =>
-    `  { id: ${esc(q.id)}, type: ${esc(q.type)}, category: ${esc(q.category)}, body: ${esc(q.body)} },`
+    `  { id: ${esc(q.id)}, type: ${esc(q.type)}, category: ${esc(q.category)}, body: ${esc(q.body)} },`,
 ).join("\n");
 
 const out = `import type { PublicQuestion } from "./types";

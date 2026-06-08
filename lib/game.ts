@@ -49,10 +49,7 @@ export function rankTeams(teams: Team[]): Team[] {
  * First position in `order` whose question id is not yet answered — i.e. where
  * a (re)joining team should resume. Returns order.length when all are answered.
  */
-export function nextUnansweredPos(
-  order: string[],
-  answered: Record<string, boolean>
-): number {
+export function nextUnansweredPos(order: string[], answered: Record<string, boolean>): number {
   let pos = 0;
   while (pos < order.length && answered[order[pos]]) pos++;
   return pos;
