@@ -52,7 +52,7 @@ export function Join({ onJoin }: JoinProps) {
           value={name}
           onChange={(e) => setName(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="border-acid/20 text-ink focus:border-acid w-full rounded-xl border bg-[#070a06] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(200,255,0,0.12)]"
+          className="border-acid/20 text-ink focus:border-acid w-full rounded-xl border bg-[#070a06] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(255,106,26,0.12)]"
         />
         <button className="btn btn-primary" onClick={handleJoin} disabled={loading || !name.trim()}>
           {loading ? "Joining…" : "Enter as a team →"}

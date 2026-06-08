@@ -16,7 +16,9 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
     <section>
       <div className="eyebrow">Host · Live Standings</div>
       <h1 className="page-heading mt-1.5 mb-0.5">Standings</h1>
-      <div className={`clock mt-2 text-left${isLow ? "low" : ""}`}>{fmtClock(timeLeftMs)} left</div>
+      <div className={["clock", "mt-2", "text-left", isLow && "low"].filter(Boolean).join(" ")}>
+        {fmtClock(timeLeftMs)} left
+      </div>
 
       <div className="card">
         <LeaderboardRows teams={teams} myId={null} crownTop={false} />

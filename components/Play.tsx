@@ -38,7 +38,9 @@ export function Play({
         <div className="timer">
           <i style={{ transform: `scaleX(${timerFraction})` }} />
         </div>
-        <div className={`clock${isLow ? "low" : ""}`}>{fmtClock(timeLeftMs)} left</div>
+        <div className={["clock", isLow && "low"].filter(Boolean).join(" ")}>
+          {fmtClock(timeLeftMs)} left
+        </div>
         <div className="stimulus flex items-center justify-center">
           <span className="text-muted font-mono text-sm">
             You&apos;ve cleared the whole bank — incredible. Sit tight for the final results ⏳
@@ -61,7 +63,7 @@ export function Play({
       <div className="timer">
         <i style={{ transform: `scaleX(${timerFraction})` }} />
       </div>
-      <div className={`clock${isLow ? "low" : ""}`} aria-live="off">
+      <div className={["clock", isLow && "low"].filter(Boolean).join(" ")} aria-live="off">
         {fmtClock(timeLeftMs)} left
       </div>
 
@@ -69,7 +71,7 @@ export function Play({
       <div className="qtype">{current.type === "text" ? "TEXT SAMPLE" : "IMAGE"}</div>
 
       {/* Stimulus card */}
-      <div className={`stimulus${current.type === "text" ? "text" : ""}`}>
+      <div className={["stimulus", current.type === "text" && "text"].filter(Boolean).join(" ")}>
         {current.type === "image" ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img src={current.body} alt="sample" className="block max-w-full rounded-lg" />
