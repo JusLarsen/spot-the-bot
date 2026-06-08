@@ -4,14 +4,31 @@ import "server-only";
 // the full tree and write scores/state with rules locked to read-only clients.
 import { initializeApp, getApps, getApp, cert, type App } from "firebase-admin/app";
 import { getDatabase, type Database } from "firebase-admin/database";
+import { readFileSync, existsSync } from "node:fs";
+import { resolve } from "node:path";
 
+// Resolve the service-account JSON from (in priority order):
+//   1. FIREBASE_SERVICE_ACCOUNT  — raw JSON or base64 (use this on Vercel)
+//   2. FIREBASE_SERVICE_ACCOUNT_PATH or ./service-account.json — a local file
+//      (drop the downloaded key in the repo root; it's gitignored). No pasting.
 function serviceAccount() {
-  const raw = process.env.FIREBASE_SERVICE_ACCOUNT;
-  if (!raw) {
-    throw new Error("FIREBASE_SERVICE_ACCOUNT is not set (see .env.example)");
+  const inline = process.env.FIREBASE_SERVICE_ACCOUNT?.trim();
+  let json: string | undefined;
+
+  if (inline) {
+    json = inline.startsWith("{") ? inline : Buffer.from(inline, "base64").toString("utf8");
+  } else {
+    const path =
+      process.env.FIREBASE_SERVICE_ACCOUNT_PATH || resolve(process.cwd(), "service-account.json");
+    if (existsSync(path)) json = readFileSync(path, "utf8");
   }
-  // Accept either raw JSON or base64-encoded JSON.
-  const json = raw.trim().startsWith("{") ? raw : Buffer.from(raw, "base64").toString("utf8");
+
+  if (!json) {
+    throw new Error(
+      "No Firebase service account found. Either drop the downloaded key at ./service-account.json " +
+        "(local dev) or set FIREBASE_SERVICE_ACCOUNT to its JSON/base64 (Vercel). See .env.example.",
+    );
+  }
   return JSON.parse(json) as {
     project_id: string;
     client_email: string;

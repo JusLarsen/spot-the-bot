@@ -22,6 +22,11 @@ next-env.d.ts
 *.pem
 npm-debug.log*
 
+# secrets — Firebase Admin service account key (local dev)
+service-account.json
+*-service-account.json
+serviceAccount*.json
+
 # editor / local
 CLAUDE.local.md
 .claude/settings.local.json

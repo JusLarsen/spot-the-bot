@@ -51,6 +51,12 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ error: "Team not found" }, { status: 404 });
   }
   const team = teamSnap.val() as Team;
+  // RTDB omits empty objects, so a team that hasn't answered yet comes back
+  // with `answered` undefined — normalize the record before using it.
+  const answered: Record<string, boolean> = team.answered ?? {};
+  team.correct = team.correct ?? 0;
+  team.wrong = team.wrong ?? 0;
+  team.totalMs = team.totalMs ?? 0;
 
   // Validate the question exists in the server bank.
   const question = BY_ID[questionId];
@@ -59,7 +65,7 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   // Idempotency: if already answered, return current counts without re-counting.
-  if (team.answered[questionId]) {
+  if (answered[questionId]) {
     const response: AnswerResponse = {
       correct: choice === question.answer,
       answer: question.answer,
@@ -80,7 +86,7 @@ export async function POST(request: Request): Promise<Response> {
     correct: team.correct + (isCorrect ? 1 : 0),
     wrong: team.wrong + (isCorrect ? 0 : 1),
     totalMs: team.totalMs + clampedMs,
-    answered: { ...team.answered, [questionId]: true },
+    answered: { ...answered, [questionId]: true },
   };
 
   await teamRef.set(updatedTeam);
