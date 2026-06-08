@@ -1,5 +1,6 @@
 "use client";
 import { useState, type KeyboardEvent } from "react";
+import { randomTeamName } from "@/lib/team-names";
 
 interface JoinProps {
   onJoin: (name: string) => Promise<void>;
@@ -13,16 +14,17 @@ export function Join({ onJoin }: JoinProps) {
 
   async function handleJoin() {
     const trimmed = name.trim();
-    if (!trimmed) return;
     if (trimmed.toLowerCase() === "host") {
       setReserved(true);
       return;
     }
     setReserved(false);
+    // Blank is fine — give them a random BBQ name so nobody's blocked on naming.
+    const finalName = trimmed || randomTeamName();
     setLoading(true);
     setError(false);
     try {
-      await onJoin(trimmed);
+      await onJoin(finalName);
     } catch {
       setError(true);
     } finally {
@@ -53,19 +55,33 @@ export function Join({ onJoin }: JoinProps) {
         >
           Team name
         </label>
-        <input
-          id="name-input"
-          type="text"
-          autoFocus
-          maxLength={40}
-          placeholder="e.g. Table 4 / The Smoke Ringers"
-          autoComplete="off"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          onKeyDown={handleKeyDown}
-          className="border-acid/20 text-ink focus:border-acid w-full rounded-xl border bg-[#0a0805] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(255,106,26,0.12)]"
-        />
-        <button className="btn btn-primary" onClick={handleJoin} disabled={loading || !name.trim()}>
+        <div className="flex gap-2">
+          <input
+            id="name-input"
+            type="text"
+            autoFocus
+            maxLength={40}
+            placeholder="Team name (or leave blank)"
+            autoComplete="off"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            onKeyDown={handleKeyDown}
+            className="border-acid/20 text-ink focus:border-acid min-w-0 flex-1 rounded-xl border bg-[#0a0805] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(255,106,26,0.12)]"
+          />
+          <button
+            type="button"
+            onClick={() => {
+              setReserved(false);
+              setName(randomTeamName());
+            }}
+            aria-label="Generate a random team name"
+            title="Random BBQ name"
+            className="border-acid/20 text-acid hover:border-acid shrink-0 rounded-xl border bg-[#0a0805] px-4 text-2xl transition-colors"
+          >
+            🎲
+          </button>
+        </div>
+        <button className="btn btn-primary" onClick={handleJoin} disabled={loading}>
           {loading ? "Joining…" : "Enter as a team →"}
         </button>
         {error && (
@@ -79,7 +95,8 @@ export function Join({ onJoin }: JoinProps) {
           </p>
         )}
         <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
-          One device per team. Pass it around and argue it out — that&apos;s the point.
+          One device per team. Tap 🎲 for a random name (or leave it blank and we&apos;ll pick one).
+          Pass it around and argue it out — that&apos;s the point.
         </p>
       </div>
     </section>
