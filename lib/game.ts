@@ -60,3 +60,42 @@ export function fmtClock(ms: number): string {
   const s = Math.max(0, Math.ceil(ms / 1000));
   return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0");
 }
+
+/**
+ * Reorder `ids` (already shuffled) so no more than `maxRun` consecutive items
+ * share the same answer, while otherwise preserving the shuffle. Splits into two
+ * answer-groups and greedily interleaves them, always drawing from the larger
+ * remaining group (so neither is stranded into a long tail) and force-switching
+ * at the run cap. For a roughly balanced set this guarantees runs <= maxRun.
+ * Returns a permutation of the input.
+ */
+export function limitRuns(ids: string[], isBot: (id: string) => boolean, maxRun = 3): string[] {
+  const human = ids.filter((id) => !isBot(id));
+  const bot = ids.filter((id) => isBot(id));
+  const out: string[] = [];
+  let hi = 0;
+  let bi = 0;
+  let runBot: boolean | null = null;
+  let runLen = 0;
+
+  while (hi < human.length || bi < bot.length) {
+    const hRem = human.length - hi;
+    const bRem = bot.length - bi;
+    let takeBot: boolean;
+    if (hRem === 0) takeBot = true;
+    else if (bRem === 0) takeBot = false;
+    else if (runLen >= maxRun)
+      takeBot = runBot !== true; // forced switch at the cap
+    else if (bRem !== hRem)
+      takeBot = bRem > hRem; // drain the larger group first
+    else takeBot = runBot !== true; // tie: alternate away from the current run
+
+    out.push(takeBot ? bot[bi++] : human[hi++]);
+    if (takeBot === runBot) runLen++;
+    else {
+      runBot = takeBot;
+      runLen = 1;
+    }
+  }
+  return out;
+}

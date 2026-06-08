@@ -86,6 +86,11 @@ export interface ApiError {
   error: string;
 }
 
+/** GET /api/order?teamId= — the team's question order, same-answer runs capped. */
+export interface OrderResponse {
+  order: string[]; // question ids, in play order (no answers — safe for the client)
+}
+
 // ---- Client hook contract (implemented in lib/use-game.ts, consumed by UI) ----
 
 /** Result of the most recent answer, for the reveal panel. */

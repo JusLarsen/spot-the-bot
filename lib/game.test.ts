@@ -8,6 +8,7 @@ import {
   rankTeams,
   nextUnansweredPos,
   fmtClock,
+  limitRuns,
 } from "./game";
 
 // ---------------------------------------------------------------------------
@@ -336,5 +337,55 @@ describe("fmtClock", () => {
   it("formats values with mixed minutes and seconds", () => {
     expect(fmtClock(3 * 60_000 + 7_000)).toBe("3:07");
     expect(fmtClock(2 * 60_000 + 45_000)).toBe("2:45");
+  });
+});
+
+// ---------------------------------------------------------------------------
+// limitRuns
+// ---------------------------------------------------------------------------
+describe("limitRuns", () => {
+  const isBot = (id: string) => id.startsWith("b");
+  const longestRun = (ids: string[]) => {
+    let max = 0;
+    let cur = 0;
+    let prev: boolean | null = null;
+    for (const id of ids) {
+      const b = isBot(id);
+      if (b === prev) cur++;
+      else {
+        cur = 1;
+        prev = b;
+      }
+      if (cur > max) max = cur;
+    }
+    return max;
+  };
+
+  it("caps runs at maxRun for a balanced set and returns a permutation", () => {
+    // a deliberately streaky input: 25 humans then 25 bots
+    const ids = [
+      ...Array.from({ length: 25 }, (_, i) => `h${i}`),
+      ...Array.from({ length: 25 }, (_, i) => `b${i}`),
+    ];
+    const out = limitRuns(ids, isBot, 3);
+    expect(longestRun(out)).toBeLessThanOrEqual(3);
+    expect([...out].sort()).toEqual([...ids].sort()); // same multiset
+    expect(out).toHaveLength(50);
+  });
+
+  it("holds across many shuffles", () => {
+    const base = [
+      ...Array.from({ length: 25 }, (_, i) => `h${i}`),
+      ...Array.from({ length: 25 }, (_, i) => `b${i}`),
+    ];
+    for (let seed = 1; seed <= 30; seed++) {
+      const shuffled = shuffledIndices(base.length, hashStr("t" + seed)).map((i) => base[i]);
+      expect(longestRun(limitRuns(shuffled, isBot, 3))).toBeLessThanOrEqual(3);
+    }
+  });
+
+  it("does not crash on a single-answer list (run unavoidable)", () => {
+    const ids = ["b0", "b1", "b2", "b3", "b4"];
+    expect(limitRuns(ids, isBot, 3)).toHaveLength(5);
   });
 });

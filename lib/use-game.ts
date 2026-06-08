@@ -123,11 +123,36 @@ export function useGame(): UseGame {
   // Guards one-time session restore on the first RTDB snapshot.
   const restoredRef = useRef(false);
 
+  // Server-computed question order (same-answer runs capped at 3 — the client
+  // can't do this itself since it never sees answers). Falls back to the local
+  // shuffle if the request hasn't landed or fails.
+  // Keyed by teamId so a previous team's order is never reused for a new one.
+  const [serverOrder, setServerOrder] = useState<{ teamId: string; order: string[] } | null>(null);
+  const myId = me?.id ?? null;
+  useEffect(() => {
+    if (!myId) return;
+    let cancelled = false;
+    fetch(`/api/order?teamId=${encodeURIComponent(myId)}`)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (!cancelled && d && Array.isArray(d.order))
+          setServerOrder({ teamId: myId, order: d.order });
+      })
+      .catch(() => {
+        /* keep the local-shuffle fallback */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [myId]);
+
   // ---- derived read-only values ----
   const phase: Phase = gameState?.phase ?? "lobby";
 
-  // Build the team's ordered question-id list (stable per team id)
-  const orderIds: string[] = me ? buildOrderIds(me.id) : [];
+  // The team's ordered question-id list: server order (run-capped) for THIS team
+  // if it has landed, else the deterministic local shuffle.
+  const orderIds: string[] =
+    serverOrder && serverOrder.teamId === myId ? serverOrder.order : me ? buildOrderIds(me.id) : [];
 
   // Live team record drives answered; answered drives current question
   const answered: Record<string, boolean> = me?.answered ?? {};
