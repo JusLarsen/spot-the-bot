@@ -122,7 +122,9 @@ export function Play({
             disabled={submitting}
             aria-label="Vote human"
           >
-            <span className="ic" aria-hidden="true" />
+            <span className="ic" aria-hidden="true">
+              🧑
+            </span>
             Human
           </button>
           <button
@@ -131,7 +133,9 @@ export function Play({
             disabled={submitting}
             aria-label="Vote AI"
           >
-            <span className="ic" aria-hidden="true" />
+            <span className="ic" aria-hidden="true">
+              🤖
+            </span>
             AI
           </button>
         </div>
@@ -151,7 +155,7 @@ export function Play({
           </div>
           {!lastResult.correct && lastResult.sneaky && (
             <div className="text-amber mt-1 text-center font-mono text-[12px]">
-              A sneaky one — even the pros miss these.
+              😈 A sneaky one — even the pros miss these.
             </div>
           )}
           {!lastResult.correct && !lastResult.sneaky && lastResult.answer === "bot" && (
