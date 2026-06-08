@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import type { Team } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 
@@ -11,6 +12,33 @@ interface HostBoardProps {
 
 export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps) {
   const isLow = timeLeftMs <= 60_000;
+  const [pending, setPending] = useState<"end" | "reset" | null>(null);
+  const [error, setError] = useState(false);
+
+  async function handleEnd() {
+    if (pending) return;
+    setPending("end");
+    setError(false);
+    try {
+      await onEnd();
+    } catch {
+      setError(true);
+      setPending(null);
+    }
+  }
+
+  async function handleReset() {
+    if (pending) return;
+    if (!window.confirm("Reset the game and delete all team scores? This can't be undone.")) return;
+    setPending("reset");
+    setError(false);
+    try {
+      await onReset();
+    } catch {
+      setError(true);
+      setPending(null);
+    }
+  }
 
   return (
     <section>
@@ -25,13 +53,19 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
       </div>
 
       <div className="hostbar">
-        <button className="btn btn-ghost" onClick={onEnd}>
-          End now →
+        <button className="btn btn-ghost" onClick={handleEnd} disabled={pending !== null}>
+          {pending === "end" ? "Ending…" : "End now →"}
         </button>
-        <button className="btn btn-ghost" onClick={onReset}>
-          Reset game
+        <button className="btn btn-ghost" onClick={handleReset} disabled={pending !== null}>
+          {pending === "reset" ? "Resetting…" : "Reset game"}
         </button>
       </div>
+
+      {error && (
+        <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+          That didn&apos;t go through — try again.
+        </p>
+      )}
 
       <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
         Updates live as teams answer. Project this screen for the room.

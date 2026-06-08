@@ -76,13 +76,16 @@ export default function Home() {
 
   // Host in live phase sees the host board, not the play view
   const showHostBoard = isHost && phase === "live";
-  const showPlay = !isHost && phase === "live";
+  const showPlay = !isHost && phase === "live" && !!me;
+  const lateJoiner = !isHost && phase === "live" && !me;
+  // Host views (live standings + final results) are projected for the room — go wide.
+  const wide = isHost && (phase === "live" || phase === "ended");
 
   return (
     <>
       {hostUnlocked && <div className="role-toggle text-acid">HOST MODE ✓</div>}
 
-      <div className="wrap">
+      <div className={wide ? "wrap host-wide" : "wrap"}>
         {phase === "lobby" && !me && !isHost && <Join onJoin={join} />}
 
         {phase === "lobby" && (me || isHost) && (
@@ -99,6 +102,19 @@ export default function Home() {
             onSubmit={submit}
             onNext={next}
           />
+        )}
+
+        {lateJoiner && (
+          <section>
+            <div className="eyebrow">Live now</div>
+            <h1 className="page-heading mt-1.5 mb-0.5">In progress</h1>
+            <div className="card">
+              <p className="text-muted text-sm leading-[1.4]">
+                A round is already underway. Hang tight — when the host starts a fresh round
+                you&apos;ll be able to jump in.
+              </p>
+            </div>
+          </section>
         )}
 
         {showHostBoard && (

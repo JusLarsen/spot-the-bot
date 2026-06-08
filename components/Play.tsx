@@ -1,4 +1,5 @@
 "use client";
+import { useEffect, useRef, useState } from "react";
 import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
 import { GAME_MS } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
@@ -28,12 +29,37 @@ export function Play({
   const isLow = timeLeftMs <= 60_000;
   const hasAnswered = lastResult !== null;
 
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState(false);
+  const nextBtnRef = useRef<HTMLButtonElement>(null);
+
+  // Move keyboard focus to "Next" when a result appears.
+  useEffect(() => {
+    if (hasAnswered) nextBtnRef.current?.focus();
+  }, [hasAnswered]);
+
+  async function handleChoice(choice: Answer) {
+    if (submitting) return; // guard against double-tap while the request is in flight
+    setSubmitting(true);
+    setError(false);
+    try {
+      await onSubmit(choice);
+    } catch {
+      setError(true);
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
   if (!current) {
+    const timeUp = timeLeftMs <= 0;
     return (
       <section>
         <div className="roundbar">
-          <span className="rno">All done</span>
-          <span className="score">{correct} correct</span>
+          <span className="rno">{timeUp ? "Time's up" : "All done"}</span>
+          <span className="score">
+            {correct} correct · {wrong} wrong
+          </span>
         </div>
         <div className="timer">
           <i style={{ transform: `scaleX(${timerFraction})` }} />
@@ -43,7 +69,9 @@ export function Play({
         </div>
         <div className="stimulus flex items-center justify-center">
           <span className="text-muted font-mono text-sm">
-            You&apos;ve cleared the whole bank — incredible. Sit tight for the final results ⏳
+            {timeUp
+              ? "Time's up! Hang tight for the final results ⏳"
+              : "You've cleared the whole bank — incredible. Sit tight for the final results ⏳"}
           </span>
         </div>
       </section>
@@ -74,7 +102,11 @@ export function Play({
       <div className={["stimulus", current.type === "text" && "text"].filter(Boolean).join(" ")}>
         {current.type === "image" ? (
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={current.body} alt="sample" className="block max-w-full rounded-lg" />
+          <img
+            src={current.body}
+            alt={`Sample ${answeredCount + 1}`}
+            className="block max-w-full rounded-lg"
+          />
         ) : (
           current.body
         )}
@@ -83,24 +115,46 @@ export function Play({
       {/* Choice buttons */}
       {!hasAnswered && (
         <div className="choices">
-          <button className="choice human" onClick={() => onSubmit("human")}>
-            <span className="ic">🧑</span>Human
+          <button
+            className="choice human"
+            onClick={() => handleChoice("human")}
+            disabled={submitting}
+            aria-label="Vote human"
+          >
+            <span className="ic" aria-hidden="true">
+              🧑
+            </span>
+            Human
           </button>
-          <button className="choice bot" onClick={() => onSubmit("bot")}>
-            <span className="ic">🤖</span>AI
+          <button
+            className="choice bot"
+            onClick={() => handleChoice("bot")}
+            disabled={submitting}
+            aria-label="Vote AI"
+          >
+            <span className="ic" aria-hidden="true">
+              🤖
+            </span>
+            AI
           </button>
+        </div>
+      )}
+
+      {error && !hasAnswered && (
+        <div className="feedback wrong" role="alert">
+          Answer didn&apos;t save — tap again.
         </div>
       )}
 
       {/* Result reveal */}
       {hasAnswered && lastResult && (
         <>
-          <div className={`feedback ${lastResult.correct ? "right" : "wrong"}`}>
+          <div className={`feedback ${lastResult.correct ? "right" : "wrong"}`} aria-live="polite">
             {lastResult.correct ? "✓ Correct" : "✗ Nope"}
           </div>
           <div className="reveal">{lastResult.reveal}</div>
           <div className="cite">Source: {lastResult.source}</div>
-          <button className="btn btn-ghost mt-3.5" onClick={onNext}>
+          <button ref={nextBtnRef} className="btn btn-ghost mt-3.5" onClick={onNext}>
             Next sample →
           </button>
         </>

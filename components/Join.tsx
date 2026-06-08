@@ -8,13 +8,17 @@ interface JoinProps {
 export function Join({ onJoin }: JoinProps) {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   async function handleJoin() {
     const trimmed = name.trim();
     if (!trimmed) return;
     setLoading(true);
+    setError(false);
     try {
       await onJoin(trimmed);
+    } catch {
+      setError(true);
     } finally {
       setLoading(false);
     }
@@ -46,17 +50,23 @@ export function Join({ onJoin }: JoinProps) {
         <input
           id="name-input"
           type="text"
-          maxLength={28}
+          autoFocus
+          maxLength={40}
           placeholder="e.g. Table 4 / The Smoke Ringers"
           autoComplete="off"
           value={name}
           onChange={(e) => setName(e.target.value)}
           onKeyDown={handleKeyDown}
-          className="border-acid/20 text-ink focus:border-acid w-full rounded-xl border bg-[#070a06] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(255,106,26,0.12)]"
+          className="border-acid/20 text-ink focus:border-acid w-full rounded-xl border bg-[#0a0805] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(255,106,26,0.12)]"
         />
         <button className="btn btn-primary" onClick={handleJoin} disabled={loading || !name.trim()}>
           {loading ? "Joining…" : "Enter as a team →"}
         </button>
+        {error && (
+          <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+            Couldn&apos;t join — check your connection and try again.
+          </p>
+        )}
         <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
           One device per team. Pass it around and argue it out — that&apos;s the point.
         </p>

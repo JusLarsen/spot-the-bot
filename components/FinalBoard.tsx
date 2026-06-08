@@ -31,7 +31,12 @@ export function FinalBoard({ teams, myId, isHost, onReset }: FinalBoardProps) {
 
       {isHost && (
         <div className="hostbar">
-          <button className="btn btn-ghost" onClick={onReset}>
+          <button
+            className="btn btn-ghost"
+            onClick={() => {
+              if (window.confirm("Reset the game and clear all team scores?")) onReset();
+            }}
+          >
             Reset game
           </button>
         </div>

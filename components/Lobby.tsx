@@ -1,4 +1,5 @@
 "use client";
+import { useState } from "react";
 import type { Team } from "@/lib/types";
 
 interface LobbyProps {
@@ -10,6 +11,20 @@ interface LobbyProps {
 
 export function Lobby({ teamName, teams, isHost, onStart }: LobbyProps) {
   const count = teams.length;
+  const [starting, setStarting] = useState(false);
+  const [error, setError] = useState(false);
+
+  async function handleStart() {
+    if (starting) return;
+    setStarting(true);
+    setError(false);
+    try {
+      await onStart();
+    } catch {
+      setError(true);
+      setStarting(false);
+    }
+  }
 
   return (
     <section>
@@ -22,9 +37,16 @@ export function Lobby({ teamName, teams, isHost, onStart }: LobbyProps) {
         </div>
       </div>
       {isHost && (
-        <button className="btn btn-primary mt-3.5" onClick={onStart}>
-          ▶ Start the 10-minute clock (host)
-        </button>
+        <>
+          <button className="btn btn-primary mt-3.5" onClick={handleStart} disabled={starting}>
+            {starting ? "Starting…" : "▶ Start the 10-minute clock (host)"}
+          </button>
+          {error && (
+            <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+              Couldn&apos;t start — try again.
+            </p>
+          )}
+        </>
       )}
     </section>
   );
