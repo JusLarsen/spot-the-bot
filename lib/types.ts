@@ -3,7 +3,7 @@
 
 export type Phase = "lobby" | "live" | "ended";
 export type Answer = "human" | "bot";
-export type Category = "bbq" | "business" | "disney" | "speech";
+export type Category = "bbq" | "business" | "disney" | "speech" | "movies";
 export type QuestionType = "text" | "image";
 
 /** Prompt shipped to the browser — deliberately has NO answer/reveal/source. */
