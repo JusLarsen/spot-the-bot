@@ -1,6 +1,8 @@
 "use client";
+import { useState } from "react";
 import type { Team } from "@/lib/types";
 import { LeaderboardRows } from "./HostBoard";
+import { ConfirmDialog } from "./ConfirmDialog";
 
 interface FinalBoardProps {
   teams: Team[];
@@ -11,6 +13,19 @@ interface FinalBoardProps {
 
 export function FinalBoard({ teams, myId, isHost, onReset }: FinalBoardProps) {
   const winner = teams[0] ?? null;
+  const [confirmReset, setConfirmReset] = useState(false);
+  const [resetting, setResetting] = useState(false);
+
+  async function doReset() {
+    if (resetting) return;
+    setResetting(true);
+    try {
+      await onReset();
+    } finally {
+      setResetting(false);
+      setConfirmReset(false);
+    }
+  }
 
   return (
     <section>
@@ -33,11 +48,10 @@ export function FinalBoard({ teams, myId, isHost, onReset }: FinalBoardProps) {
         <div className="hostbar">
           <button
             className="btn btn-ghost"
-            onClick={() => {
-              if (window.confirm("Reset the game and clear all team scores?")) onReset();
-            }}
+            onClick={() => setConfirmReset(true)}
+            disabled={resetting}
           >
-            Reset game
+            {resetting ? "Resetting…" : "Reset game"}
           </button>
         </div>
       )}
@@ -47,6 +61,17 @@ export function FinalBoard({ teams, myId, isHost, onReset }: FinalBoardProps) {
           ? "Highest correct wins; ties broken by total answer time."
           : "No teams played."}
       </p>
+
+      {confirmReset && (
+        <ConfirmDialog
+          title="Reset the game?"
+          message="This clears every team's score and returns everyone to the lobby for a fresh round."
+          confirmLabel="Reset game"
+          busy={resetting}
+          onConfirm={doReset}
+          onCancel={() => setConfirmReset(false)}
+        />
+      )}
     </section>
   );
 }

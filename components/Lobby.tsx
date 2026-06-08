@@ -2,6 +2,7 @@
 import { useState } from "react";
 import type { Team } from "@/lib/types";
 import { DURATION_CHOICES_MIN } from "@/lib/types";
+import { ConfirmDialog } from "./ConfirmDialog";
 
 interface LobbyProps {
   teamName: string;
@@ -16,6 +17,7 @@ export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps)
   const [minutes, setMinutes] = useState(10);
   const [starting, setStarting] = useState(false);
   const [resetting, setResetting] = useState(false);
+  const [confirmReset, setConfirmReset] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const busy = starting || resetting;
 
@@ -31,15 +33,16 @@ export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps)
     }
   }
 
-  async function handleReset() {
-    if (busy || !onReset) return;
-    if (!window.confirm("Reset the game and delete all team scores? This can't be undone.")) return;
+  async function doReset() {
+    if (resetting || !onReset) return;
     setResetting(true);
     setError(null);
     try {
       await onReset();
+      setConfirmReset(false);
     } catch {
       setError("Couldn't reset — try again.");
+      setConfirmReset(false);
     } finally {
       setResetting(false);
     }
@@ -95,7 +98,7 @@ export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps)
           </button>
 
           {onReset && (
-            <button className="btn btn-ghost" onClick={handleReset} disabled={busy}>
+            <button className="btn btn-ghost" onClick={() => setConfirmReset(true)} disabled={busy}>
               {resetting ? "Resetting…" : "Reset game"}
             </button>
           )}
@@ -106,6 +109,17 @@ export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps)
             </p>
           )}
         </>
+      )}
+
+      {confirmReset && (
+        <ConfirmDialog
+          title="Reset the game?"
+          message="This deletes every team's score and returns everyone to the lobby. It can't be undone."
+          confirmLabel="Reset game"
+          busy={resetting}
+          onConfirm={doReset}
+          onCancel={() => setConfirmReset(false)}
+        />
       )}
     </section>
   );

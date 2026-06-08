@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import type { Team } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
+import { ConfirmDialog } from "./ConfirmDialog";
 
 interface HostBoardProps {
   teams: Team[];
@@ -12,31 +13,23 @@ interface HostBoardProps {
 
 export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps) {
   const isLow = timeLeftMs <= 60_000;
-  const [pending, setPending] = useState<"end" | "reset" | null>(null);
+  const [confirm, setConfirm] = useState<"end" | "reset" | null>(null);
+  const [pending, setPending] = useState(false);
   const [error, setError] = useState(false);
 
-  async function handleEnd() {
-    if (pending) return;
-    setPending("end");
+  async function runConfirmed() {
+    if (!confirm || pending) return;
+    const action = confirm;
+    setPending(true);
     setError(false);
     try {
-      await onEnd();
+      await (action === "end" ? onEnd() : onReset());
+      setConfirm(null);
     } catch {
       setError(true);
-      setPending(null);
-    }
-  }
-
-  async function handleReset() {
-    if (pending) return;
-    if (!window.confirm("Reset the game and delete all team scores? This can't be undone.")) return;
-    setPending("reset");
-    setError(false);
-    try {
-      await onReset();
-    } catch {
-      setError(true);
-      setPending(null);
+      setConfirm(null);
+    } finally {
+      setPending(false);
     }
   }
 
@@ -53,11 +46,11 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
       </div>
 
       <div className="hostbar">
-        <button className="btn btn-ghost" onClick={handleEnd} disabled={pending !== null}>
-          {pending === "end" ? "Ending…" : "End now →"}
+        <button className="btn btn-ghost" onClick={() => setConfirm("end")}>
+          End now →
         </button>
-        <button className="btn btn-ghost" onClick={handleReset} disabled={pending !== null}>
-          {pending === "reset" ? "Resetting…" : "Reset game"}
+        <button className="btn btn-ghost" onClick={() => setConfirm("reset")}>
+          Reset game
         </button>
       </div>
 
@@ -70,6 +63,27 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
       <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
         Updates live as teams answer. Project this screen for the room.
       </p>
+
+      {confirm === "end" && (
+        <ConfirmDialog
+          title="End the game?"
+          message="Stop the clock now and show final results to the whole room?"
+          confirmLabel="End game"
+          busy={pending}
+          onConfirm={runConfirmed}
+          onCancel={() => setConfirm(null)}
+        />
+      )}
+      {confirm === "reset" && (
+        <ConfirmDialog
+          title="Reset the game?"
+          message="This deletes every team's score and returns everyone to the lobby. It can't be undone."
+          confirmLabel="Reset game"
+          busy={pending}
+          onConfirm={runConfirmed}
+          onCancel={() => setConfirm(null)}
+        />
+      )}
     </section>
   );
 }
