@@ -3,7 +3,7 @@
 // via subscribeTree(), manages localStorage session resume, drives question
 // ordering, and calls the server API routes for all write operations.
 import { useState, useEffect, useRef, useCallback } from "react";
-import { subscribeTree } from "./firebase-client";
+import { subscribeKey, subscribeAllTeams } from "./firebase-client";
 import { rankTeams, shuffledIndices, hashStr, nextUnansweredPos } from "./game";
 import { PUBLIC_QUESTIONS, PUBLIC_BY_ID } from "./questions.public";
 import type {
@@ -118,9 +118,9 @@ export function useGame(): UseGame {
   // ---- clock ----
   const [timeLeftMs, setTimeLeftMs] = useState(0);
 
-  // ---- tree mirror (latest snapshot, used in callbacks) ----
-  const treeRef = useRef<Record<string, unknown>>({});
-  // Guards one-time session restore on the first RTDB snapshot.
+  // Latest game state, readable inside subscription callbacks without re-subscribing.
+  const gameStateRef = useRef<GameState | null>(null);
+  // Guards one-time session restore on the first snapshot.
   const restoredRef = useRef(false);
 
   // Server-computed question order (same-answer runs capped at 3 — the client
@@ -177,75 +177,83 @@ export function useGame(): UseGame {
   }, [currentId]);
 
   // ---- session restore (runs once, on the first RTDB snapshot) ----
-  const restoreSessionFromTree = useCallback(
-    (tree: Record<string, unknown>, currentState: GameState | null): void => {
-      const role = safeLocalGet<string>(LS_ROLE_KEY);
-      if (role === "host") {
-        hostTokenRef.current = safeLocalGet<string>(LS_HOST_TOKEN_KEY);
-        setIsHost(true);
-        setHostUnlocked(true);
-        return;
-      }
+  // Restore session from localStorage once, after the first game:state snapshot.
+  // For a team we set a provisional record; the own-team subscription reconciles
+  // it (real scores, or clears it if the host reset while we were away).
+  const restoreSession = useCallback((): void => {
+    const role = safeLocalGet<string>(LS_ROLE_KEY);
+    if (role === "host") {
+      hostTokenRef.current = safeLocalGet<string>(LS_HOST_TOKEN_KEY);
+      setIsHost(true);
+      setHostUnlocked(true);
+      return;
+    }
+    const savedTeam = safeLocalGet<{ id: string; name: string }>(LS_TEAM_KEY);
+    if (!savedTeam) return;
+    setMe(
+      (prev) =>
+        prev ?? {
+          id: savedTeam.id,
+          name: savedTeam.name,
+          correct: 0,
+          wrong: 0,
+          totalMs: 0,
+          answered: {},
+        },
+    );
+  }, []);
 
-      const savedTeam = safeLocalGet<{ id: string; name: string }>(LS_TEAM_KEY);
-      if (!savedTeam) return;
-
-      const liveRecord = asTeam(tree[`team:${savedTeam.id}`]);
-      if (!liveRecord) {
-        // Team record wiped (host reset while we were away)
-        if (!currentState || currentState.phase === "lobby") {
-          safeLocalRemove(LS_TEAM_KEY);
-        }
-        return;
-      }
-      setMe(liveRecord);
-    },
-    [],
-  );
-
-  // ---- RTDB subscription ----
+  // ---- subscribe: game state (everyone — one small key) ----
   useEffect(() => {
-    const unsub = subscribeTree((tree) => {
-      treeRef.current = tree;
-
-      // Parse game state
-      const nextState = asGameState(tree["game:state"]) ?? null;
-      setGameState(nextState);
-
-      // Parse all teams
-      const nextTeams: Team[] = [];
-      for (const key of Object.keys(tree)) {
-        if (key.startsWith("team:")) {
-          const t = asTeam(tree[key]);
-          if (t) nextTeams.push(t);
-        }
-      }
-      setTeams(rankTeams(nextTeams));
-
-      // On the first snapshot only: restore session from localStorage.
+    const unsub = subscribeKey<unknown>("game:state", (val) => {
+      const next = asGameState(val);
+      gameStateRef.current = next;
+      setGameState(next);
       if (!restoredRef.current) {
         restoredRef.current = true;
-        restoreSessionFromTree(tree, nextState);
+        restoreSession();
       }
       setReady(true);
+    });
+    return unsub;
+  }, [restoreSession]);
 
-      // Keep me in sync with the live tree record (score updates flow in here)
-      setMe((prevMe) => {
-        if (!prevMe) return prevMe;
-        const liveRecord = asTeam(tree[`team:${prevMe.id}`]);
-        if (!liveRecord) {
-          // Our record is gone; if we're in lobby it means host reset — clear
-          if (nextState?.phase === "lobby") {
-            safeLocalRemove(LS_TEAM_KEY);
-            return null;
-          }
-          return prevMe; // gone mid-game (shouldn't happen) — keep local copy
+  // ---- subscribe: this device's OWN team record (team devices only) ----
+  // Scoped to one key so other teams' answers never reach this device.
+  const ownId = me?.id ?? null;
+  useEffect(() => {
+    if (!ownId) return;
+    const unsub = subscribeKey<unknown>(`team:${ownId}`, (val) => {
+      const rec = asTeam(val);
+      setMe((prev) => {
+        if (!prev || prev.id !== ownId) return prev;
+        if (rec) return rec;
+        // record gone — host reset; clear it if we're back in lobby
+        if (gameStateRef.current?.phase === "lobby") {
+          safeLocalRemove(LS_TEAM_KEY);
+          return null;
         }
-        return liveRecord;
+        return prev;
       });
     });
     return unsub;
-  }, [restoreSessionFromTree]);
+  }, [ownId]);
+
+  // ---- subscribe: ALL teams (host always; team devices only in lobby/ended) ----
+  // Team devices DROP this during live, so a team's answer only fans out to the
+  // single host + that team's own device — O(N) instead of O(N^2).
+  useEffect(() => {
+    if (!isHost && phase === "live") return;
+    const unsub = subscribeAllTeams((raw) => {
+      const next: Team[] = [];
+      for (const v of raw) {
+        const t = asTeam(v);
+        if (t) next.push(t);
+      }
+      setTeams(rankTeams(next));
+    });
+    return unsub;
+  }, [isHost, phase]);
 
   // ---- 250 ms clock tick ----
   useEffect(() => {

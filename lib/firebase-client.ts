@@ -25,18 +25,27 @@ export function db(): Database {
 }
 
 // RTDB keys can't contain ":", so we encode ":" -> "__" on the wire.
-const decodeKey = (k: string) => k.replace(/__/g, ":");
+const encodeKey = (k: string) => k.replace(/:/g, "__");
 
 /**
- * Subscribe to the whole game tree. Invokes `cb` with a decoded mirror
- * ({ "game:state": ..., "team:<id>": ... }) on every change. Returns an
- * unsubscribe function.
+ * Subscribe to a SINGLE key (e.g. "game:state" or "team:<id>"). The client
+ * only receives updates for that path — used by team devices during play so
+ * one team's answer doesn't fan out to every other device.
  */
-export function subscribeTree(cb: (tree: Record<string, unknown>) => void): () => void {
+export function subscribeKey<T>(key: string, cb: (val: T | null) => void): () => void {
+  return onValue(ref(db(), encodeKey(key)), (snap) => cb(snap.exists() ? (snap.val() as T) : null));
+}
+
+/**
+ * Subscribe to ALL team records (the full standings stream). Used by the host
+ * (always) and by team devices only in lobby/ended — never during live play.
+ * Returns the decoded list of team-record values.
+ */
+export function subscribeAllTeams(cb: (teams: unknown[]) => void): () => void {
   return onValue(ref(db(), "/"), (snap) => {
     const raw = (snap.val() as Record<string, unknown>) || {};
-    const next: Record<string, unknown> = {};
-    for (const k in raw) next[decodeKey(k)] = raw[k];
-    cb(next);
+    const teams: unknown[] = [];
+    for (const k in raw) if (k.startsWith("team__")) teams.push(raw[k]);
+    cb(teams);
   });
 }
