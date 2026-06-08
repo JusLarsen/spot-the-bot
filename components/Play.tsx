@@ -71,8 +71,8 @@ export function Play({
         <div className="stimulus flex items-center justify-center">
           <span className="text-muted font-mono text-sm">
             {timeUp
-              ? "Time's up! Hang tight for the final results ⏳"
-              : "You've cleared the whole bank — incredible. Sit tight for the final results ⏳"}
+              ? "Time's up! Hang tight for the final results."
+              : "You've cleared the whole bank — incredible. Sit tight for the final results."}
           </span>
         </div>
       </section>
@@ -122,9 +122,7 @@ export function Play({
             disabled={submitting}
             aria-label="Vote human"
           >
-            <span className="ic" aria-hidden="true">
-              🧑
-            </span>
+            <span className="ic" aria-hidden="true" />
             Human
           </button>
           <button
@@ -133,9 +131,7 @@ export function Play({
             disabled={submitting}
             aria-label="Vote AI"
           >
-            <span className="ic" aria-hidden="true">
-              🤖
-            </span>
+            <span className="ic" aria-hidden="true" />
             AI
           </button>
         </div>
@@ -155,12 +151,12 @@ export function Play({
           </div>
           {!lastResult.correct && lastResult.sneaky && (
             <div className="text-amber mt-1 text-center font-mono text-[12px]">
-              😈 A sneaky one — even the pros miss these.
+              A sneaky one — even the pros miss these.
             </div>
           )}
           {!lastResult.correct && !lastResult.sneaky && lastResult.answer === "bot" && (
             <div className="text-muted mt-1 text-center font-mono text-[12px]">
-              👀 A classic AI tell — learn it for next time:
+              A classic AI tell — learn it for next time:
             </div>
           )}
           <div className="reveal">{lastResult.reveal}</div>

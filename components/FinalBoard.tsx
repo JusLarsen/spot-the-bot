@@ -34,7 +34,6 @@ export function FinalBoard({ teams, myId, isHost, onReset }: FinalBoardProps) {
 
       {winner && (
         <div className="card winner-banner mt-4">
-          <div className="trophy">🏆</div>
           <div className="award">Least Appetizing Robot Snack</div>
           <h2>{winner.name}</h2>
         </div>

@@ -147,7 +147,7 @@ function TeamRow({
         .filter(Boolean)
         .join(" ")}
     >
-      <div className="lb-rank">{isGold ? <span className="crown">👑</span> : `#${rank}`}</div>
+      <div className="lb-rank">#{rank}</div>
       <div className="lb-name">
         {team.name || "(unnamed)"}
         <div className="lb-meta">

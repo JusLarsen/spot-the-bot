@@ -89,7 +89,7 @@ export default function Home() {
 
   return (
     <>
-      {hostUnlocked && <div className="role-toggle text-acid">HOST MODE ✓</div>}
+      {hostUnlocked && <div className="role-toggle text-acid">HOST MODE</div>}
 
       <div className={wide ? "wrap host-wide" : "wrap"}>
         {phase === "lobby" && !me && !isHost && <Join onJoin={join} />}

@@ -36,7 +36,7 @@ export default function HostPage() {
 
   return (
     <>
-      <div className="role-toggle text-acid">HOST MODE ✓</div>
+      <div className="role-toggle text-acid">HOST MODE</div>
       <div className="wrap host-wide">
         {phase === "lobby" && (
           <Lobby teamName="Host" teams={teams} isHost onStart={startGame} onReset={resetGame} />
