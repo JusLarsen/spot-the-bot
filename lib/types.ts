@@ -19,6 +19,7 @@ export interface FullQuestion extends PublicQuestion {
   answer: Answer;
   source: string;
   reveal: string;
+  sneaky?: boolean; // an AI sample designed to be hard to catch (for "don't feel bad" messaging)
 }
 
 /** Shared game state in RTDB at key `game:state`. */
@@ -66,6 +67,7 @@ export interface AnswerResponse {
   answer: Answer; // the truth, revealed only after the guess
   source: string;
   reveal: string;
+  sneaky: boolean; // true if this was a deliberately tricky AI sample
   correctCount: number;
   wrongCount: number;
 }
@@ -92,6 +94,7 @@ export interface AnswerResult {
   answer: Answer;
   source: string;
   reveal: string;
+  sneaky: boolean;
 }
 
 export interface UseGame {

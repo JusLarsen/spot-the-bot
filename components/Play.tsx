@@ -153,6 +153,16 @@ export function Play({
           <div className={`feedback ${lastResult.correct ? "right" : "wrong"}`} aria-live="polite">
             {lastResult.correct ? "✓ Correct" : "✗ Nope"}
           </div>
+          {!lastResult.correct && lastResult.sneaky && (
+            <div className="text-amber mt-1 text-center font-mono text-[12px]">
+              😈 A sneaky one — even the pros miss these.
+            </div>
+          )}
+          {!lastResult.correct && !lastResult.sneaky && lastResult.answer === "bot" && (
+            <div className="text-muted mt-1 text-center font-mono text-[12px]">
+              👀 A classic AI tell — learn it for next time:
+            </div>
+          )}
           <div className="reveal">{lastResult.reveal}</div>
           <div className="cite">Source: {lastResult.source}</div>
           <button ref={nextBtnRef} className="btn btn-ghost mt-3.5" onClick={onNext}>

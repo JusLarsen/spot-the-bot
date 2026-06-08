@@ -66,6 +66,7 @@ export async function POST(request: Request): Promise<Response> {
       answer: question.answer,
       source: question.source,
       reveal: question.reveal,
+      sneaky: !!question.sneaky,
       correctCount: team.correct,
       wrongCount: team.wrong,
     };
@@ -91,6 +92,7 @@ export async function POST(request: Request): Promise<Response> {
     answer: question.answer,
     source: question.source,
     reveal: question.reveal,
+    sneaky: !!question.sneaky,
     correctCount: updatedTeam.correct,
     wrongCount: updatedTeam.wrong,
   };

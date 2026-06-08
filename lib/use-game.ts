@@ -286,6 +286,7 @@ export function useGame(): UseGame {
         answer: data.answer,
         source: data.source,
         reveal: data.reveal,
+        sneaky: data.sneaky,
       });
       // Score update (me.answered, me.correct, etc.) flows back via the RTDB
       // subscription — no local mutation needed.
