@@ -217,7 +217,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Brisket doesn’t care about your schedule, and that’s the first lesson. Trim it clean, season it honest, and let the smoke do its slow little sermon.",
     source: "AI-generated",
     reveal:
-      "AI — the too-perfect parallel rhythm ('Trim it clean, season it honest') and the tidy moral-opener framing ('that’s the first lesson') plus the cutesy abstraction 'let the smoke do its slow little sermon.'",
+      'AI — "let the smoke do its slow little sermon" dresses a metaphor up as wisdom but names no cut, no wood, no temp; it\'s brisket advice that would fit any pit anywhere.',
   },
   {
     id: "bbq-22",
@@ -227,7 +227,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Smoke rings are pretty, but flavor pays the rent. If your bark has pepper bite, fat shimmer, and that campfire depth, nobody’s asking for a microscope.",
     source: "AI-generated",
     reveal:
-      "AI — the rule of three with an abstract third item ('pepper bite, fat shimmer, and that campfire depth') and the neat aphoristic contrast 'Smoke rings are pretty, but flavor pays the rent.'",
+      'AI — "flavor pays the rent" sounds folksy, but the bark checklist (pepper bite, fat shimmer, campfire depth) is generic sensory filler with nothing a real cook would name, like a specific rub or wood.',
   },
   {
     id: "bbq-23",
@@ -237,7 +237,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "A pork shoulder is basically a trust exercise wrapped in butcher paper. Somewhere around hour six, it looks like nothing is happening, which means everything is happening.",
     source: "AI-generated",
     reveal:
-      "AI — the metaphor-as-definition opener ('basically a trust exercise wrapped in butcher paper') and the too-tidy paradoxical closer 'it looks like nothing is happening, which means everything is happening.'",
+      'AI — "a pork shoulder is basically a trust exercise" is metaphor-as-definition, then it over-explains itself with the tidy paradox "nothing is happening, which means everything is happening."',
   },
   {
     id: "bbq-24",
@@ -247,7 +247,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Don’t drown good meat in rub until it tastes like a spice cabinet fell down the stairs. Salt, pepper, heat, smoke, and restraint will get you invited back.",
     source: "AI-generated",
     reveal:
-      "AI — the list that slides an abstract noun into a concrete series ('Salt, pepper, heat, smoke, and restraint') and the wrapped-up payoff 'will get you invited back.'",
+      'AI — the concrete list slides into an abstract noun: "salt, pepper, heat, smoke, and restraint" ends on a virtue, not an ingredient, and buttons up with the mechanical reward "get you invited back."',
   },
   {
     id: "bbq-25",
@@ -257,7 +257,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Burgers need confidence, not choreography. Hot grate, cold meat, one good flip, and cheese melted just enough to start looking dangerous.",
     source: "AI-generated",
     reveal:
-      "AI — the 'not just X, but Y' style antithesis ('confidence, not choreography') with too-perfect alliteration and the parallel staccato list.",
+      'AI — "confidence, not choreography" is a clever contrast carrying no real technique; "cheese melted just enough to start looking dangerous" is mood, not a doneness cue an actual cook would give.',
   },
   {
     id: "bbq-26",
@@ -267,7 +267,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I like ribs with a little tug, not falling off the bone like they gave up on themselves. Sauce goes on near the end, just enough to shine them up for company.",
     source: "AI-generated",
     reveal:
-      "Sneaky — reads human with a concrete preference (ribs with tug, sauce near the end), but the anthropomorphic flourish 'like they gave up on themselves' is the faint AI cleverness tell.",
+      'Sneaky — "ribs with a little tug" and saucing "near the end" is genuine pitmaster preference; the only faint tell is the slightly writerly flourish "like they gave up on themselves."',
     sneaky: true,
   },
   {
@@ -278,7 +278,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The secret to good chicken thighs is patience and not poking at them every twelve seconds like a raccoon with a badge. Let the skin render, let the edges crisp, then bring in the glaze.",
     source: "AI-generated",
     reveal:
-      "AI — the self-answering 'The secret to...' opener and the too-engineered absurd simile ('a raccoon with a badge') paired with anaphora ('Let the skin render, let the edges crisp').",
+      'AI — the "raccoon with a badge" simile is a strained showpiece, and "let the skin render, let the edges crisp, then bring in the glaze" gives sequence without a single temp, time, or thigh count.',
   },
   {
     id: "bbq-28",
@@ -288,7 +288,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I build my fire before I build my menu. Oak for beef, apple for pork, and a little hickory when I want the backyard to smell like it has opinions.",
     source: "AI-generated",
     reveal:
-      "Sneaky — has real specifics (oak/apple/hickory pairings), but the cute parallel opener 'I build my fire before I build my menu' and 'smell like it has opinions' is the subtle AI whimsy.",
+      'Sneaky — "oak for beef, apple for pork, hickory" is real wood-pairing specificity; the only faint tell is the cute personification "smell like it has opinions."',
     sneaky: true,
   },
   {
@@ -299,7 +299,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "If you’re looking at your watch, you’re doing it all wrong. Real Texas brisket doesn't care about your schedule, it only cares about the wood, the smoke, and the internal temp. Pull it when it jiggles like Jell-O and let it rest for at least two hours, period.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three ('the wood, the smoke, and the internal temp') and the schedule-personification cliché reused; the tacked-on 'period' is an LLM emphasis tic.",
+      'AI — it opens hollow ("doesn\'t care about your schedule") then over-qualifies the obvious, stacking "the wood, the smoke, and the internal temp" plus "jiggles like Jell-O" and a stagey "period" instead of one lived detail.',
   },
   {
     id: "bbq-30",
@@ -309,7 +309,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "That bark right there isn't burnt, it’s pure flavor built up over twelve hours of post oak smoke. The secret is keeping the fire clean and the rub heavy on the coarse black pepper. Slice it thick and let the juice do the talking.",
     source: "AI-generated",
     reveal:
-      "AI — the 'isn't X, it's Y' pivot ('isn't burnt, it’s pure flavor'), the self-answering 'The secret is...', and the tidy personified closer 'let the juice do the talking.'",
+      'AI — "twelve hours of post oak" and "coarse black pepper" sound right, but "let the juice do the talking" is a tidy promotional button that any brisket clip could close on.',
   },
   {
     id: "bbq-31",
@@ -319,7 +319,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Look at that smoke ring definition on these pork ribs. They’ve got just enough bite to come clean off the bone without falling apart into mush. Hit 'em with a light glaze of sweet heat right at the end for that picture-perfect shine.",
     source: "AI-generated",
     reveal:
-      "Sneaky — sounds like a real caption, but 'smoke ring definition' and 'picture-perfect shine' read like content-marketing polish rather than table talk; faint promotional sheen is the tell.",
+      'Sneaky — "come clean off the bone without falling apart into mush" is a real doneness call; the one faint tell is the polished marketing phrase "picture-perfect shine" at the end.',
     sneaky: true,
   },
   {
@@ -330,7 +330,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Sunday mornings start at 4:00 AM around here, getting the firebox stoked and the ambient temp locked right at 225. There’s something peaceful about watching the smoke roll while the rest of the neighborhood is still asleep. Grab a coffee, it's gonna be a long, beautiful day.",
     source: "AI-generated",
     reveal:
-      "AI — the 'There’s something peaceful about...' sentimental frame and the mundane-to-glow closer 'it's gonna be a long, beautiful day' are stock LLM warm-wrap moves.",
+      'AI — "225" and a 4 AM firebox read authentic, yet "something peaceful about watching the smoke roll" and "a long, beautiful day" tilt into greeting-card mood with no actual cook detail.',
   },
   {
     id: "bbq-33",
@@ -340,7 +340,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "A lot of guys overcomplicate the rub, but honestly, kosher salt and cracked pepper are all a good piece of beef needs. Let the quality of the meat and the draft of your offset smoker do the heavy lifting. If the smoke is blue, you’re doing it right.",
     source: "AI-generated",
     reveal:
-      "Sneaky — genuine pitmaster knowledge (blue smoke, kosher salt + cracked pepper), but the balanced 'A lot of guys... but honestly' setup and 'do the heavy lifting' phrasing carry a faint LLM cadence.",
+      'Sneaky — "kosher salt and cracked pepper" on good beef and an "offset smoker" are real; the giveaway-style maxim "if the smoke is blue, you\'re doing it right" is true but packaged a touch too neatly.',
     sneaky: true,
   },
   {
@@ -351,7 +351,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "We are officially locked and loaded for the weekend crowd, and these pork shoulders are already looking incredible. The fat cap is rendering down perfectly, basting the meat from the inside out. Get down here before the sold-out sign goes up.",
     source: "AI-generated",
     reveal:
-      "AI — promotional-post boilerplate ('officially locked and loaded', 'looking incredible', 'before the sold-out sign goes up') with stacked vague intensifiers and no concrete specifics.",
+      'AI — "locked and loaded" is promotional LLM diction, and "basting the meat from the inside out" plus "before the sold-out sign goes up" is hype copy, not a cook describing his own pit.',
   },
   {
     id: "bbq-35",
@@ -361,7 +361,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Tinfoil is a crutch, but peach butcher paper is a pitmaster's best friend. It breathes just enough to keep your crust nice and crunchy while holding in those essential juices. Trust the process and don't rush the wrap.",
     source: "AI-generated",
     reveal:
-      "AI — the 'X is a crutch, but Y is your best friend' antithesis and the canned motivational closer 'Trust the process and don't rush the wrap.'",
+      'AI — "tinfoil is a crutch" and "trust the process" are stock motivational phrasing, and the wrap is over-explained ("breathes just enough") rather than tied to any actual cook or temp.',
   },
   {
     id: "bbq-36",
@@ -371,7 +371,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You can buy the most expensive rig on the market, but you can’t buy patience. True barbecue is an art form of minor adjustments, feeling the heat, and listening to the sizzle on the deflector plate. Fire up the pits and let’s get to work.",
     source: "AI-generated",
     reveal:
-      "AI — the 'you can buy X, but you can't buy Y' aphorism, 'True barbecue is an art form...' grand framing, and rule of three ('minor adjustments, feeling the heat, listening to the sizzle') with a rallying closer.",
+      'AI — "you can buy patience" is a hollow aphorism, and "an art form of minor adjustments, feeling the heat, listening to the sizzle" abstracts real technique into a motivational montage.',
   },
   {
     id: "bbq-37",
@@ -381,7 +381,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "In today's world, barbecue is more than just cooking meat over fire. It is a journey that brings people together and nourishes the soul, one tender bite at a time.",
     source: "AI-generated",
     reveal:
-      "AI — big vague frame opener ('In today's world') plus the mundane-to-cosmic 'journey' leap that 'nourishes the soul.' No meat, no wood, no numbers.",
+      'AI — pure mechanical uplift: "a journey that brings people together and nourishes the soul, one tender bite at a time" stacks three button phrases and never touches meat, fire, or a real cook.',
   },
   {
     id: "bbq-38",
@@ -391,7 +391,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Great brisket isn't just about heat; it's about patience, respect, and an unwavering devotion to the craft.",
     source: "AI-generated",
     reveal:
-      "AI — the 'isn't just X; it's Y' false-contrast pivot and a rule-of-three ending on the abstract 'unwavering devotion to the craft.'",
+      'AI — "patience, respect, and an unwavering devotion to the craft" lists virtues, not technique; it\'s a brisket sentence with zero brisket in it, fitting any craft equally well.',
   },
   {
     id: "bbq-39",
@@ -401,7 +401,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "What separates a good pitmaster from a great one? The answer is simple: an unrelenting commitment to the fire.",
     source: "AI-generated",
     reveal:
-      "AI — self-answering rhetorical question with a colon-pivot ('The answer is simple:') and zero concrete detail.",
+      'AI — it\'s a self-answering rhetorical question ("What separates a good pitmaster... The answer is simple") that resolves to the empty abstraction "an unrelenting commitment to the fire."',
   },
   {
     id: "bbq-40",
@@ -411,7 +411,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "At the end of the day, smoking meat is about more than flavor. It's about connection, tradition, and the stories we share around the table.",
     source: "AI-generated",
     reveal:
-      "AI — tidy moral closer ('At the end of the day') riding a rule-of-three that drifts into the abstract.",
+      'AI — "at the end of the day" opens a hollow uplift button, and "connection, tradition, and the stories we share around the table" names everything except anything specific to smoking meat.',
   },
   {
     id: "business-1",
@@ -549,7 +549,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "True operational scale isn’t about working harder; it’s about decoupling your revenue growth from your headcount. When leaders focus on building repeatable frameworks rather than firefighting daily anomalies, the entire organization aligns. Focus on systems that empower autonomy, not bottlenecks that require permission.",
     source: "AI-generated",
     reveal:
-      "AI — the 'not X; it's Y' pivot ('isn't about working harder; it's about decoupling') plus the LLM verbs 'decoupling' and 'empower,' and the too-neat antithesis closer 'systems that empower autonomy, not bottlenecks that require permission.' No concrete specifics anywhere.",
+      "AI — consultant diction stacked thick ('decoupling your revenue growth from your headcount,' 'repeatable frameworks,' 'systems that empower autonomy') with no company, number, or situation a real operator would have named.",
   },
   {
     id: "business-14",
@@ -559,7 +559,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The market doesn’t care about your legacy strategy or how successful your previous product launch was. Disruption happens when an organization becomes too comfortable protecting past wins instead of cannibalizing its own business model to innovate. Stay paranoid, stay curious, and keep executing.",
     source: "AI-generated",
     reveal:
-      "AI — the LLM verb 'cannibalizing,' the buzzword 'Disruption,' and the rule-of-three parallel sign-off 'Stay paranoid, stay curious, and keep executing.' Generic, no real specifics.",
+      "AI — the mechanical motivational button 'Stay paranoid, stay curious, and keep executing' plus stacked MBA diction ('cannibalizing its own business model,' 'protecting past wins'); a real leader would cite which past win.",
   },
   {
     id: "business-15",
@@ -569,7 +569,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Resilience isn't an innate personality trait; it’s an organizational muscle developed through navigating ambiguity. When milestones are missed, the instinct is often to assign blame, but the highest-performing cultures treat failures as data points for iterative improvement. Turn your post-mortems into launchpads.",
     source: "AI-generated",
     reveal:
-      "AI — 'isn't X; it's Y' pivot ('isn't an innate personality trait; it's an organizational muscle'), buzzphrase 'navigating ambiguity,' and the tidy metaphor closer 'Turn your post-mortems into launchpads.'",
+      "AI — corporate filler 'navigating ambiguity' and 'data points for iterative improvement,' capped by the tidy imperative button 'Turn your post-mortems into launchpads'; advice generic enough to fit any org.",
   },
   {
     id: "business-16",
@@ -579,7 +579,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Empathy is often dismissed as a soft skill, but it is actually the hardest and most lucrative tool in a modern executive's toolkit. When employees feel genuinely understood and psychologically safe, retention skyrocketing follows naturally. Take care of your people, and they will relentlessly take care of your metrics.",
     source: "AI-generated",
     reveal:
-      "AI — 'often dismissed as X, but actually Y' reframe, stacked intensifiers 'genuinely... psychologically safe... relentlessly,' and the symmetrical moral closer 'take care of your people, and they will... take care of your metrics.' The grammar slip 'retention skyrocketing follows' is a generation artifact.",
+      "AI — HR-deck diction 'psychologically safe' and the hollow promise that retention and metrics follow 'naturally'; the garbled 'retention skyrocketing follows naturally' is a generation artifact no editor would leave.",
   },
   {
     id: "business-17",
@@ -589,7 +589,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "True leadership isn't validated by how many decisions you make, but by how many leaders you develop to make them instead. If your department paralyzes the moment you go on vacation, you haven’t built a team, you’ve built a dependency. Step back so your people can step up.",
     source: "AI-generated",
     reveal:
-      "AI — the 'not just X, but Y' pivot ('isn't validated by... but by...'), the parallel antithesis 'you haven't built a team, you've built a dependency,' and the rhyming closer 'Step back so your people can step up.'",
+      "AI — the manufactured imperative button 'Step back so your people can step up' and a vacation hypothetical ('the moment you go on vacation') that stands in for any real story; nothing here actually happened.",
   },
   {
     id: "business-18",
@@ -599,7 +599,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "We often mistake frantic activity for progress, but velocity without a clear direction is just noise. The best executives I’ve worked with spend more time listening to frontline friction than reviewing high-level slide decks. If you want to fix your culture, start by fixing the small things that drain your team's daily energy.",
     source: "AI-generated",
     reveal:
-      "AI — opens with the generic 'We often mistake X for Y' frame and the tidy 'if you want to fix X, start by Y' prescriptive closer. 'The best executives I've worked with' gestures at specifics but names none.",
+      "AI — 'The best executives I've worked with' claims firsthand experience but names no one and no moment, and 'frontline friction' versus 'high-level slide decks' is borrowed consultant shorthand, not a remembered scene.",
   },
   {
     id: "business-19",
@@ -609,7 +609,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Good leaders do not remove all friction; they remove the useless friction. Some tension sharpens the work, but bureaucracy just puts a velvet rope around progress.",
     source: "AI-generated",
     reveal:
-      "AI — built on the antithesis template 'do not remove all friction; they remove the useless friction,' a too-perfect parallel. The 'velvet rope around progress' metaphor is decorative rather than concrete.",
+      "Sneaky — the distinction between useful and useless friction is genuinely sharp; the only faint tell is 'velvet rope around progress,' a decorative flourish that names no actual piece of bureaucracy.",
     sneaky: true,
   },
   {
@@ -620,7 +620,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Your calendar is a confession. It reveals what you reward, what you avoid, and what you are accidentally teaching everyone else to value.",
     source: "AI-generated",
     reveal:
-      "AI — the punchy aphorism opener plus a rule-of-three where the third item escalates to the abstract ('what you reward, what you avoid, and what you are accidentally teaching everyone else to value'). Reads sharp but has no specifics.",
+      "Sneaky — 'Your calendar is a confession' is a genuinely arresting line; the faint tell is that nothing follows it down to a single real meeting or recurring block, so it stays universally applicable.",
     sneaky: true,
   },
   {
@@ -631,7 +631,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The mistake many teams make is confusing alignment with agreement. Alignment means we know the decision, the tradeoff, and the owner, even if we would have chosen differently.",
     source: "AI-generated",
     reveal:
-      "AI — definitional 'confusing X with Y' framing and a clean rule-of-three ('the decision, the tradeoff, and the owner'). Subtle: the concrete terms feel earned, but it's a generic abstraction with no lived detail.",
+      "Sneaky — the alignment-versus-agreement distinction is a real and useful one; the faint tell is the textbook definition that follows ('the decision, the tradeoff, and the owner') with no actual decision anyone ever disagreed on.",
     sneaky: true,
   },
   {
@@ -642,7 +642,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Culture is not what gets printed on the wall; it is what people feel safe saying in the meeting. The real work of leadership is lowering the cost of honesty.",
     source: "AI-generated",
     reveal:
-      "AI — the 'not X; it is Y' definitional pivot and the neat abstract closer 'lowering the cost of honesty.' Subtle because it's short and quotable, but it has the too-balanced aphorism rhythm.",
+      "Sneaky — 'what people feel safe saying in the meeting' is an honest, human read on culture; the faint tell is the closer that redefines leadership as 'lowering the cost of honesty,' an abstraction that resolves a bit too neatly.",
     sneaky: true,
   },
   {
@@ -653,7 +653,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Trust compounds slowly and spends quickly. Every missed follow-through is a small withdrawal, even when nobody says it out loud.",
     source: "AI-generated",
     reveal:
-      "AI — sustained banking metaphor ('compounds,' 'spends,' 'withdrawal') applied with too-perfect symmetry. The faint tell is the manufactured parallel 'compounds slowly and spends quickly'; otherwise it reads quite human.",
+      "Sneaky — 'every missed follow-through is a small withdrawal, even when nobody says it out loud' rings true; the only faint tell is that no specific broken promise or person ever anchors the metaphor.",
     sneaky: true,
   },
   {
@@ -664,7 +664,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "A strategy that cannot survive contact with the frontline is not a strategy, it is office theater. The best leaders keep walking back to the people closest to the work.",
     source: "AI-generated",
     reveal:
-      "AI — the 'is not a strategy, it is office theater' negation-reframe and the generic superlative 'The best leaders...' closer. Subtle: 'office theater' has bite, but there's still no specific situation behind it.",
+      "Sneaky — 'cannot survive contact with the frontline... office theater' has real bite; the faint tell is the generic-superlative closer 'The best leaders keep walking back,' advice with no specific strategy or frontline behind it.",
     sneaky: true,
   },
   {
@@ -795,7 +795,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You see, a heart isn't judged by how much you love, but by how much you are loved by others in return. Even when the shadows grow long and the path ahead seems completely lost, that warmth will always show you the way home. Just take my hand and don't be afraid.",
     source: "AI-generated",
     reveal:
-      "AI — textbook 'not just X, but Y' pivot ('not judged by how much you love, but by how much you are loved'), the tidy aphorism, and the cosmic-vague 'shadows grow long / way home' with zero concrete specifics.",
+      'AI — "a heart isn\'t judged by how much you love, but by how much you are loved" is sentiment-as-definition, greeting-card comfort that names no character, no moment, no actual danger.',
   },
   {
     id: "disney-14",
@@ -805,7 +805,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "It doesn't matter if you're made of tin, or wood, or fluff and stuffing, because real magic comes from what's beating inside your chest. When you love someone, you give them a piece of yourself that can never be broken or taken away. That's a promise that lasts forever.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three ('tin, or wood, or fluff and stuffing'), 'real magic comes from what's beating inside your chest' moral, and the over-tidy closer 'a promise that lasts forever.'",
+      'AI — "real magic comes from what\'s beating inside your chest" is a self-explaining moral, and "a piece of yourself that can never be broken" is generic warmth attached to no story or speaker.',
   },
   {
     id: "disney-15",
@@ -815,7 +815,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Change can be a little scary at first, kind of like stepping outside into a big, loud thunderstorm without an umbrella. But if we never let the rain fall, the flowers in the valley would never get a chance to grow. I think it’s time for us to see what’s waiting out there.",
     source: "AI-generated",
     reveal:
-      "AI — generic abstract-noun opener ('Change can be a little scary'), neat rain-makes-flowers-grow parable, and the self-motivating moral closer. No specifics, all life-lesson scaffolding.",
+      'AI — the rain-and-flowers parable explains its own lesson ("if we never let the rain fall, the flowers... would never grow") and names no speaker or situation; pure portable metaphor.',
   },
   {
     id: "disney-16",
@@ -825,7 +825,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "They can take away our crowns, lock us in the highest towers, and banish us to the edge of the map, but they can never steal our dreams. As long as we have each other, we have a spark that can light up the darkest night. Now, let’s go show them what we're made of.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three ('take away our crowns, lock us in towers, banish us...'), the 'but they can never steal our dreams' pivot, and 'spark that can light up the darkest night' cliché escalation.",
+      'AI — "a spark that can light up the darkest night" is mechanical uplift, and the crowns/towers/map imagery stays storybook-generic, naming no actual kingdom, captor, or villain.',
   },
   {
     id: "disney-17",
@@ -835,7 +835,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The stars up there look so small, but I think they’re actually giant windows looking into all the places we haven't discovered yet. If we fly fast enough, maybe we can find a way right through them. We just have to hold on tight and never look down.",
     source: "AI-generated",
     reveal:
-      "AI — mundane-to-cosmic leap (small stars → 'giant windows' into undiscovered places), too-perfect inspirational rhythm, and the 'hold on tight and never look down' tidy uplift ending.",
+      'AI — "giant windows looking into all the places we haven\'t discovered yet" is over-poetic abstraction stacked on nothing concrete: no ship, no destination, no character, just mood.',
   },
   {
     id: "disney-18",
@@ -845,7 +845,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Hurrying won't make the winter pass any faster, my little friend, as every single snowflake has its own special time to dance. Sit here by the hearth with me and let the frost paint its pictures on the windowpanes. Spring always knows exactly when to arrive.",
     source: "AI-generated",
     reveal:
-      "AI — opens with a packaged life-lesson, 'every single snowflake has its own special time to dance' aphorism, and the closing 'Spring always knows exactly when to arrive' moral. Patience-platitude with no real character voice.",
+      'AI — "Spring always knows exactly when to arrive" is a greeting-card resolution; the snowflake-patience platitude would fit any cozy hearth scene and names nobody.',
   },
   {
     id: "disney-19",
@@ -855,7 +855,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“Home isn’t the door,” the candle said, flickering proudly. “It’s who leaves a light on when you’re late.”",
     source: "AI-generated",
     reveal:
-      "AI — the 'X isn't A, it's B' redefinition formula ('Home isn't the door... It's who leaves a light on'), a candle delivering a greeting-card moral. Pure aphorism, no scene.",
+      "AI — fortune-cookie wisdom assigned to an object: a candle delivering the tidy, self-contained life-lesson \"Home isn't the door... It's who leaves a light on.\"",
   },
   {
     id: "disney-20",
@@ -865,7 +865,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“The forest doesn’t give maps to people who already know everything,” the fox said. “It prefers the lost ones. They listen better.”",
     source: "AI-generated",
     reveal:
-      "AI — the wise-mentor epigram with a too-neat antithesis ('the lost ones. They listen better.'), abstract proverb delivered with no actual stakes or specifics.",
+      "AI — fortune-cookie wisdom from an animal narrator: the fox's \"forest doesn't give maps to people who already know everything\" is a humility proverb tied to no traveler or actual journey.",
   },
   {
     id: "disney-21",
@@ -875,7 +875,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“Your song is still in there,” the whale murmured beneath the silver waves. “It just got buried under everyone else’s noise.”",
     source: "AI-generated",
     reveal:
-      "AI — 'silver waves' decorative filler plus the inner-voice-buried-by-noise metaphor, a motivational-poster sentiment in animal-mentor costume.",
+      'AI — self-help in animal costume: the whale\'s "your song... got buried under everyone else\'s noise" is a find-your-voice platitude, with "silver waves" as decorative filler and no real story.',
   },
   {
     id: "disney-22",
@@ -885,7 +885,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“I’m not small,” said the mouse, adjusting his acorn helmet. “I’m travel-sized for destiny.”",
     source: "AI-generated",
     reveal:
-      "Sneaky — the 'acorn helmet' is a vivid, specific prop and 'travel-sized for destiny' is a genuinely funny, unexpected line. Faint tell only: it still leans on the 'I'm not X, I'm Y' reframe formula AI loves.",
+      'Sneaky — "travel-sized for destiny" and the acorn helmet are a genuinely funny, specific character beat; the only faint tell is the neat "I\'m not small... I\'m" reframe.',
     sneaky: true,
   },
   {
@@ -896,7 +896,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“I tried to be perfect and accidentally became miserable,” said the little prince. “So tomorrow I’m going to be terrible at something and see if the sun still rises.”",
     source: "AI-generated",
     reveal:
-      "Sneaky — reads human: self-deprecating, specific cause-and-effect, dry humor ('accidentally became miserable'). The faint giveaway is the polished antithesis 'be terrible at something and see if the sun still rises' — a touch too aphoristically balanced.",
+      'Sneaky — the dry, specific self-deprecation genuinely lands; the faint tell is that "see if the sun still rises" polishes the joke a shade too cleanly.',
     sneaky: true,
   },
   {
@@ -907,7 +907,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Oh, great, another ancient, booby-trapped temple filled with spikes and bugs, because a regular walk in the woods would just be too boring. Don’t touch anything, especially not that giant, shiny ruby that is practically screaming 'grab me' right now. Wait, where did you go?",
     source: "AI-generated",
     reveal:
-      "Sneaky — strong human signal: sarcasm, concrete props (spikes, bugs, the ruby), and an interrupted-by-action ending ('Wait, where did you go?') instead of a moral. Faint tell is only the slightly over-tidy comic setup; tell-density is very low.",
+      'Sneaky — the sarcasm, concrete props (spikes, the shiny ruby "practically screaming \'grab me\'"), and the action-interrupted "Wait, where did you go?" feel real; the only faint tell is the slightly over-tidy setup.',
     sneaky: true,
   },
   {
@@ -999,7 +999,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "As you walk across this stage today, remember that your degree is not a final destination, but rather a key to doors you haven't even envisioned yet. The world doesn't need you to fit into the existing molds; it desperately needs you to shatter them and build something better. Go out there and make kindness your loudest attribute.",
     source: "AI-generated",
     reveal:
-      "AI — the 'not just X, but Y' pivot ('not a final destination, but rather a key'), the tidy moral-closer command ('Go out there and make kindness your loudest attribute'), and the abstract no-specifics frame ('doors you haven't even envisioned yet').",
+      'AI — stacked stock metaphors ("a key to doors you haven\'t even envisioned," "shatter the molds") that name no school, year, or person, resolving into the greeting-card imperative "make kindness your loudest attribute."',
   },
   {
     id: "speech-10",
@@ -1009,7 +1009,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "We often spend our youth waiting for the perfect moment to start, waiting for a sign that we are finally ready to make our mark. The truth is, perfection is an illusion designed to keep you comfortable in the harbor of safety. Row away from the shore, embrace the storms, and realize you were ready all along.",
     source: "AI-generated",
     reveal:
-      "AI — the self-answering setup-then-reveal ('The truth is, perfection is an illusion...'), too-perfect parallel rhythm ('Row away from the shore, embrace the storms, and realize...'), and an extended generic metaphor (harbor/shore/storms) with zero concrete specifics.",
+      'AI — it over-explains its own moral ("perfection is an illusion designed to keep you comfortable") then piles on nautical clichés, ordering you to "row away from the shore" with no real boat, harbor, or memory behind it.',
   },
   {
     id: "speech-11",
@@ -1019,7 +1019,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Look around this room at the people who supported you, wept with you, and pushed you to reach this milestone. No one achieves greatness in a vacuum, and our success is always a collective tapestry woven by those who believed in us. Carry their belief into the world and become that pillar for someone else.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three ('supported you, wept with you, and pushed you'), aphoristic moral closer ('No one achieves greatness in a vacuum'), and stacked clichéd metaphors ('collective tapestry woven,' 'become that pillar').",
+      'AI — "a collective tapestry woven by those who believed in us" is a stock metaphor pointing at nobody specific; a real speaker would name the mentor or parent, not tell you to "become that pillar for someone else."',
   },
   {
     id: "speech-12",
@@ -1029,7 +1029,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Do not let the fear of making a mistake paralyze your ambition, because every failure is simply a tuition payment toward your future wisdom. The most extraordinary lives are rarely linear; they are messy, unpredictable, and defined by the moments someone chose to get back up. Write a story worth telling.",
     source: "AI-generated",
     reveal:
-      "AI — colon/semicolon-pivot generalization ('rarely linear; they are messy, unpredictable, and defined...'), rule of three with abstract third item, and the clipped moral-closer command ('Write a story worth telling').",
+      'AI — "every failure is simply a tuition payment toward your future wisdom" is a too-neat manufactured aphorism, and it caps off by commanding you to "write a story worth telling" without telling a single story of its own.',
   },
   {
     id: "speech-13",
@@ -1039,7 +1039,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Your education has given you a voice, and with that voice comes the profound responsibility to speak for those who are currently unheard. Do not use your talents merely to climb the ladders of corporate success; use them to widen the base so more people can climb with you. True legacy is measured by what you give back.",
     source: "AI-generated",
     reveal:
-      "AI — stacked intensifier ('the profound responsibility'), 'not merely X; do Y' antithesis pivot, and the aphoristic moral closer ('True legacy is measured by what you give back').",
+      'AI — entirely second-person sermon ("widen the base so more people can climb") with zero speaker presence; it asserts "true legacy is measured by what you give back" yet cites no cause, no name, no moment the speaker actually lived.',
   },
   {
     id: "speech-14",
@@ -1049,7 +1049,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Today marks the end of a chapter, but the pen is now entirely in your hands for the rest of the book. Do not let the cynicism of the world dampen the fierce optimism that brought you to this very moment. Be bold, stay curious, and never apologize for dreaming too big.",
     source: "AI-generated",
     reveal:
-      "AI — the 'chapter/pen/book' cliché frame, intensifier pairing ('the cynicism of the world,' 'fierce optimism'), and a rule-of-three closer in perfect parallel ('Be bold, stay curious, and never apologize for dreaming too big').",
+      'AI — "the pen is now entirely in your hands for the rest of the book" is a stock metaphor, and the closing trio "be bold, stay curious, and never apologize" is hollow uplift that would fit any graduation anywhere.',
   },
   {
     id: "speech-15",
@@ -1059,7 +1059,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You are not here because the path was clear. You are here because you kept walking when the map turned into fog.",
     source: "AI-generated",
     reveal:
-      "Sneaky — feels human with its tight, concrete image, but the giveaway is the too-perfect 'not because X... because Y' antithesis in matched parallel ('You are not here because... You are here because...'), the AI's favorite balanced-negation structure.",
+      'Sneaky — "you kept walking when the map turned into fog" genuinely lands, but the faint tell is that the fog and the map belong to no real journey: it\'s still pure second-person with no speaker who was actually there.',
     sneaky: true,
   },
   {
@@ -1070,7 +1070,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Do not mistake certainty for wisdom. The people who change the world are often the ones willing to ask one more question when everyone else has packed up the chairs.",
     source: "AI-generated",
     reveal:
-      "Sneaky — the concrete 'packed up the chairs' image reads human, but the faint tell is the aphoristic abstraction-opener ('Do not mistake certainty for wisdom') leading into a tidy 'the people who change the world are often the ones who...' generalization.",
+      'Sneaky — "willing to ask one more question when everyone else has packed up the chairs" is a sharp, near-concrete image, but it stays a general type rather than one remembered person, the last faint sign it\'s composed not recalled.',
     sneaky: true,
   },
   {
@@ -1319,7 +1319,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "In the end, the galaxy will not remember our weapons or our fleets. It will remember whether we chose to stand together when the darkness came.",
     source: "AI-generated",
     reveal:
-      "AI — portentous fake-epic gravitas plus a tidy moral closer and the 'not X but Y' frame: 'will not remember our weapons or our fleets... It will remember whether we chose to stand together.'",
+      'AI — names no galaxy, no enemy, no character: "whether we chose to stand together when the darkness came" is interchangeable grandeur that could close literally any space epic, anchored to no actual scene.',
   },
   {
     id: "movies-26",
@@ -1329,7 +1329,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "This was never about the throne, the crown, or the kingdom. It was about something far greater: the soul of every world that ever dared to dream.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three with abstract third item ('the throne, the crown, or the kingdom') and the 'never about X, it was about Y' pivot with a colon into vague grandeur.",
+      'AI — the escalation "never about the throne... It was about something far greater: the soul of every world that ever dared to dream" is pure abstract uplift naming no kingdom, no speaker, no concrete stake.',
   },
   {
     id: "movies-27",
@@ -1339,7 +1339,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Together we will harness the storm, forge a new dawn, and unleash a power this universe has never witnessed.",
     source: "AI-generated",
     reveal:
-      "AI — stacked LLM verbs 'harness... forge... unleash' in a too-perfect rule-of-three rhythm.",
+      'AI — "harness the storm, forge a new dawn, and unleash a power this universe has never witnessed" is stacked mechanical grandiosity, vague cosmic power with no named threat, place, or actual plan behind it.',
   },
   {
     id: "movies-28",
@@ -1349,7 +1349,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You ask what makes a hero. I will tell you: not the strength of the arm, but the courage of the heart that refuses to break.",
     source: "AI-generated",
     reveal:
-      "AI — self-answering rhetorical question with colon-pivot and the 'not X, but Y' contrast: 'You ask what makes a hero. I will tell you...'",
+      'AI — the self-answering setup "You ask what makes a hero. I will tell you" plus a definitional "not the strength of the arm, but the courage of the heart" is a teaching device, not dialogue tied to any moment.',
   },
   {
     id: "movies-29",
@@ -1359,7 +1359,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "What began as a simple delivery run became a journey across the stars, and ultimately a reckoning with the very meaning of who we are.",
     source: "AI-generated",
     reveal:
-      "AI — mundane-to-cosmic 'journey' leap ('a simple delivery run' to 'a reckoning with the very meaning of who we are') with vague escalation and no specifics.",
+      'AI — "a reckoning with the very meaning of who we are" dissolves a concrete delivery run into abstract self-discovery, naming no destination, person, or event a real scene would ground itself in.',
   },
   {
     id: "movies-30",
@@ -1369,7 +1369,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Victory is not measured in the battles we win, but in the lives we choose to protect along the way.",
     source: "AI-generated",
     reveal:
-      "AI — neat 'not X, but Y' aphorism with a moral closer and perfect parallel rhythm; no concrete detail.",
+      'AI — "Victory is not measured in the battles we win, but in the lives we choose to protect" is a tidy definition with no concrete content: no battle, no enemy, no one being protected, just a portable maxim.',
   },
   {
     id: "movies-31",
@@ -1379,7 +1379,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I have walked through fire, through shadow, and through the quiet despair that comes when hope itself begins to fade.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three escalating to an abstract third item ('fire, shadow, and the quiet despair') with portentous gravitas.",
+      'AI — "through fire, through shadow, and through the quiet despair" piles metaphor on metaphor naming no actual ordeal, place, or foe; it\'s mood without a single specific thing the speaker survived.',
   },
   {
     id: "movies-32",
@@ -1389,7 +1389,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Surrender now, and I may yet allow you to truly, deeply understand the profound mercy of which I am capable.",
     source: "AI-generated",
     reveal:
-      "AI — stacked intensifiers 'truly, deeply... profound' piled into one villain line where a human writer would cut them.",
+      'AI — the over-stuffed intensifiers "truly, deeply understand the profound mercy" are the tell; real menace is specific and lean, while this villain threatens in vague abstractions naming no captive or consequence.',
   },
   {
     id: "movies-33",
@@ -1399,7 +1399,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Look around you. This is not merely a rebellion. This is the dawn of an age where the oppressed will rise and never again kneel.",
     source: "AI-generated",
     reveal:
-      "AI — big vague frame opener ('Look around you') with the 'not merely X, this is Y' pivot and grand abstract escalation.",
+      'AI — "the dawn of an age where the oppressed will rise and never again kneel" is hollow manifesto: it names no oppressor, no place, no people, sweeping grandeur that would fit any rebellion anywhere.',
   },
   {
     id: "movies-34",
@@ -1409,7 +1409,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The question is not whether we can win, but whether we are willing to become the kind of people who deserve to.",
     source: "AI-generated",
     reveal:
-      "AI — 'the question is not X, but Y' construction with a tidy moral inversion and too-perfect balance; no character specifics.",
+      'AI — "not whether we can win, but whether we are willing to become the kind of people who deserve to" resolves into an abstract moral definition rather than dialogue about an actual fight or enemy.',
   },
   {
     id: "movies-35",
@@ -1419,7 +1419,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Every great empire begins with a single choice, and today, my friends, we choose to delve into legend.",
     source: "AI-generated",
     reveal:
-      "AI — sweeping vague frame opener plus the LLM verb 'delve' wedged into would-be epic dialogue.",
+      'AI — "today, my friends, we choose to delve into legend" is empty ceremony naming no empire, no choice, no people; "delve" especially is generic uplift standing in for an actual decision or stake.',
   },
   {
     id: "movies-36",
@@ -1429,7 +1429,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "They told me a machine could never love, never grieve, never truly hope. And yet, here I stand, profoundly and irrevocably alive.",
     source: "AI-generated",
     reveal:
-      "AI — rule of three ('never love, never grieve, never truly hope') plus stacked intensifiers 'profoundly and irrevocably'.",
+      'AI — the piled adverbs "profoundly and irrevocably alive" plus the triple "never love, never grieve, never truly hope" is mechanical abstract uplift, an essay on machine consciousness with no scene around it.',
   },
   {
     id: "movies-37",
@@ -1439,7 +1439,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Heroes are not born in moments of triumph. They are forged in the silent, unseen battles no one will ever know.",
     source: "AI-generated",
     reveal:
-      "AI — 'not born in X, forged in Y' contrast, the LLM verb 'forged,' and a polished aphoristic closer with no specifics.",
+      'AI — "Heroes are not born... They are forged in the silent, unseen battles" is a portable definition of heroism naming no hero, no battle, no enemy; it teaches a concept rather than speaking to anyone.',
   },
   {
     id: "movies-38",
@@ -1449,7 +1449,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "This power was never meant to be controlled. It was meant to be unleashed, and through it, the cosmos itself reborn.",
     source: "AI-generated",
     reveal:
-      "AI — 'never meant to be X, meant to be Y' pivot with LLM verb 'unleashed' and the mundane-to-cosmic leap to 'the cosmos itself reborn.'",
+      'AI — "the cosmos itself reborn" is mechanical cosmic grandiosity; "power... meant to be unleashed" names no source, wielder, or target, pure abstract scale with no specific moment behind it.',
   },
   {
     id: "movies-39",
@@ -1459,7 +1459,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "What is courage, if not fear that has chosen to stand? And what is sacrifice, if not love made visible in its final, fearless act?",
     source: "AI-generated",
     reveal:
-      "AI — stacked self-answering rhetorical questions ('What is X, if not...'), each resolving into a tidy abstract definition.",
+      'AI — two stacked self-answering definitions, "What is courage, if not..." and "what is sacrifice, if not love made visible," are a philosophy lecture, not a line a character says inside an actual scene.',
   },
   {
     id: "movies-40",
@@ -1469,7 +1469,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "We did not come here to be remembered. We came here to make sure there was someone left to do the remembering.",
     source: "AI-generated",
     reveal:
-      "AI — 'did not come for X, came for Y' parallel inversion with too-clean rhythm and vague stakes.",
+      'AI — "someone left to do the remembering" is engineered grandeur that names no "here," no enemy, no mission; the clever inversion has no concrete situation underneath it the way a real line would.',
   },
   {
     id: "movies-41",
@@ -1479,7 +1479,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "So this is how it ends: not with the roar of cannons, but with the whisper of a promise kept.",
     source: "AI-generated",
     reveal:
-      "AI — colon-pivot 'this is how it ends:' into the 'not X, but Y' contrast and a polished poetic closer.",
+      'AI — "not with the roar of cannons, but with the whisper of a promise kept" frames a contrast as profundity but names no promise, no who, no actual ending; it\'s abstract closure with no scene.',
   },
   {
     id: "movies-42",
@@ -1489,7 +1489,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You really thought a force field would stop me? I helped design half the tech in this building. Buddy, I invented the off switch.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — reads like a punchy action-comedy quip, but the faint tell is the too-tidy setup-and-button symmetry of 'force field' answered by 'off switch.'",
+      'Sneaky — genuinely grounded and specific ("I helped design half the tech in this building," "I invented the off switch"); the only faint tell is the slightly too-clean button-line cadence of "the off switch."',
     sneaky: true,
   },
   {
@@ -1500,7 +1500,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Cut the blue wire. No — the other blue wire, the one tucked behind the red. We've got maybe ten seconds, so please trust me on this.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — passes as a real comedic beat; subtle tell is the schematic, almost templated joke structure with the manufactured 'no, the other' reversal.",
+      'Sneaky — convincingly concrete with the blue-wire-behind-the-red detail and "maybe ten seconds"; the faintest tell is how neatly the self-correction is staged, just a touch too tidy for real panic.',
     sneaky: true,
   },
   {
@@ -1511,7 +1511,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I counted three guards on the schematic. On the ground there were six. We're going to need a bigger plan.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — convincing terse action line; faint tell is the neat numeric escalation (three to six) into a balanced punchline that's a touch too engineered.",
+      'Sneaky — specific and plausible with "three guards on the schematic... six on the ground"; the only soft tell is the engineered three-versus-six symmetry setting up a slightly pat closing line.',
     sneaky: true,
   },
   {
@@ -1522,7 +1522,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Whatever happens out there, you don't let go of my hand. No matter what you see, no matter what they tell you. Promise me.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — believable quiet emotional beat; the only tell is the generic, character-free phrasing that fits any movie and names no one and nothing specific.",
+      'Sneaky — emotionally grounded and scene-anchored ("don\'t let go of my hand," "Promise me"); the faint tell is the balanced "no matter what you see, no matter what they tell you" repetition reading a hair too composed.',
     sneaky: true,
   },
   {
@@ -1533,7 +1533,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The ship can take the hit; the hull's rated for worse than this. The question is whether we can.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — passes as a tense line; subtle tell is the polished 'X can; the question is whether Y can' parallel that's slightly too symmetrical for natural speech.",
+      'Sneaky — believable and specific with "the hull\'s rated for worse than this"; the only soft tell is the engineered ship-versus-us symmetry in "The question is whether we can," a touch too neat.',
     sneaky: true,
   },
   {
@@ -1544,7 +1544,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "He's not answering the radio. Either he's gone dark on purpose, or he's just gone. That's either very good or very bad.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — reads natural and punchy; faint tell is the perfectly balanced 'either very good or very bad' binary, a tidy AI cadence.",
+      'Sneaky — naturally grounded with "He\'s not answering the radio" and the real either/or of gone-dark-or-gone; the faint tell is the slightly too-balanced "very good or very bad" button on the binary.',
     sneaky: true,
   },
   {
@@ -1555,7 +1555,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Go now, while there's still a gap in their line. Run. Don't look back. And tell them I was smiling.",
     source: "AI-generated",
     reveal:
-      "AI (sneaky) — believable heroic exit; subtle tell is the clean three-beat command rhythm ('Run. Don't look back. And tell them...') landing a touch too composed.",
+      'Sneaky — urgent and concrete ("while there\'s still a gap in their line," "Don\'t look back"); the only faint tell is the engineered poignancy of "tell them I was smiling," a hair too composed for the moment.',
     sneaky: true,
   },
 ];
