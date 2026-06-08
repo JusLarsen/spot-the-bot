@@ -373,15 +373,19 @@ describe("limitRuns", () => {
     expect(out).toHaveLength(50);
   });
 
-  it("holds across many shuffles", () => {
+  it("holds across many shuffles and preserves natural clustering", () => {
     const base = [
       ...Array.from({ length: 25 }, (_, i) => `h${i}`),
       ...Array.from({ length: 25 }, (_, i) => `b${i}`),
     ];
+    let sawCluster = false; // at least one run of 2+ — i.e. NOT forced strict alternation
     for (let seed = 1; seed <= 30; seed++) {
       const shuffled = shuffledIndices(base.length, hashStr("t" + seed)).map((i) => base[i]);
-      expect(longestRun(limitRuns(shuffled, isBot, 3))).toBeLessThanOrEqual(3);
+      const run = longestRun(limitRuns(shuffled, isBot, 3));
+      expect(run).toBeLessThanOrEqual(3);
+      if (run >= 2) sawCluster = true;
     }
+    expect(sawCluster).toBe(true);
   });
 
   it("does not crash on a single-answer list (run unavoidable)", () => {
