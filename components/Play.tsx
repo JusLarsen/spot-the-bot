@@ -51,7 +51,7 @@ export function Play({
   return (
     <section>
       <div className="roundbar">
-        <span className="rno">Sample {answeredCount + 1}</span>
+        <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
         <span className="score">
           {hasAnswered ? `${correct} correct · ${wrong} wrong` : `${correct} correct`}
         </span>
@@ -93,7 +93,7 @@ export function Play({
       {/* Result reveal */}
       {hasAnswered && lastResult && (
         <>
-          <div className={`feedback${lastResult.correct ? "right" : "wrong"}`}>
+          <div className={`feedback ${lastResult.correct ? "right" : "wrong"}`}>
             {lastResult.correct ? "✓ Correct" : "✗ Nope"}
           </div>
           <div className="reveal">{lastResult.reveal}</div>

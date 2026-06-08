@@ -27,7 +27,7 @@ export function Join({ onJoin }: JoinProps) {
   return (
     <section>
       <div className="eyebrow">Leadership Session · Live</div>
-      <h1 className="mt-1.5 mb-0.5 [font-size:clamp(34px,11vw,52px)] leading-[0.92] [font-weight:800] tracking-[-1.5px]">
+      <h1 className="page-heading mt-1.5 mb-0.5">
         Spot the <span className="text-acid italic">Bot</span>
       </h1>
       <p className="text-muted mt-2 text-sm leading-[1.4]">
@@ -54,7 +54,7 @@ export function Join({ onJoin }: JoinProps) {
           onKeyDown={handleKeyDown}
           className="border-acid/20 text-ink focus:border-acid w-full rounded-xl border bg-[#070a06] px-4 py-3.5 font-mono text-lg transition-shadow outline-none focus:shadow-[0_0_0_3px_rgba(200,255,0,0.12)]"
         />
-        <button className="btn-primary" onClick={handleJoin} disabled={loading || !name.trim()}>
+        <button className="btn btn-primary" onClick={handleJoin} disabled={loading || !name.trim()}>
           {loading ? "Joining…" : "Enter as a team →"}
         </button>
         <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">

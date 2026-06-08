@@ -15,9 +15,7 @@ export function FinalBoard({ teams, myId, isHost, onReset }: FinalBoardProps) {
   return (
     <section>
       <div className="eyebrow">Final Results</div>
-      <h1 className="mt-1.5 mb-0.5 [font-size:clamp(34px,11vw,52px)] leading-[0.92] [font-weight:800] tracking-[-1.5px]">
-        Time&apos;s up!
-      </h1>
+      <h1 className="page-heading mt-1.5 mb-0.5">Time&apos;s up!</h1>
 
       {winner && (
         <div className="card winner-banner mt-4">

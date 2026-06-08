@@ -69,9 +69,7 @@ export default function Home() {
   if (!ready) {
     return (
       <div className="wrap">
-        <div className="eyebrow" style={{ marginTop: "40px", textAlign: "center" }}>
-          Connecting…
-        </div>
+        <div className="eyebrow mt-10 text-center">Connecting…</div>
       </div>
     );
   }
@@ -82,11 +80,7 @@ export default function Home() {
 
   return (
     <>
-      {hostUnlocked && (
-        <div className="role-toggle" style={{ color: "var(--color-acid)" }}>
-          HOST MODE ✓
-        </div>
-      )}
+      {hostUnlocked && <div className="role-toggle text-acid">HOST MODE ✓</div>}
 
       <div className="wrap">
         {phase === "lobby" && !me && !isHost && <Join onJoin={join} />}

@@ -5,7 +5,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { subscribeTree } from "./firebase-client";
 import { rankTeams, shuffledIndices, hashStr, nextUnansweredPos } from "./game";
-import { PUBLIC_QUESTIONS } from "./questions.public";
+import { PUBLIC_QUESTIONS, PUBLIC_BY_ID } from "./questions.public";
 import type {
   UseGame,
   GameState,
@@ -20,6 +20,7 @@ import type {
   AnswerResponse,
   HostRequest,
   HostResponse,
+  HostAction,
 } from "./types";
 
 // ---- localStorage key constants ----
@@ -91,11 +92,6 @@ function buildOrderIds(teamId: string): string[] {
   return indices.map((i) => PUBLIC_QUESTIONS[i].id);
 }
 
-// Find the PublicQuestion for a given id
-function questionById(id: string): PublicQuestion | undefined {
-  return PUBLIC_QUESTIONS.find((q) => q.id === id);
-}
-
 export function useGame(): UseGame {
   // ---- raw tree state ----
   const [ready, setReady] = useState(false);
@@ -112,6 +108,10 @@ export function useGame(): UseGame {
 
   // ---- play state ----
   const [lastResult, setLastResult] = useState<AnswerResult | null>(null);
+  // While a reveal is showing, the displayed question is frozen so it doesn't
+  // jump to the next one underneath the result (current recomputes from
+  // me.answered, which updates the instant the server records the answer).
+  const [frozenQuestion, setFrozenQuestion] = useState<PublicQuestion | null>(null);
   // Timestamp (Date.now()) when the current question first became visible.
   const questionShownAtRef = useRef<number>(0);
 
@@ -133,14 +133,16 @@ export function useGame(): UseGame {
   const answered: Record<string, boolean> = me?.answered ?? {};
   const answeredCount = Object.keys(answered).length;
 
-  // Determine the current question
-  let current: PublicQuestion | null = null;
+  // The next unanswered question for this team (null when done / not live).
+  let nextQuestion: PublicQuestion | null = null;
   if (me && phase === "live" && timeLeftMs > 0) {
     const pos = nextUnansweredPos(orderIds, answered);
     if (pos < orderIds.length) {
-      current = questionById(orderIds[pos]) ?? null;
+      nextQuestion = PUBLIC_BY_ID[orderIds[pos]] ?? null;
     }
   }
+  // While a result is showing, keep displaying the question that was answered.
+  const current: PublicQuestion | null = lastResult ? frozenQuestion : nextQuestion;
 
   // Track when the current question became visible (for elapsedMs on submit).
   // Done in an effect — refs must not be written during render.
@@ -264,6 +266,7 @@ export function useGame(): UseGame {
   const submit = useCallback(
     async (choice: Answer): Promise<void> => {
       if (!me || !current) return;
+      setFrozenQuestion(current); // pin this question while its result is shown
       const elapsedMs = Date.now() - questionShownAtRef.current;
       const body: AnswerRequest = {
         teamId: me.id,
@@ -292,6 +295,7 @@ export function useGame(): UseGame {
 
   const next = useCallback((): void => {
     setLastResult(null);
+    setFrozenQuestion(null);
     // current recomputes automatically from the updated me.answered in the tree
   }, []);
 
@@ -316,39 +320,28 @@ export function useGame(): UseGame {
     return true;
   }, []);
 
-  const startGame = useCallback(async (): Promise<void> => {
-    const body: HostRequest = { action: "start", token: hostTokenRef.current ?? "" };
+  // All host mutations share the same POST /api/host shape (guarded server-side
+  // by HOST_TOKEN); only the action differs.
+  const callHost = useCallback(async (action: HostAction): Promise<void> => {
+    const body: HostRequest = { action, token: hostTokenRef.current ?? "" };
     const res = await fetch("/api/host", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    if (!res.ok) throw new Error(`startGame failed: ${res.status}`);
+    if (!res.ok) throw new Error(`host ${action} failed: ${res.status}`);
   }, []);
 
-  const endGame = useCallback(async (): Promise<void> => {
-    const body: HostRequest = { action: "end", token: hostTokenRef.current ?? "" };
-    const res = await fetch("/api/host", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    if (!res.ok) throw new Error(`endGame failed: ${res.status}`);
-  }, []);
+  const startGame = useCallback(() => callHost("start"), [callHost]);
+  const endGame = useCallback(() => callHost("end"), [callHost]);
 
   const resetGame = useCallback(async (): Promise<void> => {
-    const body: HostRequest = { action: "reset", token: hostTokenRef.current ?? "" };
-    const res = await fetch("/api/host", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(body),
-    });
-    if (!res.ok) throw new Error(`resetGame failed: ${res.status}`);
-    // Clear local team so this device (if it was ever a team) re-enters lobby
+    await callHost("reset");
+    // Clear local team so this device (if it was ever a team) re-enters lobby.
     safeLocalRemove(LS_TEAM_KEY);
     setMe(null);
-    // Host stays host — do NOT clear isHost/hostUnlocked
-  }, []);
+    // Host stays host — do NOT clear isHost/hostUnlocked.
+  }, [callHost]);
 
   return {
     ready,

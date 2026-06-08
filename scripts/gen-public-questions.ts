@@ -16,6 +16,10 @@ const out = `import type { PublicQuestion } from "./types";
 export const PUBLIC_QUESTIONS: PublicQuestion[] = [
 ${rows}
 ];
+
+export const PUBLIC_BY_ID: Record<string, PublicQuestion> = Object.fromEntries(
+  PUBLIC_QUESTIONS.map((q) => [q.id, q]),
+);
 `;
 
 writeFileSync(new URL("../lib/questions.public.ts", import.meta.url), out);

@@ -1,19 +1,14 @@
 export const runtime = "nodejs";
 
 import { adminDb, encodeKey } from "@/lib/firebase-admin";
+import { parseJsonBody } from "@/lib/api-utils";
 import { BY_ID } from "@/lib/questions.server";
 import type { AnswerRequest, AnswerResponse, GameState, Team } from "@/lib/types";
 import { STATE_KEY, teamKey } from "@/lib/types";
 
-const MIN_ELAPSED_MS = 0;
-
 export async function POST(request: Request): Promise<Response> {
-  let body: Partial<AnswerRequest>;
-  try {
-    body = await request.json();
-  } catch {
-    return Response.json({ error: "Invalid JSON" }, { status: 400 });
-  }
+  const body = await parseJsonBody<AnswerRequest>(request);
+  if (body instanceof Response) return body;
 
   const { teamId, questionId, choice, elapsedMs } = body;
 
@@ -79,7 +74,7 @@ export async function POST(request: Request): Promise<Response> {
 
   // Score the answer.
   const isCorrect = choice === question.answer;
-  const clampedMs = Math.max(MIN_ELAPSED_MS, elapsedMs);
+  const clampedMs = Math.max(0, elapsedMs); // ignore negative times from a misbehaving client
 
   const updatedTeam: Team = {
     ...team,

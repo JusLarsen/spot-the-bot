@@ -104,3 +104,7 @@ export const PUBLIC_QUESTIONS: PublicQuestion[] = [
   { id: "speech-15", type: "text", category: "speech", body: "I will not stand here and pretend I have figured it all out, because the truth is none of us ever do. Life is not a problem to be solved but a mystery to be lived — a delicate dance between holding on and letting go. You will face setbacks that feel like endings and beginnings disguised as detours. Through it all, let three principles steady you: show up fully, fail forward bravely, and lead with empathy. The people who change the world are rarely the smartest in the room. They are simply the ones who refused to give up, who kept believing, who chose hope when hope was hard." },
   { id: "speech-16", type: "text", category: "speech", body: "Look around you for a moment. Look at the faces beside you, the people who laughed with you, struggled with you, and grew alongside you. This is what it was all for — not the grades, not the accolades, but the connections that quietly shaped who you have become. As you go out into a world that often rewards speed over depth and noise over meaning, I ask you to be different. Be the person who pauses. Be the one who listens. Be the light in someone else's darkness. The realm of possibility stretches endlessly before you, and the only limits that matter are the ones you choose to believe in." },
 ];
+
+export const PUBLIC_BY_ID: Record<string, PublicQuestion> = Object.fromEntries(
+  PUBLIC_QUESTIONS.map((q) => [q.id, q]),
+);

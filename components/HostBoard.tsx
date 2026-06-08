@@ -15,12 +15,8 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
   return (
     <section>
       <div className="eyebrow">Host · Live Standings</div>
-      <h1 className="mt-1.5 mb-0.5 [font-size:clamp(34px,11vw,52px)] leading-[0.92] [font-weight:800] tracking-[-1.5px]">
-        Standings
-      </h1>
-      <div className={`clock${isLow ? "low" : ""}`} style={{ textAlign: "left", marginTop: "8px" }}>
-        {fmtClock(timeLeftMs)} left
-      </div>
+      <h1 className="page-heading mt-1.5 mb-0.5">Standings</h1>
+      <div className={`clock mt-2 text-left${isLow ? "low" : ""}`}>{fmtClock(timeLeftMs)} left</div>
 
       <div className="card">
         <LeaderboardRows teams={teams} myId={null} crownTop={false} />

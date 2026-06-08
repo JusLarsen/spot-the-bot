@@ -1,16 +1,13 @@
 export const runtime = "nodejs";
 
 import { adminDb, encodeKey, isValidHostToken } from "@/lib/firebase-admin";
+import { parseJsonBody } from "@/lib/api-utils";
 import type { GameState, HostRequest, HostResponse } from "@/lib/types";
-import { GAME_MS, STATE_KEY } from "@/lib/types";
+import { GAME_MS, STATE_KEY, teamKey } from "@/lib/types";
 
 export async function POST(request: Request): Promise<Response> {
-  let body: Partial<HostRequest>;
-  try {
-    body = await request.json();
-  } catch {
-    return Response.json({ error: "Invalid JSON" }, { status: 400 });
-  }
+  const body = await parseJsonBody<HostRequest>(request);
+  if (body instanceof Response) return body;
 
   if (!isValidHostToken(body.token)) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
@@ -58,7 +55,7 @@ export async function POST(request: Request): Promise<Response> {
     const rootSnap = await db.ref("/").get();
     if (rootSnap.exists()) {
       const rootData = rootSnap.val() as Record<string, unknown>;
-      const teamPrefix = "team__"; // encoded: "team:" -> "team__"
+      const teamPrefix = encodeKey(teamKey("")); // "team:" -> "team__"
       const deletePromises = Object.keys(rootData)
         .filter((k) => k.startsWith(teamPrefix))
         .map((k) => db.ref(k).remove());

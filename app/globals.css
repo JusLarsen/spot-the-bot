@@ -93,6 +93,14 @@
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
+  /* big page heading (shared by every view's <h1>) */
+  .page-heading {
+    font-size: clamp(34px, 11vw, 52px);
+    font-weight: 800;
+    line-height: 0.92;
+    letter-spacing: -1.5px;
+  }
+
   /* buttons */
   .btn {
     display: block;
@@ -117,33 +125,14 @@
     opacity: 0.4;
     cursor: default;
   }
+  /* variant — pair with .btn (use className="btn btn-primary"); inherits layout,
+     :active and :disabled from .btn */
   .btn-primary {
-    display: block;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 18px;
-    letter-spacing: 0.3px;
-    padding: 16px;
-    border-radius: 14px;
-    margin-top: 14px;
     background: var(--color-acid);
     color: #0a0e0a;
-    transition:
-      transform 0.08s ease,
-      filter 0.2s ease;
   }
   .btn-primary:hover {
     filter: brightness(1.08);
-  }
-  .btn-primary:active {
-    transform: translateY(2px) scale(0.99);
-  }
-  .btn-primary:disabled {
-    opacity: 0.4;
-    cursor: default;
   }
   .btn-ghost {
     background: transparent;

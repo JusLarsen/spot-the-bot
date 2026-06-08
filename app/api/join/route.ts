@@ -1,6 +1,7 @@
 export const runtime = "nodejs";
 
 import { adminDb, encodeKey } from "@/lib/firebase-admin";
+import { parseJsonBody } from "@/lib/api-utils";
 import type { GameState, JoinRequest, JoinResponse, Team } from "@/lib/types";
 import { STATE_KEY, teamKey } from "@/lib/types";
 
@@ -14,12 +15,8 @@ function generateTeamId(): string {
 }
 
 export async function POST(request: Request): Promise<Response> {
-  let body: Partial<JoinRequest>;
-  try {
-    body = await request.json();
-  } catch {
-    return Response.json({ error: "Invalid JSON" }, { status: 400 });
-  }
+  const body = await parseJsonBody<JoinRequest>(request);
+  if (body instanceof Response) return body;
 
   const name = typeof body.name === "string" ? body.name.trim() : "";
   if (name.length < 1 || name.length > 40) {
