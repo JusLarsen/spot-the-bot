@@ -327,6 +327,15 @@
   .crown {
     font-size: 18px;
   }
+  /* a team's row pulses when it answers (host live standings) */
+  .lb-row.flash {
+    animation: lb-flash 0.8s ease-out;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .lb-row.flash {
+      animation: none;
+    }
+  }
   .lb-meta {
     font-family: var(--font-mono);
     font-size: 10px;
@@ -449,5 +458,15 @@
   100% {
     opacity: 1;
     transform: scale(1) rotate(0);
+  }
+}
+@keyframes lb-flash {
+  0% {
+    background: rgba(255, 106, 26, 0.5);
+    box-shadow: inset 0 0 0 1px var(--color-acid);
+  }
+  100% {
+    background: transparent;
+    box-shadow: none;
   }
 }

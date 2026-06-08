@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { Team } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 
@@ -87,29 +87,60 @@ export function LeaderboardRows({ teams, myId, crownTop }: LeaderboardRowsProps)
 
   return (
     <>
-      {teams.slice(0, 24).map((team, i) => {
-        const isMe = team.id === myId;
-        const isGold = crownTop && i === 0;
-        const totalSecs = ((team.totalMs || 0) / 1000).toFixed(1);
-
-        return (
-          <div
-            key={team.id}
-            className={["lb-row", isMe ? "me" : "", isGold ? "gold" : ""].filter(Boolean).join(" ")}
-          >
-            <div className="lb-rank">
-              {isGold ? <span className="crown">👑</span> : `#${i + 1}`}
-            </div>
-            <div className="lb-name">
-              {team.name || "(unnamed)"}
-              <div className="lb-meta">
-                {team.wrong || 0} wrong · {totalSecs}s
-              </div>
-            </div>
-            <div className="lb-pts">{team.correct || 0} correct</div>
-          </div>
-        );
-      })}
+      {teams.slice(0, 24).map((team, i) => (
+        <TeamRow
+          key={team.id}
+          team={team}
+          rank={i + 1}
+          isMe={team.id === myId}
+          isGold={crownTop && i === 0}
+        />
+      ))}
     </>
+  );
+}
+
+function TeamRow({
+  team,
+  rank,
+  isMe,
+  isGold,
+}: {
+  team: Team;
+  rank: number;
+  isMe: boolean;
+  isGold: boolean;
+}) {
+  const correct = team.correct || 0;
+  const wrong = team.wrong || 0;
+  const totalSecs = ((team.totalMs || 0) / 1000).toFixed(1);
+
+  // Flash the row whenever this team answers (its correct+wrong total changes).
+  const answered = correct + wrong;
+  const prev = useRef(answered);
+  const [flash, setFlash] = useState(false);
+  useEffect(() => {
+    if (answered === prev.current) return;
+    prev.current = answered;
+    setFlash(true);
+    const t = setTimeout(() => setFlash(false), 800);
+    return () => clearTimeout(t);
+  }, [answered]);
+
+  return (
+    <div
+      className={["lb-row", isMe && "me", isGold && "gold", flash && "flash"]
+        .filter(Boolean)
+        .join(" ")}
+    >
+      <div className="lb-rank">{isGold ? <span className="crown">👑</span> : `#${rank}`}</div>
+      <div className="lb-name">
+        {team.name || "(unnamed)"}
+        <div className="lb-meta">
+          <span className="text-rust">{wrong} wrong</span> · {totalSecs}s
+        </div>
+      </div>
+      <div className="lb-pts text-acid">{correct} correct</div>
+    </div>
   );
 }
