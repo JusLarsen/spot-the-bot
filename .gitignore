@@ -1,4 +1,29 @@
-node_modules/
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+
+# next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo
+
+# production
+/build
+
+# env / secrets
+.env
+.env*.local
+.env.local
+
+# misc
 .DS_Store
+*.pem
+npm-debug.log*
+
+# editor / local
 CLAUDE.local.md
 .claude/settings.local.json
+
+# legacy static app (kept temporarily as a porting reference; removed at integration)

@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Design tokens → exposed as Tailwind utilities (bg-acid, text-muted, font-mono, …).
+   Fonts are loaded in app/layout.tsx (next/font) and bound to these family names. */
+@theme {
+  --color-bg: #0a0e0a;
+  --color-panel: #11160f;
+  --color-ink: #e8ecd9;
+  --color-muted: #7d8a6a;
+  --color-acid: #c8ff00;
+  --color-amber: #ff8a00;
+  --color-rust: #d9521e;
+  --color-human: #5ad1ff;
+  --color-bot: #ff5a8a;
+
+  --font-display: var(--font-bricolage), sans-serif;
+  --font-mono: var(--font-space-mono), monospace;
+}
+
+/* Non-utility vars used by the page backdrop. */
+:root {
+  --grid: rgba(200, 255, 0, 0.07);
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+  }
+  body {
+    background:
+      radial-gradient(circle at 20% -10%, rgba(200, 255, 0, 0.1), transparent 45%),
+      radial-gradient(circle at 90% 110%, rgba(255, 138, 0, 0.1), transparent 45%),
+      var(--color-bg);
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-display);
+    min-height: 100dvh;
+    overflow-x: hidden;
+    position: relative;
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* faint acid grid backdrop */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: radial-gradient(circle at 50% 30%, black, transparent 80%);
+  }
+}
