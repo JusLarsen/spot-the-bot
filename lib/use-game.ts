@@ -158,11 +158,17 @@ export function useGame(): UseGame {
   const answered: Record<string, boolean> = me?.answered ?? {};
   const answeredCount = Object.keys(answered).length;
 
-  // The next unanswered question for this team (null when done / not live).
+  // The next unanswered question for this team, plus whether the bank is
+  // GENUINELY exhausted. These are distinct: a null question with bankCleared
+  // false means the order/session is still settling (a transient blip) — the UI
+  // must show "loading next", not falsely declare the whole bank cleared.
   let nextQuestion: PublicQuestion | null = null;
-  if (me && phase === "live" && timeLeftMs > 0) {
+  let bankCleared = false;
+  if (me && phase === "live") {
     const pos = nextUnansweredPos(orderIds, answered);
-    if (pos < orderIds.length) {
+    // Only "cleared" when the order has loaded AND every id in it is answered.
+    bankCleared = orderIds.length > 0 && pos >= orderIds.length;
+    if (timeLeftMs > 0 && pos < orderIds.length) {
       nextQuestion = PUBLIC_BY_ID[orderIds[pos]] ?? null;
     }
   }
@@ -388,6 +394,7 @@ export function useGame(): UseGame {
     hostUnlocked,
     timeLeftMs,
     current,
+    bankCleared,
     answeredCount,
     lastResult,
     join,

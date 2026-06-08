@@ -5,6 +5,7 @@ import { fmtClock } from "@/lib/game";
 
 interface PlayProps {
   current: PublicQuestion | null;
+  bankCleared: boolean;
   answeredCount: number;
   lastResult: AnswerResult | null;
   timeLeftMs: number;
@@ -16,6 +17,7 @@ interface PlayProps {
 
 export function Play({
   current,
+  bankCleared,
   answeredCount,
   lastResult,
   timeLeftMs,
@@ -54,10 +56,22 @@ export function Play({
 
   if (!current) {
     const timeUp = timeLeftMs <= 0;
+    // Three distinct states — never claim the bank is cleared on a transient null
+    // (order still loading, a reconnect, session restoring). Only `bankCleared`
+    // from the hook means genuinely done.
+    const heading = timeUp ? "Time's up" : bankCleared ? "All done" : "One sec…";
+    let message: string;
+    if (timeUp) {
+      message = "Time's up! Hang tight for the final results.";
+    } else if (bankCleared) {
+      message = "You've cleared the whole bank — incredible. Sit tight for the final results.";
+    } else {
+      message = "Loading your next sample…";
+    }
     return (
       <section>
         <div className="roundbar">
-          <span className="rno">{timeUp ? "Time's up" : "All done"}</span>
+          <span className="rno">{heading}</span>
           <span className="score">
             {correct} correct · {wrong} wrong
           </span>
@@ -69,11 +83,7 @@ export function Play({
           {fmtClock(timeLeftMs)} left
         </div>
         <div className="stimulus flex items-center justify-center">
-          <span className="text-muted font-mono text-sm">
-            {timeUp
-              ? "Time's up! Hang tight for the final results."
-              : "You've cleared the whole bank — incredible. Sit tight for the final results."}
-          </span>
+          <span className="text-muted font-mono text-sm">{message}</span>
         </div>
       </section>
     );

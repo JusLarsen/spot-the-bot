@@ -114,6 +114,7 @@ export interface UseGame {
 
   // play
   current: PublicQuestion | null; // current prompt for this team, or null when done/not playing
+  bankCleared: boolean; // true ONLY when every question is genuinely answered (not a transient null)
   answeredCount: number;
   lastResult: AnswerResult | null; // set after submit(), cleared on next()
 

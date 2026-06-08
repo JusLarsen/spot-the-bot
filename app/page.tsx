@@ -21,6 +21,7 @@ export default function Home() {
     hostUnlocked,
     timeLeftMs,
     current,
+    bankCleared,
     answeredCount,
     lastResult,
     join,
@@ -107,6 +108,7 @@ export default function Home() {
         {showPlay && (
           <Play
             current={current}
+            bankCleared={bankCleared}
             answeredCount={answeredCount}
             lastResult={lastResult}
             timeLeftMs={timeLeftMs}
