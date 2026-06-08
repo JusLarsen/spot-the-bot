@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
-import { GAME_MS } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 
 interface PlayProps {
@@ -9,6 +8,7 @@ interface PlayProps {
   answeredCount: number;
   lastResult: AnswerResult | null;
   timeLeftMs: number;
+  durationMs: number; // total game length, for the timer-bar fraction
   me: { correct: number; wrong: number } | null;
   onSubmit: (choice: Answer) => Promise<void>;
   onNext: () => void;
@@ -19,13 +19,14 @@ export function Play({
   answeredCount,
   lastResult,
   timeLeftMs,
+  durationMs,
   me,
   onSubmit,
   onNext,
 }: PlayProps) {
   const correct = me?.correct ?? 0;
   const wrong = me?.wrong ?? 0;
-  const timerFraction = Math.max(0, Math.min(1, timeLeftMs / GAME_MS));
+  const timerFraction = Math.max(0, Math.min(1, timeLeftMs / Math.max(1, durationMs)));
   const isLow = timeLeftMs <= 60_000;
   const hasAnswered = lastResult !== null;
 

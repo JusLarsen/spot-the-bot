@@ -1,17 +1,20 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useGame } from "@/lib/use-game";
+import { GAME_MS } from "@/lib/types";
 import { Join } from "@/components/Join";
 import { Lobby } from "@/components/Lobby";
 import { Play } from "@/components/Play";
 import { HostBoard } from "@/components/HostBoard";
 import { FinalBoard } from "@/components/FinalBoard";
+import { HostLogin } from "@/components/HostLogin";
 
 export default function Home() {
   const game = useGame();
   const {
     ready,
     phase,
+    state,
     teams,
     me,
     isHost,
@@ -29,7 +32,10 @@ export default function Home() {
     resetGame,
   } = game;
 
-  // ---- HOST UNLOCK: keyboard "host" sequence ----
+  // The hidden host unlock opens an in-page dialog (not a browser prompt).
+  const [showHostLogin, setShowHostLogin] = useState(false);
+
+  // ---- HOST UNLOCK: type "host" anywhere ----
   const comboBufRef = useRef("");
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -38,12 +44,12 @@ export default function Home() {
       }
       if (comboBufRef.current.endsWith("host")) {
         comboBufRef.current = "";
-        promptHostUnlock(unlockHost);
+        setShowHostLogin(true);
       }
     }
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [unlockHost]);
+  }, []);
 
   // ---- HOST UNLOCK: 5-tap on .eyebrow ----
   const eyebrowTapsRef = useRef(0);
@@ -59,12 +65,12 @@ export default function Home() {
       }, 1200);
       if (eyebrowTapsRef.current >= 5) {
         eyebrowTapsRef.current = 0;
-        promptHostUnlock(unlockHost);
+        setShowHostLogin(true);
       }
     }
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, [unlockHost]);
+  }, []);
 
   if (!ready) {
     return (
@@ -74,12 +80,12 @@ export default function Home() {
     );
   }
 
-  // Host in live phase sees the host board, not the play view
   const showHostBoard = isHost && phase === "live";
   const showPlay = !isHost && phase === "live" && !!me;
   const lateJoiner = !isHost && phase === "live" && !me;
   // Host views (live standings + final results) are projected for the room — go wide.
   const wide = isHost && (phase === "live" || phase === "ended");
+  const durationMs = state ? Math.max(1, state.endsAt - state.startedAt) : GAME_MS;
 
   return (
     <>
@@ -89,7 +95,13 @@ export default function Home() {
         {phase === "lobby" && !me && !isHost && <Join onJoin={join} />}
 
         {phase === "lobby" && (me || isHost) && (
-          <Lobby teamName={me?.name ?? "Host"} teams={teams} isHost={isHost} onStart={startGame} />
+          <Lobby
+            teamName={me?.name ?? "Host"}
+            teams={teams}
+            isHost={isHost}
+            onStart={startGame}
+            onReset={isHost ? resetGame : undefined}
+          />
         )}
 
         {showPlay && (
@@ -98,6 +110,7 @@ export default function Home() {
             answeredCount={answeredCount}
             lastResult={lastResult}
             timeLeftMs={timeLeftMs}
+            durationMs={durationMs}
             me={me}
             onSubmit={submit}
             onNext={next}
@@ -125,15 +138,21 @@ export default function Home() {
           <FinalBoard teams={teams} myId={me?.id ?? null} isHost={isHost} onReset={resetGame} />
         )}
       </div>
+
+      {showHostLogin && !isHost && (
+        <div className="modal-overlay" onClick={() => setShowHostLogin(false)}>
+          <div className="w-full max-w-[420px]" onClick={(e) => e.stopPropagation()}>
+            <HostLogin
+              onUnlock={async (t) => {
+                const ok = await unlockHost(t);
+                if (ok) setShowHostLogin(false);
+                return ok;
+              }}
+              onCancel={() => setShowHostLogin(false)}
+            />
+          </div>
+        </div>
+      )}
     </>
   );
-}
-
-async function promptHostUnlock(unlockHost: (token: string) => Promise<boolean>) {
-  const token = window.prompt("Host passphrase:");
-  if (!token) return;
-  const ok = await unlockHost(token);
-  if (!ok) {
-    window.alert("Wrong passphrase.");
-  }
 }

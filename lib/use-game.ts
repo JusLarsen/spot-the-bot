@@ -321,9 +321,10 @@ export function useGame(): UseGame {
   }, []);
 
   // All host mutations share the same POST /api/host shape (guarded server-side
-  // by HOST_TOKEN); only the action differs.
-  const callHost = useCallback(async (action: HostAction): Promise<void> => {
+  // by HOST_TOKEN); only the action (and optional duration) differ.
+  const callHost = useCallback(async (action: HostAction, durationMs?: number): Promise<void> => {
     const body: HostRequest = { action, token: hostTokenRef.current ?? "" };
+    if (durationMs !== undefined) body.durationMs = durationMs;
     const res = await fetch("/api/host", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -332,7 +333,7 @@ export function useGame(): UseGame {
     if (!res.ok) throw new Error(`host ${action} failed: ${res.status}`);
   }, []);
 
-  const startGame = useCallback(() => callHost("start"), [callHost]);
+  const startGame = useCallback((durationMs?: number) => callHost("start", durationMs), [callHost]);
   const endGame = useCallback(() => callHost("end"), [callHost]);
 
   const resetGame = useCallback(async (): Promise<void> => {

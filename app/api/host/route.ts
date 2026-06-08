@@ -3,7 +3,7 @@ export const runtime = "nodejs";
 import { adminDb, encodeKey, isValidHostToken } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
 import type { GameState, HostRequest, HostResponse } from "@/lib/types";
-import { GAME_MS, STATE_KEY, teamKey } from "@/lib/types";
+import { GAME_MS, MIN_DURATION_MS, MAX_DURATION_MS, STATE_KEY, teamKey } from "@/lib/types";
 
 export async function POST(request: Request): Promise<Response> {
   const body = await parseJsonBody<HostRequest>(request);
@@ -35,10 +35,13 @@ export async function POST(request: Request): Promise<Response> {
   const now = Date.now();
 
   if (action === "start") {
+    // Host-chosen duration, clamped to a sane range; fall back to the default.
+    const requested = typeof body.durationMs === "number" ? body.durationMs : GAME_MS;
+    const durationMs = Math.min(MAX_DURATION_MS, Math.max(MIN_DURATION_MS, requested));
     const nextState: GameState = {
       phase: "live",
       startedAt: now,
-      endsAt: now + GAME_MS,
+      endsAt: now + durationMs,
       version: currentState.version + 1,
     };
     await stateRef.set(nextState);

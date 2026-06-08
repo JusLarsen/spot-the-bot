@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Spot the Bot** is a live **team** game for a room of people (a leadership session). Each team uses one device, picks a team name, and works through a shuffled bank of text samples deciding **human vs AI** together. The host starts a single shared **10-minute clock**; when it ends, the team with the most correct answers wins (ties broken by least total answer time — one trophy winner).
+**Spot the Bot** is a live **team** game for a room of people (a leadership session). Each team uses one device, picks a team name, and works through a shuffled bank of text samples deciding **human vs AI** together. The host starts a single shared **countdown clock** (host-selectable length, default 10 min); when it ends, the team with the most correct answers wins (ties broken by least total answer time — one trophy winner).
 
 ## Architecture
 
@@ -18,6 +18,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Invariants — preserve these
 
 - **Host is never a contestant.** Unlocking host mode removes any team record this device created. The host device shows live standings and controls (Start / End / Reset) and never appears on the leaderboard.
+- **Host entry:** the dedicated **`/host`** route shows an in-page passphrase form (`components/HostLogin.tsx`); the main page also exposes the same dialog via the hidden gesture (type "host" / 5-tap the eyebrow). The host picks the clock length at start (`DURATION_CHOICES_MIN`), sent as `durationMs` to `/api/host` (clamped server-side); `game:state.endsAt - startedAt` is the source of truth for the timer. The team name "host" is reserved.
 - **Session identity persists in `localStorage`** (`stb_role`/`stb_team`) for reconnect — a page reload or dropped phone must resume the same team, not create a duplicate.
 - **`:` encodes to `__` in RTDB keys.** Firebase disallows `:` in paths, so `game:state` → `game__state` and `team:<id>` → `team__<id>` on the wire. Decode on read. See `lib/firebase-client.ts` and `lib/firebase-admin.ts`.
 - **Answers are never sent to the client before the guess.** `AnswerResponse` returns the truth only after the server validates the submitted choice. `lib/questions.server.ts` never leaves the server.

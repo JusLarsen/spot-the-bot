@@ -396,6 +396,19 @@
     letter-spacing: 1px;
   }
 
+  /* in-page modal (host unlock dialog) */
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 18px;
+    background: rgba(0, 0, 0, 0.72);
+    backdrop-filter: blur(2px);
+  }
+
   /* host projector view — wider + larger type so it reads across a room */
   .wrap.host-wide {
     max-width: 920px;

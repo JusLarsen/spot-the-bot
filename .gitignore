@@ -32,3 +32,5 @@ CLAUDE.local.md
 .claude/settings.local.json
 
 # legacy static app (kept temporarily as a porting reference; removed at integration)
+.vercel
+.env*

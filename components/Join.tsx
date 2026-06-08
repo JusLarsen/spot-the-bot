@@ -9,10 +9,16 @@ export function Join({ onJoin }: JoinProps) {
   const [name, setName] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [reserved, setReserved] = useState(false);
 
   async function handleJoin() {
     const trimmed = name.trim();
     if (!trimmed) return;
+    if (trimmed.toLowerCase() === "host") {
+      setReserved(true);
+      return;
+    }
+    setReserved(false);
     setLoading(true);
     setError(false);
     try {
@@ -65,6 +71,11 @@ export function Join({ onJoin }: JoinProps) {
         {error && (
           <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
             Couldn&apos;t join — check your connection and try again.
+          </p>
+        )}
+        {reserved && (
+          <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+            &quot;host&quot; is reserved — pick a different team name.
           </p>
         )}
         <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">

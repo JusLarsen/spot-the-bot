@@ -39,7 +39,10 @@ export interface Team {
   answered: Record<string, boolean>; // keyed by question id
 }
 
-export const GAME_MS = 10 * 60 * 1000; // 10-minute clock
+export const GAME_MS = 10 * 60 * 1000; // default clock if the host doesn't pick
+export const DURATION_CHOICES_MIN = [5, 10, 15] as const; // host-selectable lengths
+export const MIN_DURATION_MS = 60 * 1000;
+export const MAX_DURATION_MS = 60 * 60 * 1000;
 export const STATE_KEY = "game:state";
 export const teamKey = (id: string) => `team:${id}`;
 
@@ -71,6 +74,7 @@ export type HostAction = "verify" | "start" | "end" | "reset";
 export interface HostRequest {
   token: string;
   action: HostAction;
+  durationMs?: number; // for "start" — game length the host chose
 }
 export interface HostResponse {
   ok: boolean;
@@ -112,7 +116,7 @@ export interface UseGame {
 
   // host actions (guarded server-side by HOST_TOKEN)
   unlockHost: (token: string) => Promise<boolean>;
-  startGame: () => Promise<void>;
+  startGame: (durationMs?: number) => Promise<void>;
   endGame: () => Promise<void>;
   resetGame: () => Promise<void>;
 }
