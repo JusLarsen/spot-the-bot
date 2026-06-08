@@ -76,9 +76,9 @@ export function Join({ onJoin }: JoinProps) {
             }}
             aria-label="Generate a random team name"
             title="Random BBQ name"
-            className="border-acid/20 text-acid hover:border-acid shrink-0 rounded-xl border bg-[#0a0805] px-4 font-mono text-[11px] tracking-[1px] uppercase transition-colors"
+            className="border-acid/20 text-acid hover:border-acid shrink-0 rounded-xl border bg-[#0a0805] px-4 text-2xl transition-colors"
           >
-            Random
+            🎲
           </button>
         </div>
         <button className="btn btn-primary" onClick={handleJoin} disabled={loading}>
@@ -95,7 +95,7 @@ export function Join({ onJoin }: JoinProps) {
           </p>
         )}
         <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
-          One device per team. Tap Random for a name (or leave it blank and we&apos;ll pick one).
+          One device per team. Tap 🎲 for a random name (or leave it blank and we&apos;ll pick one).
           Pass it around and argue it out — that&apos;s the point.
         </p>
       </div>
