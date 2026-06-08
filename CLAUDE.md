@@ -12,7 +12,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Firebase Realtime Database (RTDB)** holds live game state. The client (`lib/firebase-client.ts`) subscribes read-only. All writes go through Next.js API route handlers using the Firebase Admin SDK (`lib/firebase-admin.ts`). RTDB rules deny all client writes — see `database.rules.json`.
 - **Server-authoritative API routes** in `app/api/`. Route handlers validate the host token and write scores/state via Admin SDK. Clients never write to RTDB directly.
 - **Anti-cheat question split**: `lib/questions.server.ts` is the full question bank (answers, reveal, source) — guarded by `import "server-only"` at the top. Never import it into client code; the build will fail if you do. `lib/questions.public.ts` is prompts-only and is safe for the browser. Regenerate the public file with `npm run gen:questions`.
-- **Game phases**: `game:state` holds `{phase: 'lobby'|'live'|'ended', startedAt, endsAt, version}`. The `live` phase runs the shared 10-min countdown; every team plays self-paced through its own deterministic shuffle. No per-round host sync.
+- **Game phases**: `game:state` holds `{phase: 'lobby'|'live'|'ended', startedAt, endsAt, version}`. The `live` phase runs a single shared host-set countdown (`endsAt - startedAt`); every team plays self-paced through its own deterministic, run-capped shuffle (`/api/order?teamId=`). No per-round host sync.
+- **Scoped RTDB subscriptions.** To keep fan-out linear for a full room, team devices subscribe to `game:state` + their own `team:<id>` during `live`, and to all teams only in `lobby`/`ended`; the host subscribes to all teams. See `lib/use-game.ts` and `subscribeAllTeams`/`subscribeKey` in `lib/firebase-client.ts`.
+- **Question bank**: 152 samples across 5 categories (`bbq`, `business`, `disney`, `speech`, `movies`). Most AI samples deliberately show common AI tells (training moments); a minority carry the server-only `sneaky` flag, surfaced in `AnswerResponse` for "don't feel bad" reveal messaging on a miss.
 - **Session identity persists in `localStorage`** (`stb_role` = "host"; `stb_team` = `{id, name}`) so a reload or dropped phone resumes the same team/host via session restore logic rather than spawning a duplicate. Anything that mints a team ID or changes role must keep these keys in sync.
 
 ## Invariants — preserve these
@@ -52,7 +54,7 @@ Copy `.env.example` to `.env.local` and fill in values for local dev. Production
 
 This repo deploys to **Vercel**. Pushing to `main` triggers a production deployment; any other branch gets a preview deployment. Never push secrets — all sensitive values are Vercel environment variables, not committed files.
 
-Follow the global CLAUDE.md rule: **never push directly to `main`**. Create a feature branch, push it, and let the user create the PR/merge.
+The global CLAUDE.md rule is "never push directly to `main`," but for this repo the user has explicitly authorized merging straight to `main` (there's no point keeping a non-Next app deployed). Prefer a feature branch when the change is risky; routine work can go to `main` per that standing authorization. Still never force-push or rewrite shared history.
 
 ## Type contracts
 
