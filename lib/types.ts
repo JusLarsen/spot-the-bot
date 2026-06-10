@@ -31,15 +31,22 @@ export interface GameState {
   code: string; // the session's own short code (also names its RTDB node)
 }
 
-/** A team record in RTDB at key `team:<id>`. */
+/** A team record in RTDB at `sessions/<code>/teams/<id>`. */
 export interface Team {
   id: string;
   name: string;
   correct: number;
   wrong: number;
-  totalMs: number;
+  totalMs: number; // server-measured answer time (tiebreaker) — never client-supplied
   answered: Record<string, boolean>; // keyed by question id
+  joinedAt?: number; // server timestamp at join — baseline for the first answer's elapsed
+  lastAnswerAt?: number; // server timestamp of the most recent answer — for server-side elapsed
 }
+
+/** A session short code contains only the unambiguous code alphabet — validate
+ * anything client-supplied before interpolating it into an RTDB path. */
+export const isValidSessionCode = (code: unknown): code is string =>
+  typeof code === "string" && /^[A-HJ-NP-Z2-9]{3,12}$/.test(code);
 
 export const GAME_MS = 10 * 60 * 1000; // default clock if the host doesn't pick
 export const DURATION_CHOICES_MIN = [5, 10, 15] as const; // host-selectable lengths
@@ -85,12 +92,13 @@ export interface AnswerResponse {
   wrongCount: number;
 }
 
-export type HostAction = "verify" | "start" | "end" | "reset";
+export type HostAction = "verify" | "start" | "end" | "reset" | "unclaim";
 export interface HostRequest {
   token: string;
   action: HostAction;
   durationMs?: number; // for "start" — game length the host chose
   sessionId?: string; // optional target session (defaults to the current one)
+  teamId?: string; // for "unclaim" — the team record to delete when this device becomes host
 }
 export interface HostResponse {
   ok: boolean;

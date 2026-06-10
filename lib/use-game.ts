@@ -378,6 +378,27 @@ export function useGame(): UseGame {
     const data: HostResponse = await res.json();
     if (!data.ok) return false;
 
+    // If this device joined as a team before unlocking, delete that team record
+    // server-side — the host is never a contestant and must not ghost the board.
+    const saved = safeLocalGet<{ id: string; name: string; sessionId?: string }>(LS_TEAM_KEY);
+    if (saved?.id && saved.sessionId) {
+      const unclaim: HostRequest = {
+        action: "unclaim",
+        token,
+        sessionId: saved.sessionId,
+        teamId: saved.id,
+      };
+      try {
+        await fetch("/api/host", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(unclaim),
+        });
+      } catch {
+        /* best-effort — proceed with unlock regardless */
+      }
+    }
+
     hostTokenRef.current = token;
     safeLocalSet(LS_ROLE_KEY, "host");
     safeLocalSet(LS_HOST_TOKEN_KEY, token);

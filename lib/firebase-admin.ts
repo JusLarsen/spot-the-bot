@@ -81,22 +81,38 @@ async function mintUniqueCode(db: Database): Promise<string> {
   return makeShortCode(() => Math.random(), 6); // extremely unlikely collision streak
 }
 
-/** Create a fresh lobby session and point currentSessionCode at it. Returns the code. */
+/** Create a fresh lobby session and point currentSessionCode at it. Returns the code.
+ * Used by reset (always wants a brand-new session). The state + pointer go in ONE
+ * atomic multi-path write, so the pointer never names a session whose state node
+ * hasn't landed yet. */
 export async function createSession(db: Database): Promise<string> {
   const code = await mintUniqueCode(db);
   const state: GameState = { phase: "lobby", startedAt: 0, endsAt: 0, version: 1, code };
-  await db.ref(sessionStatePath(code)).set(state);
-  await db.ref(CURRENT_SESSION_KEY).set(code);
+  await db.ref().update({ [sessionStatePath(code)]: state, [CURRENT_SESSION_KEY]: code });
   return code;
 }
 
-/** The active session code, creating a fresh lobby session if none exists yet. */
+/** The active session code, creating a fresh lobby session if none exists yet.
+ * Concurrency-safe: when no session exists, the currentSessionCode pointer is claimed
+ * via a transaction, so simultaneous cold-start joins (mass event start) all converge
+ * on the SAME session rather than minting rivals and stranding teams on an orphan. */
 export async function ensureCurrentSession(db: Database): Promise<string> {
-  const snap = await db.ref(CURRENT_SESSION_KEY).get();
-  const code = snap.exists() ? (snap.val() as string) : null;
-  if (code) {
-    const stateSnap = await db.ref(sessionStatePath(code)).get();
-    if (stateSnap.exists()) return code;
+  const ptrRef = db.ref(CURRENT_SESSION_KEY);
+  const snap = await ptrRef.get();
+  const existing = snap.exists() ? (snap.val() as string) : null;
+  if (existing) {
+    const stateSnap = await db.ref(sessionStatePath(existing)).get();
+    if (stateSnap.exists()) return existing;
   }
-  return createSession(db);
+  // No live session — atomically claim the pointer; first writer wins, others read it back.
+  const candidate = await mintUniqueCode(db);
+  const txn = await ptrRef.transaction((cur) => (cur ? cur : candidate));
+  const winner = (txn.snapshot.val() as string) || candidate;
+  // Idempotently ensure the winner's state node exists (winner + losers all run this safely).
+  const stateRef = db.ref(sessionStatePath(winner));
+  if (!(await stateRef.get()).exists()) {
+    const state: GameState = { phase: "lobby", startedAt: 0, endsAt: 0, version: 1, code: winner };
+    await stateRef.set(state);
+  }
+  return winner;
 }

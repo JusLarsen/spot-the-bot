@@ -4,16 +4,18 @@ import { adminDb } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
 import { BY_ID } from "@/lib/questions.server";
 import type { AnswerRequest, AnswerResponse, GameState, Team } from "@/lib/types";
-import { sessionStatePath, sessionTeamPath } from "@/lib/types";
+import { sessionStatePath, sessionTeamPath, isValidSessionCode } from "@/lib/types";
 
 export async function POST(request: Request): Promise<Response> {
   const body = await parseJsonBody<AnswerRequest>(request);
   if (body instanceof Response) return body;
 
-  const { sessionId, teamId, questionId, choice, elapsedMs } = body;
+  // `elapsedMs` is intentionally NOT read — answer time is measured server-side
+  // (see below) so the tiebreaker can't be gamed by a client sending 0.
+  const { sessionId, teamId, questionId, choice } = body;
 
-  if (typeof sessionId !== "string" || !sessionId) {
-    return Response.json({ error: "sessionId is required" }, { status: 400 });
+  if (!isValidSessionCode(sessionId)) {
+    return Response.json({ error: "invalid sessionId" }, { status: 400 });
   }
   if (typeof teamId !== "string" || !teamId) {
     return Response.json({ error: "teamId is required" }, { status: 400 });
@@ -23,9 +25,6 @@ export async function POST(request: Request): Promise<Response> {
   }
   if (choice !== "human" && choice !== "bot") {
     return Response.json({ error: "choice must be 'human' or 'bot'" }, { status: 400 });
-  }
-  if (typeof elapsedMs !== "number") {
-    return Response.json({ error: "elapsedMs must be a number" }, { status: 400 });
   }
 
   const db = adminDb();
@@ -78,14 +77,24 @@ export async function POST(request: Request): Promise<Response> {
 
   // Score the answer.
   const isCorrect = choice === question.answer;
-  const clampedMs = Math.max(0, elapsedMs); // ignore negative times from a misbehaving client
+  // Server-authoritative answer time: elapsed since this team's previous answer
+  // (or its join / the game start for the first one). The client value is ignored,
+  // so a team can't send elapsedMs:0 to win the least-total-time tiebreaker.
+  const baseline =
+    typeof team.lastAnswerAt === "number"
+      ? team.lastAnswerAt
+      : typeof team.joinedAt === "number"
+        ? team.joinedAt
+        : state.startedAt || now;
+  const serverElapsedMs = Math.max(0, now - baseline);
 
   const updatedTeam: Team = {
     ...team,
     correct: team.correct + (isCorrect ? 1 : 0),
     wrong: team.wrong + (isCorrect ? 0 : 1),
-    totalMs: team.totalMs + clampedMs,
+    totalMs: team.totalMs + serverElapsedMs,
     answered: { ...answered, [questionId]: true },
+    lastAnswerAt: now,
   };
 
   await teamRef.set(updatedTeam);

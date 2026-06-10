@@ -35,6 +35,7 @@ export async function POST(request: Request): Promise<Response> {
     wrong: 0,
     totalMs: 0,
     answered: {},
+    joinedAt: Date.now(), // server baseline for the first answer's elapsed time
   };
 
   await db.ref(sessionTeamPath(sessionId, teamId)).set(team);
