@@ -6,6 +6,9 @@ import { initializeApp, getApps, getApp, cert, type App } from "firebase-admin/a
 import { getDatabase, type Database } from "firebase-admin/database";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve } from "node:path";
+import { makeShortCode } from "./session-code";
+import { CURRENT_SESSION_KEY, sessionStatePath } from "./types";
+import type { GameState } from "./types";
 
 // Resolve the service-account JSON from (in priority order):
 //   1. FIREBASE_SERVICE_ACCOUNT  — raw JSON or base64 (use this on Vercel)
@@ -56,10 +59,44 @@ export function adminDb(): Database {
 }
 
 // RTDB keys can't contain ":", so encode ":" -> "__" for admin paths too.
+// (Used only by the legacy flat keys; the session paths in lib/types are
+// already native nested paths and need no encoding.)
 export const encodeKey = (k: string) => k.replace(/:/g, "__");
 
 /** Constant-time-ish host token check. */
 export function isValidHostToken(token: string | undefined): boolean {
   const expected = process.env.HOST_TOKEN;
   return !!expected && typeof token === "string" && token === expected;
+}
+
+// ---- Session lifecycle (server-authoritative) ----
+
+/** Mint a code not already used by an existing session node (short retry loop). */
+async function mintUniqueCode(db: Database): Promise<string> {
+  for (let i = 0; i < 6; i++) {
+    const code = makeShortCode(() => Math.random());
+    const snap = await db.ref(`sessions/${code}`).get();
+    if (!snap.exists()) return code;
+  }
+  return makeShortCode(() => Math.random(), 6); // extremely unlikely collision streak
+}
+
+/** Create a fresh lobby session and point currentSessionCode at it. Returns the code. */
+export async function createSession(db: Database): Promise<string> {
+  const code = await mintUniqueCode(db);
+  const state: GameState = { phase: "lobby", startedAt: 0, endsAt: 0, version: 1, code };
+  await db.ref(sessionStatePath(code)).set(state);
+  await db.ref(CURRENT_SESSION_KEY).set(code);
+  return code;
+}
+
+/** The active session code, creating a fresh lobby session if none exists yet. */
+export async function ensureCurrentSession(db: Database): Promise<string> {
+  const snap = await db.ref(CURRENT_SESSION_KEY).get();
+  const code = snap.exists() ? (snap.val() as string) : null;
+  if (code) {
+    const stateSnap = await db.ref(sessionStatePath(code)).get();
+    if (stateSnap.exists()) return code;
+  }
+  return createSession(db);
 }

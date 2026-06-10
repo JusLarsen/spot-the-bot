@@ -13,6 +13,9 @@ shuffled bank of 152 text samples — for each one the group decides **human** o
 The host starts a single shared countdown for the whole room (host picks the length at
 start — 5, 10, or 15 min; default 10). When time runs out, the team with the most correct
 answers wins; ties break by least total answer time, so there's one clean trophy winner.
+Latecomers can **jump into a round already in progress** (until the final 60 seconds), and
+every game's leaderboard is **saved under a short code** — revisit it any time at `/r/<CODE>`
+(the host's final screen shows a QR to it).
 
 It's a **training** game first: most AI samples deliberately show common AI tells (hedging,
 listy parallelism, hollow uplift) so teams learn to spot them. A minority are flagged
@@ -47,14 +50,16 @@ graph TB
 
     subgraph Vercel["▲ Vercel — Next.js App Router"]
         Routes["API routes (server-authoritative)<br/>/api/join · /api/answer · /api/host · /api/order"]
+        Results["/r/&lt;CODE&gt; (server-rendered saved board)"]
         Admin["firebase-admin (Admin SDK)"]
         ServerBank["questions.server.ts<br/>🔒 server-only · answers + reveal + source"]
         Routes --> Admin
+        Results --> Admin
         Routes --> ServerBank
     end
 
     subgraph Firebase["🔥 Firebase RTDB"]
-        DB["game:state · team:&lt;id&gt;<br/>rules: read ✓ / client write ✗"]
+        DB["currentSessionCode → sessions/&lt;CODE&gt;/{state, teams}<br/>rules: read ✓ / client write ✗"]
     end
 
     Hook -- "subscribe (onValue)" --> DB
@@ -89,13 +94,15 @@ graph LR
         FinalBoard["FinalBoard"]
         HostLogin["HostLogin"]
         Confirm["ConfirmDialog"]
+        Lookup["ResultsLookup"]
     end
     subgraph lib["lib/ — logic & contracts"]
-        Types["types.ts<br/>(shared types + constants)"]
+        Types["types.ts<br/>(shared types + session paths)"]
         Game["game.ts<br/>(shuffle · score · limitRuns)"]
+        Code["session-code.ts"]
         UseGame["use-game.ts"]
         FbClient["firebase-client.ts"]
-        FbAdmin["firebase-admin.ts"]
+        FbAdmin["firebase-admin.ts<br/>(ensureCurrentSession)"]
         QPub["questions.public.ts"]
         QSrv["questions.server.ts 🔒"]
         Names["team-names.ts"]
@@ -119,22 +126,28 @@ sequenceDiagram
     participant DB as RTDB
 
     T->>API: POST /api/join (team name)
-    API->>DB: create team:&lt;id&gt; (Admin SDK)
-    Note over T: stb_role / stb_team saved to localStorage
-    Note over T,DB: Host: POST /api/host {start, durationMs} → game:state = live, endsAt set
+    API->>DB: ensure session, create sessions/&lt;CODE&gt;/teams/&lt;id&gt;
+    API-->>T: { teamId, sessionId }
+    Note over T: stb_role / stb_team (incl. sessionId) saved to localStorage
+    Note over T,DB: Host: POST /api/host {start} → sessions/&lt;CODE&gt;/state = live, endsAt set
     T->>API: GET /api/order?teamId=
     API-->>T: deterministic, run-capped question id list
     loop each sample (self-paced)
-        T->>API: POST /api/answer (id, guess)
-        API->>DB: update team score (correct/wrong/totalMs)
+        T->>API: POST /api/answer (sessionId, id, guess)
+        API->>DB: update sessions/&lt;CODE&gt;/teams/&lt;id&gt; score
         API-->>T: truth + reveal + source (+ sneaky flag)
     end
-    Note over DB: clock ends → phase: ended → FinalBoard ranks teams
+    Note over DB: End → phase: ended; session node is the saved board at /r/&lt;CODE&gt;
 ```
 
-**Game phases** live in `game:state` as `{phase: 'lobby'|'live'|'ended', startedAt, endsAt,
-version}`. During `live`, every team plays self-paced through its own deterministic shuffle;
-there's no per-round host sync, just the one shared clock (`endsAt - startedAt`).
+**Sessions & phases**: a run of the game is a session keyed by its short **code**, stored at
+`sessions/<CODE>/state` (`{phase: 'lobby'|'live'|'ended', startedAt, endsAt, version, code}`)
+and `sessions/<CODE>/teams/<id>`. A root `currentSessionCode` pointer names the active session;
+the single-session client follows it (it never types a code). During `live`, every team plays
+self-paced through its own deterministic shuffle — no per-round host sync, just the one shared
+clock (`endsAt - startedAt`). **Reset mints a new session and repoints**, leaving old sessions
+intact (so their `/r/<CODE>` boards persist). Multi-session + join codes later are purely
+additive — read the code from the URL instead of the pointer.
 
 ### Why per-team order is computed server-side
 
@@ -145,9 +158,10 @@ times, must be human" meta-gaming.
 
 ### Scoped subscriptions (keeps a full room linear)
 
-Team devices subscribe to `game:state` + their own `team:<id>` during play, and to all teams
-only in lobby/ended; the host subscribes to all teams. This keeps RTDB fan-out O(N) instead
-of O(N²) — load-tested at 30 concurrent connections.
+Team devices subscribe to the `currentSessionCode` pointer + `sessions/<CODE>/state` + their
+own `sessions/<CODE>/teams/<id>` during play, and to all of the session's teams only in
+lobby/ended; the host subscribes to all teams. This keeps RTDB fan-out O(N) instead of O(N²)
+— load-tested at 30 concurrent connections.
 
 ## Key invariants
 
@@ -155,11 +169,14 @@ of O(N²) — load-tested at 30 concurrent connections.
 - **Answers never reach the client before the guess** — `questions.server.ts` is
   `import "server-only"`; the build fails if it leaks into client code.
 - **Clients never write to RTDB** — all writes go through server API routes + Admin SDK.
-- **`:` → `__` in RTDB keys** — `game:state` → `game__state`, `team:<id>` → `team__<id>`.
+- **Session data uses native nested paths** — `sessions/<code>/state`, `sessions/<code>/teams/<id>`
+  (no `:`, so no encoding); the legacy `:` → `__` swap only ever applied to old flat keys.
+- **Reset never deletes old sessions** — it mints a new one and repoints `currentSessionCode`, so
+  saved `/r/<CODE>` leaderboards survive.
 - **Leaderboard rows use React text rendering, never `innerHTML`** — team names are
   user-supplied; string-concatenated HTML would be an injection vector.
-- **Session identity persists in `localStorage`** (`stb_role` / `stb_team`) so a dropped
-  phone rejoins the same team instead of spawning a duplicate.
+- **Session identity persists in `localStorage`** (`stb_role` / `stb_team` incl. `sessionId`) so a
+  dropped phone rejoins the same team instead of spawning a duplicate.
 
 ## Local development
 

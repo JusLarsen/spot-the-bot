@@ -1,9 +1,9 @@
 export const runtime = "nodejs";
 
-import { adminDb, encodeKey } from "@/lib/firebase-admin";
+import { adminDb, ensureCurrentSession } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
-import type { GameState, JoinRequest, JoinResponse, Team } from "@/lib/types";
-import { STATE_KEY, teamKey } from "@/lib/types";
+import type { JoinRequest, JoinResponse, Team } from "@/lib/types";
+import { sessionTeamPath } from "@/lib/types";
 
 function generateTeamId(): string {
   const chars = "0123456789abcdefghijklmnopqrstuvwxyz";
@@ -24,6 +24,8 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const db = adminDb();
+  // Join the active session, creating a fresh lobby session if none exists yet.
+  const sessionId = await ensureCurrentSession(db);
   const teamId = generateTeamId();
 
   const team: Team = {
@@ -35,22 +37,8 @@ export async function POST(request: Request): Promise<Response> {
     answered: {},
   };
 
-  // Write the new team record.
-  await db.ref(encodeKey(teamKey(teamId))).set(team);
+  await db.ref(sessionTeamPath(sessionId, teamId)).set(team);
 
-  // Bootstrap game state if it doesn't exist yet.
-  const stateRef = db.ref(encodeKey(STATE_KEY));
-  const stateSnap = await stateRef.get();
-  if (!stateSnap.exists()) {
-    const initialState: GameState = {
-      phase: "lobby",
-      startedAt: 0,
-      endsAt: 0,
-      version: 1,
-    };
-    await stateRef.set(initialState);
-  }
-
-  const response: JoinResponse = { teamId };
+  const response: JoinResponse = { teamId, sessionId };
   return Response.json(response, { status: 200 });
 }

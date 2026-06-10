@@ -1,13 +1,14 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { useGame } from "@/lib/use-game";
-import { GAME_MS } from "@/lib/types";
+import { GAME_MS, LATE_JOIN_CUTOFF_MS } from "@/lib/types";
 import { Join } from "@/components/Join";
 import { Lobby } from "@/components/Lobby";
 import { Play } from "@/components/Play";
 import { HostBoard } from "@/components/HostBoard";
 import { FinalBoard } from "@/components/FinalBoard";
 import { HostLogin } from "@/components/HostLogin";
+import { ResultsLookup } from "@/components/ResultsLookup";
 
 export default function Home() {
   const game = useGame();
@@ -83,7 +84,11 @@ export default function Home() {
 
   const showHostBoard = isHost && phase === "live";
   const showPlay = !isHost && phase === "live" && !!me;
-  const lateJoiner = !isHost && phase === "live" && !me;
+  // Late join: a team may join an in-progress session while >60s remain; inside
+  // the final minute we stop new joins (no real chance to play).
+  const canJoin =
+    !isHost && !me && (phase === "lobby" || (phase === "live" && timeLeftMs > LATE_JOIN_CUTOFF_MS));
+  const wrappingUp = !isHost && !me && phase === "live" && timeLeftMs <= LATE_JOIN_CUTOFF_MS;
   // Host views (live standings + final results) are projected for the room — go wide.
   const wide = isHost && (phase === "live" || phase === "ended");
   const durationMs = state ? Math.max(1, state.endsAt - state.startedAt) : GAME_MS;
@@ -93,7 +98,12 @@ export default function Home() {
       {hostUnlocked && <div className="role-toggle text-acid">HOST MODE</div>}
 
       <div className={wide ? "wrap host-wide" : "wrap"}>
-        {phase === "lobby" && !me && !isHost && <Join onJoin={join} />}
+        {canJoin && (
+          <>
+            <Join onJoin={join} live={phase === "live"} />
+            <ResultsLookup />
+          </>
+        )}
 
         {phase === "lobby" && (me || isHost) && (
           <Lobby
@@ -119,14 +129,14 @@ export default function Home() {
           />
         )}
 
-        {lateJoiner && (
+        {wrappingUp && (
           <section>
             <div className="eyebrow">Live now</div>
-            <h1 className="page-heading mt-1.5 mb-0.5">In progress</h1>
+            <h1 className="page-heading mt-1.5 mb-0.5">Round wrapping up</h1>
             <div className="card">
               <p className="text-muted text-sm leading-[1.4]">
-                A round is already underway. Hang tight — when the host starts a fresh round
-                you&apos;ll be able to jump in.
+                This round is in its final seconds. Hang tight — you&apos;ll be able to hop in when
+                the host starts the next one.
               </p>
             </div>
           </section>
@@ -137,7 +147,13 @@ export default function Home() {
         )}
 
         {phase === "ended" && (
-          <FinalBoard teams={teams} myId={me?.id ?? null} isHost={isHost} onReset={resetGame} />
+          <FinalBoard
+            teams={teams}
+            myId={me?.id ?? null}
+            isHost={isHost}
+            sessionCode={state?.code}
+            onReset={resetGame}
+          />
         )}
       </div>
 

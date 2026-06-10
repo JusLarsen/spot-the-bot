@@ -22,12 +22,13 @@ export interface FullQuestion extends PublicQuestion {
   sneaky?: boolean; // an AI sample designed to be hard to catch (for "don't feel bad" messaging)
 }
 
-/** Shared game state in RTDB at key `game:state`. */
+/** State for a single game session, stored at `sessions/<code>/state`. */
 export interface GameState {
   phase: Phase;
   startedAt: number;
   endsAt: number;
   version: number;
+  code: string; // the session's own short code (also names its RTDB node)
 }
 
 /** A team record in RTDB at key `team:<id>`. */
@@ -44,8 +45,18 @@ export const GAME_MS = 10 * 60 * 1000; // default clock if the host doesn't pick
 export const DURATION_CHOICES_MIN = [5, 10, 15] as const; // host-selectable lengths
 export const MIN_DURATION_MS = 60 * 1000;
 export const MAX_DURATION_MS = 60 * 60 * 1000;
-export const STATE_KEY = "game:state";
-export const teamKey = (id: string) => `team:${id}`;
+export const LATE_JOIN_CUTOFF_MS = 60 * 1000; // no joining inside the final minute
+
+// ---- Session model ----
+// A session is one run of the game (lobby → live → ended), keyed by its short
+// code. The single-session client follows `currentSessionCode` to find the
+// active one; multi-session + join codes later are purely additive. These are
+// native NESTED RTDB paths (with "/"), so the legacy ":" → "__" encoding does
+// NOT apply to them.
+export const CURRENT_SESSION_KEY = "currentSessionCode";
+export const sessionStatePath = (code: string) => `sessions/${code}/state`;
+export const sessionTeamsPath = (code: string) => `sessions/${code}/teams`;
+export const sessionTeamPath = (code: string, teamId: string) => `sessions/${code}/teams/${teamId}`;
 
 // ---- API contracts (client → Next route handlers, server-authoritative) ----
 
@@ -54,9 +65,11 @@ export interface JoinRequest {
 }
 export interface JoinResponse {
   teamId: string;
+  sessionId: string; // the session the team joined (its short code)
 }
 
 export interface AnswerRequest {
+  sessionId: string;
   teamId: string;
   questionId: string;
   choice: Answer;
@@ -77,9 +90,11 @@ export interface HostRequest {
   token: string;
   action: HostAction;
   durationMs?: number; // for "start" — game length the host chose
+  sessionId?: string; // optional target session (defaults to the current one)
 }
 export interface HostResponse {
   ok: boolean;
+  code?: string; // the session code acted on (e.g. the new session after reset)
 }
 
 export interface ApiError {

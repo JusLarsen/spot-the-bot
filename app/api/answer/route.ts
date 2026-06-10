@@ -1,17 +1,20 @@
 export const runtime = "nodejs";
 
-import { adminDb, encodeKey } from "@/lib/firebase-admin";
+import { adminDb } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
 import { BY_ID } from "@/lib/questions.server";
 import type { AnswerRequest, AnswerResponse, GameState, Team } from "@/lib/types";
-import { STATE_KEY, teamKey } from "@/lib/types";
+import { sessionStatePath, sessionTeamPath } from "@/lib/types";
 
 export async function POST(request: Request): Promise<Response> {
   const body = await parseJsonBody<AnswerRequest>(request);
   if (body instanceof Response) return body;
 
-  const { teamId, questionId, choice, elapsedMs } = body;
+  const { sessionId, teamId, questionId, choice, elapsedMs } = body;
 
+  if (typeof sessionId !== "string" || !sessionId) {
+    return Response.json({ error: "sessionId is required" }, { status: 400 });
+  }
   if (typeof teamId !== "string" || !teamId) {
     return Response.json({ error: "teamId is required" }, { status: 400 });
   }
@@ -28,8 +31,8 @@ export async function POST(request: Request): Promise<Response> {
   const db = adminDb();
   const now = Date.now();
 
-  // Load and validate game state.
-  const stateSnap = await db.ref(encodeKey(STATE_KEY)).get();
+  // Load and validate the session's game state.
+  const stateSnap = await db.ref(sessionStatePath(sessionId)).get();
   if (!stateSnap.exists()) {
     return Response.json({ error: "Game not started" }, { status: 409 });
   }
@@ -39,8 +42,8 @@ export async function POST(request: Request): Promise<Response> {
     return Response.json({ error: "Game is not accepting answers right now" }, { status: 409 });
   }
 
-  // Load team record.
-  const teamRef = db.ref(encodeKey(teamKey(teamId)));
+  // Load team record (scoped to the session).
+  const teamRef = db.ref(sessionTeamPath(sessionId, teamId));
   const teamSnap = await teamRef.get();
   if (!teamSnap.exists()) {
     return Response.json({ error: "Team not found" }, { status: 404 });

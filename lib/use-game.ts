@@ -3,8 +3,9 @@
 // via subscribeTree(), manages localStorage session resume, drives question
 // ordering, and calls the server API routes for all write operations.
 import { useState, useEffect, useRef, useCallback } from "react";
-import { subscribeKey, subscribeAllTeams } from "./firebase-client";
+import { subscribeKey, subscribeSessionTeams } from "./firebase-client";
 import { rankTeams, shuffledIndices, hashStr, nextUnansweredPos } from "./game";
+import { CURRENT_SESSION_KEY, sessionStatePath, sessionTeamPath } from "./types";
 import { PUBLIC_QUESTIONS, PUBLIC_BY_ID } from "./questions.public";
 import type {
   UseGame,
@@ -95,6 +96,9 @@ function buildOrderIds(teamId: string): string[] {
 export function useGame(): UseGame {
   // ---- raw tree state ----
   const [ready, setReady] = useState(false);
+  // The active session code (from the `currentSessionCode` pointer). The
+  // single-session client follows it; all state/teams/answers are scoped to it.
+  const [sessionCode, setSessionCode] = useState<string | null>(null);
   const [gameState, setGameState] = useState<GameState | null>(null);
   const [teams, setTeams] = useState<Team[]>([]);
 
@@ -194,8 +198,11 @@ export function useGame(): UseGame {
       setHostUnlocked(true);
       return;
     }
-    const savedTeam = safeLocalGet<{ id: string; name: string }>(LS_TEAM_KEY);
+    const savedTeam = safeLocalGet<{ id: string; name: string; sessionId?: string }>(LS_TEAM_KEY);
     if (!savedTeam) return;
+    // Optimistically resume the saved session so play restores without waiting
+    // for the pointer round-trip; the live pointer value still wins if present.
+    if (savedTeam.sessionId) setSessionCode((p) => p ?? savedTeam.sessionId!);
     setMe(
       (prev) =>
         prev ?? {
@@ -209,12 +216,12 @@ export function useGame(): UseGame {
     );
   }, []);
 
-  // ---- subscribe: game state (everyone — one small key) ----
+  // ---- subscribe: the active-session pointer (everyone — one tiny key) ----
+  // The single-session client follows `currentSessionCode` to find the live
+  // session; multi-session later just reads the code from the URL instead.
   useEffect(() => {
-    const unsub = subscribeKey<unknown>("game:state", (val) => {
-      const next = asGameState(val);
-      gameStateRef.current = next;
-      setGameState(next);
+    const unsub = subscribeKey<string>(CURRENT_SESSION_KEY, (val) => {
+      setSessionCode(typeof val === "string" && val ? val : null);
       if (!restoredRef.current) {
         restoredRef.current = true;
         restoreSession();
@@ -224,17 +231,32 @@ export function useGame(): UseGame {
     return unsub;
   }, [restoreSession]);
 
+  // ---- subscribe: the active session's game state ----
+  // sessionCode only ever goes null → code → code (a reset repoints to a NEW
+  // code, never back to null), and both gameState and the ref start null, so we
+  // never need to synchronously clear here — only set inside the callback.
+  useEffect(() => {
+    if (!sessionCode) return;
+    const unsub = subscribeKey<unknown>(sessionStatePath(sessionCode), (val) => {
+      const next = asGameState(val);
+      gameStateRef.current = next;
+      setGameState(next);
+    });
+    return unsub;
+  }, [sessionCode]);
+
   // ---- subscribe: this device's OWN team record (team devices only) ----
   // Scoped to one key so other teams' answers never reach this device.
   const ownId = me?.id ?? null;
   useEffect(() => {
-    if (!ownId) return;
-    const unsub = subscribeKey<unknown>(`team:${ownId}`, (val) => {
+    if (!sessionCode || !ownId) return;
+    const unsub = subscribeKey<unknown>(sessionTeamPath(sessionCode, ownId), (val) => {
       const rec = asTeam(val);
       setMe((prev) => {
         if (!prev || prev.id !== ownId) return prev;
         if (rec) return rec;
-        // record gone — host reset; clear it if we're back in lobby
+        // record gone — host reset rolled to a new session; if the active
+        // session is back in lobby, drop our team so we re-join the new one.
         if (gameStateRef.current?.phase === "lobby") {
           safeLocalRemove(LS_TEAM_KEY);
           return null;
@@ -243,14 +265,15 @@ export function useGame(): UseGame {
       });
     });
     return unsub;
-  }, [ownId]);
+  }, [sessionCode, ownId]);
 
   // ---- subscribe: ALL teams (host always; team devices only in lobby/ended) ----
   // Team devices DROP this during live, so a team's answer only fans out to the
   // single host + that team's own device — O(N) instead of O(N^2).
   useEffect(() => {
+    if (!sessionCode) return;
     if (!isHost && phase === "live") return;
-    const unsub = subscribeAllTeams((raw) => {
+    const unsub = subscribeSessionTeams(sessionCode, (raw) => {
       const next: Team[] = [];
       for (const v of raw) {
         const t = asTeam(v);
@@ -259,7 +282,7 @@ export function useGame(): UseGame {
       setTeams(rankTeams(next));
     });
     return unsub;
-  }, [isHost, phase]);
+  }, [sessionCode, isHost, phase]);
 
   // ---- 250 ms clock tick ----
   useEffect(() => {
@@ -285,8 +308,12 @@ export function useGame(): UseGame {
     if (!res.ok) throw new Error(`join failed: ${res.status}`);
     const data: JoinResponse = await res.json();
 
-    safeLocalSet(LS_TEAM_KEY, { id: data.teamId, name });
+    safeLocalSet(LS_TEAM_KEY, { id: data.teamId, name, sessionId: data.sessionId });
     safeLocalRemove(LS_ROLE_KEY);
+
+    // Adopt the joined session immediately (don't wait for the pointer to
+    // propagate) so the team drops straight into play.
+    setSessionCode(data.sessionId);
 
     // me will be populated by the RTDB subscription once the server writes it;
     // set a provisional record immediately so the UI doesn't flash.
@@ -304,10 +331,11 @@ export function useGame(): UseGame {
 
   const submit = useCallback(
     async (choice: Answer): Promise<void> => {
-      if (!me || !current) return;
+      if (!me || !current || !sessionCode) return;
       setFrozenQuestion(current); // pin this question while its result is shown
       const elapsedMs = Date.now() - questionShownAtRef.current;
       const body: AnswerRequest = {
+        sessionId: sessionCode,
         teamId: me.id,
         questionId: current.id,
         choice,
@@ -330,7 +358,7 @@ export function useGame(): UseGame {
       // Score update (me.answered, me.correct, etc.) flows back via the RTDB
       // subscription — no local mutation needed.
     },
-    [me, current],
+    [me, current, sessionCode],
   );
 
   const next = useCallback((): void => {
