@@ -1,7 +1,7 @@
 export const meta = {
   name: "tiered-review",
   description:
-    "Risk-gated tiered code review: isolated Sonnet quorum (report-everything) → higher-tier (Opus/Fable) adjudication before merge",
+    "Risk-gated tiered code review: isolated Sonnet quorum (report-everything) → Fable adjudication before merge",
   phases: [
     { title: "Scope", detail: "classify change risk from the diff" },
     {
@@ -11,7 +11,7 @@ export const meta = {
     },
     {
       title: "Adjudicate",
-      detail: "Opus/Fable dedups, converges, hunts blind spots, gives the merge verdict",
+      detail: "Fable dedups, converges, hunts blind spots, gives the merge verdict",
     },
   ],
 };
@@ -175,7 +175,7 @@ const risk = riskOverride || scope.risk;
 // Risk → quorum size + final reviewer tier.
 const PLAN = {
   trivial: { quorum: 1, finalModel: null },
-  normal: { quorum: 3, finalModel: "opus" },
+  normal: { quorum: 3, finalModel: "fable" },
   high: { quorum: 3, finalModel: "fable" },
 }[risk];
 if (!PLAN) throw new Error(`Unknown risk "${risk}"; expected one of: ${VALID_RISK.join(", ")}`);
