@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
+import { HUMAN_SPRITE, botSpriteFor } from "@/lib/sprites";
 
 interface PlayProps {
   current: PublicQuestion | null;
@@ -133,7 +134,8 @@ export function Play({
             aria-label="Vote human"
           >
             <span className="ic" aria-hidden="true">
-              🧑
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={HUMAN_SPRITE} alt="" className="sprite" />
             </span>
             Human
           </button>
@@ -144,7 +146,8 @@ export function Play({
             aria-label="Vote AI"
           >
             <span className="ic" aria-hidden="true">
-              🤖
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={botSpriteFor(current.id)} alt="" className="sprite" />
             </span>
             AI
           </button>
