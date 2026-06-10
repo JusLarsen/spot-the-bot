@@ -170,6 +170,7 @@ ${HIGH_RISK_HINT}
 If there are no changes in scope, set hasChanges=false and risk=trivial.`,
   { label: "scope", phase: "Scope", schema: SCOPE_SCHEMA },
 );
+if (!scope) throw new Error("Scope agent failed — cannot determine what to review.");
 
 const risk = riskOverride || scope.risk;
 // Risk → quorum size + final reviewer tier.
@@ -220,7 +221,10 @@ const reviews = await parallel(
         agentType: "code-reviewer",
         schema: FINDINGS_SCHEMA,
       })
-        .then((r) => (r ? r.findings.map((f) => ({ ...f, reviewer: i + 1 })) : []))
+        .then((r) => {
+          if (!r) throw new Error("reviewer returned no result"); // null resolution = failure, not a clean pass
+          return r.findings.map((f) => ({ ...f, reviewer: i + 1 }));
+        })
         .catch((err) => {
           log(`reviewer #${i + 1} failed: ${err && err.message}`);
           return null; // sentinel: distinguishes a crash from a clean empty pass
@@ -233,7 +237,25 @@ if (succeeded < PLAN.quorum)
   log(
     `WARNING: only ${succeeded}/${PLAN.quorum} reviewers succeeded — convergence counts are out of that smaller pool`,
   );
-log(`quorum raised ${allFindings.length} finding(s) across ${PLAN.quorum} reviewer(s)`);
+log(
+  `quorum raised ${allFindings.length} finding(s) across ${succeeded}/${PLAN.quorum} reviewer(s)`,
+);
+
+// Zero evidence must never read as a clean pass — abort rather than approve.
+if (succeeded === 0) {
+  log("ABORT: every reviewer failed — refusing to approve or adjudicate on zero evidence.");
+  return {
+    risk,
+    reviewed: false,
+    reason: "all reviewers failed",
+    quorum: PLAN.quorum,
+    reviewersSucceeded: 0,
+    finalModel: PLAN.finalModel,
+    findings: [],
+    verdict: null,
+    scope,
+  };
+}
 
 // Trivial changes get a single reviewer and no higher-tier pass. Return the
 // same shape as the adjudicated path (stub verdict) so callers can always read
