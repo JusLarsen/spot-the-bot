@@ -119,7 +119,7 @@ export interface HostRequest {
   action: HostAction;
   durationMs?: number; // for "start" — game length the host chose
   sessionId?: string; // optional target session (defaults to the current one)
-  teamId?: string; // for "unclaim" — the team record to delete when this device becomes host
+  teamId?: string; // for "unclaim" — server-side action only; the client no longer calls it
 }
 export interface HostResponse {
   ok: boolean;
@@ -170,6 +170,7 @@ export interface UseGame {
 
   // host actions (guarded server-side by HOST_TOKEN)
   unlockHost: (token: string) => Promise<boolean>;
+  exitHost: () => void; // leave host mode on this tab (local only; game keeps running)
   startGame: (durationMs?: number) => Promise<void>;
   endGame: () => Promise<void>;
   resetGame: () => Promise<void>;

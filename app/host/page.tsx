@@ -4,6 +4,7 @@ import { HostLogin } from "@/components/HostLogin";
 import { Lobby } from "@/components/Lobby";
 import { HostBoard } from "@/components/HostBoard";
 import { FinalBoard } from "@/components/FinalBoard";
+import { ExitHostButton } from "@/components/ExitHostButton";
 
 export default function HostPage() {
   const {
@@ -13,6 +14,7 @@ export default function HostPage() {
     timeLeftMs,
     hostUnlocked,
     unlockHost,
+    exitHost,
     startGame,
     endGame,
     resetGame,
@@ -36,7 +38,7 @@ export default function HostPage() {
 
   return (
     <>
-      <div className="role-toggle text-acid">HOST MODE</div>
+      <ExitHostButton onExit={exitHost} />
       <div className="wrap host-wide">
         {phase === "lobby" && (
           <Lobby teamName="Host" teams={teams} isHost onStart={startGame} onReset={resetGame} />

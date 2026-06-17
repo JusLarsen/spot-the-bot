@@ -9,6 +9,7 @@ import { HostBoard } from "@/components/HostBoard";
 import { FinalBoard } from "@/components/FinalBoard";
 import { HostLogin } from "@/components/HostLogin";
 import { ResultsLookup } from "@/components/ResultsLookup";
+import { ExitHostButton } from "@/components/ExitHostButton";
 
 export default function Home() {
   const game = useGame();
@@ -30,6 +31,7 @@ export default function Home() {
     next,
     setAvatar,
     unlockHost,
+    exitHost,
     startGame,
     endGame,
     resetGame,
@@ -96,7 +98,7 @@ export default function Home() {
 
   return (
     <>
-      {hostUnlocked && <div className="role-toggle text-acid">HOST MODE</div>}
+      {hostUnlocked && <ExitHostButton onExit={exitHost} />}
 
       <div className={wide ? "wrap host-wide" : "wrap"}>
         {canJoin && (

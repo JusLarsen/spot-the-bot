@@ -25,36 +25,56 @@ import type {
   HostAction,
 } from "./types";
 
-// ---- localStorage key constants ----
-const LS_ROLE_KEY = "stb_role";
-const LS_TEAM_KEY = "stb_team";
-const LS_HOST_TOKEN_KEY = "stb_host_token";
+// ---- storage keys ----
+// Team identity is DEVICE-scoped (localStorage) so a reload or a dropped phone
+// reconnects to the same team. Host role + token are TAB-scoped (sessionStorage)
+// so two tabs of one browser don't share a role — opening or reloading one tab
+// can never silently promote another into host mode.
+const TEAM_KEY = "stb_team"; // localStorage
+const ROLE_KEY = "stb_role"; // sessionStorage
+const HOST_TOKEN_KEY = "stb_host_token"; // sessionStorage
 
 // ---- helpers ----
+// Storage is passed explicitly (localStorage vs sessionStorage) so each call
+// site declares its scope. All reads/writes are guarded for SSR / private-mode.
 
-function safeLocalGet<T>(key: string): T | null {
+function safeGet<T>(store: Storage, key: string): T | null {
   try {
-    const raw = localStorage.getItem(key);
+    const raw = store.getItem(key);
     return raw ? (JSON.parse(raw) as T) : null;
   } catch {
     return null;
   }
 }
 
-function safeLocalSet(key: string, value: unknown): void {
+function safeSet(store: Storage, key: string, value: unknown): void {
   try {
-    localStorage.setItem(key, JSON.stringify(value));
+    store.setItem(key, JSON.stringify(value));
   } catch {
     // storage unavailable (SSR guard, private mode quota, etc.)
   }
 }
 
-function safeLocalRemove(key: string): void {
+function safeRemove(store: Storage, key: string): void {
   try {
-    localStorage.removeItem(key);
+    store.removeItem(key);
   } catch {
     // ignore
   }
+}
+
+// A zeroed local Team record; real scores arrive via the own-team subscription.
+// Shared by join, session restore, and leaving host mode (reconnect).
+function provisionalTeam(t: { id: string; name: string; avatar?: string }): Team {
+  return {
+    id: t.id,
+    name: t.name,
+    avatar: t.avatar,
+    correct: 0,
+    wrong: 0,
+    totalMs: 0,
+    answered: {},
+  };
 }
 
 // Decode tree Record<string,unknown> -> typed GameState or Team (best-effort)
@@ -108,8 +128,8 @@ export function useGame(): UseGame {
   const [me, setMe] = useState<Team | null>(null);
   const [isHost, setIsHost] = useState(false);
   const [hostUnlocked, setHostUnlocked] = useState(false);
-  // Persisted host token is only ever read from localStorage on mount; stored
-  // in a ref so actions always have the latest value without re-renders.
+  // Persisted host token is read from sessionStorage on mount (tab-scoped);
+  // stored in a ref so actions always have the latest value without re-renders.
   const hostTokenRef = useRef<string | null>(null);
 
   // ---- play state ----
@@ -193,35 +213,31 @@ export function useGame(): UseGame {
   // For a team we set a provisional record; the own-team subscription reconciles
   // it (real scores, or clears it if the host reset while we were away).
   const restoreSession = useCallback((): void => {
-    const role = safeLocalGet<string>(LS_ROLE_KEY);
+    // Migration: host role/token used to live in localStorage (shared across
+    // tabs, which trapped every tab as host with no way out). They're tab-scoped
+    // (sessionStorage) now — purge the OLD localStorage copies so an old value
+    // can't re-promote a tab.
+    safeRemove(localStorage, ROLE_KEY);
+    safeRemove(localStorage, HOST_TOKEN_KEY);
+
+    const role = safeGet<string>(sessionStorage, ROLE_KEY);
     if (role === "host") {
-      hostTokenRef.current = safeLocalGet<string>(LS_HOST_TOKEN_KEY);
+      hostTokenRef.current = safeGet<string>(sessionStorage, HOST_TOKEN_KEY);
       setIsHost(true);
       setHostUnlocked(true);
       return;
     }
-    const savedTeam = safeLocalGet<{
+    const savedTeam = safeGet<{
       id: string;
       name: string;
       sessionId?: string;
       avatar?: string;
-    }>(LS_TEAM_KEY);
+    }>(localStorage, TEAM_KEY);
     if (!savedTeam) return;
     // Optimistically resume the saved session so play restores without waiting
     // for the pointer round-trip; the live pointer value still wins if present.
     if (savedTeam.sessionId) setSessionCode((p) => p ?? savedTeam.sessionId!);
-    setMe(
-      (prev) =>
-        prev ?? {
-          id: savedTeam.id,
-          name: savedTeam.name,
-          avatar: savedTeam.avatar,
-          correct: 0,
-          wrong: 0,
-          totalMs: 0,
-          answered: {},
-        },
-    );
+    setMe((prev) => prev ?? provisionalTeam(savedTeam));
   }, []);
 
   // ---- subscribe: the active-session pointer (everyone — one tiny key) ----
@@ -266,7 +282,7 @@ export function useGame(): UseGame {
         // record gone — host reset rolled to a new session; if the active
         // session is back in lobby, drop our team so we re-join the new one.
         if (gameStateRef.current?.phase === "lobby") {
-          safeLocalRemove(LS_TEAM_KEY);
+          safeRemove(localStorage, TEAM_KEY);
           return null;
         }
         return prev;
@@ -316,13 +332,15 @@ export function useGame(): UseGame {
     if (!res.ok) throw new Error(`join failed: ${res.status}`);
     const data: JoinResponse = await res.json();
 
-    safeLocalSet(LS_TEAM_KEY, {
+    safeSet(localStorage, TEAM_KEY, {
       id: data.teamId,
       name,
       sessionId: data.sessionId,
       avatar: data.avatar,
     });
-    safeLocalRemove(LS_ROLE_KEY);
+    // Becoming a team clears any host role/token on THIS tab.
+    safeRemove(sessionStorage, ROLE_KEY);
+    safeRemove(sessionStorage, HOST_TOKEN_KEY);
 
     // Adopt the joined session immediately (don't wait for the pointer to
     // propagate) so the team drops straight into play.
@@ -330,15 +348,7 @@ export function useGame(): UseGame {
 
     // me will be populated by the RTDB subscription once the server writes it;
     // set a provisional record immediately so the UI doesn't flash.
-    setMe({
-      id: data.teamId,
-      name,
-      avatar: data.avatar,
-      correct: 0,
-      wrong: 0,
-      totalMs: 0,
-      answered: {},
-    });
+    setMe(provisionalTeam({ id: data.teamId, name, avatar: data.avatar }));
     setIsHost(false);
     setHostUnlocked(false);
   }, []);
@@ -388,8 +398,8 @@ export function useGame(): UseGame {
       // reconciles it (and the server rejects an unknown name, leaving the
       // stored value untouched). Also update the saved record for reconnects.
       setMe((prev) => (prev ? { ...prev, avatar } : prev));
-      const saved = safeLocalGet<Record<string, unknown>>(LS_TEAM_KEY);
-      if (saved) safeLocalSet(LS_TEAM_KEY, { ...saved, avatar });
+      const saved = safeGet<Record<string, unknown>>(localStorage, TEAM_KEY);
+      if (saved) safeSet(localStorage, TEAM_KEY, { ...saved, avatar });
 
       const body: SetAvatarRequest = { sessionId: sessionCode, teamId: me.id, avatar };
       const res = await fetch("/api/avatar", {
@@ -413,35 +423,41 @@ export function useGame(): UseGame {
     const data: HostResponse = await res.json();
     if (!data.ok) return false;
 
-    // If this device joined as a team before unlocking, delete that team record
-    // server-side — the host is never a contestant and must not ghost the board.
-    const saved = safeLocalGet<{ id: string; name: string; sessionId?: string }>(LS_TEAM_KEY);
-    if (saved?.id && saved.sessionId) {
-      const unclaim: HostRequest = {
-        action: "unclaim",
-        token,
-        sessionId: saved.sessionId,
-        teamId: saved.id,
-      };
-      try {
-        await fetch("/api/host", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(unclaim),
-        });
-      } catch {
-        /* best-effort — proceed with unlock regardless */
-      }
-    }
-
+    // Host role + token are tab-scoped (sessionStorage). Host and team are
+    // DECOUPLED: unlocking does NOT touch the browser's team (localStorage) —
+    // the team stays available for other tabs and for reconnect when this tab
+    // later leaves host mode. The host VIEW still never scores (me is null on a
+    // host tab), so the host itself is never a contestant.
     hostTokenRef.current = token;
-    safeLocalSet(LS_ROLE_KEY, "host");
-    safeLocalSet(LS_HOST_TOKEN_KEY, token);
-    safeLocalRemove(LS_TEAM_KEY);
+    safeSet(sessionStorage, ROLE_KEY, "host");
+    safeSet(sessionStorage, HOST_TOKEN_KEY, token);
     setIsHost(true);
     setHostUnlocked(true);
     setMe(null);
     return true;
+  }, []);
+
+  // Leave host mode on THIS tab only. Purely local: it issues NO server action,
+  // so the running game (clock, scores, teams in RTDB) is untouched and plays on
+  // without a host — host mode is only needed to CHANGE game state. If this
+  // browser has a team (localStorage, never cleared by host actions), drop back
+  // into it so leaving reconnects instead of forcing a re-join; otherwise land
+  // on the Join screen. Re-entering host needs the passphrase.
+  const exitHost = useCallback((): void => {
+    safeRemove(sessionStorage, ROLE_KEY);
+    safeRemove(sessionStorage, HOST_TOKEN_KEY);
+    hostTokenRef.current = null;
+    setIsHost(false);
+    setHostUnlocked(false);
+    const savedTeam = safeGet<{ id: string; name: string; sessionId?: string; avatar?: string }>(
+      localStorage,
+      TEAM_KEY,
+    );
+    // Bind the team's session if we don't already have one, so the own-team
+    // subscription (keyed on sessionCode + me.id) actually fires on reconnect
+    // even if the pointer snapshot hasn't landed yet. Mirrors restoreSession.
+    if (savedTeam?.sessionId) setSessionCode((p) => p ?? savedTeam.sessionId!);
+    setMe(savedTeam ? provisionalTeam(savedTeam) : null);
   }, []);
 
   // All host mutations share the same POST /api/host shape (guarded server-side
@@ -463,7 +479,7 @@ export function useGame(): UseGame {
   const resetGame = useCallback(async (): Promise<void> => {
     await callHost("reset");
     // Clear local team so this device (if it was ever a team) re-enters lobby.
-    safeLocalRemove(LS_TEAM_KEY);
+    safeRemove(localStorage, TEAM_KEY);
     setMe(null);
     // Host stays host — do NOT clear isHost/hostUnlocked.
   }, [callHost]);
@@ -486,6 +502,7 @@ export function useGame(): UseGame {
     next,
     setAvatar,
     unlockHost,
+    exitHost,
     startGame,
     endGame,
     resetGame,
