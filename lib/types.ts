@@ -54,6 +54,12 @@ export const DURATION_CHOICES_MIN = [5, 10, 15] as const; // host-selectable len
 export const MIN_DURATION_MS = 60 * 1000;
 export const MAX_DURATION_MS = 60 * 60 * 1000;
 export const LATE_JOIN_CUTOFF_MS = 60 * 1000; // no joining inside the final minute
+/** Clock turns red at this threshold — distinct concept from the late-join cutoff. */
+export const LOW_CLOCK_MS = 60 * 1000;
+
+/** Confirmation dialog body for the "Reset game" action. */
+export const RESET_CONFIRM_MESSAGE =
+  "This clears every team's score and returns everyone to the lobby for a fresh round.";
 
 // ---- Session model ----
 // A session is one run of the game (lobby → live → ended), keyed by its short
@@ -106,7 +112,8 @@ export interface AnswerResponse {
   wrongCount: number;
 }
 
-export type HostAction = "verify" | "start" | "end" | "reset" | "unclaim";
+export const HOST_ACTIONS = ["verify", "start", "end", "reset", "unclaim"] as const;
+export type HostAction = (typeof HOST_ACTIONS)[number];
 export interface HostRequest {
   token: string;
   action: HostAction;

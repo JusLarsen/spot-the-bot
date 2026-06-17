@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import type { Team } from "@/lib/types";
-import { DURATION_CHOICES_MIN } from "@/lib/types";
+import { DURATION_CHOICES_MIN, RESET_CONFIRM_MESSAGE } from "@/lib/types";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { Avatar } from "./Avatar";
 import { TeamAvatar } from "./TeamAvatar";
@@ -63,7 +63,7 @@ export function Lobby({
   return (
     <section>
       <div className="eyebrow">{isHost ? "Host" : "You're in"}</div>
-      <h1 className="page-heading mt-1.5 mb-0.5">{isHost ? "Lobby" : teamName || "—"}</h1>
+      <h1 className="page-heading">{isHost ? "Lobby" : teamName || "—"}</h1>
       <div className="card">
         {!isHost && me && onChangeAvatar && (
           <div className="mb-4 flex items-center gap-3">
@@ -159,7 +159,7 @@ export function Lobby({
           )}
 
           {error && (
-            <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+            <p className="error-hint" role="alert">
               {error}
             </p>
           )}
@@ -169,7 +169,7 @@ export function Lobby({
       {confirmReset && (
         <ConfirmDialog
           title="Reset the game?"
-          message="This deletes every team's score and returns everyone to the lobby. It can't be undone."
+          message={RESET_CONFIRM_MESSAGE}
           confirmLabel="Reset game"
           busy={resetting}
           onConfirm={doReset}

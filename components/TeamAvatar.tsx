@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
-import { AVATARS, avatarSrc, avatarForTeam } from "@/lib/avatars";
+import { AVATARS, avatarSrc } from "@/lib/avatars";
+import { resolveAvatar } from "@/lib/avatar-utils";
 
 interface TeamAvatarProps {
   teamId: string;
@@ -13,7 +14,7 @@ interface TeamAvatarProps {
  * a new one. Used wherever the player controls their own team (lobby + play). */
 export function TeamAvatar({ teamId, avatar, size = 56, onChange }: TeamAvatarProps) {
   const [open, setOpen] = useState(false);
-  const current = avatar ?? avatarForTeam(teamId);
+  const current = resolveAvatar(avatar, teamId);
 
   async function choose(next: string) {
     setOpen(false);

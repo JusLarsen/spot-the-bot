@@ -136,7 +136,7 @@ export default function Home() {
         {wrappingUp && (
           <section>
             <div className="eyebrow">Live now</div>
-            <h1 className="page-heading mt-1.5 mb-0.5">Round wrapping up</h1>
+            <h1 className="page-heading">Round wrapping up</h1>
             <div className="card">
               <p className="text-muted text-sm leading-[1.4]">
                 This round is in its final seconds. Hang tight — you&apos;ll be able to hop in when

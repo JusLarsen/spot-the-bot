@@ -37,7 +37,7 @@ export default async function ResultsPage({ params }: { params: Promise<{ code: 
       <div className="wrap">
         <section>
           <div className="eyebrow">Saved results</div>
-          <h1 className="page-heading mt-1.5 mb-0.5">No results for {code}</h1>
+          <h1 className="page-heading">No results for {code}</h1>
           <div className="card">
             <p className="text-muted text-sm leading-[1.4]">
               We couldn&apos;t find a game with that code. Double-check the code and try again.
@@ -59,7 +59,7 @@ export default async function ResultsPage({ params }: { params: Promise<{ code: 
     <div className="wrap">
       <section>
         <div className="eyebrow">{ended ? "Final results" : "Standings · in progress"}</div>
-        <h1 className="page-heading mt-1.5 mb-0.5">
+        <h1 className="page-heading">
           Game <span className="text-acid">{code}</span>
         </h1>
         {when && <div className="text-muted mb-3 font-mono text-[12px]">{when}</div>}

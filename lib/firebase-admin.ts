@@ -58,11 +58,6 @@ export function adminDb(): Database {
   return getDatabase(_app);
 }
 
-// RTDB keys can't contain ":", so encode ":" -> "__" for admin paths too.
-// (Used only by the legacy flat keys; the session paths in lib/types are
-// already native nested paths and need no encoding.)
-export const encodeKey = (k: string) => k.replace(/:/g, "__");
-
 /** Constant-time-ish host token check. */
 export function isValidHostToken(token: string | undefined): boolean {
   const expected = process.env.HOST_TOKEN;

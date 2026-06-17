@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
+import { LOW_CLOCK_MS } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 import { humanSpriteFor, botSpriteFor } from "@/lib/sprites";
 import { TeamAvatar } from "./TeamAvatar";
@@ -33,7 +34,7 @@ export function Play({
   const correct = me?.correct ?? 0;
   const wrong = me?.wrong ?? 0;
   const timerFraction = Math.max(0, Math.min(1, timeLeftMs / Math.max(1, durationMs)));
-  const isLow = timeLeftMs <= 60_000;
+  const isLow = timeLeftMs <= LOW_CLOCK_MS;
   const hasAnswered = lastResult !== null;
 
   const [submitting, setSubmitting] = useState(false);
@@ -80,9 +81,7 @@ export function Play({
             {correct} correct · {wrong} wrong
           </span>
         </div>
-        <div className="timer">
-          <i style={{ transform: `scaleX(${timerFraction})` }} />
-        </div>
+        <TimerBar fraction={timerFraction} />
         <div className={["clock", isLow && "low"].filter(Boolean).join(" ")}>
           {fmtClock(timeLeftMs)} left
         </div>
@@ -108,9 +107,7 @@ export function Play({
       </div>
 
       {/* Timer bar */}
-      <div className="timer">
-        <i style={{ transform: `scaleX(${timerFraction})` }} />
-      </div>
+      <TimerBar fraction={timerFraction} />
       <div className={["clock", isLow && "low"].filter(Boolean).join(" ")} aria-live="off">
         {fmtClock(timeLeftMs)} left
       </div>
@@ -192,5 +189,14 @@ export function Play({
         </>
       )}
     </section>
+  );
+}
+
+/** The shrinking progress bar shown above the clock (same in every play state). */
+function TimerBar({ fraction }: { fraction: number }) {
+  return (
+    <div className="timer">
+      <i style={{ transform: `scaleX(${fraction})` }} />
+    </div>
   );
 }
