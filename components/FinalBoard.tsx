@@ -4,6 +4,7 @@ import { QRCodeSVG } from "qrcode.react";
 import type { Team } from "@/lib/types";
 import { LeaderboardRows } from "./HostBoard";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { Avatar } from "./Avatar";
 
 interface FinalBoardProps {
   teams: Team[];
@@ -44,6 +45,9 @@ export function FinalBoard({ teams, myId, isHost, sessionCode, onReset }: FinalB
       {winner && (
         <div className="card winner-banner mt-4">
           <div className="award">Least Appetizing Robot Snack</div>
+          <div className="mt-2 flex justify-center">
+            <Avatar name={winner.avatar} teamId={winner.id} size={72} />
+          </div>
           <h2>{winner.name}</h2>
         </div>
       )}

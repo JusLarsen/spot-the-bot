@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import type { Team } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { Avatar } from "./Avatar";
 
 interface HostBoardProps {
   teams: Team[];
@@ -148,6 +149,7 @@ function TeamRow({
         .join(" ")}
     >
       <div className="lb-rank">{isGold ? <span className="crown">👑</span> : `#${rank}`}</div>
+      <Avatar name={team.avatar} teamId={team.id} className="lb-avatar" />
       <div className="lb-name">
         {team.name || "(unnamed)"}
         <div className="lb-meta">

@@ -3,16 +3,28 @@ import { useState } from "react";
 import type { Team } from "@/lib/types";
 import { DURATION_CHOICES_MIN } from "@/lib/types";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { Avatar } from "./Avatar";
+import { TeamAvatar } from "./TeamAvatar";
 
 interface LobbyProps {
   teamName: string;
   teams: Team[];
   isHost: boolean;
+  me?: Team | null; // this device's team (null for host) — drives the editable avatar
   onStart: (durationMs: number) => Promise<void>;
   onReset?: () => Promise<void>;
+  onChangeAvatar?: (avatar: string) => Promise<void>;
 }
 
-export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps) {
+export function Lobby({
+  teamName,
+  teams,
+  isHost,
+  me,
+  onStart,
+  onReset,
+  onChangeAvatar,
+}: LobbyProps) {
   const count = teams.length;
   const [minutes, setMinutes] = useState(10);
   const [starting, setStarting] = useState(false);
@@ -53,6 +65,16 @@ export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps)
       <div className="eyebrow">{isHost ? "Host" : "You're in"}</div>
       <h1 className="page-heading mt-1.5 mb-0.5">{isHost ? "Lobby" : teamName || "—"}</h1>
       <div className="card">
+        {!isHost && me && onChangeAvatar && (
+          <div className="mb-4 flex items-center gap-3">
+            <TeamAvatar teamId={me.id} avatar={me.avatar} onChange={onChangeAvatar} />
+            <div className="text-muted font-mono text-[12px] leading-[1.4]">
+              Your team avatar.
+              <br />
+              Tap it to pick a new one.
+            </div>
+          </div>
+        )}
         <p className="text-muted text-sm leading-[1.4]">
           {isHost
             ? "Teams are joining. Pick a length and start when ready."
@@ -64,7 +86,11 @@ export function Lobby({ teamName, teams, isHost, onStart, onReset }: LobbyProps)
         {isHost && count > 0 && (
           <div className="mt-3 font-mono text-[12px]">
             {teams.map((t) => (
-              <div key={t.id} className="text-ink/80 border-t border-white/5 py-1 first:border-t-0">
+              <div
+                key={t.id}
+                className="text-ink/80 flex items-center gap-2 border-t border-white/5 py-1.5 first:border-t-0"
+              >
+                <Avatar name={t.avatar} teamId={t.id} size={28} />
                 {t.name}
               </div>
             ))}

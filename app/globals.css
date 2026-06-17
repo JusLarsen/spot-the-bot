@@ -144,7 +144,7 @@
   .roundbar {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
     margin-bottom: 6px;
   }
   .rno {
@@ -424,6 +424,129 @@
     padding: 18px;
     background: rgba(0, 0, 0, 0.72);
     backdrop-filter: blur(2px);
+  }
+
+  /* team avatars — pixel-art BBQ-food icons */
+  .avatar-img {
+    display: block;
+    image-rendering: pixelated;
+    flex-shrink: 0;
+  }
+  /* clickable "my avatar" (lobby + play) */
+  .avatar-btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: 1px solid rgba(255, 106, 26, 0.22);
+    border-radius: 14px;
+    background: #140f0a;
+    cursor: pointer;
+    transition:
+      transform 0.08s ease,
+      border-color 0.15s;
+  }
+  .avatar-btn:hover {
+    border-color: var(--color-acid);
+  }
+  .avatar-btn:active {
+    transform: translateY(1px);
+  }
+  .avatar-btn-edit {
+    position: absolute;
+    right: -6px;
+    bottom: -6px;
+    width: 22px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    border-radius: 50%;
+    background: var(--color-acid);
+    color: #140f0a;
+    border: 2px solid var(--color-bg);
+  }
+  /* avatar in a leaderboard row */
+  .lb-avatar {
+    width: 34px;
+    height: 34px;
+  }
+  .host-wide .lb-avatar {
+    width: 44px;
+    height: 44px;
+  }
+
+  /* the vertically-scrolling avatar picker */
+  .avatar-picker {
+    width: 100%;
+    max-width: 420px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(180deg, var(--color-panel), #140f0a);
+    border: 1px solid rgba(255, 106, 26, 0.22);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 24px 70px -30px rgba(0, 0, 0, 0.9);
+  }
+  .avatar-picker-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+  }
+  .avatar-picker-close {
+    background: none;
+    border: none;
+    color: var(--color-muted);
+    font-size: 16px;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+  }
+  .avatar-picker-close:hover {
+    color: var(--color-ink);
+  }
+  .avatar-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding: 2px;
+  }
+  .avatar-cell {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    background: #0a0805;
+    cursor: pointer;
+    transition:
+      transform 0.08s ease,
+      border-color 0.12s,
+      background 0.12s;
+  }
+  .avatar-cell .avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .avatar-cell:hover {
+    border-color: rgba(255, 106, 26, 0.5);
+  }
+  .avatar-cell:active {
+    transform: scale(0.94);
+  }
+  .avatar-cell.selected {
+    border-color: var(--color-acid);
+    background: rgba(255, 106, 26, 0.12);
   }
 
   /* host projector view — wider + larger type so it reads across a room */

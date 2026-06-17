@@ -2,6 +2,7 @@ export const runtime = "nodejs";
 
 import { adminDb, ensureCurrentSession } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
+import { randomAvatar } from "@/lib/avatars";
 import type { JoinRequest, JoinResponse, Team } from "@/lib/types";
 import { sessionTeamPath } from "@/lib/types";
 
@@ -27,10 +28,12 @@ export async function POST(request: Request): Promise<Response> {
   // Join the active session, creating a fresh lobby session if none exists yet.
   const sessionId = await ensureCurrentSession(db);
   const teamId = generateTeamId();
+  const avatar = randomAvatar(); // teams can change it later via /api/avatar
 
   const team: Team = {
     id: teamId,
     name,
+    avatar,
     correct: 0,
     wrong: 0,
     totalMs: 0,
@@ -40,6 +43,6 @@ export async function POST(request: Request): Promise<Response> {
 
   await db.ref(sessionTeamPath(sessionId, teamId)).set(team);
 
-  const response: JoinResponse = { teamId, sessionId };
+  const response: JoinResponse = { teamId, sessionId, avatar };
   return Response.json(response, { status: 200 });
 }

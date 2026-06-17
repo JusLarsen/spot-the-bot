@@ -19,6 +19,7 @@ import type {
   JoinResponse,
   AnswerRequest,
   AnswerResponse,
+  SetAvatarRequest,
   HostRequest,
   HostResponse,
   HostAction,
@@ -78,6 +79,7 @@ function asTeam(v: unknown): Team | null {
     return {
       id: o.id as string,
       name: o.name as string,
+      avatar: typeof o.avatar === "string" ? (o.avatar as string) : undefined,
       correct: (o.correct as number) ?? 0,
       wrong: (o.wrong as number) ?? 0,
       totalMs: (o.totalMs as number) ?? 0,
@@ -198,7 +200,12 @@ export function useGame(): UseGame {
       setHostUnlocked(true);
       return;
     }
-    const savedTeam = safeLocalGet<{ id: string; name: string; sessionId?: string }>(LS_TEAM_KEY);
+    const savedTeam = safeLocalGet<{
+      id: string;
+      name: string;
+      sessionId?: string;
+      avatar?: string;
+    }>(LS_TEAM_KEY);
     if (!savedTeam) return;
     // Optimistically resume the saved session so play restores without waiting
     // for the pointer round-trip; the live pointer value still wins if present.
@@ -208,6 +215,7 @@ export function useGame(): UseGame {
         prev ?? {
           id: savedTeam.id,
           name: savedTeam.name,
+          avatar: savedTeam.avatar,
           correct: 0,
           wrong: 0,
           totalMs: 0,
@@ -308,7 +316,12 @@ export function useGame(): UseGame {
     if (!res.ok) throw new Error(`join failed: ${res.status}`);
     const data: JoinResponse = await res.json();
 
-    safeLocalSet(LS_TEAM_KEY, { id: data.teamId, name, sessionId: data.sessionId });
+    safeLocalSet(LS_TEAM_KEY, {
+      id: data.teamId,
+      name,
+      sessionId: data.sessionId,
+      avatar: data.avatar,
+    });
     safeLocalRemove(LS_ROLE_KEY);
 
     // Adopt the joined session immediately (don't wait for the pointer to
@@ -320,6 +333,7 @@ export function useGame(): UseGame {
     setMe({
       id: data.teamId,
       name,
+      avatar: data.avatar,
       correct: 0,
       wrong: 0,
       totalMs: 0,
@@ -366,6 +380,27 @@ export function useGame(): UseGame {
     setFrozenQuestion(null);
     // current recomputes automatically from the updated me.answered in the tree
   }, []);
+
+  const setAvatar = useCallback(
+    async (avatar: string): Promise<void> => {
+      if (!me || !sessionCode) return;
+      // Optimistic: show the new avatar immediately; the RTDB subscription
+      // reconciles it (and the server rejects an unknown name, leaving the
+      // stored value untouched). Also update the saved record for reconnects.
+      setMe((prev) => (prev ? { ...prev, avatar } : prev));
+      const saved = safeLocalGet<Record<string, unknown>>(LS_TEAM_KEY);
+      if (saved) safeLocalSet(LS_TEAM_KEY, { ...saved, avatar });
+
+      const body: SetAvatarRequest = { sessionId: sessionCode, teamId: me.id, avatar };
+      const res = await fetch("/api/avatar", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+      if (!res.ok) throw new Error(`setAvatar failed: ${res.status}`);
+    },
+    [me, sessionCode],
+  );
 
   const unlockHost = useCallback(async (token: string): Promise<boolean> => {
     const body: HostRequest = { action: "verify", token };
@@ -449,6 +484,7 @@ export function useGame(): UseGame {
     join,
     submit,
     next,
+    setAvatar,
     unlockHost,
     startGame,
     endGame,

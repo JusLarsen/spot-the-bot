@@ -35,6 +35,7 @@ export interface GameState {
 export interface Team {
   id: string;
   name: string;
+  avatar?: string; // avatar icon file name (in public/avatars/); assigned at join, changeable
   correct: number;
   wrong: number;
   totalMs: number; // server-measured answer time (tiebreaker) — never client-supplied
@@ -73,6 +74,19 @@ export interface JoinRequest {
 export interface JoinResponse {
   teamId: string;
   sessionId: string; // the session the team joined (its short code)
+  avatar: string; // the random avatar the server assigned this team
+}
+
+/** POST /api/avatar — change a team's avatar (cosmetic; server validates the
+ * name against the manifest and writes it, like every other RTDB mutation). */
+export interface SetAvatarRequest {
+  sessionId: string;
+  teamId: string;
+  avatar: string; // must be a known avatar file name (see lib/avatars.ts)
+}
+export interface SetAvatarResponse {
+  ok: boolean;
+  avatar: string;
 }
 
 export interface AnswerRequest {
@@ -145,6 +159,7 @@ export interface UseGame {
   join: (name: string) => Promise<void>;
   submit: (choice: Answer) => Promise<void>;
   next: () => void;
+  setAvatar: (avatar: string) => Promise<void>; // change this team's avatar
 
   // host actions (guarded server-side by HOST_TOKEN)
   unlockHost: (token: string) => Promise<boolean>;

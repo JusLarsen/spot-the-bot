@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 import { humanSpriteFor, botSpriteFor } from "@/lib/sprites";
+import { TeamAvatar } from "./TeamAvatar";
 
 interface PlayProps {
   current: PublicQuestion | null;
@@ -11,9 +12,10 @@ interface PlayProps {
   lastResult: AnswerResult | null;
   timeLeftMs: number;
   durationMs: number; // total game length, for the timer-bar fraction
-  me: { correct: number; wrong: number } | null;
+  me: { id: string; correct: number; wrong: number; avatar?: string } | null;
   onSubmit: (choice: Answer) => Promise<void>;
   onNext: () => void;
+  onChangeAvatar: (avatar: string) => Promise<void>;
 }
 
 export function Play({
@@ -26,6 +28,7 @@ export function Play({
   me,
   onSubmit,
   onNext,
+  onChangeAvatar,
 }: PlayProps) {
   const correct = me?.correct ?? 0;
   const wrong = me?.wrong ?? 0;
@@ -93,7 +96,12 @@ export function Play({
   return (
     <section>
       <div className="roundbar">
-        <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
+        <span className="flex items-center gap-2">
+          {me && (
+            <TeamAvatar teamId={me.id} avatar={me.avatar} size={32} onChange={onChangeAvatar} />
+          )}
+          <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
+        </span>
         <span className="score">
           {hasAnswered ? `${correct} correct · ${wrong} wrong` : `${correct} correct`}
         </span>

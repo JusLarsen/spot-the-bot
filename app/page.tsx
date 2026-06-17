@@ -28,6 +28,7 @@ export default function Home() {
     join,
     submit,
     next,
+    setAvatar,
     unlockHost,
     startGame,
     endGame,
@@ -110,8 +111,10 @@ export default function Home() {
             teamName={me?.name ?? "Host"}
             teams={teams}
             isHost={isHost}
+            me={me}
             onStart={startGame}
             onReset={isHost ? resetGame : undefined}
+            onChangeAvatar={setAvatar}
           />
         )}
 
@@ -126,6 +129,7 @@ export default function Home() {
             me={me}
             onSubmit={submit}
             onNext={next}
+            onChangeAvatar={setAvatar}
           />
         )}
 
