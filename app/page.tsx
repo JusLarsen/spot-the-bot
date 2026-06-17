@@ -9,6 +9,7 @@ import { HostBoard } from "@/components/HostBoard";
 import { FinalBoard } from "@/components/FinalBoard";
 import { HostLogin } from "@/components/HostLogin";
 import { ResultsLookup } from "@/components/ResultsLookup";
+import { ExitHostButton } from "@/components/ExitHostButton";
 
 export default function Home() {
   const game = useGame();
@@ -28,7 +29,9 @@ export default function Home() {
     join,
     submit,
     next,
+    setAvatar,
     unlockHost,
+    exitHost,
     startGame,
     endGame,
     resetGame,
@@ -95,7 +98,7 @@ export default function Home() {
 
   return (
     <>
-      {hostUnlocked && <div className="role-toggle text-acid">HOST MODE</div>}
+      {hostUnlocked && <ExitHostButton onExit={exitHost} />}
 
       <div className={wide ? "wrap host-wide" : "wrap"}>
         {canJoin && (
@@ -110,8 +113,10 @@ export default function Home() {
             teamName={me?.name ?? "Host"}
             teams={teams}
             isHost={isHost}
+            me={me}
             onStart={startGame}
             onReset={isHost ? resetGame : undefined}
+            onChangeAvatar={setAvatar}
           />
         )}
 
@@ -126,13 +131,14 @@ export default function Home() {
             me={me}
             onSubmit={submit}
             onNext={next}
+            onChangeAvatar={setAvatar}
           />
         )}
 
         {wrappingUp && (
           <section>
             <div className="eyebrow">Live now</div>
-            <h1 className="page-heading mt-1.5 mb-0.5">Round wrapping up</h1>
+            <h1 className="page-heading">Round wrapping up</h1>
             <div className="card">
               <p className="text-muted text-sm leading-[1.4]">
                 This round is in its final seconds. Hang tight — you&apos;ll be able to hop in when

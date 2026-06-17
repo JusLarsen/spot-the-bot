@@ -50,7 +50,7 @@ export function HostLogin({ onUnlock, onCancel }: HostLoginProps) {
           {submitting ? "Checking…" : "Unlock host →"}
         </button>
         {error && (
-          <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+          <p className="error-hint" role="alert">
             Wrong passphrase — try again.
           </p>
         )}

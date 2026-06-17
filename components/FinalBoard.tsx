@@ -2,8 +2,10 @@
 import { useState } from "react";
 import { QRCodeSVG } from "qrcode.react";
 import type { Team } from "@/lib/types";
+import { RESET_CONFIRM_MESSAGE } from "@/lib/types";
 import { LeaderboardRows } from "./HostBoard";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { Avatar } from "./Avatar";
 
 interface FinalBoardProps {
   teams: Team[];
@@ -39,11 +41,14 @@ export function FinalBoard({ teams, myId, isHost, sessionCode, onReset }: FinalB
   return (
     <section>
       <div className="eyebrow">Final Results</div>
-      <h1 className="page-heading mt-1.5 mb-0.5">Time&apos;s up!</h1>
+      <h1 className="page-heading">Time&apos;s up!</h1>
 
       {winner && (
         <div className="card winner-banner mt-4">
           <div className="award">Least Appetizing Robot Snack</div>
+          <div className="mt-2 flex justify-center">
+            <Avatar name={winner.avatar} teamId={winner.id} size={72} />
+          </div>
           <h2>{winner.name}</h2>
         </div>
       )}
@@ -95,7 +100,7 @@ export function FinalBoard({ teams, myId, isHost, sessionCode, onReset }: FinalB
       {confirmReset && (
         <ConfirmDialog
           title="Reset the game?"
-          message="This clears every team's score and returns everyone to the lobby for a fresh round."
+          message={RESET_CONFIRM_MESSAGE}
           confirmLabel="Reset game"
           busy={resetting}
           onConfirm={doReset}

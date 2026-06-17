@@ -1,8 +1,10 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import type { Team } from "@/lib/types";
+import { LOW_CLOCK_MS, RESET_CONFIRM_MESSAGE } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 import { ConfirmDialog } from "./ConfirmDialog";
+import { Avatar } from "./Avatar";
 
 interface HostBoardProps {
   teams: Team[];
@@ -12,7 +14,7 @@ interface HostBoardProps {
 }
 
 export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps) {
-  const isLow = timeLeftMs <= 60_000;
+  const isLow = timeLeftMs <= LOW_CLOCK_MS;
   const [confirm, setConfirm] = useState<"end" | "reset" | null>(null);
   const [pending, setPending] = useState(false);
   const [error, setError] = useState(false);
@@ -36,7 +38,7 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
   return (
     <section>
       <div className="eyebrow">Host · Live Standings</div>
-      <h1 className="page-heading mt-1.5 mb-0.5">Standings</h1>
+      <h1 className="page-heading">Standings</h1>
       <div className={["clock", "mt-2", "text-left", isLow && "low"].filter(Boolean).join(" ")}>
         {fmtClock(timeLeftMs)} left
       </div>
@@ -55,7 +57,7 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
       </div>
 
       {error && (
-        <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+        <p className="error-hint" role="alert">
           That didn&apos;t go through — try again.
         </p>
       )}
@@ -77,7 +79,7 @@ export function HostBoard({ teams, timeLeftMs, onEnd, onReset }: HostBoardProps)
       {confirm === "reset" && (
         <ConfirmDialog
           title="Reset the game?"
-          message="This deletes every team's score and returns everyone to the lobby. It can't be undone."
+          message={RESET_CONFIRM_MESSAGE}
           confirmLabel="Reset game"
           busy={pending}
           onConfirm={runConfirmed}
@@ -148,6 +150,7 @@ function TeamRow({
         .join(" ")}
     >
       <div className="lb-rank">{isGold ? <span className="crown">👑</span> : `#${rank}`}</div>
+      <Avatar name={team.avatar} teamId={team.id} className="lb-avatar" />
       <div className="lb-name">
         {team.name || "(unnamed)"}
         <div className="lb-meta">

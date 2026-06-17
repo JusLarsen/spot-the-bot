@@ -35,6 +35,7 @@ export interface GameState {
 export interface Team {
   id: string;
   name: string;
+  avatar?: string; // avatar icon file name (in public/avatars/); assigned at join, changeable
   correct: number;
   wrong: number;
   totalMs: number; // server-measured answer time (tiebreaker) — never client-supplied
@@ -53,6 +54,12 @@ export const DURATION_CHOICES_MIN = [5, 10, 15] as const; // host-selectable len
 export const MIN_DURATION_MS = 60 * 1000;
 export const MAX_DURATION_MS = 60 * 60 * 1000;
 export const LATE_JOIN_CUTOFF_MS = 60 * 1000; // no joining inside the final minute
+/** Clock turns red at this threshold — distinct concept from the late-join cutoff. */
+export const LOW_CLOCK_MS = 60 * 1000;
+
+/** Confirmation dialog body for the "Reset game" action. */
+export const RESET_CONFIRM_MESSAGE =
+  "This clears every team's score and returns everyone to the lobby for a fresh round.";
 
 // ---- Session model ----
 // A session is one run of the game (lobby → live → ended), keyed by its short
@@ -73,6 +80,19 @@ export interface JoinRequest {
 export interface JoinResponse {
   teamId: string;
   sessionId: string; // the session the team joined (its short code)
+  avatar: string; // the random avatar the server assigned this team
+}
+
+/** POST /api/avatar — change a team's avatar (cosmetic; server validates the
+ * name against the manifest and writes it, like every other RTDB mutation). */
+export interface SetAvatarRequest {
+  sessionId: string;
+  teamId: string;
+  avatar: string; // must be a known avatar file name (see lib/avatars.ts)
+}
+export interface SetAvatarResponse {
+  ok: boolean;
+  avatar: string;
 }
 
 export interface AnswerRequest {
@@ -92,13 +112,14 @@ export interface AnswerResponse {
   wrongCount: number;
 }
 
-export type HostAction = "verify" | "start" | "end" | "reset" | "unclaim";
+export const HOST_ACTIONS = ["verify", "start", "end", "reset", "unclaim"] as const;
+export type HostAction = (typeof HOST_ACTIONS)[number];
 export interface HostRequest {
   token: string;
   action: HostAction;
   durationMs?: number; // for "start" — game length the host chose
   sessionId?: string; // optional target session (defaults to the current one)
-  teamId?: string; // for "unclaim" — the team record to delete when this device becomes host
+  teamId?: string; // for "unclaim" — server-side action only; the client no longer calls it
 }
 export interface HostResponse {
   ok: boolean;
@@ -145,9 +166,11 @@ export interface UseGame {
   join: (name: string) => Promise<void>;
   submit: (choice: Answer) => Promise<void>;
   next: () => void;
+  setAvatar: (avatar: string) => Promise<void>; // change this team's avatar
 
   // host actions (guarded server-side by HOST_TOKEN)
   unlockHost: (token: string) => Promise<boolean>;
+  exitHost: () => void; // leave host mode on this tab (local only; game keeps running)
   startGame: (durationMs?: number) => Promise<void>;
   endGame: () => Promise<void>;
   resetGame: () => Promise<void>;

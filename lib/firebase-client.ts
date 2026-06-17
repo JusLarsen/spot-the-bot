@@ -4,6 +4,7 @@
 // subscribe here to keep the room's live state/standings in sync.
 import { initializeApp, getApps, getApp, type FirebaseApp } from "firebase/app";
 import { getDatabase, ref, onValue, type Database } from "firebase/database";
+import { encodeKey } from "./firebase-utils";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -23,9 +24,6 @@ export function db(): Database {
   }
   return _db;
 }
-
-// RTDB keys can't contain ":", so we encode ":" -> "__" on the wire.
-const encodeKey = (k: string) => k.replace(/:/g, "__");
 
 /**
  * Subscribe to a SINGLE path (e.g. the `currentSessionCode` pointer or

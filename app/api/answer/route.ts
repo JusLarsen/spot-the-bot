@@ -1,10 +1,10 @@
 export const runtime = "nodejs";
 
 import { adminDb } from "@/lib/firebase-admin";
-import { parseJsonBody } from "@/lib/api-utils";
+import { parseJsonBody, validateSessionAndTeam } from "@/lib/api-utils";
 import { BY_ID } from "@/lib/questions.server";
 import type { AnswerRequest, AnswerResponse, GameState, Team } from "@/lib/types";
-import { sessionStatePath, sessionTeamPath, isValidSessionCode } from "@/lib/types";
+import { sessionStatePath, sessionTeamPath } from "@/lib/types";
 
 export async function POST(request: Request): Promise<Response> {
   const body = await parseJsonBody<AnswerRequest>(request);
@@ -12,14 +12,12 @@ export async function POST(request: Request): Promise<Response> {
 
   // `elapsedMs` is intentionally NOT read — answer time is measured server-side
   // (see below) so the tiebreaker can't be gamed by a client sending 0.
-  const { sessionId, teamId, questionId, choice } = body;
+  const { questionId, choice } = body;
 
-  if (!isValidSessionCode(sessionId)) {
-    return Response.json({ error: "invalid sessionId" }, { status: 400 });
-  }
-  if (typeof teamId !== "string" || !teamId) {
-    return Response.json({ error: "teamId is required" }, { status: 400 });
-  }
+  const checked = validateSessionAndTeam(body.sessionId, body.teamId);
+  if (checked instanceof Response) return checked;
+  const { sessionId, teamId } = checked;
+
   if (typeof questionId !== "string" || !questionId) {
     return Response.json({ error: "questionId is required" }, { status: 400 });
   }

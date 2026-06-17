@@ -1,8 +1,10 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
+import { LOW_CLOCK_MS } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 import { humanSpriteFor, botSpriteFor } from "@/lib/sprites";
+import { TeamAvatar } from "./TeamAvatar";
 
 interface PlayProps {
   current: PublicQuestion | null;
@@ -11,9 +13,10 @@ interface PlayProps {
   lastResult: AnswerResult | null;
   timeLeftMs: number;
   durationMs: number; // total game length, for the timer-bar fraction
-  me: { correct: number; wrong: number } | null;
+  me: { id: string; correct: number; wrong: number; avatar?: string } | null;
   onSubmit: (choice: Answer) => Promise<void>;
   onNext: () => void;
+  onChangeAvatar: (avatar: string) => Promise<void>;
 }
 
 export function Play({
@@ -26,11 +29,12 @@ export function Play({
   me,
   onSubmit,
   onNext,
+  onChangeAvatar,
 }: PlayProps) {
   const correct = me?.correct ?? 0;
   const wrong = me?.wrong ?? 0;
   const timerFraction = Math.max(0, Math.min(1, timeLeftMs / Math.max(1, durationMs)));
-  const isLow = timeLeftMs <= 60_000;
+  const isLow = timeLeftMs <= LOW_CLOCK_MS;
   const hasAnswered = lastResult !== null;
 
   const [submitting, setSubmitting] = useState(false);
@@ -77,9 +81,7 @@ export function Play({
             {correct} correct · {wrong} wrong
           </span>
         </div>
-        <div className="timer">
-          <i style={{ transform: `scaleX(${timerFraction})` }} />
-        </div>
+        <TimerBar fraction={timerFraction} />
         <div className={["clock", isLow && "low"].filter(Boolean).join(" ")}>
           {fmtClock(timeLeftMs)} left
         </div>
@@ -93,16 +95,19 @@ export function Play({
   return (
     <section>
       <div className="roundbar">
-        <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
+        <span className="flex items-center gap-2">
+          {me && (
+            <TeamAvatar teamId={me.id} avatar={me.avatar} size={32} onChange={onChangeAvatar} />
+          )}
+          <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
+        </span>
         <span className="score">
           {hasAnswered ? `${correct} correct · ${wrong} wrong` : `${correct} correct`}
         </span>
       </div>
 
       {/* Timer bar */}
-      <div className="timer">
-        <i style={{ transform: `scaleX(${timerFraction})` }} />
-      </div>
+      <TimerBar fraction={timerFraction} />
       <div className={["clock", isLow && "low"].filter(Boolean).join(" ")} aria-live="off">
         {fmtClock(timeLeftMs)} left
       </div>
@@ -184,5 +189,14 @@ export function Play({
         </>
       )}
     </section>
+  );
+}
+
+/** The shrinking progress bar shown above the clock (same in every play state). */
+function TimerBar({ fraction }: { fraction: number }) {
+  return (
+    <div className="timer">
+      <i style={{ transform: `scaleX(${fraction})` }} />
+    </div>
   );
 }

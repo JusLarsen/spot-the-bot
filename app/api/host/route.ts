@@ -7,9 +7,10 @@ import {
   isValidHostToken,
 } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
-import type { GameState, HostRequest, HostResponse } from "@/lib/types";
+import type { GameState, HostAction, HostRequest, HostResponse } from "@/lib/types";
 import {
   GAME_MS,
+  HOST_ACTIONS,
   MIN_DURATION_MS,
   MAX_DURATION_MS,
   CURRENT_SESSION_KEY,
@@ -27,13 +28,7 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const { action } = body;
-  if (
-    action !== "verify" &&
-    action !== "start" &&
-    action !== "end" &&
-    action !== "reset" &&
-    action !== "unclaim"
-  ) {
+  if (!HOST_ACTIONS.includes(action as HostAction)) {
     return Response.json({ error: "Unknown action" }, { status: 400 });
   }
 

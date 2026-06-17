@@ -40,7 +40,7 @@ export function Join({ onJoin, live = false }: JoinProps) {
   return (
     <section>
       <div className="eyebrow">Leadership Session · Live</div>
-      <h1 className="page-heading mt-1.5 mb-0.5">
+      <h1 className="page-heading">
         Spot the <span className="text-acid italic">Bot</span>
       </h1>
       <p className="text-muted mt-2 text-sm leading-[1.4]">
@@ -91,12 +91,12 @@ export function Join({ onJoin, live = false }: JoinProps) {
           {loading ? "Joining…" : "Enter as a team →"}
         </button>
         {error && (
-          <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+          <p className="error-hint" role="alert">
             Couldn&apos;t join — check your connection and try again.
           </p>
         )}
         {reserved && (
-          <p className="text-rust mt-3 text-center font-mono text-[12px]" role="alert">
+          <p className="error-hint" role="alert">
             &quot;host&quot; is reserved — pick a different team name.
           </p>
         )}
