@@ -2,9 +2,10 @@
 import { useState } from "react";
 import type { Team } from "@/lib/types";
 import { DURATION_CHOICES_MIN, RESET_CONFIRM_MESSAGE } from "@/lib/types";
+import { resolveAvatar } from "@/lib/avatar-utils";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { Avatar } from "./Avatar";
-import { TeamAvatar } from "./TeamAvatar";
+import { AvatarChooser } from "./AvatarChooser";
 
 interface LobbyProps {
   teamName: string;
@@ -31,7 +32,18 @@ export function Lobby({
   const [resetting, setResetting] = useState(false);
   const [confirmReset, setConfirmReset] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [avatarError, setAvatarError] = useState(false);
   const busy = starting || resetting;
+
+  async function changeAvatar(next: string) {
+    if (!onChangeAvatar) return;
+    setAvatarError(false);
+    try {
+      await onChangeAvatar(next);
+    } catch {
+      setAvatarError(true); // surface the failure instead of swallowing it
+    }
+  }
 
   async function handleStart() {
     if (busy) return;
@@ -66,13 +78,20 @@ export function Lobby({
       <h1 className="page-heading">{isHost ? "Lobby" : teamName || "—"}</h1>
       <div className="card">
         {!isHost && me && onChangeAvatar && (
-          <div className="mb-4 flex items-center gap-3">
-            <TeamAvatar teamId={me.id} avatar={me.avatar} onChange={onChangeAvatar} />
-            <div className="text-muted font-mono text-[12px] leading-[1.4]">
-              Your team avatar.
-              <br />
-              Tap it to pick a new one.
+          <div className="mb-4">
+            <div className="flex items-center gap-3">
+              <AvatarChooser current={resolveAvatar(me.avatar, me.id)} onSelect={changeAvatar} />
+              <div className="text-muted font-mono text-[12px] leading-[1.4]">
+                Your team avatar.
+                <br />
+                Tap it to pick a new one.
+              </div>
             </div>
+            {avatarError && (
+              <p className="error-hint" role="alert">
+                Couldn&apos;t save that avatar — try again.
+              </p>
+            )}
           </div>
         )}
         <p className="text-muted text-sm leading-[1.4]">

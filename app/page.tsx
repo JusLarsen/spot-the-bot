@@ -131,7 +131,6 @@ export default function Home() {
             me={me}
             onSubmit={submit}
             onNext={next}
-            onChangeAvatar={setAvatar}
           />
         )}
 

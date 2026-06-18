@@ -322,8 +322,8 @@ export function useGame(): UseGame {
 
   // ---- actions ----
 
-  const join = useCallback(async (name: string): Promise<void> => {
-    const body: JoinRequest = { name };
+  const join = useCallback(async (name: string, avatar?: string): Promise<void> => {
+    const body: JoinRequest = { name, avatar };
     const res = await fetch("/api/join", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -119,6 +119,28 @@ describe("useGame — host/team role storage (two-tab fix)", () => {
     expect(result.current.isHost).toBe(false);
   });
 
+  it("join sends the avatar chosen on the join screen in the request body", async () => {
+    const fetchMock = vi.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ teamId: "t_x", sessionId: "ABCD", avatar: "broccoli.png" }),
+    });
+    vi.stubGlobal("fetch", fetchMock);
+
+    const { result } = renderHook(() => useGame());
+    await act(async () => {
+      await result.current.join("Veg Heads", "broccoli.png");
+    });
+
+    const joinCall = fetchMock.mock.calls.find(([url]) => url === "/api/join");
+    expect(joinCall).toBeTruthy();
+    expect(JSON.parse(joinCall![1].body as string)).toMatchObject({
+      name: "Veg Heads",
+      avatar: "broccoli.png",
+    });
+    // me reflects the server-confirmed avatar (the authoritative value, not the input).
+    expect(result.current.me?.avatar).toBe("broccoli.png");
+  });
+
   it("unlockHost does NOT delete the browser's team (host and team are decoupled)", async () => {
     // Decoupled model: a browser keeps its team identity even when a tab becomes
     // host, so the team survives for other tabs / reconnect. unlockHost should

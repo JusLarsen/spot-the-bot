@@ -3,8 +3,8 @@ export const runtime = "nodejs";
 import { adminDb } from "@/lib/firebase-admin";
 import { parseJsonBody, validateSessionAndTeam } from "@/lib/api-utils";
 import { isValidAvatar } from "@/lib/avatars";
-import type { SetAvatarRequest, SetAvatarResponse } from "@/lib/types";
-import { sessionTeamPath } from "@/lib/types";
+import type { SetAvatarRequest, SetAvatarResponse, GameState } from "@/lib/types";
+import { sessionTeamPath, sessionStatePath } from "@/lib/types";
 
 // Change a team's avatar. Cosmetic, but writes still go through the server like
 // every other RTDB mutation. The avatar must be a known manifest file name so a
@@ -24,6 +24,17 @@ export async function POST(request: Request): Promise<Response> {
   }
 
   const db = adminDb();
+
+  // Avatars are editable only before the game starts (join + lobby). Enforce the
+  // "locked once live" rule server-side, not just by hiding the picker in the UI.
+  const stateSnap = await db.ref(sessionStatePath(sessionId)).get();
+  if (!stateSnap.exists()) {
+    return Response.json({ error: "Game not started" }, { status: 409 });
+  }
+  if ((stateSnap.val() as GameState).phase !== "lobby") {
+    return Response.json({ error: "Avatar is locked once the game starts" }, { status: 409 });
+  }
+
   const teamRef = db.ref(sessionTeamPath(sessionId, teamId));
   const teamSnap = await teamRef.get();
   if (!teamSnap.exists()) {

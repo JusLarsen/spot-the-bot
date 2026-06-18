@@ -4,7 +4,7 @@ import type { PublicQuestion, AnswerResult, Answer } from "@/lib/types";
 import { LOW_CLOCK_MS } from "@/lib/types";
 import { fmtClock } from "@/lib/game";
 import { humanSpriteFor, botSpriteFor } from "@/lib/sprites";
-import { TeamAvatar } from "./TeamAvatar";
+import { Avatar } from "./Avatar";
 
 interface PlayProps {
   current: PublicQuestion | null;
@@ -16,7 +16,6 @@ interface PlayProps {
   me: { id: string; correct: number; wrong: number; avatar?: string } | null;
   onSubmit: (choice: Answer) => Promise<void>;
   onNext: () => void;
-  onChangeAvatar: (avatar: string) => Promise<void>;
 }
 
 export function Play({
@@ -29,7 +28,6 @@ export function Play({
   me,
   onSubmit,
   onNext,
-  onChangeAvatar,
 }: PlayProps) {
   const correct = me?.correct ?? 0;
   const wrong = me?.wrong ?? 0;
@@ -96,9 +94,8 @@ export function Play({
     <section>
       <div className="roundbar">
         <span className="flex items-center gap-2">
-          {me && (
-            <TeamAvatar teamId={me.id} avatar={me.avatar} size={32} onChange={onChangeAvatar} />
-          )}
+          {/* Locked once live — the avatar is chosen at join and in the lobby. */}
+          {me && <Avatar name={me.avatar} teamId={me.id} size={32} />}
           <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
         </span>
         <span className="score">

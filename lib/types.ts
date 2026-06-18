@@ -76,11 +76,12 @@ export const sessionTeamPath = (code: string, teamId: string) => `sessions/${cod
 
 export interface JoinRequest {
   name: string;
+  avatar?: string; // avatar chosen at join; server validates against the manifest, random if absent/invalid
 }
 export interface JoinResponse {
   teamId: string;
   sessionId: string; // the session the team joined (its short code)
-  avatar: string; // the random avatar the server assigned this team
+  avatar: string; // the avatar stored for this team — the chosen one if valid, else a random fallback
 }
 
 /** POST /api/avatar — change a team's avatar (cosmetic; server validates the
@@ -163,7 +164,7 @@ export interface UseGame {
   lastResult: AnswerResult | null; // set after submit(), cleared on next()
 
   // team actions
-  join: (name: string) => Promise<void>;
+  join: (name: string, avatar?: string) => Promise<void>;
   submit: (choice: Answer) => Promise<void>;
   next: () => void;
   setAvatar: (avatar: string) => Promise<void>; // change this team's avatar
