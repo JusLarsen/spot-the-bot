@@ -1,14 +1,19 @@
 "use client";
 import { useState, type KeyboardEvent } from "react";
 import { randomTeamName } from "@/lib/team-names";
+import { randomAvatar } from "@/lib/avatars";
+import { AvatarChooser } from "./AvatarChooser";
 
 interface JoinProps {
-  onJoin: (name: string) => Promise<void>;
+  onJoin: (name: string, avatar: string) => Promise<void>;
   live?: boolean; // joining an already-running round (late join)
 }
 
 export function Join({ onJoin, live = false }: JoinProps) {
   const [name, setName] = useState("");
+  // Start on a random avatar (so every team gets one) — changeable here and in
+  // the lobby until the host starts the clock.
+  const [avatar, setAvatar] = useState(() => randomAvatar());
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
   const [reserved, setReserved] = useState(false);
@@ -25,7 +30,7 @@ export function Join({ onJoin, live = false }: JoinProps) {
     setLoading(true);
     setError(false);
     try {
-      await onJoin(finalName);
+      await onJoin(finalName, avatar);
     } catch {
       setError(true);
     } finally {
@@ -55,6 +60,14 @@ export function Join({ onJoin, live = false }: JoinProps) {
         </p>
       )}
       <div className="card">
+        <div className="mb-4 flex items-center gap-3">
+          <AvatarChooser current={avatar} onSelect={setAvatar} />
+          <div className="text-muted font-mono text-[12px] leading-[1.4]">
+            Pick your team avatar.
+            <br />
+            Tap to choose — change it anytime before the game starts.
+          </div>
+        </div>
         <label
           className="text-muted mb-2 block font-mono text-[11px] tracking-[2px] uppercase"
           htmlFor="name-input"

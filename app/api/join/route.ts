@@ -2,7 +2,7 @@ export const runtime = "nodejs";
 
 import { adminDb, ensureCurrentSession } from "@/lib/firebase-admin";
 import { parseJsonBody } from "@/lib/api-utils";
-import { randomAvatar } from "@/lib/avatars";
+import { isValidAvatar, randomAvatar } from "@/lib/avatars";
 import type { JoinRequest, JoinResponse, Team } from "@/lib/types";
 import { sessionTeamPath } from "@/lib/types";
 
@@ -28,7 +28,9 @@ export async function POST(request: Request): Promise<Response> {
   // Join the active session, creating a fresh lobby session if none exists yet.
   const sessionId = await ensureCurrentSession(db);
   const teamId = generateTeamId();
-  const avatar = randomAvatar(); // teams can change it later via /api/avatar
+  // Use the avatar the team chose at join if it's a known manifest name; else
+  // assign a random one. They can still change it (until the game starts).
+  const avatar = isValidAvatar(body.avatar) ? body.avatar : randomAvatar();
 
   const team: Team = {
     id: teamId,
