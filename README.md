@@ -206,22 +206,34 @@ The real security boundary is the RTDB rules and server routes, not key secrecy.
 ## Firebase setup
 
 1. Create a Firebase project and enable **Realtime Database**.
-2. Apply `database.rules.json` in **Realtime Database → Rules** (read ✓, client write ✗ —
-   all writes go through the server Admin SDK). These rules are **not deployed by CI** —
-   they live only in the Firebase console, so they can drift from the file in this repo.
-   Firebase's default "test mode" rules **expire after 30 days**; when they do, every client
-   read starts returning `permission_denied` and the app shows **"Can't connect"** on every
-   device even though the server API routes keep working (the Admin SDK bypasses rules).
-   Verify with:
+2. Publish the database rules (read ✓, client write ✗ — all writes go through the server
+   Admin SDK):
 
    ```sh
-   curl "https://<your-db>.firebaseio.com/currentSessionCode.json"   # 200, not 401
+   npx firebase-tools login   # once
+   npm run deploy:rules       # pushes database.rules.json to the project in .firebaserc
    ```
+
+   You can also paste `database.rules.json` by hand into **Realtime Database → Rules**.
 
 3. **Project settings → Service accounts → Generate new private key** → paste the entire
    JSON (single-line or base64) into `FIREBASE_SERVICE_ACCOUNT`.
 4. **Project settings → Your apps → Web app → SDK config** → copy the `NEXT_PUBLIC_FIREBASE_*`
    values.
+
+### Rules drift — check before every live session
+
+The rules are **not deployed by CI**. They live in the Firebase console, so they can drift
+from `database.rules.json`, and Firebase's default "test mode" rules **expire after 30 days**.
+When that happens every client read returns `permission_denied`, every device shows
+**"Can't connect"**, and nothing in the app logs looks wrong — the server API routes keep
+working, because the Admin SDK bypasses rules.
+
+```sh
+npm run check:rules   # exit 0 = clients can read; exit 1 = rules are blocking
+```
+
+If it fails, run `npm run deploy:rules`. No redeploy is needed — clients recover on reload.
 
 ## Deploy to Vercel
 
@@ -232,15 +244,17 @@ The real security boundary is the RTDB rules and server routes, not key secrecy.
 
 ## Scripts
 
-| Command                 | Description                                                        |
-| ----------------------- | ------------------------------------------------------------------ |
-| `npm run dev`           | Start Next.js dev server                                           |
-| `npm run build`         | Production build                                                   |
-| `npm run lint`          | ESLint                                                             |
-| `npm run typecheck`     | TypeScript type check (`tsc --noEmit`)                             |
-| `npm run test`          | Vitest (single run)                                                |
-| `npm run test:watch`    | Vitest in watch mode                                               |
-| `npm run gen:questions` | Regenerate `lib/questions.public.ts` from the server question bank |
+| Command                 | Description                                                          |
+| ----------------------- | -------------------------------------------------------------------- |
+| `npm run dev`           | Start Next.js dev server                                             |
+| `npm run build`         | Production build                                                     |
+| `npm run lint`          | ESLint                                                               |
+| `npm run typecheck`     | TypeScript type check (`tsc --noEmit`)                               |
+| `npm run test`          | Vitest (single run)                                                  |
+| `npm run test:watch`    | Vitest in watch mode                                                 |
+| `npm run gen:questions` | Regenerate `lib/questions.public.ts` from the server question bank   |
+| `npm run check:rules`   | Verify the live RTDB still allows client reads (run before an event) |
+| `npm run deploy:rules`  | Publish `database.rules.json` to Firebase                            |
 
 ## Testing
 

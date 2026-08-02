@@ -40,6 +40,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `npm run test:watch` — Vitest in watch mode
 - `npm run gen:questions` — Regenerate `lib/questions.public.ts` from the server bank
 - `npm run gen:avatars` — Regenerate the team-avatar icon set + `lib/avatars.ts` manifest via PixelLab (resumable; needs `PIXELLAB_API_KEY`)
+- `npm run check:rules` — Probe the live RTDB for anonymous read access (exit 1 if rules are blocking). Run before any live session.
+- `npm run deploy:rules` — Publish `database.rules.json` via `firebase-tools` (project in `.firebaserc`)
 
 ## Environment variables
 

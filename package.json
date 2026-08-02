@@ -12,6 +12,8 @@
     "test:watch": "vitest",
     "gen:questions": "NODE_OPTIONS=--conditions=react-server tsx scripts/gen-public-questions.ts",
     "gen:avatars": "node scripts/gen-avatars.mjs",
+    "deploy:rules": "npx --yes firebase-tools@15 deploy --only database",
+    "check:rules": "node scripts/check-rules.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },

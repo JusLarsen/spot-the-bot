@@ -17,6 +17,11 @@ next-env.d.ts
 .env*.local
 .env.local
 
+# firebase CLI local cache (firebase.json / .firebaserc ARE committed)
+.firebase/
+firebase-debug.log*
+database-debug.log*
+
 # misc
 .DS_Store
 *.pem
