@@ -41,10 +41,10 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     type: "text",
     category: "bbq",
     answer: "human",
-    body: "it's all about cooking delicious food and taking pride in everything we cook",
-    source: "Malcom Reed, HowToBBQRight / Killer Hogs BBQ",
+    body: "To us, it's all about cooking delicious food and taking pride in everything we cook.",
+    source: 'Malcom & Rachelle Reed, "About HowToBBQRight" (2018, since removed from the site)',
     reveal:
-      'It\'s plain-spoken pitmaster humility — "everything we cook" with that family-business "we" is how a real BBQ guy talks, not a polished brand tagline.',
+      'It\'s plain-spoken and a little humble — the family-business "to us" and "we" are how real people describe their own shop, not how a brand writes a tagline.',
   },
   {
     id: "bbq-6",
@@ -103,7 +103,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "bbq",
     answer: "human",
     body: "I am an absolute insatiable learner. I love to learn more than anything in the world.",
-    source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2024)',
+    source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021)',
     reveal:
       'The plain, slightly redundant doubling ("insatiable learner" then "love to learn more than anything") is how people actually emphasize a point when speaking off the cuff, not how a polished slogan reads.',
   },
@@ -113,7 +113,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "bbq",
     answer: "human",
     body: "There is a saying in my industry, you buy the meat, not the sauce.",
-    source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2023)',
+    source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021)',
     reveal:
       'She calls it an industry saying and immediately riffs on it ("sauce can hide a lot of barbecue sins"). That\'s shop talk, not a clean quote.',
   },
@@ -152,7 +152,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     type: "text",
     category: "bbq",
     answer: "human",
-    body: "The worst thing you can do is overcook it.",
+    body: "With steak, the worst thing you can do is overcook it.",
     source: "Aaron Franklin, Tasting Table exclusive interview (2023)",
     reveal:
       "It is plain, practical pitmaster advice — short and direct, the kind of thing a real cook says off the cuff rather than a polished marketing line.",
@@ -174,7 +174,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "bbq",
     answer: "human",
     body: "Barbecue feeds your soul because it brings people together.",
-    source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview (2024)',
+    source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview (2021)',
     reveal:
       "It's a heartfelt, slightly cliched personal philosophy a real pitmaster repeats in interviews — earnest and a little worn, not the kind of polished line a bot would invent.",
   },
@@ -184,7 +184,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "bbq",
     answer: "human",
     body: "I do not say I'm lucky. I work too hard to be lucky.",
-    source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview (2023)',
+    source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview on WhistlePig whiskey (2022)',
     reveal:
       'The blunt, self-assured way it lands — "I do not say I\'m lucky" — is earned confidence from a real person, not a line smoothed out for a poster.',
   },
