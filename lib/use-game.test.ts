@@ -26,7 +26,70 @@ beforeEach(() => {
   localStorage.clear();
   sessionStorage.clear();
   vi.unstubAllGlobals();
-  vi.mocked(subscribeKey).mockClear();
+  // Reset the IMPLEMENTATION too — the connection-failure tests below swap in
+  // failing ones, and mockClear alone would leak them into every later test.
+  vi.mocked(subscribeKey).mockReset();
+  vi.mocked(subscribeKey).mockImplementation((_key: string, cb: (v: unknown) => void) => {
+    cb(null);
+    return () => {};
+  });
+});
+
+describe("useGame — connection failure surfacing", () => {
+  it("reports a rules rejection instead of hanging on ready=false forever", () => {
+    // A permission_denied never fires the VALUE callback, so `ready` can never
+    // flip. Without the error callback the room just sits on "Connecting…".
+    vi.mocked(subscribeKey).mockImplementation(
+      (_key: string, _cb: (v: unknown) => void, onError?: (e: Error) => void) => {
+        const err = new Error("permission_denied at /currentSessionCode");
+        (err as Error & { code?: string }).code = "PERMISSION_DENIED";
+        onError?.(err);
+        return () => {};
+      },
+    );
+
+    const { result } = renderHook(() => useGame());
+
+    expect(result.current.ready).toBe(false);
+    expect(result.current.connectionError).toMatch(/database\.rules\.json/);
+  });
+
+  it("reports a generic reach failure for non-permission errors", () => {
+    vi.mocked(subscribeKey).mockImplementation(
+      (_key: string, _cb: (v: unknown) => void, onError?: (e: Error) => void) => {
+        onError?.(new Error("network unreachable"));
+        return () => {};
+      },
+    );
+
+    const { result } = renderHook(() => useGame());
+
+    expect(result.current.connectionError).toBe(
+      "Couldn't reach the game database (network unreachable).",
+    );
+  });
+
+  it("reports a timeout when the first snapshot never arrives", () => {
+    vi.useFakeTimers();
+    // Subscribes but never calls back — a wedged socket or bad databaseURL.
+    vi.mocked(subscribeKey).mockImplementation(() => () => {});
+
+    const { result } = renderHook(() => useGame());
+    expect(result.current.connectionError).toBeNull();
+
+    act(() => {
+      vi.advanceTimersByTime(12_000);
+    });
+
+    expect(result.current.connectionError).toMatch(/timed out/);
+    vi.useRealTimers();
+  });
+
+  it("leaves connectionError null on a healthy connection", () => {
+    const { result } = renderHook(() => useGame());
+    expect(result.current.ready).toBe(true);
+    expect(result.current.connectionError).toBeNull();
+  });
 });
 
 describe("useGame — host/team role storage (two-tab fix)", () => {

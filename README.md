@@ -207,7 +207,17 @@ The real security boundary is the RTDB rules and server routes, not key secrecy.
 
 1. Create a Firebase project and enable **Realtime Database**.
 2. Apply `database.rules.json` in **Realtime Database → Rules** (read ✓, client write ✗ —
-   all writes go through the server Admin SDK).
+   all writes go through the server Admin SDK). These rules are **not deployed by CI** —
+   they live only in the Firebase console, so they can drift from the file in this repo.
+   Firebase's default "test mode" rules **expire after 30 days**; when they do, every client
+   read starts returning `permission_denied` and the app shows **"Can't connect"** on every
+   device even though the server API routes keep working (the Admin SDK bypasses rules).
+   Verify with:
+
+   ```sh
+   curl "https://<your-db>.firebaseio.com/currentSessionCode.json"   # 200, not 401
+   ```
+
 3. **Project settings → Service accounts → Generate new private key** → paste the entire
    JSON (single-line or base64) into `FIREBASE_SERVICE_ACCOUNT`.
 4. **Project settings → Your apps → Web app → SDK config** → copy the `NEXT_PUBLIC_FIREBASE_*`

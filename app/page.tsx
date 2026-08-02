@@ -10,11 +10,13 @@ import { FinalBoard } from "@/components/FinalBoard";
 import { HostLogin } from "@/components/HostLogin";
 import { ResultsLookup } from "@/components/ResultsLookup";
 import { ExitHostButton } from "@/components/ExitHostButton";
+import { ConnectionGate } from "@/components/ConnectionGate";
 
 export default function Home() {
   const game = useGame();
   const {
     ready,
+    connectionError,
     phase,
     state,
     teams,
@@ -78,11 +80,7 @@ export default function Home() {
   }, []);
 
   if (!ready) {
-    return (
-      <div className="wrap">
-        <div className="eyebrow mt-10 text-center">Connecting…</div>
-      </div>
-    );
+    return <ConnectionGate error={connectionError} />;
   }
 
   const showHostBoard = isHost && phase === "live";

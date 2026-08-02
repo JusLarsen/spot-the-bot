@@ -30,9 +30,21 @@ export function db(): Database {
  * `sessions/<code>/state`). The client only receives updates for that path —
  * used by team devices during play so one team's answer doesn't fan out to
  * every other device. (`:`→`__` encoding is a no-op for nested session paths.)
+ *
+ * `onError` is how a read rejection reaches the UI. Without it a rules failure
+ * (`permission_denied`) silently never fires the value callback, and every
+ * device sits on "Connecting…" forever with no clue why.
  */
-export function subscribeKey<T>(key: string, cb: (val: T | null) => void): () => void {
-  return onValue(ref(db(), encodeKey(key)), (snap) => cb(snap.exists() ? (snap.val() as T) : null));
+export function subscribeKey<T>(
+  key: string,
+  cb: (val: T | null) => void,
+  onError?: (err: Error) => void,
+): () => void {
+  return onValue(
+    ref(db(), encodeKey(key)),
+    (snap) => cb(snap.exists() ? (snap.val() as T) : null),
+    (err) => onError?.(err),
+  );
 }
 
 /**
@@ -41,11 +53,19 @@ export function subscribeKey<T>(key: string, cb: (val: T | null) => void): () =>
  * play. Scoped to `sessions/<code>/teams`, so historical sessions never affect
  * live fan-out. Returns the decoded list of team-record values.
  */
-export function subscribeSessionTeams(code: string, cb: (teams: unknown[]) => void): () => void {
-  return onValue(ref(db(), `sessions/${code}/teams`), (snap) => {
-    const raw = (snap.val() as Record<string, unknown>) || {};
-    const teams: unknown[] = [];
-    for (const k in raw) teams.push(raw[k]);
-    cb(teams);
-  });
+export function subscribeSessionTeams(
+  code: string,
+  cb: (teams: unknown[]) => void,
+  onError?: (err: Error) => void,
+): () => void {
+  return onValue(
+    ref(db(), `sessions/${code}/teams`),
+    (snap) => {
+      const raw = (snap.val() as Record<string, unknown>) || {};
+      const teams: unknown[] = [];
+      for (const k in raw) teams.push(raw[k]);
+      cb(teams);
+    },
+    (err) => onError?.(err),
+  );
 }

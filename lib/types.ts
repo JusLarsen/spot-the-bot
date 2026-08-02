@@ -149,6 +149,10 @@ export interface AnswerResult {
 
 export interface UseGame {
   ready: boolean; // Firebase connected + initial snapshot in
+  /** Human-readable reason the RTDB subscription failed (rules rejection,
+   * unreachable database, timeout). Non-null means `ready` will never flip —
+   * show this instead of an indefinite "Connecting…". */
+  connectionError: string | null;
   phase: Phase;
   state: GameState | null;
   teams: Team[]; // standings, sorted, host excluded

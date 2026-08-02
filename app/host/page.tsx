@@ -5,10 +5,12 @@ import { Lobby } from "@/components/Lobby";
 import { HostBoard } from "@/components/HostBoard";
 import { FinalBoard } from "@/components/FinalBoard";
 import { ExitHostButton } from "@/components/ExitHostButton";
+import { ConnectionGate } from "@/components/ConnectionGate";
 
 export default function HostPage() {
   const {
     ready,
+    connectionError,
     phase,
     teams,
     timeLeftMs,
@@ -21,11 +23,7 @@ export default function HostPage() {
   } = useGame();
 
   if (!ready) {
-    return (
-      <div className="wrap">
-        <div className="eyebrow mt-10 text-center">Connecting…</div>
-      </div>
-    );
+    return <ConnectionGate error={connectionError} />;
   }
 
   if (!hostUnlocked) {

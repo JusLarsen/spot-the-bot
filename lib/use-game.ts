@@ -115,9 +115,30 @@ function buildOrderIds(teamId: string): string[] {
   return indices.map((i) => PUBLIC_QUESTIONS[i].id);
 }
 
+// How long to wait for the first pointer snapshot before telling the user the
+// connection is stuck. RTDB reports rules rejections quickly, but a wedged
+// socket or a bad databaseURL produces no event at all — this covers that.
+const CONNECT_TIMEOUT_MS = 12_000;
+
+// Firebase's rules rejection. Surfaced with an operator-actionable message
+// because the cause is always the same: database.rules.json isn't published.
+const PERMISSION_DENIED_MESSAGE =
+  "The game database is rejecting reads. Publish database.rules.json in the Firebase console (Realtime Database → Rules).";
+
+function connectionMessage(err: Error): string {
+  const code = (err as Error & { code?: string }).code ?? "";
+  if (code.toLowerCase().includes("permission") || /permission[_ ]denied/i.test(err.message)) {
+    return PERMISSION_DENIED_MESSAGE;
+  }
+  return `Couldn't reach the game database (${err.message}).`;
+}
+
 export function useGame(): UseGame {
   // ---- raw tree state ----
   const [ready, setReady] = useState(false);
+  // Non-null once the live-state subscription has failed (or never arrived).
+  // The UI shows this instead of an indefinite "Connecting…".
+  const [connectionError, setConnectionError] = useState<string | null>(null);
   // The active session code (from the `currentSessionCode` pointer). The
   // single-session client follows it; all state/teams/answers are scoped to it.
   const [sessionCode, setSessionCode] = useState<string | null>(null);
@@ -244,15 +265,33 @@ export function useGame(): UseGame {
   // The single-session client follows `currentSessionCode` to find the live
   // session; multi-session later just reads the code from the URL instead.
   useEffect(() => {
-    const unsub = subscribeKey<string>(CURRENT_SESSION_KEY, (val) => {
-      setSessionCode(typeof val === "string" && val ? val : null);
-      if (!restoredRef.current) {
-        restoredRef.current = true;
-        restoreSession();
-      }
-      setReady(true);
-    });
-    return unsub;
+    // If the first snapshot never lands (wedged socket, unreachable
+    // databaseURL), stop pretending we're still connecting.
+    const timer = setTimeout(() => {
+      setConnectionError((prev) => prev ?? "Couldn't reach the game database (timed out).");
+    }, CONNECT_TIMEOUT_MS);
+
+    const unsub = subscribeKey<string>(
+      CURRENT_SESSION_KEY,
+      (val) => {
+        clearTimeout(timer);
+        setConnectionError(null);
+        setSessionCode(typeof val === "string" && val ? val : null);
+        if (!restoredRef.current) {
+          restoredRef.current = true;
+          restoreSession();
+        }
+        setReady(true);
+      },
+      (err) => {
+        clearTimeout(timer);
+        setConnectionError(connectionMessage(err));
+      },
+    );
+    return () => {
+      clearTimeout(timer);
+      unsub();
+    };
   }, [restoreSession]);
 
   // ---- subscribe: the active session's game state ----
@@ -486,6 +525,7 @@ export function useGame(): UseGame {
 
   return {
     ready,
+    connectionError,
     phase,
     state: gameState,
     teams,
