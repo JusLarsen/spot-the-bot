@@ -520,28 +520,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "It's one of those punchy, almost-too-tidy sayings people repeat from a business book — and it's slightly misremembered, which is very human.",
   },
   {
-    id: "business-11",
-    type: "text",
-    category: "business",
-    answer: "human",
-    body: "When it comes to standards, as a leader, it's not what you preach, it's what you tolerate.",
-    source:
-      'Jocko Willink & Leif Babin, Extreme Ownership (2015), Ch. 2 "No Bad Teams, Only Bad Leaders"',
-    reveal:
-      "It draws a hard line between stated values and accepted behavior, the kind of plainspoken accountability a SEAL officer actually lives by.",
-  },
-  {
-    id: "business-12",
-    type: "text",
-    category: "business",
-    answer: "human",
-    body: "Good is the enemy of great.",
-    source:
-      "Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001), opening line",
-    reveal:
-      "It's a real human's hard-won, deflating observation that comfortable competence is precisely what keeps most things from ever becoming exceptional.",
-  },
-  {
     id: "business-13",
     type: "text",
     category: "business",
