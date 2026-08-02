@@ -25,15 +25,22 @@ const ROOT = resolve(__dirname, "..");
 // whole app. Checking this path checks the thing that actually breaks.
 const PROBE_PATH = "currentSessionCode";
 
+// `vercel env pull` writes the literal "[SENSITIVE]" for env vars marked
+// Sensitive in Vercel — they're write-only and can't be read back. Treat any
+// non-URL value as absent so we fall through to .firebaserc instead of
+// probing a garbage host.
+const usableUrl = (v) => (/^https?:\/\/\S+$/.test((v ?? "").trim()) ? v.trim() : null);
+
 function databaseUrl() {
-  if (process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL) {
-    return process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL;
-  }
+  const fromEnv = usableUrl(process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL);
+  if (fromEnv) return fromEnv;
+
   const envPath = resolve(ROOT, ".env.local");
   if (existsSync(envPath)) {
     for (const line of readFileSync(envPath, "utf8").split("\n")) {
       const m = line.match(/^\s*NEXT_PUBLIC_FIREBASE_DATABASE_URL\s*=\s*"?([^"\n]+)"?\s*$/);
-      if (m) return m[1].trim();
+      const fromFile = m && usableUrl(m[1]);
+      if (fromFile) return fromFile;
     }
   }
   // Fall back to the default RTDB instance for the project in .firebaserc, so
