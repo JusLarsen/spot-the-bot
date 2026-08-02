@@ -4,7 +4,7 @@
 
 **Spot the Bot** is a live, team-based human-vs-AI detection game built for a Traeger
 leadership/training session. A room of ~24–30 teams each grab one device, pick a team
-name, and work through a shuffled bank of 150 text samples deciding **human vs AI**
+name, and work through a shuffled bank of 148 text samples deciding **human vs AI**
 together. The host runs a single shared countdown (host-selectable length, default
 10 min). When it ends, the team with the most correct answers wins — ties broken by
 least total answer time, so there's one clean trophy winner.
@@ -24,7 +24,7 @@ server-authoritative API routes so clients can never write to the database or se
 answers before they guess. Load-tested at 30 concurrent connections. 55 passing Vitest
 unit tests over the pure game logic.
 
-Question bank: 150 samples across 5 categories — **bbq** (40, Traeger influencers like
+Question bank: 148 samples across 5 categories — **bbq** (38, Traeger influencers like
 Diva Q / Matt Pittman), **movies** (48, Star Wars / Avengers / Spaceballs), **business**
 (22, business-book quotes), **disney** (24, famous + obscure Disney/Pixar lines),
 **speech** (16, famous/funny speeches). Each category mixes authentic human quotes with
@@ -95,6 +95,6 @@ See `README.md` for setup, env vars, and component/data-flow diagrams.
   (world-open rules); hidden host unlock; sudden-death scoring; ~70 phones.
 - **v3 (current)**: full rewrite to Next.js App Router on Vercel; server-authoritative
   API routes + Admin SDK; client-write-denied RTDB rules; anti-cheat question split;
-  team format with host-selectable shared clock; 150-question training corpus across 5
+  team format with host-selectable shared clock; 148-question training corpus across 5
   categories; run-capped per-team order; scoped subscriptions; in-UI dialogs; live on
   Vercel.

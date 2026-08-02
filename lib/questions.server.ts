@@ -37,17 +37,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       'The self-deprecating "I tell people..." framing and the specific hobby-to-job pivot reflect a real person recounting leaving an IT career, not a generic platitude.',
   },
   {
-    id: "bbq-4",
-    type: "text",
-    category: "bbq",
-    answer: "human",
-    body: "Didn't have great equipment or great knowledge, but the passion was there. That's never changed.",
-    source:
-      'Jeremy Yoder (Mad Scientist BBQ), "Barbecue, Beef Ribs & Burnout: A Chat with Jeremy Yoder," Lord Saunders Smokehouse interview',
-    reveal:
-      "It's a humble origin story — admitting you started with bad gear and no knowledge is the kind of self-deprecating honesty a real person offers, not a polished brag.",
-  },
-  {
     id: "bbq-5",
     type: "text",
     category: "bbq",
@@ -198,16 +187,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview (2023)',
     reveal:
       'The blunt, self-assured way it lands — "I do not say I\'m lucky" — is earned confidence from a real person, not a line smoothed out for a poster.',
-  },
-  {
-    id: "bbq-20",
-    type: "text",
-    category: "bbq",
-    answer: "human",
-    body: "I'd be setting alarms and waking up every 30 minutes; go put a couple logs on the fire, and eventually, it became a business.",
-    source: "Jeremy Yoder (Mad Scientist BBQ), Spectrum News 1 (2025)",
-    reveal:
-      "The mundane, sleep-deprived detail of setting alarms every 30 minutes to tend a fire is the kind of unglamorous specific that only someone who actually lived it would mention.",
   },
   {
     id: "bbq-21",
