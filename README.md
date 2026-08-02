@@ -130,7 +130,7 @@ sequenceDiagram
     T->>API: POST /api/join (team name)
     API->>DB: ensure session, create sessions/&lt;CODE&gt;/teams/&lt;id&gt;
     API-->>T: { teamId, sessionId }
-    Note over T: stb_role / stb_team (incl. sessionId) saved to localStorage
+    Note over T: stb_team (incl. sessionId) saved to localStorage
     Note over T,DB: Host: POST /api/host {start} → sessions/&lt;CODE&gt;/state = live, endsAt set
     T->>API: GET /api/order?teamId=
     API-->>T: deterministic, run-capped question id list
@@ -167,7 +167,9 @@ lobby/ended; the host subscribes to all teams. This keeps RTDB fan-out O(N) inst
 
 ## Key invariants
 
-- **Host is never a contestant** — unlocking host mode deletes any team this device made.
+- **The host view is never a contestant** — a host tab has `me === null` and never appears on
+  the leaderboard or answers. Host and team are decoupled: entering host mode does **not**
+  delete the browser's team, so it survives for other tabs and for reconnect on exit.
 - **Answers never reach the client before the guess** — `questions.server.ts` is
   `import "server-only"`; the build fails if it leaks into client code.
 - **Clients never write to RTDB** — all writes go through server API routes + Admin SDK.
@@ -177,8 +179,10 @@ lobby/ended; the host subscribes to all teams. This keeps RTDB fan-out O(N) inst
   saved `/r/<CODE>` leaderboards survive.
 - **Leaderboard rows use React text rendering, never `innerHTML`** — team names are
   user-supplied; string-concatenated HTML would be an injection vector.
-- **Session identity persists in `localStorage`** (`stb_role` / `stb_team` incl. `sessionId`) so a
-  dropped phone rejoins the same team instead of spawning a duplicate.
+- **Session identity persists, split by scope** — team identity (`stb_team`, incl. `sessionId`)
+  is device-scoped in `localStorage` so a dropped phone rejoins the same team instead of
+  spawning a duplicate; host role and token (`stb_role` / `stb_host_token`) are tab-scoped in
+  `sessionStorage` so a second tab can't inherit host.
 
 ## Local development
 
