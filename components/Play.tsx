@@ -168,9 +168,6 @@ export function Play({
           <div className={`feedback ${lastResult.correct ? "right" : "wrong"}`} aria-live="polite">
             {lastResult.correct ? "✓ Correct" : "✗ Nope"}
           </div>
-          {/* Tier banner above the reveal. Shown on a RIGHT answer too, not just
-              a wrong one — correctly catching a sneaky sample is the best moment
-              in the game, and it used to pass with no acknowledgement at all. */}
           {lastResult.sneaky && (
             <div className="text-amber mt-1 text-center font-mono text-[12px]">
               {lastResult.correct
