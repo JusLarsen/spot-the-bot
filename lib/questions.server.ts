@@ -65,7 +65,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "But the fact that in Texas barbecue, you're taking one of the worst pieces of the animal and converting it into one of the best is a miracle itself.",
     source: "Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015)",
     reveal:
-      "The slightly clumsy phrasing and the geeky pride in transforming a cheap, tough cut reflects a real pitmaster's lived obsession rather than a polished aphorism.",
+      "The phrasing is a little clumsy, and the pride in turning a cheap, tough cut into something great is very specific. That's a real person's obsession, not a line polished for a poster.",
   },
   {
     id: "bbq-7",
@@ -75,7 +75,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Sure, I was poor. But barbecue has never been a rich man's pleasure. It's always been a culture of thrift.",
     source: "Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015)",
     reveal:
-      'The self-deprecating "Sure, I was poor" opener and the offhand class-history aside read like a real person reflecting, not a polished aphorism.',
+      'The self-deprecating "Sure, I was poor" opener and the offhand aside about growing up read like a real person remembering, not a line written to be quoted.',
   },
   {
     id: "bbq-8",
@@ -85,7 +85,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I think it's key that you buy the best thing that you can afford.",
     source: 'Aaron Franklin, "The Sublime Simplicity of Aaron Franklin," Austin Food Magazine',
     reveal:
-      "It's plainspoken, practical kitchen advice with a casual hedge (\"I think it's key\") rather than a polished marketing line.",
+      "It's plain kitchen advice, softened with \"I think it's key\" the way people actually talk. Machines rarely bother to sound unsure.",
   },
   {
     id: "bbq-9",
@@ -95,7 +95,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You learn from your mistakes and you just keep going and trying to do the best you can.",
     source: "Aaron Franklin, Q&A interview, Austin Food Magazine",
     reveal:
-      "It's plainspoken, slightly run-on encouragement about barbecue trial-and-error — the kind of casual, unpolished advice a real pitmaster gives in conversation, not a tidy aphorism.",
+      "It's plainspoken and a bit run-on — the kind of encouragement a real pitmaster gives in conversation, not a tidy line built to be quoted.",
   },
   {
     id: "bbq-10",
@@ -126,7 +126,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "There is a saying in my industry, you buy the meat, not the sauce.",
     source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2023)',
     reveal:
-      'She frames it as an industry saying and immediately riffs on it ("sauce can hide a lot of barbecue sins"), the way a real pitmaster talks shop, not a clean aphorism.',
+      'She calls it an industry saying and immediately riffs on it ("sauce can hide a lot of barbecue sins"). That\'s shop talk, not a clean quote.',
   },
   {
     id: "bbq-13",
@@ -146,7 +146,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You can't make a fake fire.",
     source: "Aaron Franklin, Tasting Table exclusive interview (2023)",
     reveal:
-      "It's a blunt, plainspoken pitmaster's truism — the kind of unhedged real-talk a person says, not a tidy AI line.",
+      "It's blunt and says the obvious thing straight out, with no softening. Machines almost always add a qualifier.",
   },
   {
     id: "bbq-15",
@@ -197,7 +197,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I do not say I'm lucky. I work too hard to be lucky.",
     source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview (2023)',
     reveal:
-      'The slightly blunt, self-assured cadence — "I do not say I\'m lucky" — is the kind of earned, unpolished confidence a real pitmaster uses, not a tidy aphorism.',
+      'The blunt, self-assured way it lands — "I do not say I\'m lucky" — is earned confidence from a real person, not a line smoothed out for a poster.',
   },
   {
     id: "bbq-20",
@@ -217,7 +217,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Brisket doesn’t care about your schedule, and that’s the first lesson. Trim it clean, season it honest, and let the smoke do its slow little sermon.",
     source: "AI-generated",
     reveal:
-      'AI — "let the smoke do its slow little sermon" dresses a metaphor up as wisdom but names no cut, no wood, no temp; it\'s brisket advice that would fit any pit anywhere.',
+      'AI — "trim it clean, season it honest, and let the smoke do its slow little sermon" is three parallel commands that end in metaphor instead of instruction: no trim line, no wood, no temp, nothing you could actually do tomorrow.',
   },
   {
     id: "bbq-22",
@@ -247,7 +247,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Don’t drown good meat in rub until it tastes like a spice cabinet fell down the stairs. Salt, pepper, heat, smoke, and restraint will get you invited back.",
     source: "AI-generated",
     reveal:
-      'AI — the concrete list slides into an abstract noun: "salt, pepper, heat, smoke, and restraint" ends on a virtue, not an ingredient, and buttons up with the mechanical reward "get you invited back."',
+      'AI — watch the list: "salt, pepper, heat, smoke, and restraint." Four real things, then a virtue. It slides from the pit to the poster, and closes on the tidy reward "get you invited back."',
   },
   {
     id: "bbq-25",
@@ -267,7 +267,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I like ribs with a little tug, not falling off the bone like they gave up on themselves. Sauce goes on near the end, just enough to shine them up for company.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "ribs with a little tug" and saucing "near the end" is genuine pitmaster preference; the only faint tell is the slightly writerly flourish "like they gave up on themselves."',
+      'Sneaky — a bot, and it knows ribs should have a little tug, which is more than most people do. Only "like they gave up on themselves" got a bit writerly.',
     sneaky: true,
   },
   {
@@ -288,7 +288,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I build my fire before I build my menu. Oak for beef, apple for pork, and a little hickory when I want the backyard to smell like it has opinions.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "oak for beef, apple for pork, hickory" is real wood-pairing specificity; the only faint tell is the cute personification "smell like it has opinions."',
+      "Sneaky — a well-read bot: oak for beef and apple for pork is exactly right. Calling this human meant rewarding real knowledge, which is usually the right bet.",
     sneaky: true,
   },
   {
@@ -299,7 +299,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "If you’re looking at your watch, you’re doing it all wrong. Real Texas brisket doesn't care about your schedule, it only cares about the wood, the smoke, and the internal temp. Pull it when it jiggles like Jell-O and let it rest for at least two hours, period.",
     source: "AI-generated",
     reveal:
-      'AI — it opens hollow ("doesn\'t care about your schedule") then over-qualifies the obvious, stacking "the wood, the smoke, and the internal temp" plus "jiggles like Jell-O" and a stagey "period" instead of one lived detail.',
+      'AI — it declares the clock irrelevant ("if you\'re looking at your watch, you\'re doing it all wrong") and then prescribes exactly two hours of rest. Watch for samples that contradict their own advice, and for tidy trios like "the wood, the smoke, and the internal temp."',
   },
   {
     id: "bbq-30",
@@ -309,7 +309,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "That bark right there isn't burnt, it’s pure flavor built up over twelve hours of post oak smoke. The secret is keeping the fire clean and the rub heavy on the coarse black pepper. Slice it thick and let the juice do the talking.",
     source: "AI-generated",
     reveal:
-      'AI — "twelve hours of post oak" and "coarse black pepper" sound right, but "let the juice do the talking" is a tidy promotional button that any brisket clip could close on.',
+      'AI — "twelve hours of post oak" and "coarse black pepper" sound right, but "let the juice do the talking" is an ad line any brisket clip could end on.',
   },
   {
     id: "bbq-31",
@@ -319,7 +319,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Look at that smoke ring definition on these pork ribs. They’ve got just enough bite to come clean off the bone without falling apart into mush. Hit 'em with a light glaze of sweet heat right at the end for that picture-perfect shine.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "come clean off the bone without falling apart into mush" is a real doneness call; the one faint tell is the polished marketing phrase "picture-perfect shine" at the end.',
+      'Sneaky — bot, and it earned the confusion; that doneness call is spot on. It only slipped reaching for "picture-perfect shine" at the finish.',
     sneaky: true,
   },
   {
@@ -330,7 +330,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Sunday mornings start at 4:00 AM around here, getting the firebox stoked and the ambient temp locked right at 225. There’s something peaceful about watching the smoke roll while the rest of the neighborhood is still asleep. Grab a coffee, it's gonna be a long, beautiful day.",
     source: "AI-generated",
     reveal:
-      'AI — "225" and a 4 AM firebox read authentic, yet "something peaceful about watching the smoke roll" and "a long, beautiful day" tilt into greeting-card mood with no actual cook detail.',
+      'AI — the 4 AM firebox and the locked-in 225 are convincing, then the middle dissolves into mood ("something peaceful about watching the smoke roll") and the closer turns into a greeting card. Specifics up front, uplift at the end, is a common machine shape.',
   },
   {
     id: "bbq-33",
@@ -340,7 +340,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "A lot of guys overcomplicate the rub, but honestly, kosher salt and cracked pepper are all a good piece of beef needs. Let the quality of the meat and the draft of your offset smoker do the heavy lifting. If the smoke is blue, you’re doing it right.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "kosher salt and cracked pepper" on good beef and an "offset smoker" are real; the giveaway-style maxim "if the smoke is blue, you\'re doing it right" is true but packaged a touch too neatly.',
+      "Sneaky — bot. Blue smoke, kosher salt, an offset: it did its homework. This one fools plenty of people who actually cook.",
     sneaky: true,
   },
   {
@@ -351,7 +351,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "We are officially locked and loaded for the weekend crowd, and these pork shoulders are already looking incredible. The fat cap is rendering down perfectly, basting the meat from the inside out. Get down here before the sold-out sign goes up.",
     source: "AI-generated",
     reveal:
-      'AI — "locked and loaded" is promotional LLM diction, and "basting the meat from the inside out" plus "before the sold-out sign goes up" is hype copy, not a cook describing his own pit.',
+      'AI — it can\'t pick a voice: "locked and loaded... before the sold-out sign goes up" is hype copy, but "basting the meat from the inside out" stops to explain food science mid-shout. Real posts don\'t teach and sell in the same breath.',
   },
   {
     id: "bbq-35",
@@ -371,7 +371,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You can buy the most expensive rig on the market, but you can’t buy patience. True barbecue is an art form of minor adjustments, feeling the heat, and listening to the sizzle on the deflector plate. Fire up the pits and let’s get to work.",
     source: "AI-generated",
     reveal:
-      'AI — "you can buy patience" is a hollow aphorism, and "an art form of minor adjustments, feeling the heat, listening to the sizzle" abstracts real technique into a motivational montage.',
+      'AI — "you can buy the most expensive rig, but you can\'t buy patience" is a fridge-magnet line: true, tidy, and about nobody. It never names a rig or a cook, and "feeling the heat, listening to the sizzle" is a movie montage, not advice.',
   },
   {
     id: "bbq-37",
@@ -381,7 +381,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "In today's world, barbecue is more than just cooking meat over fire. It is a journey that brings people together and nourishes the soul, one tender bite at a time.",
     source: "AI-generated",
     reveal:
-      'AI — pure mechanical uplift: "a journey that brings people together and nourishes the soul, one tender bite at a time" stacks three button phrases and never touches meat, fire, or a real cook.',
+      'AI — two tells in two sentences: the throat-clearing "In today\'s world" opener, and the "more than just X" move that promotes barbecue into "a journey," closing on "one tender bite at a time."',
   },
   {
     id: "bbq-38",
@@ -411,7 +411,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "At the end of the day, smoking meat is about more than flavor. It's about connection, tradition, and the stories we share around the table.",
     source: "AI-generated",
     reveal:
-      'AI — "at the end of the day" opens a hollow uplift button, and "connection, tradition, and the stories we share around the table" names everything except anything specific to smoking meat.',
+      'AI — "connection, tradition, and the stories we share around the table" is three big warm words standing in for an actual answer. Good test: if a sentence sounds complete but you can\'t picture anything in it, a machine probably wrote it.',
   },
   {
     id: "business-1",
@@ -421,7 +421,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Discipline equals freedom.",
     source: "Jocko Willink, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
     reveal:
-      "It is a blunt, paradoxical four-word maxim a drill-hardened SEAL would actually bark — not the tidy, hedged phrasing an AI tends to produce.",
+      "Four blunt words a drill-hardened SEAL would actually bark. Machines soften things; this doesn't.",
   },
   {
     id: "business-2",
@@ -432,7 +432,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
     reveal:
-      "It's a blunt, real-world leadership maxim of the kind a combat veteran would phrase tersely, not a polished platitude.",
+      "It's a blunt piece of real-world leadership advice, said the terse way a combat veteran would say it — not smoothed into a platitude.",
   },
   {
     id: "business-3",
@@ -443,7 +443,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
     reveal:
-      "It states a blunt, accountability-shifting principle in plain declarative language — the kind of hard-edged maxim a leadership practitioner coins, not a hedged AI summary.",
+      "It states a hard principle in plain, flat language and takes the hit. Machines hedge their bets; this doesn't.",
   },
   {
     id: "business-4",
@@ -465,7 +465,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001)",
     reveal:
-      "It's the famous opening line of the book — a punchy, paradoxical aphorism a real author crafted as a hook, not generic filler.",
+      "It's the famous opening line of the book — punchy and deliberately contradictory, written by an author to hook you.",
   },
   {
     id: "business-6",
@@ -476,7 +476,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001)",
     reveal:
-      'The slightly awkward mid-sentence aside "it turns out" and the comma before "and discipline" are conversational tics a real author writes, not a polished aphorism a machine would generate.',
+      'The mid-sentence "it turns out" and the stray comma before "and discipline" are the small messes a real writer leaves in.',
   },
   {
     id: "business-7",
@@ -497,7 +497,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you.",
     source: "Dale Carnegie, How to Win Friends and Influence People (1936)",
     reveal:
-      "It captures Carnegie's earnest, slightly preachy self-help cadence — the kind of folksy time-math advice a real person dispenses.",
+      "It has Carnegie's earnest, slightly preachy self-help voice — folksy time-math advice from a real person.",
   },
   {
     id: "business-9",
@@ -517,7 +517,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "People don't buy what you do; they buy why you do it.",
     source: "Simon Sinek, Start with Why: How Great Leaders Inspire Everyone to Take Action (2009)",
     reveal:
-      "It's one of those punchy, almost-too-tidy maxims a real person repeats from a business book, slightly misremembering the semicolon as a comma.",
+      "It's one of those punchy, almost-too-tidy sayings people repeat from a business book — and it's slightly misremembered, which is very human.",
   },
   {
     id: "business-11",
@@ -549,7 +549,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "True operational scale isn’t about working harder; it’s about decoupling your revenue growth from your headcount. When leaders focus on building repeatable frameworks rather than firefighting daily anomalies, the entire organization aligns. Focus on systems that empower autonomy, not bottlenecks that require permission.",
     source: "AI-generated",
     reveal:
-      "AI — consultant diction stacked thick ('decoupling your revenue growth from your headcount,' 'repeatable frameworks,' 'systems that empower autonomy') with no company, number, or situation a real operator would have named.",
+      "AI — consultant-speak stacked thick: 'decoupling your revenue growth from your headcount,' 'repeatable frameworks,' 'systems that empower autonomy.' A real operator would have named a company, a number, or one actual situation.",
   },
   {
     id: "business-14",
@@ -559,7 +559,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The market doesn’t care about your legacy strategy or how successful your previous product launch was. Disruption happens when an organization becomes too comfortable protecting past wins instead of cannibalizing its own business model to innovate. Stay paranoid, stay curious, and keep executing.",
     source: "AI-generated",
     reveal:
-      "AI — the mechanical motivational button 'Stay paranoid, stay curious, and keep executing' plus stacked MBA diction ('cannibalizing its own business model,' 'protecting past wins'); a real leader would cite which past win.",
+      "AI — 'Stay paranoid, stay curious, and keep executing' is a motivational sign-off, and the business-school phrases around it never land on a real example. A real leader would tell you which past win they gave up.",
   },
   {
     id: "business-15",
@@ -569,7 +569,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Resilience isn't an innate personality trait; it’s an organizational muscle developed through navigating ambiguity. When milestones are missed, the instinct is often to assign blame, but the highest-performing cultures treat failures as data points for iterative improvement. Turn your post-mortems into launchpads.",
     source: "AI-generated",
     reveal:
-      "AI — corporate filler 'navigating ambiguity' and 'data points for iterative improvement,' capped by the tidy imperative button 'Turn your post-mortems into launchpads'; advice generic enough to fit any org.",
+      'AI — it argues from definitions instead of memory: resilience recast as "an organizational muscle," failures recast as "data points." A bot defines the terms because it never sat through the post-mortem.',
   },
   {
     id: "business-16",
@@ -579,7 +579,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Empathy is often dismissed as a soft skill, but it is actually the hardest and most lucrative tool in a modern executive's toolkit. When employees feel genuinely understood and psychologically safe, retention skyrocketing follows naturally. Take care of your people, and they will relentlessly take care of your metrics.",
     source: "AI-generated",
     reveal:
-      "AI — HR-deck diction 'psychologically safe' and the hollow promise that retention and metrics follow 'naturally'; the garbled 'retention skyrocketing follows naturally' is a generation artifact no editor would leave.",
+      "AI — HR-deck language ('psychologically safe') plus a promise that retention and metrics improve 'naturally.' And 'retention skyrocketing follows naturally' is garbled — a glitch no human editor would leave in.",
   },
   {
     id: "business-17",
@@ -589,7 +589,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "True leadership isn't validated by how many decisions you make, but by how many leaders you develop to make them instead. If your department paralyzes the moment you go on vacation, you haven’t built a team, you’ve built a dependency. Step back so your people can step up.",
     source: "AI-generated",
     reveal:
-      "AI — the manufactured imperative button 'Step back so your people can step up' and a vacation hypothetical ('the moment you go on vacation') that stands in for any real story; nothing here actually happened.",
+      "AI — 'Step back so your people can step up' is a slogan, and the vacation example never happened to anyone. It says 'if your department paralyzes' — a hypothetical standing in for a real story.",
   },
   {
     id: "business-18",
@@ -609,7 +609,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Good leaders do not remove all friction; they remove the useless friction. Some tension sharpens the work, but bureaucracy just puts a velvet rope around progress.",
     source: "AI-generated",
     reveal:
-      "Sneaky — the distinction between useful and useless friction is genuinely sharp; the only faint tell is 'velvet rope around progress,' a decorative flourish that names no actual piece of bureaucracy.",
+      "Sneaky — bot, and a sharp one. Useful friction versus useless friction is a real idea, so no shame in this one.",
     sneaky: true,
   },
   {
@@ -620,7 +620,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Your calendar is a confession. It reveals what you reward, what you avoid, and what you are accidentally teaching everyone else to value.",
     source: "AI-generated",
     reveal:
-      "Sneaky — 'Your calendar is a confession' is a genuinely arresting line; the faint tell is that nothing follows it down to a single real meeting or recurring block, so it stays universally applicable.",
+      "Sneaky — bot. 'Your calendar is a confession' is a genuinely good line, which is exactly why it got you.",
     sneaky: true,
   },
   {
@@ -631,7 +631,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The mistake many teams make is confusing alignment with agreement. Alignment means we know the decision, the tradeoff, and the owner, even if we would have chosen differently.",
     source: "AI-generated",
     reveal:
-      "Sneaky — the alignment-versus-agreement distinction is a real and useful one; the faint tell is the textbook definition that follows ('the decision, the tradeoff, and the owner') with no actual decision anyone ever disagreed on.",
+      "Sneaky — bot, but it's right: alignment isn't agreement. Missing this one mostly means you agreed with it.",
     sneaky: true,
   },
   {
@@ -642,7 +642,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Culture is not what gets printed on the wall; it is what people feel safe saying in the meeting. The real work of leadership is lowering the cost of honesty.",
     source: "AI-generated",
     reveal:
-      "Sneaky — 'what people feel safe saying in the meeting' is an honest, human read on culture; the faint tell is the closer that redefines leadership as 'lowering the cost of honesty,' an abstraction that resolves a bit too neatly.",
+      "Sneaky — bot. 'Lowering the cost of honesty' is a line you'd write down in a real meeting, so a miss here is a compliment to your taste.",
     sneaky: true,
   },
   {
@@ -653,7 +653,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Trust compounds slowly and spends quickly. Every missed follow-through is a small withdrawal, even when nobody says it out loud.",
     source: "AI-generated",
     reveal:
-      "Sneaky — 'every missed follow-through is a small withdrawal, even when nobody says it out loud' rings true; the only faint tell is that no specific broken promise or person ever anchors the metaphor.",
+      "Sneaky — bot, and a quotable one. The withdrawal metaphor rings true enough that doubting it would have felt unfair.",
     sneaky: true,
   },
   {
@@ -664,7 +664,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "A strategy that cannot survive contact with the frontline is not a strategy, it is office theater. The best leaders keep walking back to the people closest to the work.",
     source: "AI-generated",
     reveal:
-      "Sneaky — 'cannot survive contact with the frontline... office theater' has real bite; the faint tell is the generic-superlative closer 'The best leaders keep walking back,' advice with no specific strategy or frontline behind it.",
+      "Sneaky — bot. 'Office theater' has real teeth; calling it human meant listening for voice, which is the right instinct even when it misfires.",
     sneaky: true,
   },
   {
@@ -795,7 +795,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You see, a heart isn't judged by how much you love, but by how much you are loved by others in return. Even when the shadows grow long and the path ahead seems completely lost, that warmth will always show you the way home. Just take my hand and don't be afraid.",
     source: "AI-generated",
     reveal:
-      'AI — "a heart isn\'t judged by how much you love, but by how much you are loved" is sentiment-as-definition, greeting-card comfort that names no character, no moment, no actual danger.',
+      'AI — the first sentence is lifted almost word for word from The Wizard of Oz. Then it drifts into stock comfort — "when the shadows grow long," "show you the way home" — that isn\'t about anyone, or any real danger. It borrows a great line and can\'t keep it up.',
   },
   {
     id: "disney-14",
@@ -865,7 +865,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“The forest doesn’t give maps to people who already know everything,” the fox said. “It prefers the lost ones. They listen better.”",
     source: "AI-generated",
     reveal:
-      "AI — fortune-cookie wisdom from an animal narrator: the fox's \"forest doesn't give maps to people who already know everything\" is a humility proverb tied to no traveler or actual journey.",
+      'AI — it arrives pre-polished, like a quote card: "It prefers the lost ones. They listen better." Real characters ramble, argue, get interrupted. This one hands you the moral with a bow on it.',
   },
   {
     id: "disney-21",
@@ -885,7 +885,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“I’m not small,” said the mouse, adjusting his acorn helmet. “I’m travel-sized for destiny.”",
     source: "AI-generated",
     reveal:
-      'Sneaky — "travel-sized for destiny" and the acorn helmet are a genuinely funny, specific character beat; the only faint tell is the neat "I\'m not small... I\'m" reframe.',
+      'Sneaky — a machine landed an actual joke, and "travel-sized for destiny" is a good one. Don\'t feel bad; the "I\'m not small... I\'m" reframe just snaps shut a little fast.',
     sneaky: true,
   },
   {
@@ -896,7 +896,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“I tried to be perfect and accidentally became miserable,” said the little prince. “So tomorrow I’m going to be terrible at something and see if the sun still rises.”",
     source: "AI-generated",
     reveal:
-      'Sneaky — the dry, specific self-deprecation genuinely lands; the faint tell is that "see if the sun still rises" polishes the joke a shade too cleanly.',
+      'Sneaky — this one is simply good writing, whoever wrote it. Consolation prize: "see if the sun still rises" lands a half-shade too cleanly.',
     sneaky: true,
   },
   {
@@ -907,7 +907,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Oh, great, another ancient, booby-trapped temple filled with spikes and bugs, because a regular walk in the woods would just be too boring. Don’t touch anything, especially not that giant, shiny ruby that is practically screaming 'grab me' right now. Wait, where did you go?",
     source: "AI-generated",
     reveal:
-      'Sneaky — the sarcasm, concrete props (spikes, the shiny ruby "practically screaming \'grab me\'"), and the action-interrupted "Wait, where did you go?" feel real; the only faint tell is the slightly over-tidy setup.',
+      'Sneaky — sarcasm and a shiny ruby are supposed to be human territory, so no shame here. The seam is how tidily everything lines up before "Wait, where did you go?"',
     sneaky: true,
   },
   {
@@ -918,7 +918,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "There are these two young fish swimming along and they happen to meet an older fish swimming the other way, who nods at them and says 'Morning, boys. How's the water?' And the two young fish swim on for a bit, and then eventually one of them looks over at the other and goes 'What the hell is water?'",
     source: 'David Foster Wallace, "This Is Water" commencement address, Kenyon College, 2005',
     reveal:
-      'The casual register — "Morning, boys" and "What the hell is water?" — is a spoken-aloud joke, not polished prose, exactly how a person tells a parable from a podium.',
+      'It\'s casual and spoken out loud — "Morning, boys" and "What the hell is water?" That\'s a person telling a joke from a podium, not written prose.',
   },
   {
     id: "speech-2",
@@ -948,7 +948,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I went from being in the center of the grid to not only off the grid, but underneath the coffee table that the grid sits on, lost in the shag carpeting that is underneath the coffee table supporting the grid.",
     source: "Conan O'Brien, Dartmouth College Commencement Address (2011)",
     reveal:
-      'The metaphor keeps piling on absurd nested detail ("the coffee table that the grid sits on... the shag carpeting underneath the coffee table") in a way that builds to a laugh — a real comedian\'s escalating bit, not a clean aphorism.',
+      'The joke keeps piling on absurd detail ("the coffee table that the grid sits on... the shag carpeting underneath") building to a laugh. That escalation is a real comedian working a room.',
   },
   {
     id: "speech-5",
@@ -969,7 +969,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Admiral William H. McRaven, commencement address, University of Texas at Austin (May 17, 2014)",
     reveal:
-      'It is plain, practical advice with a homespun cadence — the repeated "another and another and another" is the kind of rhythmic emphasis a real speaker uses aloud, not a polished written aphorism.',
+      'Plain, practical advice with a homespun rhythm — "another and another and another" is the kind of repetition a real speaker uses out loud.',
   },
   {
     id: "speech-7",
@@ -989,7 +989,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "And I have always wished that for myself. And now, as you graduate to begin anew, I wish that for you. Stay Hungry. Stay Foolish.",
     source: "Steve Jobs, Commencement Address, Stanford University (June 12, 2005)",
     reveal:
-      "He's quoting the Whole Earth Catalog's farewell line back to the grads as a personal wish for himself, not minting an original aphorism.",
+      "He's quoting the Whole Earth Catalog's farewell line back to the graduates as a wish for himself — borrowing someone else's words, not inventing a slogan.",
   },
   {
     id: "speech-9",
@@ -1029,7 +1029,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Do not let the fear of making a mistake paralyze your ambition, because every failure is simply a tuition payment toward your future wisdom. The most extraordinary lives are rarely linear; they are messy, unpredictable, and defined by the moments someone chose to get back up. Write a story worth telling.",
     source: "AI-generated",
     reveal:
-      'AI — "every failure is simply a tuition payment toward your future wisdom" is a too-neat manufactured aphorism, and it caps off by commanding you to "write a story worth telling" without telling a single story of its own.',
+      'AI — "every failure is simply a tuition payment toward your future wisdom" is a line built for a graduation card. Then it orders you to "write a story worth telling" without ever telling one of its own.',
   },
   {
     id: "speech-13",
@@ -1039,7 +1039,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Your education has given you a voice, and with that voice comes the profound responsibility to speak for those who are currently unheard. Do not use your talents merely to climb the ladders of corporate success; use them to widen the base so more people can climb with you. True legacy is measured by what you give back.",
     source: "AI-generated",
     reveal:
-      'AI — entirely second-person sermon ("widen the base so more people can climb") with zero speaker presence; it asserts "true legacy is measured by what you give back" yet cites no cause, no name, no moment the speaker actually lived.',
+      'AI — it\'s all "you," never "I." A real speaker would say who they lost, what they built, when they failed. This one declares "true legacy is measured by what you give back" and never once shows up in its own speech.',
   },
   {
     id: "speech-14",
@@ -1059,7 +1059,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You are not here because the path was clear. You are here because you kept walking when the map turned into fog.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "you kept walking when the map turned into fog" genuinely lands, but the faint tell is that the fog and the map belong to no real journey: it\'s still pure second-person with no speaker who was actually there.',
+      "Sneaky — bot. Two sentences, barely a seam, and a line that actually lands. Almost nobody gets this one.",
     sneaky: true,
   },
   {
@@ -1070,7 +1070,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Do not mistake certainty for wisdom. The people who change the world are often the ones willing to ask one more question when everyone else has packed up the chairs.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "willing to ask one more question when everyone else has packed up the chairs" is a sharp, near-concrete image, but it stays a general type rather than one remembered person, the last faint sign it\'s composed not recalled.',
+      'Sneaky — bot, and "packed up the chairs" is a better image than most commencement speakers manage. If you called it human, so did the rest of the room.',
     sneaky: true,
   },
   {
@@ -1121,7 +1121,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "No! Try not. Do... or do not. There is no try.",
     source: "The Empire Strikes Back (1980) — Yoda",
     reveal:
-      "Human — Yoda's inverted syntax and blunt absolutism are pure character voice; a writer's choice to sound alien and wise at once.",
+      "Human — Yoda's backwards word order and flat certainty are pure character voice; a writer chose to make him sound alien and wise at once.",
   },
   {
     id: "movies-6",
@@ -1131,7 +1131,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "No. I am your father.",
     source: "The Empire Strikes Back (1980) — Darth Vader",
     reveal:
-      "Human — the real line (not 'Luke, I am your father'): it opens with a flat contradiction, making the reveal land as a gut-punch rebuttal.",
+      "Human — this is the real line (not 'Luke, I am your father'). It opens with a flat contradiction, which is what makes it land like a punch.",
   },
   {
     id: "movies-7",
@@ -1150,7 +1150,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: '"I love you." "I know."',
     source: "The Empire Strikes Back (1980) — Leia & Han Solo",
     reveal:
-      "Human — Han's two-word reply was improvised by Harrison Ford; the asymmetry is loaded subtext a person crafts, not generates.",
+      "Human — Han refuses the line he's supposed to say and answers sideways instead. That's a person making a choice, not a machine completing a sentence.",
   },
   {
     id: "movies-9",
@@ -1297,7 +1297,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "movies",
     answer: "human",
     body: '"We were told to comb the desert, so we\'re combing it!" "We ain\'t found shit!"',
-    source: "Spaceballs (1987) — Colonel Sandurz & a trooper",
+    source: "Spaceballs (1987) — Dark Helmet & a trooper",
     reveal:
       "Human — the idiom 'comb the desert' taken literally, plus profanity for comic deflation; cultural comedy.",
   },
@@ -1306,10 +1306,10 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     type: "text",
     category: "movies",
     answer: "human",
-    body: '"What happened to then?" "We passed it." "When?" "Just now."',
+    body: '"What happened to then?" "We passed then." "When?" "Just now."',
     source: "Spaceballs (1987) — Dark Helmet & Colonel Sandurz",
     reveal:
-      "Human — a meta comedy loop collapsing 'now' as a moment vs 'now' as a label; linguistic comedy, not information.",
+      'Human — the joke treats "then" as a place you can drive past and miss. Wordplay that silly is a writer having fun; a machine plays it straight.',
   },
   {
     id: "movies-25",
@@ -1339,7 +1339,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Together we will harness the storm, forge a new dawn, and unleash a power this universe has never witnessed.",
     source: "AI-generated",
     reveal:
-      'AI — "harness the storm, forge a new dawn, and unleash a power this universe has never witnessed" is stacked mechanical grandiosity, vague cosmic power with no named threat, place, or actual plan behind it.',
+      'AI — three verbs marching in a row ("harness the storm, forge a new dawn, unleash a power"), each grander than the last and none attached to a plan. When a line escalates in threes and gets vaguer as it climbs, suspect the machine.',
   },
   {
     id: "movies-28",
@@ -1369,7 +1369,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Victory is not measured in the battles we win, but in the lives we choose to protect along the way.",
     source: "AI-generated",
     reveal:
-      'AI — "Victory is not measured in the battles we win, but in the lives we choose to protect" is a tidy definition with no concrete content: no battle, no enemy, no one being protected, just a portable maxim.',
+      'AI — "Victory is not measured in the battles we win, but in the lives we choose to protect" is a saying you could paste into any war film. No battle, no enemy, nobody actually being protected.',
   },
   {
     id: "movies-31",
@@ -1409,7 +1409,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The question is not whether we can win, but whether we are willing to become the kind of people who deserve to.",
     source: "AI-generated",
     reveal:
-      'AI — "not whether we can win, but whether we are willing to become the kind of people who deserve to" resolves into an abstract moral definition rather than dialogue about an actual fight or enemy.',
+      'AI — "The question is not whether we can win, but whether..." is the fake-question move: pose a question only to reject it for a loftier one. Watch for lines that correct your question instead of answering it.',
   },
   {
     id: "movies-35",
@@ -1439,7 +1439,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Heroes are not born in moments of triumph. They are forged in the silent, unseen battles no one will ever know.",
     source: "AI-generated",
     reveal:
-      'AI — "Heroes are not born... They are forged in the silent, unseen battles" is a portable definition of heroism naming no hero, no battle, no enemy; it teaches a concept rather than speaking to anyone.',
+      'AI — read it again and notice nobody is actually in it. Heroes "are forged" — by who? In what fight? Real lines have someone doing something; this one just floats.',
   },
   {
     id: "movies-38",
@@ -1479,7 +1479,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "So this is how it ends: not with the roar of cannons, but with the whisper of a promise kept.",
     source: "AI-generated",
     reveal:
-      'AI — "not with the roar of cannons, but with the whisper of a promise kept" frames a contrast as profundity but names no promise, no who, no actual ending; it\'s abstract closure with no scene.',
+      "AI — it borrows the shape of a famous last line and fills in the blanks. Sounds momentous, but ask the obvious questions and nothing answers: which promise? Made to who? Ending what?",
   },
   {
     id: "movies-42",
@@ -1489,7 +1489,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You really thought a force field would stop me? I helped design half the tech in this building. Buddy, I invented the off switch.",
     source: "AI-generated",
     reveal:
-      'Sneaky — genuinely grounded and specific ("I helped design half the tech in this building," "I invented the off switch"); the only faint tell is the slightly too-clean button-line cadence of "the off switch."',
+      "Sneaky — a great closing line, and you were right to trust it. If there's a tell, \"I invented the off switch\" is timed a shade too perfectly — but that's a coin flip, not a mistake.",
     sneaky: true,
   },
   {
@@ -1500,7 +1500,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Cut the blue wire. No — the other blue wire, the one tucked behind the red. We've got maybe ten seconds, so please trust me on this.",
     source: "AI-generated",
     reveal:
-      'Sneaky — convincingly concrete with the blue-wire-behind-the-red detail and "maybe ten seconds"; the faintest tell is how neatly the self-correction is staged, just a touch too tidy for real panic.',
+      "Sneaky — you can practically see the wire. Real panic is messier than this staged self-correction, but that's a fine hair to split with ten seconds on the clock.",
     sneaky: true,
   },
   {
@@ -1511,7 +1511,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I counted three guards on the schematic. On the ground there were six. We're going to need a bigger plan.",
     source: "AI-generated",
     reveal:
-      'Sneaky — specific and plausible with "three guards on the schematic... six on the ground"; the only soft tell is the engineered three-versus-six symmetry setting up a slightly pat closing line.',
+      "Sneaky — real detail, and most rooms call this one human. The only giveaway: it's a bit too well-organized. People in actual trouble don't lay things out this neatly.",
     sneaky: true,
   },
   {
@@ -1544,7 +1544,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "He's not answering the radio. Either he's gone dark on purpose, or he's just gone. That's either very good or very bad.",
     source: "AI-generated",
     reveal:
-      'Sneaky — naturally grounded with "He\'s not answering the radio" and the real either/or of gone-dark-or-gone; the faint tell is the slightly too-balanced "very good or very bad" button on the binary.',
+      'Sneaky — "gone dark on purpose, or just gone" is a genuinely good line. If you missed it, blame the too-neat "very good or very bad" ending; that was about all there was to catch.',
     sneaky: true,
   },
   {

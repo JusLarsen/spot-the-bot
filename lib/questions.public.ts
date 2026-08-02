@@ -130,7 +130,7 @@ export const PUBLIC_QUESTIONS: PublicQuestion[] = [
   { id: "movies-21", type: "text", category: "movies", body: "What's the matter, Colonel Sandurz? Chicken?!" },
   { id: "movies-22", type: "text", category: "movies", body: "There's only one man who would dare give me the raspberry: Lone Starr!" },
   { id: "movies-23", type: "text", category: "movies", body: "\"We were told to comb the desert, so we're combing it!\" \"We ain't found shit!\"" },
-  { id: "movies-24", type: "text", category: "movies", body: "\"What happened to then?\" \"We passed it.\" \"When?\" \"Just now.\"" },
+  { id: "movies-24", type: "text", category: "movies", body: "\"What happened to then?\" \"We passed then.\" \"When?\" \"Just now.\"" },
   { id: "movies-25", type: "text", category: "movies", body: "In the end, the galaxy will not remember our weapons or our fleets. It will remember whether we chose to stand together when the darkness came." },
   { id: "movies-26", type: "text", category: "movies", body: "This was never about the throne, the crown, or the kingdom. It was about something far greater: the soul of every world that ever dared to dream." },
   { id: "movies-27", type: "text", category: "movies", body: "Together we will harness the storm, forge a new dawn, and unleash a power this universe has never witnessed." },
