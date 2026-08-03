@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Reset mints a new session.** `/api/host` `reset` creates a fresh `sessions/<CODE>` and repoints `currentSessionCode`; it does **not** delete the old session node, so its saved leaderboard at `/r/<CODE>` persists. `end` just flips the current session to `ended` — the session node itself is the durable archive.
 - **Late join**: teams may join an in-progress session while `> LATE_JOIN_CUTOFF_MS` (60s) remain on the clock; inside the final minute joining is blocked (see `canJoin`/`wrappingUp` in `app/page.tsx`).
 - **Scoped RTDB subscriptions.** To keep fan-out linear for a full room, team devices subscribe to the `currentSessionCode` pointer + `sessions/<CODE>/state` + their own `sessions/<CODE>/teams/<id>` during `live`, and to all teams (`subscribeSessionTeams`) only in `lobby`/`ended`; the host subscribes to all teams. See `lib/use-game.ts` and `subscribeSessionTeams`/`subscribeKey` in `lib/firebase-client.ts`.
-- **Question bank**: 246 samples across 9 categories (`bbq`, `business`, `disney`, `speech`, `movies`, plus the comedy cohorts `genx`, `millennial`, `genz`, `alpha`). `category` is **organizational only** — never shown to players, never affects ordering. Most AI samples deliberately show common AI tells (training moments); a minority carry the server-only `sneaky` flag, surfaced in `AnswerResponse` so `Play.tsx` can frame the reveal — "even the pros miss these" on a miss, "you caught it" on a hit. See the content rules below before editing any sample.
+- **Question bank**: 258 samples across 9 categories (`bbq`, `business`, `disney`, `speech`, `movies`, plus the comedy cohorts `genx`, `millennial`, `genz`, `alpha`). `category` is **organizational only** — never shown to players, never affects ordering. Most AI samples deliberately show common AI tells (training moments); a minority carry the server-only `sneaky` flag, surfaced in `AnswerResponse` so `Play.tsx` can frame the reveal — "even the pros miss these" on a miss, "you caught it" on a hit. See the content rules below before editing any sample.
 - **Team avatars**: ~104 pixel-art BBQ-food/veggie icons in `public/avatars/`, listed in the client-safe manifest `lib/avatars.ts` (regenerate both icons + manifest with `npm run gen:avatars`, which calls the PixelLab API — needs `PIXELLAB_API_KEY`). A team **chooses** its avatar on the join screen (random default) — sent in `JoinRequest.avatar` and honored by `/api/join` if it passes `isValidAvatar`, else random — and can keep changing it in the **lobby** via the validated `/api/avatar` route. **Avatars lock once the game starts**: it's UI-locked (the play screen shows the read-only `Avatar`, not the editable `AvatarChooser`) AND server-enforced (`/api/avatar` 409s unless `state.phase === "lobby"`). The requested name must exist in the manifest, and the write `update()`s only the `avatar` field so it never clobbers scores. The picker UI is `AvatarChooser` (button + state) wrapping `AvatarPicker` (the grid modal); `Avatar` is the read-only display. Voting-button sprites (`lib/sprites.ts`) are a separate, unrelated set.
 - **Session identity persists across reloads, split by scope.** Team identity (`stb_team` = `{id, name, sessionId, avatar}`) is **device-scoped in `localStorage`** so a reload or dropped phone resumes the same team. Host role + token (`stb_role` = "host", `stb_host_token`) are **tab-scoped in `sessionStorage`** so two tabs of one browser don't share a role — one tab can be host while another is a team, and opening/reloading a tab can't silently promote it. `restoreSession()` purges any legacy `localStorage` `stb_role`/`stb_host_token` (the old shared-localStorage design trapped every tab as host). Anything that mints a team ID or changes role must keep the right storage tier in sync — see the storage-key comments in `lib/use-game.ts`.
 
@@ -39,8 +39,15 @@ that shipped, so check them before editing `lib/questions.server.ts`.
 phones**, one table at a time — only the **scoreboard** is projected. So sources must
 stay short and human-readable (never paste a URL into `source`; it renders to players
 as "Source: …"), and reveals must stay short because the clock is running while they
-read. Target under ~200 characters, hard ceiling ~240. **One lesson per reveal** — two
-tells in one reveal is how they get long.
+read.
+
+**Bot reveals: name the tell in ONE fun sentence.** Playtested: a two-sentence
+explanation is a claim, and claims make tables argue with the game — but pure
+coyness teaches nothing. The balance: say which common tell it was (the "isn't
+just X, it's Y" flip, the echoed question, the list of three) inside a single
+concise sentence with a grin ('AI — the "not just X" upgrade, snowball-fight
+edition.'). Hard ceiling 110 characters, enforced by test. Sneaky reveals are the
+same length in a warm register. Human reveals are provenance only (below).
 
 **Reveal voice.** Written for ~300 non-technical people, many in sales, many who have
 never used AI. Plain language only. Banned: aphorism, cadence, diction, register,
@@ -71,8 +78,10 @@ replaced. Enforced by `lib/questions.test.ts`.
    no AI sample should lean on one as its tell.
 
 **AI sample design.** Each non-sneaky AI sample must be built around **one nameable,
-transferable tell**, and its reveal should say where the player will meet that tell in
-real life ("you'll see this in your inbox"). Two distinct classes:
+transferable tell**; the SAMPLE carries the lesson (the tic is right there in the
+text), and the reveal just points at it in one sentence. The easy tier is exactly
+**10 tells × 10 samples** — repetition of the lesson is the point, repetition of the
+phrasing is the failure. Two distinct classes:
 
 - _Prose-style tells_ — "not just X, it's Y", lists of three, "In today's world",
   machine vocabulary (delve/tapestry/testament to), hedge-everything, tidy uplifting
