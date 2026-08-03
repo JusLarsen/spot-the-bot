@@ -13,7 +13,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       'Aaron Franklin & Jordan Mackay, Franklin Barbecue: A Meat-Smoking Manifesto (2015), Chapter 6 "The Cook"',
     reveal:
-      'The slightly weary "At long last" opener and the personal "you\'ve gotten to know your smoker" reflect a real pitmaster\'s voice walking a reader through hard-won craft.',
+      'That\'s Aaron Franklin & Jordan Mackay, Franklin Barbecue: A Meat-Smoking Manifesto (2015), Chapter 6 "The Cook".',
   },
   {
     id: "bbq-2",
@@ -23,7 +23,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Life is too short for bad BBQ!",
     source: 'Danielle "Diva Q" Bennett, Traeger Grills ambassador profile (traeger.com/diva-q)',
     reveal:
-      "Six words and an exclamation point, ending on a joke at nobody's expense. Someone put this on a T-shirt because they meant it, and you can hear that.",
+      'That\'s Danielle "Diva Q" Bennett, Traeger Grills ambassador profile (traeger.com/diva-q).',
   },
   {
     id: "bbq-3",
@@ -34,7 +34,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Matt Pittman, Meat Church BBQ — Traeger Collective profile (traeger.com/collective/matt-pittman)",
     reveal:
-      'The self-deprecating "I tell people..." framing and the specific hobby-to-job pivot reflect a real person recounting leaving an IT career, not a generic platitude.',
+      "That's Matt Pittman, Meat Church BBQ — Traeger Collective profile (traeger.com/collective/matt-pittman).",
   },
   {
     id: "bbq-5",
@@ -44,7 +44,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "To us, it's all about cooking delicious food and taking pride in everything we cook.",
     source: 'Malcom & Rachelle Reed, "About HowToBBQRight" (2018, since removed from the site)',
     reveal:
-      'It\'s plain-spoken and a little humble — the family-business "to us" and "we" are how real people describe their own shop, not how a brand writes a tagline.',
+      'That\'s Malcom & Rachelle Reed, "About HowToBBQRight" (2018, since removed from the site).',
   },
   {
     id: "bbq-6",
@@ -53,8 +53,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "But the fact that in Texas barbecue, you're taking one of the worst pieces of the animal and converting it into one of the best is a miracle itself.",
     source: "Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015)",
-    reveal:
-      "The phrasing is a little clumsy, and the pride in turning a cheap, tough cut into something great is very specific. That's a real person's obsession, not a line polished for a poster.",
+    reveal: "That's Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015).",
   },
   {
     id: "bbq-7",
@@ -63,8 +62,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Sure, I was poor. But barbecue has never been a rich man's pleasure. It's always been a culture of thrift.",
     source: "Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015)",
-    reveal:
-      'He says "Sure, I was poor" like it costs him nothing, then turns it straight into pride. Owning the unflattering part first is something people do and slogans never do.',
+    reveal: "That's Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015).",
   },
   {
     id: "bbq-8",
@@ -74,7 +72,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I think it's key that you buy the best thing that you can afford.",
     source: 'Aaron Franklin, "The Sublime Simplicity of Aaron Franklin," Austin Food Magazine',
     reveal:
-      "It's plain kitchen advice, softened with \"I think it's key\" the way people actually talk. Machines rarely bother to sound unsure.",
+      'That\'s Aaron Franklin, "The Sublime Simplicity of Aaron Franklin," Austin Food Magazine.',
   },
   {
     id: "bbq-9",
@@ -83,8 +81,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You learn from your mistakes and you just keep going and trying to do the best you can.",
     source: "Aaron Franklin, Q&A interview, Austin Food Magazine",
-    reveal:
-      "It's plainspoken and a bit run-on — the kind of encouragement a real pitmaster gives in conversation, not a tidy line built to be quoted.",
+    reveal: "That's Aaron Franklin, Q&A interview, Austin Food Magazine.",
   },
   {
     id: "bbq-10",
@@ -95,7 +92,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Matt Pittman (Meat Church BBQ), in \"Going to Texas' Meat Church — Matt Pittman's Barbecue School is a Truly Unique Food Experience,\" PaperCity Magazine",
     reveal:
-      'The cheeky "sexy slices" phrasing is exactly the kind of offhand, personality-driven pitmaster patter a real person uses, not generic AI prose.',
+      "That's Matt Pittman (Meat Church BBQ), in \"Going to Texas' Meat Church — Matt Pittman's Barbecue School is a Truly Unique Food Experience,\" PaperCity Magazine.",
   },
   {
     id: "bbq-11",
@@ -104,8 +101,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I am an absolute insatiable learner. I love to learn more than anything in the world.",
     source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021)',
-    reveal:
-      'The plain, slightly redundant doubling ("insatiable learner" then "love to learn more than anything") is how people actually emphasize a point when speaking off the cuff, not how a polished slogan reads.',
+    reveal: 'That\'s Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021).',
   },
   {
     id: "bbq-12",
@@ -114,8 +110,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "There is a saying in my industry, you buy the meat, not the sauce.",
     source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021)',
-    reveal:
-      "She isn't coining it, she's repeating it — \"a saying in my industry.\" People pass along the shop talk they picked up; a machine would have made up its own clever line instead.",
+    reveal: 'That\'s Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021).',
   },
   {
     id: "bbq-13",
@@ -124,8 +119,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I've always looked at myself as a student of BBQ, because no matter how long you've been doing it, there's always something else to learn.",
     source: 'Malcom Reed, "About Malcom Reed & HowToBBQRight" (h2qshop.com)',
-    reveal:
-      'The humble "I\'m still a student even after all these years" framing is a lived-experience sentiment a real pitmaster says, not a generic AI platitude.',
+    reveal: 'That\'s Malcom Reed, "About Malcom Reed & HowToBBQRight" (h2qshop.com).',
   },
   {
     id: "bbq-14",
@@ -134,8 +128,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You can't make a fake fire.",
     source: "Aaron Franklin, Tasting Table exclusive interview (2023)",
-    reveal:
-      "It's blunt and says the obvious thing straight out, with no softening. Machines almost always add a qualifier.",
+    reveal: "That's Aaron Franklin, Tasting Table exclusive interview (2023).",
   },
   {
     id: "bbq-15",
@@ -144,8 +137,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "If the temperatures are up and down, it's pretty likely that your firewood is too big, so it's robbing energy from the fire to get to a combustion point.",
     source: "Aaron Franklin, Tasting Table exclusive interview (2023)",
-    reveal:
-      "It's hands-on pitmaster intuition — diagnosing a swinging temperature by the physics of oversized wood robbing energy to combust — the kind of specific, earned detail a real expert gives.",
+    reveal: "That's Aaron Franklin, Tasting Table exclusive interview (2023).",
   },
   {
     id: "bbq-16",
@@ -154,8 +146,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "With steak, the worst thing you can do is overcook it.",
     source: "Aaron Franklin, Tasting Table exclusive interview (2023)",
-    reveal:
-      "It is plain, practical pitmaster advice — short and direct, the kind of thing a real cook says off the cuff rather than a polished marketing line.",
+    reveal: "That's Aaron Franklin, Tasting Table exclusive interview (2023).",
   },
   {
     id: "bbq-17",
@@ -166,7 +157,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       'Matt Pittman (Meat Church BBQ), "Traeger Grills Partners with Meat Church BBQ\'s Matt Pittman to Spread the Gospel of Wood-Fired Cooking," PR Newswire (2018)',
     reveal:
-      'It pairs personal brand allegiance ("I subscribe to") with a casual idiom ("just can\'t be beat") in a way that reads like an endorsement quote a real pitmaster gave, not a generic AI line.',
+      "That's Matt Pittman (Meat Church BBQ), \"Traeger Grills Partners with Meat Church BBQ's Matt Pittman to Spread the Gospel of Wood-Fired Cooking,\" PR Newswire (2018).",
   },
   {
     id: "bbq-18",
@@ -175,8 +166,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Barbecue feeds your soul because it brings people together.",
     source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview (2021)',
-    reveal:
-      "It's a heartfelt, slightly cliched personal philosophy a real pitmaster repeats in interviews — earnest and a little worn, not the kind of polished line a bot would invent.",
+    reveal: 'That\'s Danielle "Diva Q" Bennett, Mashed exclusive interview (2021).',
   },
   {
     id: "bbq-19",
@@ -186,7 +176,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I do not say I'm lucky. I work too hard to be lucky.",
     source: 'Danielle "Diva Q" Bennett, Mashed exclusive interview on WhistlePig whiskey (2022)',
     reveal:
-      'The blunt, self-assured way it lands — "I do not say I\'m lucky" — is earned confidence from a real person, not a line smoothed out for a poster.',
+      'That\'s Danielle "Diva Q" Bennett, Mashed exclusive interview on WhistlePig whiskey (2022).',
   },
   {
     id: "bbq-21",
@@ -299,8 +289,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Discipline equals freedom.",
     source: "Jocko Willink, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
-    reveal:
-      "Four blunt words a drill-hardened SEAL would actually bark. Machines soften things; this doesn't.",
+    reveal: "That's Jocko Willink, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015).",
   },
   {
     id: "business-2",
@@ -311,7 +300,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
     reveal:
-      "It's a blunt piece of real-world leadership advice, said the terse way a combat veteran would say it — not smoothed into a platitude.",
+      "That's Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015).",
   },
   {
     id: "business-3",
@@ -322,7 +311,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
     reveal:
-      "It states a hard principle in plain, flat language and takes the hit. Machines hedge their bets; this doesn't.",
+      "That's Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015).",
   },
   {
     id: "business-4",
@@ -333,7 +322,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015)",
     reveal:
-      'It states a hard-won, specific leadership consequence ("poor performance becomes the new standard") rather than a vague motivational platitude—the kind of pointed insight that comes from real command experience.',
+      "That's Jocko Willink and Leif Babin, Extreme Ownership: How U.S. Navy SEALs Lead and Win (2015).",
   },
   {
     id: "business-5",
@@ -344,7 +333,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001)",
     reveal:
-      "It's the famous opening line of the book — punchy and deliberately contradictory, written by an author to hook you.",
+      "That's Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001).",
   },
   {
     id: "business-6",
@@ -355,7 +344,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001)",
     reveal:
-      'The mid-sentence "it turns out" and the stray comma before "and discipline" are the small messes a real writer leaves in.',
+      "That's Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001).",
   },
   {
     id: "business-7",
@@ -366,7 +355,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001)",
     reveal:
-      'It\'s a blunt, almost contrarian one-liner that flips the comfortable "vision first" cliche on its head — the kind of provocative inversion a real management thinker uses to make a point stick.',
+      "That's Jim Collins, Good to Great: Why Some Companies Make the Leap... and Others Don't (2001).",
   },
   {
     id: "business-8",
@@ -375,8 +364,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You can make more friends in two months by becoming interested in other people than you can in two years by trying to get other people interested in you.",
     source: "Dale Carnegie, How to Win Friends and Influence People (1936)",
-    reveal:
-      "It has Carnegie's earnest, slightly preachy self-help voice — folksy time-math advice from a real person.",
+    reveal: "That's Dale Carnegie, How to Win Friends and Influence People (1936).",
   },
   {
     id: "business-9",
@@ -385,8 +373,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Most people do not listen with the intent to understand; they listen with the intent to reply.",
     source: "Stephen R. Covey, The 7 Habits of Highly Effective People (1989)",
-    reveal:
-      "It names a specific, relatable human failing in conversation that anyone who has felt unheard immediately recognizes.",
+    reveal: "That's Stephen R. Covey, The 7 Habits of Highly Effective People (1989).",
   },
   {
     id: "business-10",
@@ -396,7 +383,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "People don't buy what you do; they buy why you do it.",
     source: "Simon Sinek, Start with Why: How Great Leaders Inspire Everyone to Take Action (2009)",
     reveal:
-      "It's tidy enough to look machine-made, and that's the trap. This one got tidy the slow way: a guy repeating himself on stage until the extra words fell off.",
+      "That's Simon Sinek, Start with Why: How Great Leaders Inspire Everyone to Take Action (2009).",
   },
   {
     id: "business-14",
@@ -491,8 +478,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You have forgotten who you are and so have forgotten me. Look inside yourself, Simba. You are more than what you have become. You must take your place in the Circle of Life.",
     source: "The Lion King (1994) — Mufasa",
-    reveal:
-      "a father naming a specific failure ('forgotten who you are'); the emotional logic is peculiar to this relationship, not a generic pep talk.",
+    reveal: "That's Mufasa in The Lion King (1994).",
   },
   {
     id: "disney-2",
@@ -501,8 +487,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Everything you see exists together in a delicate balance. As king, you need to understand that balance and respect all the creatures, from the crawling ant to the leaping antelope.",
     source: "The Lion King (1994) — Mufasa",
-    reveal:
-      "grounds the idea in a concrete, specific image (the crawling ant to the leaping antelope) rather than abstraction.",
+    reveal: "That's Mufasa in The Lion King (1994).",
   },
   {
     id: "disney-3",
@@ -511,8 +496,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Look, over in that house is a kid who thinks you are the greatest, and it's not because you're a Space Ranger, pal. It's because you're a toy. You are his toy.",
     source: "Toy Story (1995) — Woody",
-    reveal:
-      "'pal' cuts the sentiment just enough to feel real, and the repeated 'you are his toy' lands as recognition, not a slogan.",
+    reveal: "That's Woody in Toy Story (1995).",
   },
   {
     id: "disney-4",
@@ -521,8 +505,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You are a sad, strange little man, and you have my pity. Farewell.",
     source: "Toy Story (1995) — Buzz Lightyear",
-    reveal:
-      "chilly, formal dignity that's pitch-perfect for the character; a real comic beat, not a generic insult.",
+    reveal: "That's Buzz Lightyear in Toy Story (1995).",
   },
   {
     id: "disney-5",
@@ -531,8 +514,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Well, you can't never let anything happen to him. Then nothing would ever happen to him. Not much fun for little Harpo.",
     source: "Finding Nemo (2003) — Dory",
-    reveal:
-      "accidental wisdom from someone who doesn't realize she's being wise, capped by the throwaway joke name 'Harpo.'",
+    reveal: "That's Dory in Finding Nemo (2003).",
   },
   {
     id: "disney-6",
@@ -541,8 +523,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "If he could learn to love another and earn her love in return by the time the last petal fell, then the spell would be broken. If not, he would be doomed to remain a beast for all time.",
     source: "Beauty and the Beast (1991) — prologue narration",
-    reveal:
-      "a fairy-tale conditional with a specific, ticking image ('by the time the last petal fell').",
+    reveal: "That's prologue narration in Beauty and the Beast (1991).",
   },
   {
     id: "disney-7",
@@ -551,8 +532,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Dishonor! Dishonor on your whole family! Make a note of this: dishonor on you, dishonor on your cow!",
     source: "Mulan (1998) — Mushu",
-    reveal:
-      "pointed absurdist comedy; the cow has done nothing, which is the joke. AI rarely lands this kind of specific nonsense.",
+    reveal: "That's Mushu in Mulan (1998).",
   },
   {
     id: "disney-8",
@@ -561,8 +541,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "The flower that blooms in adversity is the most rare and beautiful of all. You don't meet a girl like that every dynasty.",
     source: "Mulan (1998) — The Emperor",
-    reveal:
-      "the formal proverb punctured by a dry aside ('every dynasty'); a genuine comic instinct.",
+    reveal: "That's The Emperor in Mulan (1998).",
   },
   {
     id: "disney-9",
@@ -571,8 +550,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Some people are worth melting for. Just maybe not right this second.",
     source: "Frozen (2013) — Olaf",
-    reveal:
-      "warmth immediately walked back by self-preservation; a character meaning two things at once.",
+    reveal: "That's Olaf in Frozen (2013).",
   },
   {
     id: "disney-10",
@@ -581,8 +559,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Not everyone can become a great artist, but a great artist can come from anywhere. It is difficult to imagine more humble origins than those of the genius now cooking at Gusteau's.",
     source: "Ratatouille (2007) — Anton Ego",
-    reveal:
-      "yes, it opens 'not X, but Y' (a structure AI loves too!) — but it's a real critic's hard-won reversal, naming a specific person and place.",
+    reveal: "That's Anton Ego in Ratatouille (2007).",
   },
   {
     id: "disney-11",
@@ -591,8 +568,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You made it! Go! Go save Riley! Take her to the moon for me… okay?",
     source: "Inside Out (2015) — Bing Bong",
-    reveal:
-      "the tiny, uncertain '…okay?' turns a sacrifice into a small personal request; an ellipsis doing enormous emotional work.",
+    reveal: "That's Bing Bong in Inside Out (2015).",
   },
   {
     id: "disney-12",
@@ -601,8 +577,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "It's kind of fun to do the impossible.",
     source: "Walt Disney",
-    reveal:
-      "short, but the word 'fun' reframes difficulty as play; an offhand real remark, not a committee-written poster.",
+    reveal: "That's Walt Disney.",
   },
   {
     id: "disney-18",
@@ -655,7 +630,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "There are these two young fish swimming along and they happen to meet an older fish swimming the other way, who nods at them and says 'Morning, boys. How's the water?' And the two young fish swim on for a bit, and then eventually one of them looks over at the other and goes 'What the hell is water?'",
     source: 'David Foster Wallace, "This Is Water" commencement address, Kenyon College, 2005',
     reveal:
-      'It\'s casual and spoken out loud — "Morning, boys" and "What the hell is water?" That\'s a person telling a joke from a podium, not written prose.',
+      'That\'s David Foster Wallace, "This Is Water" commencement address, Kenyon College, 2005.',
   },
   {
     id: "speech-2",
@@ -665,7 +640,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The point of the fish story is merely that the most obvious, important realities are often the ones that are hardest to see and talk about.",
     source: 'David Foster Wallace, "This Is Water" commencement address, Kenyon College (2005)',
     reveal:
-      'It admits its own point is "merely" simple, an offhand humility no slogan-writer would add.',
+      'That\'s David Foster Wallace, "This Is Water" commencement address, Kenyon College (2005).',
   },
   {
     id: "speech-3",
@@ -674,8 +649,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "With your college diploma you now have a crushing advantage over 8% of the workforce. I'm talking about dropout losers like Bill Gates, Steve Jobs, and Mark Zuckerberg.",
     source: "Conan O'Brien, commencement address, Dartmouth College (2011)",
-    reveal:
-      'The deadpan stat-then-punchline rhythm and naming real billionaire dropouts as "losers" is classic live comic timing only a human would land.',
+    reveal: "That's Conan O'Brien, commencement address, Dartmouth College (2011).",
   },
   {
     id: "speech-4",
@@ -684,8 +658,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I went from being in the center of the grid to not only off the grid, but underneath the coffee table that the grid sits on, lost in the shag carpeting that is underneath the coffee table supporting the grid.",
     source: "Conan O'Brien, Dartmouth College Commencement Address (2011)",
-    reveal:
-      'The joke keeps piling on absurd detail ("the coffee table that the grid sits on... the shag carpeting underneath") building to a laugh. That escalation is a real comedian working a room.',
+    reveal: "That's Conan O'Brien, Dartmouth College Commencement Address (2011).",
   },
   {
     id: "speech-5",
@@ -695,7 +668,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "And, if by chance you have a miserable day, you will come home to a bed that is made — that you made — and a made bed gives you encouragement that tomorrow will be better. If you want to change the world, start off by making your bed.",
     source: "Admiral William H. McRaven, 2014 Commencement Address, University of Texas at Austin",
     reveal:
-      "It is plainspoken military advice — small, concrete, almost humble — exactly the kind of homespun discipline a Navy admiral would offer a graduating class.",
+      "That's Admiral William H. McRaven, 2014 Commencement Address, University of Texas at Austin.",
   },
   {
     id: "speech-6",
@@ -706,7 +679,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source:
       "Admiral William H. McRaven, commencement address, University of Texas at Austin (May 17, 2014)",
     reveal:
-      'Plain, practical advice with a homespun rhythm — "another and another and another" is the kind of repetition a real speaker uses out loud.',
+      "That's Admiral William H. McRaven, commencement address, University of Texas at Austin (May 17, 2014).",
   },
   {
     id: "speech-7",
@@ -715,8 +688,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Death is very likely the single best invention of Life. It is Life's change agent. It clears out the old to make way for the new.",
     source: "Steve Jobs, Commencement Address, Stanford University (2005)",
-    reveal:
-      "It is a deeply personal, slightly morbid reflection on mortality that a marketing team would never script for a polished brand voice.",
+    reveal: "That's Steve Jobs, Commencement Address, Stanford University (2005).",
   },
   {
     id: "speech-8",
@@ -725,8 +697,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "And I have always wished that for myself. And now, as you graduate to begin anew, I wish that for you. Stay Hungry. Stay Foolish.",
     source: "Steve Jobs, Commencement Address, Stanford University (June 12, 2005)",
-    reveal:
-      "He's quoting the Whole Earth Catalog's farewell line back to the graduates as a wish for himself — borrowing someone else's words, not inventing a slogan.",
+    reveal: "That's Steve Jobs, Commencement Address, Stanford University (June 12, 2005).",
   },
   {
     id: "speech-12",
@@ -767,8 +738,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "This is our most desperate hour. Help me, Obi-Wan Kenobi. You're my only hope.",
     source: "Star Wars: A New Hope (1977) — Princess Leia",
-    reveal:
-      "a desperate, name-specific plea in a looping distress recording; the kind of concrete, vulnerable ask only a real character in a specific jam makes.",
+    reveal: "That's Princess Leia in Star Wars: A New Hope (1977).",
   },
   {
     id: "movies-2",
@@ -777,8 +747,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "That's no moon. It's a space station.",
     source: "Star Wars: A New Hope (1977) — Obi-Wan Kenobi",
-    reveal:
-      "two declarative fragments, the second landing harder; the rhythm of dawning horror, not information delivery.",
+    reveal: "That's Obi-Wan Kenobi in Star Wars: A New Hope (1977).",
   },
   {
     id: "movies-3",
@@ -787,8 +756,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I find your lack of faith disturbing.",
     source: "Star Wars: A New Hope (1977) — Darth Vader",
-    reveal:
-      "villainous understatement; 'disturbing' is almost polite, which makes it scarier than a shout.",
+    reveal: "That's Darth Vader in Star Wars: A New Hope (1977).",
   },
   {
     id: "movies-4",
@@ -797,8 +765,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "These aren't the droids you're looking for.",
     source: "Star Wars: A New Hope (1977) — Obi-Wan Kenobi",
-    reveal:
-      "the casual confidence of a practiced Jedi mind trick reads lived-in and specific, not generic mysticism.",
+    reveal: "That's Obi-Wan Kenobi in Star Wars: A New Hope (1977).",
   },
   {
     id: "movies-5",
@@ -807,8 +774,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "No! Try not. Do... or do not. There is no try.",
     source: "The Empire Strikes Back (1980) — Yoda",
-    reveal:
-      "Yoda's backwards word order and flat certainty are pure character voice; a writer chose to make him sound alien and wise at once.",
+    reveal: "That's Yoda in The Empire Strikes Back (1980).",
   },
   {
     id: "movies-6",
@@ -817,8 +783,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "No. I am your father.",
     source: "The Empire Strikes Back (1980) — Darth Vader",
-    reveal:
-      "this is the real line (not 'Luke, I am your father'). It opens with a flat contradiction, which is what makes it land like a punch.",
+    reveal: "That's Darth Vader in The Empire Strikes Back (1980).",
   },
   {
     id: "movies-7",
@@ -827,7 +792,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Never tell me the odds!",
     source: "The Empire Strikes Back (1980) — Han Solo",
-    reveal: "pure Han: bravado as philosophy, a man who performs recklessness as identity.",
+    reveal: "That's Han Solo in The Empire Strikes Back (1980).",
   },
   {
     id: "movies-8",
@@ -836,8 +801,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"I love you." "I know."',
     source: "The Empire Strikes Back (1980) — Leia & Han Solo",
-    reveal:
-      "Han refuses the line he's supposed to say and answers sideways instead. That's a person making a choice, not a machine completing a sentence.",
+    reveal: "That's Leia & Han Solo in The Empire Strikes Back (1980).",
   },
   {
     id: "movies-9",
@@ -846,8 +810,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Hello there.",
     source: "Star Wars: Revenge of the Sith (2005) — Obi-Wan Kenobi",
-    reveal:
-      "a cheerful greeting delivered mid-ambush to a war criminal; the comedy is the total mismatch of tone and stakes.",
+    reveal: "That's Obi-Wan Kenobi in Star Wars: Revenge of the Sith (2005).",
   },
   {
     id: "movies-10",
@@ -856,7 +819,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Genius, billionaire, playboy, philanthropist.",
     source: "The Avengers (2012) — Tony Stark",
-    reveal: "four nouns, zero verbs; a self-description as a list, deliberate comic arrogance.",
+    reveal: "That's Tony Stark in The Avengers (2012).",
   },
   {
     id: "movies-11",
@@ -865,7 +828,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "That's my secret, Cap. I'm always angry.",
     source: "The Avengers (2012) — Bruce Banner",
-    reveal: "the quiet delivery of a devastating confession; the calm control is the whole point.",
+    reveal: "That's Bruce Banner in The Avengers (2012).",
   },
   {
     id: "movies-12",
@@ -874,8 +837,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Puny god.",
     source: "The Avengers (2012) — Hulk",
-    reveal:
-      "two words after smashing a god into the floor; brutal comic timing that's a writer's rhythm.",
+    reveal: "That's Hulk in The Avengers (2012).",
   },
   {
     id: "movies-13",
@@ -884,7 +846,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Even when I had nothing, I had Bucky.",
     source: "Captain America: The Winter Soldier (2014) — Steve Rogers",
-    reveal: "specific, proper-noun grief: not 'a friend' but this person by name.",
+    reveal: "That's Steve Rogers in Captain America: The Winter Soldier (2014).",
   },
   {
     id: "movies-14",
@@ -893,7 +855,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Mr. Stark, I don't feel so good. I don't want to go. I don't want to go, sir. Please. I'm sorry.",
     source: "Avengers: Infinity War (2018) — Peter Parker",
-    reveal: "stumbling repetition and apologizing; a kid scared of dying who still says sorry.",
+    reveal: "That's Peter Parker in Avengers: Infinity War (2018).",
   },
   {
     id: "movies-15",
@@ -902,8 +864,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Perfectly balanced, as all things should be.",
     source: "Avengers: Infinity War (2018) — Thanos",
-    reveal:
-      "a genocidal maniac describing a knife like a proud craftsman; the serenity is what makes him frightening.",
+    reveal: "That's Thanos in Avengers: Infinity War (2018).",
   },
   {
     id: "movies-16",
@@ -912,8 +873,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Part of the journey is the end.",
     source: "Avengers: Endgame (2019) — Tony Stark",
-    reveal:
-      "yes, it literally uses 'journey' (an AI favorite!) — but it's Tony's hologram to his daughter, accepting mortality with earned, specific grace.",
+    reveal: "That's Tony Stark in Avengers: Endgame (2019).",
   },
   {
     id: "movies-17",
@@ -922,8 +882,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "And I... am... Iron Man.",
     source: "Avengers: Endgame (2019) — Tony Stark",
-    reveal:
-      "the deliberate pauses call back his 2008 origin line; it lands 11 years later as both punchline and eulogy.",
+    reveal: "That's Tony Stark in Avengers: Endgame (2019).",
   },
   {
     id: "movies-18",
@@ -932,8 +891,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Avengers... assemble.",
     source: "Avengers: Endgame (2019) — Steve Rogers",
-    reveal:
-      "the most anticipated three words in the MCU, delivered quietly; it earns the moment through restraint, not volume.",
+    reveal: "That's Steve Rogers in Avengers: Endgame (2019).",
   },
   {
     id: "movies-19",
@@ -942,8 +900,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I'm a mog: half man, half dog. I'm my own best friend!",
     source: "Spaceballs (1987) — Barf",
-    reveal:
-      "the punchline pivots on 'best friend'; a joke that needs human-culture knowledge of what dogs are to people.",
+    reveal: "That's Barf in Spaceballs (1987).",
   },
   {
     id: "movies-20",
@@ -952,8 +909,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"I am your father\'s brother\'s nephew\'s cousin\'s former roommate." "What\'s that make us?" "Absolutely nothing!"',
     source: "Spaceballs (1987) — Dark Helmet & Lone Starr",
-    reveal:
-      "a bureaucratic labyrinth of family relations arriving at 'nothing'; a joke about Star Wars mythology and anticlimactic reveals at once.",
+    reveal: "That's Dark Helmet & Lone Starr in Spaceballs (1987).",
   },
   {
     id: "movies-21",
@@ -962,8 +918,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "What's the matter, Colonel Sandurz? Chicken?!",
     source: "Spaceballs (1987) — Dark Helmet",
-    reveal:
-      "a schoolyard taunt ('chicken?') from a supervillain in full armor; ridiculous authority, pure Mel Brooks.",
+    reveal: "That's Dark Helmet in Spaceballs (1987).",
   },
   {
     id: "movies-22",
@@ -972,8 +927,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "There's only one man who would dare give me the raspberry: Lone Starr!",
     source: "Spaceballs (1987) — Dark Helmet",
-    reveal:
-      "taking a Bronx cheer literally as an act of defiance; the specificity of 'dare give me the raspberry' sells the absurdism.",
+    reveal: "That's Dark Helmet in Spaceballs (1987).",
   },
   {
     id: "movies-23",
@@ -982,8 +936,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"We were told to comb the desert, so we\'re combing it!" "We ain\'t found shit!"',
     source: "Spaceballs (1987) — Dark Helmet & a trooper",
-    reveal:
-      "the idiom 'comb the desert' taken literally, plus profanity for comic deflation; cultural comedy.",
+    reveal: "That's Dark Helmet & a trooper in Spaceballs (1987).",
   },
   {
     id: "movies-24",
@@ -992,8 +945,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"What happened to then?" "We passed then." "When?" "Just now."',
     source: "Spaceballs (1987) — Dark Helmet & Colonel Sandurz",
-    reveal:
-      'the joke treats "then" as a place you can drive past and miss. Wordplay that silly is a writer having fun; a machine plays it straight.',
+    reveal: "That's Dark Helmet & Colonel Sandurz in Spaceballs (1987).",
   },
   {
     id: "movies-26",
@@ -1013,7 +965,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Together we will harness the storm, forge a new dawn, and unleash a power this universe has never witnessed.",
     source: "AI-generated",
     reveal:
-      'AI — three verbs marching in a row ("harness the storm, forge a new dawn, unleash a power"), each grander than the last and none attached to a plan. When a line escalates in threes and gets vaguer as it climbs, suspect the machine.',
+      'AI — three verbs marching in a row ("harness the storm, forge a new dawn, and unleash a power"), each grander than the last and none attached to a plan. When a line escalates in threes and gets vaguer as it climbs, suspect the machine.',
   },
   {
     id: "movies-30",
@@ -1033,7 +985,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Surrender now, and I may yet allow you to truly, deeply understand the profound mercy of which I am capable.",
     source: "AI-generated",
     reveal:
-      'AI — the over-stuffed intensifiers "truly, deeply understand the profound mercy" are the tell; real menace is specific and lean, while this villain threatens in vague abstractions naming no captive or consequence.',
+      'AI — "truly, deeply understand the profound mercy" is three boosters propping up one word. Real menace is short and tells you what happens to you; this one just turns the volume up.',
   },
   {
     id: "movies-35",
@@ -1118,7 +1070,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "He's not answering the radio. Either he's gone dark on purpose, or he's just gone. That's either very good or very bad.",
     source: "AI-generated",
     reveal:
-      'Sneaky — "gone dark on purpose, or just gone" is a genuinely good line. If you missed it, blame the too-neat "very good or very bad" ending; that was about all there was to catch.',
+      'Sneaky — "gone dark on purpose, or he\'s just gone" is a genuinely good line. If you missed it, blame the too-neat "very good or very bad" ending; that was about all there was to catch.',
     sneaky: true,
   },
   {
@@ -1144,8 +1096,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"Surely you can\'t be serious." "I am serious. And don\'t call me Shirley."',
     source: "Airplane! (1980) — Ted Striker & Dr. Rumack",
-    reveal:
-      "The whole line hangs on one man mishearing a single word, delivered with a completely straight face. Betting an entire joke on a name is a risk a person takes and a machine never would.",
+    reveal: "That's Ted Striker & Dr. Rumack in Airplane! (1980).",
   },
   {
     id: "genx-2",
@@ -1154,8 +1105,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "So I've got that going for me, which is nice.",
     source: "Caddyshack (1980) — Carl Spackler",
-    reveal:
-      "He tells a huge story and then shrugs it off with a mumbled consolation prize. A machine would have ended on the big payoff, not on someone quietly deflating himself.",
+    reveal: "That's Carl Spackler in Caddyshack (1980).",
   },
   {
     id: "genx-3",
@@ -1164,8 +1114,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Back off, man. I'm a scientist.",
     source: "Ghostbusters (1984) — Dr. Peter Venkman",
-    reveal:
-      'Claiming professional credentials in the middle of a shoving match is a very human kind of nonsense. The mismatch between "back off, man" and "scientist" is the entire joke.',
+    reveal: "That's Dr. Peter Venkman in Ghostbusters (1984).",
   },
   {
     id: "genx-4",
@@ -1174,8 +1123,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Life moves pretty fast. If you don't stop and look around once in a while, you could miss it.",
     source: "Ferris Bueller's Day Off (1986) — Ferris Bueller",
-    reveal:
-      "This one genuinely looks like a fridge magnet, which is why it's a nasty question — but it's a teenager talking straight to the camera while skipping school, and \"you could miss it\" is offhand rather than grand.",
+    reveal: "That's Ferris Bueller in Ferris Bueller's Day Off (1986).",
   },
   {
     id: "genx-5",
@@ -1184,8 +1132,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "The 1961 Ferrari 250 GT California. Less than a hundred were made.",
     source: "Ferris Bueller's Day Off (1986) — Cameron Frye",
-    reveal:
-      "A model year, a car name, and a production number. That much checkable detail is somebody who knows exactly what he's looking at; machines avoid numbers they'd have to be right about.",
+    reveal: "That's Cameron Frye in Ferris Bueller's Day Off (1986).",
   },
   {
     id: "genx-6",
@@ -1194,8 +1141,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "My name is Inigo Montoya. You killed my father. Prepare to die.",
     source: "The Princess Bride (1987) — Inigo Montoya",
-    reveal:
-      "He introduces himself politely before threatening to kill you, and you can tell he has rehearsed it for years. That specific, strange little habit is too odd to be invented by a machine.",
+    reveal: "That's Inigo Montoya in The Princess Bride (1987).",
   },
   {
     id: "genx-7",
@@ -1204,8 +1150,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You keep using that word. I do not think it means what you think it means.",
     source: "The Princess Bride (1987) — Inigo Montoya",
-    reveal:
-      "It's a correction delivered patiently in the middle of a chase, and it never tells you which word. The joke only works because there's a real scene and a real annoying man around it.",
+    reveal: "That's Inigo Montoya in The Princess Bride (1987).",
   },
   {
     id: "genx-8",
@@ -1214,8 +1159,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "What if there is no tomorrow? There wasn't one today.",
     source: "Groundhog Day (1993) — Phil Connors",
-    reveal:
-      "The second sentence quietly breaks reality, and he says it in the tone of a man complaining about the weather. That flatness in the face of something impossible is a person's timing.",
+    reveal: "That's Phil Connors in Groundhog Day (1993).",
   },
   {
     id: "genx-9",
@@ -1224,8 +1168,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "We're not worthy! We're not worthy!",
     source: "Wayne's World (1992) — Wayne & Garth",
-    reveal:
-      "Two grown men on their knees chanting the same three words. It makes no sense on the page and total sense in the room, which is what a real scene gives you.",
+    reveal: "That's Wayne & Garth in Wayne's World (1992).",
   },
   {
     id: "genx-10",
@@ -1234,8 +1177,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "So you're telling me there's a chance!",
     source: "Dumb and Dumber (1994) — Lloyd Christmas",
-    reveal:
-      "He has just been told one in a million and he hears good news. The joke lives in the gap between what was said and what he decided to hear — that's a character, not a clever sentence.",
+    reveal: "That's Lloyd Christmas in Dumb and Dumber (1994).",
   },
   {
     id: "genx-11",
@@ -1244,8 +1186,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "We get the warhead and hold the world ransom for... one million dollars!",
     source: "Austin Powers: International Man of Mystery (1997) — Dr. Evil",
-    reveal:
-      "The pause before the number is the whole gag: a villain frozen in the wrong decade, enormously proud of an amount nobody is scared of. Timing built out of a pause is a person's work.",
+    reveal: "That's Dr. Evil in Austin Powers: International Man of Mystery (1997).",
   },
   {
     id: "genx-12",
@@ -1254,8 +1195,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Yeah, well, The Dude abides.",
     source: "The Big Lebowski (1998) — The Dude",
-    reveal:
-      'Three words, and one of them is a nickname he gave himself. The "yeah, well" shrug in front of it is how people actually start sentences; a machine would have trimmed that off.',
+    reveal: "That's The Dude in The Big Lebowski (1998).",
   },
   {
     id: "genx-13",
@@ -1264,8 +1204,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I'm also gonna need you to go ahead and come in on Sunday, too, OK?",
     source: "Office Space (1999) — Bill Lumbergh",
-    reveal:
-      'Every padding word — "also," "go ahead," "too," "OK" — is a manager softening bad news until it\'s unbearable. Anybody who has had that conversation recognizes the sound of it.',
+    reveal: "That's Bill Lumbergh in Office Space (1999).",
   },
   {
     id: "genx-14",
@@ -1274,8 +1213,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I want my two dollars!",
     source: "Better Off Dead (1985) — Johnny the paperboy",
-    reveal:
-      'Two dollars. A specific, absurdly small amount, shouted by a paperboy who will never let it go. Real comedy commits to a tiny stupid number; invented lines round it up to "my money."',
+    reveal: "That's Johnny the paperboy in Better Off Dead (1985).",
   },
   {
     id: "genx-15",
@@ -1284,8 +1222,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "They've got the golden arches. Mine are the golden arcs.",
     source: "Coming to America (1988) — Cleo McDowell",
-    reveal:
-      "A one-letter dodge around a lawsuit, delivered with total confidence. That's a specific scam a writer thought all the way through, not a generic joke about fast food.",
+    reveal: "That's Cleo McDowell in Coming to America (1988).",
   },
   {
     id: "genx-16",
@@ -1294,8 +1231,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "It's all ball bearings nowadays.",
     source: "Fletch (1985) — Fletch",
-    reveal:
-      'He\'s bluffing his way through a job he knows nothing about, and "nowadays" is the perfect fake-expert word. Confidence with absolutely nothing behind it is a very human move.',
+    reveal: "That's Fletch in Fletch (1985).",
   },
   {
     id: "genx-17",
@@ -1304,8 +1240,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Nothing to see here. Please disperse!",
     source: "The Naked Gun (1988) — Lt. Frank Drebin",
-    reveal:
-      "He says it while a fireworks factory explodes behind him. The words are deliberately boring — the comedy is entirely in what they're ignoring, which needs a real scene to work.",
+    reveal: "That's Lt. Frank Drebin in The Naked Gun (1988).",
   },
   {
     id: "genx-18",
@@ -1314,8 +1249,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"Looking good, Billy Ray!" "Feeling good, Louis!"',
     source: "Trading Places (1983) — Louis Winthorpe III & Billy Ray Valentine",
-    reveal:
-      "Two guys checking in with each other by name, and that's the whole exchange. It only pays off because you watched them earn it — machines don't write payoffs for scenes they never set up.",
+    reveal: "That's Louis Winthorpe III & Billy Ray Valentine in Trading Places (1983).",
   },
   {
     id: "genx-19",
@@ -1385,7 +1319,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "My uncle's chili was truly spicy. Deeply, profoundly spicy. Everyone at the table was significantly affected.",
     source: "AI-generated",
     reveal:
-      'AI — "truly, deeply, profoundly" are doing the job one real detail should do; a person would have told you who ran for the garden hose. Those words prop up AI writing everywhere, and there is never anything underneath them.',
+      "AI — truly, then deeply, then profoundly: three boosters and not one detail. A person would have told you who ran for the garden hose. Those words prop up AI writing everywhere, and there is never anything underneath them.",
   },
   {
     id: "genx-30",
@@ -1459,8 +1393,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Moisture is the essence of wetness, and wetness is the essence of beauty.",
     source: "Zoolander (2001) — Derek Zoolander",
-    reveal:
-      "It's confident nonsense — a chain of reasoning that goes absolutely nowhere, delivered by a man who is deadly serious. A machine writing a beauty line would have made it make sense.",
+    reveal: "That's Derek Zoolander in Zoolander (2001).",
   },
   {
     id: "millennial-2",
@@ -1469,8 +1402,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "The best way to spread Christmas cheer is singing loud for all to hear.",
     source: "Elf (2003) — Buddy",
-    reveal:
-      "It rhymes, and he means every word of it with his whole chest. The total lack of embarrassment is the joke, and only a writer building a character would commit that hard.",
+    reveal: "That's Buddy in Elf (2003).",
   },
   {
     id: "millennial-3",
@@ -1479,8 +1411,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I just like to smile. Smiling's my favorite.",
     source: "Elf (2003) — Buddy",
-    reveal:
-      "\"Smiling's my favorite\" isn't quite how anyone would say it — favorite what? That tiny wrongness is a writer making a grown man think like a six-year-old.",
+    reveal: "That's Buddy in Elf (2003).",
   },
   {
     id: "millennial-4",
@@ -1489,8 +1420,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I caught you a delicious bass.",
     source: "Napoleon Dynamite (2004) — Napoleon",
-    reveal:
-      'He is offering a fish, on purpose, as a romantic gesture. Nobody invents the word "delicious" there — it\'s too specific and too strange to be anything but a real script.',
+    reveal: "That's Napoleon in Napoleon Dynamite (2004).",
   },
   {
     id: "millennial-5",
@@ -1499,8 +1429,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Girls only want boyfriends who have great skills.",
     source: "Napoleon Dynamite (2004) — Napoleon",
-    reveal:
-      "The word \"skills\" is doing an enormous amount of work here, and it's said as flat fact. That's a real teenager's theory of the entire world in one sentence.",
+    reveal: "That's Napoleon in Napoleon Dynamite (2004).",
   },
   {
     id: "millennial-6",
@@ -1509,8 +1438,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "On Wednesdays, we wear pink.",
     source: "Mean Girls (2004) — Karen Smith",
-    reveal:
-      "It's a rule about the color pink, announced like a law of physics. The comedy is entirely in how seriously it's said, which is a choice a person makes.",
+    reveal: "That's Karen Smith in Mean Girls (2004).",
   },
   {
     id: "millennial-7",
@@ -1519,8 +1447,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: 'Gretchen, stop trying to make "fetch" happen. It\'s not going to happen.',
     source: "Mean Girls (2004) — Regina George",
-    reveal:
-      "Someone is being shut down by name, in the middle of trying. The name and the interruption are what make it feel like a real room full of people.",
+    reveal: "That's Regina George in Mean Girls (2004).",
   },
   {
     id: "millennial-8",
@@ -1529,8 +1456,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I don't know how to put this, but I'm kind of a big deal.",
     source: "Anchorman: The Legend of Ron Burgundy (2004) — Ron Burgundy",
-    reveal:
-      "He pretends to struggle for words right before saying the least modest thing possible. That little two-step is a setup and a punchline crammed into one breath.",
+    reveal: "That's Ron Burgundy in Anchorman: The Legend of Ron Burgundy (2004).",
   },
   {
     id: "millennial-9",
@@ -1539,8 +1465,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "If you ain't first, you're last.",
     source: "Talladega Nights: The Ballad of Ricky Bobby (2006) — Reese Bobby",
-    reveal:
-      "It's terrible advice, said with total confidence by a dad, and a grown man builds his whole life on it. Real writing hands you a bad idea and lets it do damage.",
+    reveal: "That's Reese Bobby in Talladega Nights: The Ballad of Ricky Bobby (2006).",
   },
   {
     id: "millennial-10",
@@ -1549,8 +1474,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "If you can dodge a wrench, you can dodge a ball.",
     source: "DodgeBall: A True Underdog Story (2004) — Patches O'Houlihan",
-    reveal:
-      "It's coaching advice that is also, technically, an assault. Nobody lands on \"wrench\" as the example — it's too dumb and too specific to be generated.",
+    reveal: "That's Patches O'Houlihan in DodgeBall: A True Underdog Story (2004).",
   },
   {
     id: "millennial-11",
@@ -1559,8 +1483,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I'm watching you, Wazowski. Always watching. Always.",
     source: "Monsters, Inc. (2001) — Roz",
-    reveal:
-      "The threat gets repeated because she's enjoying it, and it's aimed at one specific person by last name. That's a character with a grudge, not a line about surveillance.",
+    reveal: "That's Roz in Monsters, Inc. (2001).",
   },
   {
     id: "millennial-12",
@@ -1569,8 +1492,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Ogres are like onions. Onions have layers. Ogres have layers.",
     source: "Shrek (2001) — Shrek",
-    reveal:
-      "He's frustrated and saying the same thing three different ways because the first two didn't land. That's what losing an argument actually sounds like.",
+    reveal: "That's Shrek in Shrek (2001).",
   },
   {
     id: "millennial-13",
@@ -1579,8 +1501,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"Did we just become best friends?" "Yep."',
     source: "Step Brothers (2008) — Brennan & Dale",
-    reveal:
-      'Two grown men discover a friendship out loud, and the answer is one syllable. The tiny "Yep" doing all the work is the entire joke.',
+    reveal: "That's Brennan & Dale in Step Brothers (2008).",
   },
   {
     id: "millennial-14",
@@ -1589,8 +1510,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "No one knows what it means, but it's provocative. It gets the people going.",
     source: "Blades of Glory (2007) — Chazz Michael Michaels",
-    reveal:
-      "He admits nobody understands it and then argues for it anyway. Doubling down on a bad case is a very human thing to write into a scene.",
+    reveal: "That's Chazz Michael Michaels in Blades of Glory (2007).",
   },
   {
     id: "millennial-15",
@@ -1599,8 +1519,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "It's not a man-purse. It's called a satchel. Indiana Jones wears one.",
     source: "The Hangover (2009) — Alan",
-    reveal:
-      "He corrects the word, then immediately reaches for Indiana Jones as proof. That defensive scramble for backup is exactly what an embarrassed person does.",
+    reveal: "That's Alan in The Hangover (2009).",
   },
   {
     id: "millennial-16",
@@ -1609,8 +1528,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I'm gonna need you to go ahead and come in tomorrow. So if you could be here around nine, that would be great.",
     source: "Office Space (1999) — Bill Lumbergh",
-    reveal:
-      'It\'s a demand wrapped in polite filler — "if you could," "that would be great." Anyone who has ever had a manager recognizes that exact wording, and that\'s why it\'s real.',
+    reveal: "That's Bill Lumbergh in Office Space (1999).",
   },
   {
     id: "millennial-17",
@@ -1619,8 +1537,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You're tacky, and I hate you.",
     source: "School of Rock (2003) — Billy",
-    reveal:
-      "Five words from the kid who appointed himself the band's stylist, and \"tacky\" is a wonderfully petty word for a child to reach for. It's the sort of insult that's too oddly chosen to be invented.",
+    reveal: "That's Billy in School of Rock (2003).",
   },
   {
     id: "millennial-18",
@@ -1629,8 +1546,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Help me, I'm poor.",
     source: "Bridesmaids (2011) — Annie",
-    reveal:
-      "She's pleading with a flight attendant using the actual, humiliating truth. Saying the embarrassing thing straight out is a person's move, not a machine's.",
+    reveal: "That's Annie in Bridesmaids (2011).",
   },
   {
     id: "millennial-19",
@@ -1650,7 +1566,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "I live by three rules: never quit, never explain, and never wear socks with sandals.",
     source: "AI-generated",
     reveal:
-      'AI — a tidy group of three, each about the same length. Machines can\'t resist threes; watch for it the next time an AI-written email promises something "fast, simple, and reliable."',
+      "AI — a tidy group of three, each about the same length. Machines can't resist threes; watch for it the next time an AI-written email promises something 'fast, simple, and reliable.'",
   },
   {
     id: "millennial-21",
@@ -1774,8 +1690,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I only work in black. And sometimes, very, very dark gray.",
     source: "The Lego Movie (2014) — Batman",
-    reveal:
-      "The joke is that he corrects himself to something that isn't a correction at all. That tiny, self-serious walk-back is a writer's touch — a machine would have stopped at \"black.\"",
+    reveal: "That's Batman in The Lego Movie (2014).",
   },
   {
     id: "genz-3",
@@ -1784,8 +1699,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "All right, let's do this one last time. My name is Peter Parker.",
     source: "Spider-Man: Into the Spider-Verse (2018) — Peter Parker",
-    reveal:
-      '"One last time" is a tired guy who has told this story too many times already. That weariness is a real person\'s idea; a machine would open with something grand instead.',
+    reveal: "That's Peter Parker in Spider-Man: Into the Spider-Verse (2018).",
   },
   {
     id: "genz-4",
@@ -1794,8 +1708,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "You won't. It's a leap of faith. That's all it is, Miles.",
     source: "Spider-Man: Into the Spider-Verse (2018) — Peter B. Parker",
-    reveal:
-      "He answers a scared kid's question with a flat \"You won't\" before offering any comfort, and he uses his name. Honest first, kind second — that ordering is how people actually talk.",
+    reveal: "That's Peter B. Parker in Spider-Man: Into the Spider-Verse (2018).",
   },
   {
     id: "genz-5",
@@ -1804,8 +1717,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Yeah, no, don't put me down for cardio.",
     source: "Pitch Perfect (2012) — Fat Amy",
-    reveal:
-      '"Yeah, no" is a real thing people say and a machine almost never writes, because it agrees and refuses in the same breath. The flat delivery does all the work.',
+    reveal: "That's Fat Amy in Pitch Perfect (2012).",
   },
   {
     id: "genz-6",
@@ -1814,8 +1726,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "I do hope you keep me in mind for any future game nights.",
     source: "Game Night (2018) — Gary",
-    reveal:
-      "Nobody talks this formally to their neighbors, and that's the whole joke — a lonely guy being painfully polite about wanting to be invited. The comedy is the mismatch, which takes a person to build.",
+    reveal: "That's Gary in Game Night (2018).",
   },
   {
     id: "genz-7",
@@ -1824,8 +1735,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: '"You guys don\'t even care about school." "No, we just don\'t only care about school."',
     source: "Booksmart (2019) — Molly & Triple A",
-    reveal:
-      'The comeback moves one small word — "even" becomes "only" — and demolishes her entire worldview. That kind of precision landing is a screenwriter finding the exact word, not a machine reaching for a bigger one.',
+    reveal: "That's Molly & Triple A in Booksmart (2019).",
   },
   {
     id: "genz-8",
@@ -1834,8 +1744,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Maximum effort.",
     source: "Deadpool (2016) — Deadpool",
-    reveal:
-      "Two words, said before doing something ridiculous. It's a catchphrase because it's short and reusable, and real people talk in shorthand like this far more than machines do.",
+    reveal: "That's Deadpool in Deadpool (2016).",
   },
   {
     id: "genz-9",
@@ -1844,8 +1753,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "The only thing I do know is that we have to be kind. Please, be kind, especially when we don't know what's going on.",
     source: "Everything Everywhere All at Once (2022) — Waymond Wang",
-    reveal:
-      "Yes, it reads like a poster — but look at the ending. He doesn't stop on the clean line; he tacks on \"especially when we don't know what's going on.\" That's a person.",
+    reveal: "That's Waymond Wang in Everything Everywhere All at Once (2022).",
   },
   {
     id: "genz-13",
@@ -1917,8 +1825,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "Rats along his back. When he calls your name, it all fades to black.",
     source: "Encanto (2021) — Camilo, “We Don't Talk About Bruno”",
-    reveal:
-      "Nobody needed the rats. That oddly specific, useless detail is the giveaway — it's a family gossiping about their uncle until he sounds like a monster, and a person wrote the part that goes too far.",
+    reveal: "That's Camilo, “We Don't Talk About Bruno” in Encanto (2021).",
   },
   {
     id: "alpha-2",
@@ -1927,8 +1834,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "But Aunt Lucy said, “If we're kind and polite, the world will be right.”",
     source: "Paddington 2 (2017) — Paddington",
-    reveal:
-      "It rhymes like a fridge magnet, but it belongs to somebody: a small bear repeating his aunt's advice, and he names her. A machine writes the saying; a person gives it an owner.",
+    reveal: "That's Paddington in Paddington 2 (2017).",
   },
   {
     id: "alpha-3",
@@ -1937,8 +1843,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "He's so fluffy, I'm gonna die!",
     source: "Despicable Me (2010) — Agnes",
-    reveal:
-      "This is the actual line — almost everyone remembers it as “It's so fluffy.” A little kid announcing that a stuffed unicorn might kill her is the kind of overreaction you only write if you've met a real three-year-old.",
+    reveal: "That's Agnes in Despicable Me (2010).",
   },
   {
     id: "alpha-4",
@@ -1947,8 +1852,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "And I don't mean it metaphorically or rhetorically or poetically or theoretically or in any other fancy way. I'm Death, straight up.",
     source: "Puss in Boots: The Last Wish (2022) — Death",
-    reveal:
-      "Four fancy words piled up just to say “I'm not kidding,” then thrown away for “straight up.” A machine picks one word; a writer stacks all four because the pile-up is the joke.",
+    reveal: "That's Death in Puss in Boots: The Last Wish (2022).",
   },
   {
     id: "alpha-5",
@@ -1957,8 +1861,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "human",
     body: "If you start singing, I'm gonna throw up.",
     source: "Moana (2016) — Maui",
-    reveal:
-      "It's a threat about singing — in a musical, right before he sings. A movie making fun of itself like that is people in a room having fun, not a line built to be quoted.",
+    reveal: "That's Maui in Moana (2016).",
   },
   {
     id: "alpha-6",
@@ -2240,7 +2143,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Hi Dana — great question! Regarding the 3pm: 1) Availability — my calendar is clear. 2) Preparation — I will review the deck beforehand. 3) Follow-up — I will circulate notes after. Let me know if you'd like me to expand on any of these.",
     source: "AI-generated",
     reveal:
-      'AI — the honest reply was "yes, see you at 3." What arrived was a three-part memo with a label on each line. When an answer is longer and tidier than the question deserved, check who actually typed it.',
+      "AI — the honest reply was 'yes, see you at 3.' What arrived was a three-part memo with a label on each line. When an answer is longer and tidier than the question deserved, check who actually typed it.",
   },
   {
     id: "disney-27",
@@ -2600,7 +2503,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“The river has risen again,” said the old raccoon, resting a paw on the boy's shoulder. “Together, we must navigate the challenges ahead.”",
     source: "AI-generated",
     reveal:
-      'AI — swap "navigate" for a plain verb and the raccoon just gets across the river. Machines take the big word every time, which is why "navigate the changes ahead" turns up in half the company updates you get.',
+      "AI — swap \"navigate\" for a plain verb and the raccoon just gets across the river. Machines take the big word every time, which is why 'navigate the changes ahead' turns up in half the company updates you get.",
   },
   {
     id: "speech-25",
