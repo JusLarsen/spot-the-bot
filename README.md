@@ -270,6 +270,7 @@ If it fails, run `npm run deploy:rules`. No redeploy is needed — clients recov
 | `npm run test`          | Vitest (single run)                                                  |
 | `npm run test:watch`    | Vitest in watch mode                                                 |
 | `npm run gen:questions` | Regenerate `lib/questions.public.ts` from the server question bank   |
+| `npm run gen:qr`        | Regenerate the event QR poster (`public/event-qr.svg`/`.png`)        |
 | `npm run check:rules`   | Verify the live RTDB still allows client reads (run before an event) |
 | `npm run deploy:rules`  | Publish `database.rules.json` to Firebase                            |
 
