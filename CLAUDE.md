@@ -50,6 +50,14 @@ inversion, intensifier. Describe what an ordinary person notices, and anchor to 
 references — quote cards, fridge magnets, LinkedIn posts, motivational posters, ads.
 Plain AI reveals prefix `AI — `, sneaky ones `Sneaky — `, human ones take no prefix.
 
+**Human-quote reveals are provenance ONLY — no exceptions.** The reveal for a real
+quote is `That's <speaker> in <work> (<year>).` (or `That's <person>, <work>.` for
+person-first sources), derived mechanically from `source`. Never write prose about
+what makes the quote feel human — an AI explaining humanness is off-putting, and the
+attribution IS the payoff. This rule exists because 121 reveals shipped as literary
+analysis ("the rhythm of dawning horror, not information delivery") and all had to be
+replaced. Enforced by `lib/questions.test.ts`.
+
 **Three correctness rules for reveals:**
 
 1. **Only cite text that is actually in the `body`.** A reveal quoting a phrase the
