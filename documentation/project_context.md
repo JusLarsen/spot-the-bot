@@ -3,7 +3,7 @@
 ## What it is
 
 **Spot the Bot** is a live, team-based human-vs-AI detection game built for a Traeger
-leadership/training session. A room of ~24–30 teams each grab one device, pick a team
+live event or training session. A room of ~24–30 teams each grab one device, pick a team
 name, and work through a shuffled bank of 246 text samples deciding **human vs AI**
 together. The host runs a single shared countdown (host-selectable length, default
 10 min). When it ends, the team with the most correct answers wins — ties broken by

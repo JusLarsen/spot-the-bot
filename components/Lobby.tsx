@@ -82,9 +82,7 @@ export function Lobby({
             <div className="flex items-center gap-3">
               <AvatarChooser current={resolveAvatar(me.avatar, me.id)} onSelect={changeAvatar} />
               <div className="text-muted font-mono text-[12px] leading-[1.4]">
-                Your team avatar.
-                <br />
-                Tap it to pick a new one.
+                Tap to change your team avatar.
               </div>
             </div>
             {avatarError && (
@@ -120,28 +118,10 @@ export function Lobby({
       {!isHost && (
         <div className="card mt-4">
           <div className="eyebrow">How to spot the bot</div>
-          <ul className="text-muted mt-2 space-y-2 text-sm leading-[1.4]">
-            <li>
-              <b className="text-bot">It names nothing specific.</b> No real person, place, or
-              moment — it would fit any quote. Real lines are anchored to something particular.
-            </li>
-            <li>
-              <b className="text-bot">It hedges, then wraps up too neatly.</b> Over-explains, then
-              lands a tidy moral or pep-talk button (&ldquo;brings people together,&rdquo;
-              &ldquo;you were ready all along&rdquo;).
-            </li>
-            <li>
-              <b className="text-bot">Polished but hollow.</b> Grand words and stock metaphors with
-              no lived detail — a number, an odd specific, a rough edge.
-            </li>
-            <li>
-              <b className="text-human">Humans are concrete and a little messy.</b> Specific names,
-              weird particulars, unfinished thoughts.
-            </li>
-          </ul>
-          <p className="text-muted mt-3 font-mono text-[11px] leading-[1.5]">
-            Heads up: punchy, aphoristic, rule-of-three lines can be human too — polish and a clever
-            rhythm aren&apos;t proof of a bot.
+          <p className="text-muted mt-2 text-sm leading-[1.4]">
+            Real quotes from <b className="text-human">people and movies</b>, mixed with{" "}
+            <b className="text-bot">AI fakes</b> — and every fake has a tell. The reveal names it
+            after each guess.
           </p>
         </div>
       )}

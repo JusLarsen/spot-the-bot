@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-**Spot the Bot** is a live **team** game for a room of people (a leadership session). Each team uses one device, picks a team name, and works through a shuffled bank of text samples deciding **human vs AI** together. The host starts a single shared **countdown clock** (host-selectable length, default 10 min); when it ends, the team with the most correct answers wins (ties broken by least total answer time — one trophy winner). Teams can **join an in-progress round** (until the final 60s), and each game's leaderboard is **saved under a short code** and revisitable at `/r/<CODE>`.
+**Spot the Bot** is a live **team** game for a room of people at an event. Each team uses one device, picks a team name, and works through a shuffled bank of text samples deciding **human vs AI** together. The host starts a single shared **countdown clock** (host-selectable length, default 10 min); when it ends, the team with the most correct answers wins (ties broken by least total answer time — one trophy winner). Teams can **join an in-progress round** (until the final 60s), and each game's leaderboard is **saved under a short code** and revisitable at `/r/<CODE>`.
 
 ## Architecture
 
