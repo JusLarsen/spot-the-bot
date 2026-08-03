@@ -3,7 +3,18 @@
 
 export type Phase = "lobby" | "live" | "ended";
 export type Answer = "human" | "bot";
-export type Category = "bbq" | "business" | "disney" | "speech" | "movies";
+/** Category is organizational only — it is never shown to players and never
+ * affects ordering. The generation cohorts group the comedy expansion. */
+export type Category =
+  | "bbq"
+  | "business"
+  | "disney"
+  | "speech"
+  | "movies"
+  | "genx"
+  | "millennial"
+  | "genz"
+  | "alpha";
 export type QuestionType = "text" | "image";
 
 /** Prompt shipped to the browser — deliberately has NO answer/reveal/source. */

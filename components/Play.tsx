@@ -168,14 +168,18 @@ export function Play({
           <div className={`feedback ${lastResult.correct ? "right" : "wrong"}`} aria-live="polite">
             {lastResult.correct ? "✓ Correct" : "✗ Nope"}
           </div>
-          {!lastResult.correct && lastResult.sneaky && (
+          {lastResult.sneaky && (
             <div className="text-amber mt-1 text-center font-mono text-[12px]">
-              😈 A sneaky one — even the pros miss these.
+              {lastResult.correct
+                ? "😈 A sneaky one — and you caught it. Nice work."
+                : "😈 A sneaky one — even the pros miss these."}
             </div>
           )}
-          {!lastResult.correct && !lastResult.sneaky && lastResult.answer === "bot" && (
+          {!lastResult.sneaky && lastResult.answer === "bot" && (
             <div className="text-muted mt-1 text-center font-mono text-[12px]">
-              A classic AI tell — learn it for next time:
+              {lastResult.correct
+                ? "A classic AI tell — here's the one you spotted:"
+                : "A classic AI tell — learn it for next time:"}
             </div>
           )}
           <div className="reveal">{lastResult.reveal}</div>
