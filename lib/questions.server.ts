@@ -193,10 +193,10 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     type: "text",
     category: "bbq",
     answer: "bot",
-    body: "Brisket doesn’t care about your schedule, and that’s the first lesson. Trim it clean, season it honest, and let the smoke do its slow little sermon.",
+    body: "Great brisket comes down to three key factors: 1) Preparation — trim the excess fat. 2) Patience — hold a consistent temperature. 3) Rest — allow the meat to relax. Follow these steps for optimal results.",
     source: "AI-generated",
     reveal:
-      'AI — "trim it clean, season it honest, and let the smoke do its slow little sermon" is three parallel commands that end in metaphor instead of instruction: no trim line, no wood, no temp, nothing you could actually do tomorrow.',
+      "AI — it turned a question into a numbered handout with a label on every point. Nobody talks in numbered steps. When a reply arrives pre-formatted like this, something generated it.",
   },
   {
     id: "bbq-22",
@@ -533,10 +533,10 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     type: "text",
     category: "business",
     answer: "bot",
-    body: "Empathy is often dismissed as a soft skill, but it is actually the hardest and most lucrative tool in a modern executive's toolkit. When employees feel genuinely understood and psychologically safe, retention skyrocketing follows naturally. Take care of your people, and they will relentlessly take care of your metrics.",
+    body: "You're absolutely right, and I apologize for the confusion. That's a great point about retention, and you've clearly thought deeply about this. Building on your excellent observation, psychological safety really is the foundation here.",
     source: "AI-generated",
     reveal:
-      "AI — HR-deck language ('psychologically safe') plus a promise that retention and metrics improve 'naturally.' And 'retention skyrocketing follows naturally' is garbled — a glitch no human editor would leave in.",
+      'AI — four compliments and an apology for a mistake nobody mentioned, before a single actual idea. "You\'re absolutely right" is a machine folding, not agreeing. Push back on a chatbot and watch it cave either way.',
   },
   {
     id: "business-17",
