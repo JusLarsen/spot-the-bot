@@ -161,7 +161,7 @@ export const PUBLIC_QUESTIONS: PublicQuestion[] = [
   { id: "genx-8", type: "text", category: "genx", body: "What if there is no tomorrow? There wasn't one today." },
   { id: "genx-9", type: "text", category: "genx", body: "We're not worthy! We're not worthy!" },
   { id: "genx-10", type: "text", category: "genx", body: "So you're telling me there's a chance!" },
-  { id: "genx-11", type: "text", category: "genx", body: "We hold the world ransom for... one million dollars!" },
+  { id: "genx-11", type: "text", category: "genx", body: "We get the warhead and hold the world ransom for... one million dollars!" },
   { id: "genx-12", type: "text", category: "genx", body: "Yeah, well, The Dude abides." },
   { id: "genx-13", type: "text", category: "genx", body: "I'm also gonna need you to go ahead and come in on Sunday, too, OK?" },
   { id: "genx-14", type: "text", category: "genx", body: "I want my two dollars!" },

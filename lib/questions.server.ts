@@ -1622,7 +1622,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     type: "text",
     category: "genx",
     answer: "human",
-    body: "We hold the world ransom for... one million dollars!",
+    body: "We get the warhead and hold the world ransom for... one million dollars!",
     source: "Austin Powers: International Man of Mystery (1997) — Dr. Evil",
     reveal:
       "The pause before the number is the whole gag: a villain frozen in the wrong decade, enormously proud of an amount nobody is scared of. Timing built out of a pause is a person's work.",
@@ -2038,9 +2038,9 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "millennial",
     answer: "human",
     body: "You're tacky, and I hate you.",
-    source: "School of Rock (2003) — Summer",
+    source: "School of Rock (2003) — Billy",
     reveal:
-      "Five words, said by a straight-A kid to her teacher, and \"tacky\" is a wonderfully petty word to pick. It's the sort of insult that's too oddly chosen to be invented.",
+      "Five words from the kid who appointed himself the band's stylist, and \"tacky\" is a wonderfully petty word for a child to reach for. It's the sort of insult that's too oddly chosen to be invented.",
   },
   {
     id: "millennial-18",
