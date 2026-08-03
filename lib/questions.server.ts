@@ -185,8 +185,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Great brisket comes down to three key factors: 1) Preparation — trim the excess fat. 2) Patience — hold a consistent temperature. 3) Rest — allow the meat to relax. Follow these steps for optimal results.",
     source: "AI-generated",
-    reveal:
-      "AI — it turned a question into a numbered handout with a label on every point. Nobody talks in numbered steps. When a reply arrives pre-formatted like this, something generated it.",
+    reveal: "AI — nobody talks in numbered steps.",
   },
   {
     id: "bbq-24",
@@ -195,8 +194,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Don’t drown good meat in rub until it tastes like a spice cabinet fell down the stairs. Salt, pepper, heat, smoke, and restraint will get you invited back.",
     source: "AI-generated",
-    reveal:
-      'AI — watch the list: "salt, pepper, heat, smoke, and restraint." Four real things, then a virtue. It slides from the pit to the poster, and closes on the tidy reward "get you invited back."',
+    reveal: 'AI — four real ingredients, then "restraint" sneaks onto the list.',
   },
   {
     id: "bbq-26",
@@ -205,8 +203,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I like ribs with a little tug, not falling off the bone like they gave up on themselves. Sauce goes on near the end, just enough to shine them up for company.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — a bot, and it knows ribs should have a little tug, which is more than most people do. Only "like they gave up on themselves" got a bit writerly.',
+    reveal: "Sneaky — it knows ribs should tug, which is more than most of this room does.",
     sneaky: true,
   },
   {
@@ -216,8 +213,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I build my fire before I build my menu. Oak for beef, apple for pork, and a little hickory when I want the backyard to smell like it has opinions.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — a well-read bot: oak for beef and apple for pork is exactly right. Calling this human meant rewarding real knowledge, which is usually the right bet.",
+    reveal: "Sneaky — oak for beef, apple for pork: the bot did the reading.",
     sneaky: true,
   },
   {
@@ -227,8 +223,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Look at that smoke ring definition on these pork ribs. They’ve got just enough bite to come clean off the bone without falling apart into mush. Hit 'em with a light glaze of sweet heat right at the end for that picture-perfect shine.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — bot, and it earned the confusion; that doneness call is spot on. It only slipped reaching for "picture-perfect shine" at the finish.',
+    reveal: "Sneaky — the doneness call is dead-on; don't beat yourself up over this one.",
     sneaky: true,
   },
   {
@@ -238,8 +233,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A lot of guys overcomplicate the rub, but honestly, kosher salt and cracked pepper are all a good piece of beef needs. Let the quality of the meat and the draft of your offset smoker do the heavy lifting. If the smoke is blue, you’re doing it right.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot. Blue smoke, kosher salt, an offset: it did its homework. This one fools plenty of people who actually cook.",
+    reveal: "Sneaky — blue smoke, kosher salt, an offset: it did its homework.",
     sneaky: true,
   },
   {
@@ -249,8 +243,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Tinfoil is a crutch, but peach butcher paper is a pitmaster's best friend. It breathes just enough to keep your crust nice and crunchy while holding in those essential juices. Trust the process and don't rush the wrap.",
     source: "AI-generated",
-    reveal:
-      'AI — "tinfoil is a crutch" and "trust the process" are stock motivational phrasing, and the wrap is over-explained ("breathes just enough") rather than tied to any actual cook or temp.',
+    reveal: 'AI — "trust the process" is a poster, not a pit.',
   },
   {
     id: "bbq-37",
@@ -259,8 +252,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's world, barbecue is more than just cooking meat over fire. It is a journey that brings people together and nourishes the soul, one tender bite at a time.",
     source: "AI-generated",
-    reveal:
-      'AI — two tells in two sentences: the throat-clearing "In today\'s world" opener, and the "more than just X" move that promotes barbecue into "a journey," closing on "one tender bite at a time."',
+    reveal: 'AI — "In today\'s world," it began, about barbecue.',
   },
   {
     id: "bbq-38",
@@ -269,8 +261,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Great brisket isn't just about heat; it's about patience, respect, and an unwavering devotion to the craft.",
     source: "AI-generated",
-    reveal:
-      'AI — "patience, respect, and an unwavering devotion to the craft" lists virtues, not technique; it\'s a brisket sentence with zero brisket in it, fitting any craft equally well.',
+    reveal: 'AI — "patience, respect, and an unwavering devotion" — but no brisket.',
   },
   {
     id: "bbq-40",
@@ -280,7 +271,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "At the end of the day, smoking meat is about more than flavor. It's about connection, tradition, and the stories we share around the table.",
     source: "AI-generated",
     reveal:
-      'AI — "connection, tradition, and the stories we share around the table" is three big warm words standing in for an actual answer. Good test: if a sentence sounds complete but you can\'t picture anything in it, a machine probably wrote it.',
+      'AI — "connection, tradition, and the stories we share" — three warm words, zero smoke.',
   },
   {
     id: "business-1",
@@ -392,8 +383,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The market doesn’t care about your legacy strategy or how successful your previous product launch was. Disruption happens when an organization becomes too comfortable protecting past wins instead of cannibalizing its own business model to innovate. Stay paranoid, stay curious, and keep executing.",
     source: "AI-generated",
-    reveal:
-      "AI — 'Stay paranoid, stay curious, and keep executing' is a motivational sign-off, and the business-school phrases around it never land on a real example. A real leader would tell you which past win they gave up.",
+    reveal: 'AI — "Stay paranoid, stay curious" is a pep talk where an example should be.',
   },
   {
     id: "business-16",
@@ -402,8 +392,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You're absolutely right, and I apologize for the confusion. That's a great point about retention, and you've clearly thought deeply about this. Building on your excellent observation, psychological safety really is the foundation here.",
     source: "AI-generated",
-    reveal:
-      'AI — four compliments and an apology for a mistake nobody mentioned, before a single actual idea. "You\'re absolutely right" is a machine folding, not agreeing. Push back on a chatbot and watch it cave either way.',
+    reveal: 'AI — "You\'re absolutely right" is a machine folding, not agreeing.',
   },
   {
     id: "business-19",
@@ -412,8 +401,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Good leaders do not remove all friction; they remove the useless friction. Some tension sharpens the work, but bureaucracy just puts a velvet rope around progress.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot, and a sharp one. Useful friction versus useless friction is a real idea, so no shame in this one.",
+    reveal: "Sneaky — useful friction versus useless friction is genuinely sharp; no shame here.",
     sneaky: true,
   },
   {
@@ -424,7 +412,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Your calendar is a confession. It reveals what you reward, what you avoid, and what you are accidentally teaching everyone else to value.",
     source: "AI-generated",
     reveal:
-      "Sneaky — bot. 'Your calendar is a confession' is a genuinely good line, which is exactly why it got you.",
+      'Sneaky — "Your calendar is a confession" is a great line, which is exactly why it got you.',
     sneaky: true,
   },
   {
@@ -434,8 +422,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The mistake many teams make is confusing alignment with agreement. Alignment means we know the decision, the tradeoff, and the owner, even if we would have chosen differently.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot, but it's right: alignment isn't agreement. Missing this one mostly means you agreed with it.",
+    reveal: "Sneaky — missing this one mostly means you agreed with it.",
     sneaky: true,
   },
   {
@@ -445,8 +432,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Culture is not what gets printed on the wall; it is what people feel safe saying in the meeting. The real work of leadership is lowering the cost of honesty.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot. 'Lowering the cost of honesty' is a line you'd write down in a real meeting, so a miss here is a compliment to your taste.",
+    reveal: "Sneaky — you'd write that line down in a real meeting; so would we.",
     sneaky: true,
   },
   {
@@ -456,8 +442,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Trust compounds slowly and spends quickly. Every missed follow-through is a small withdrawal, even when nobody says it out loud.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot, and a quotable one. The withdrawal metaphor rings true enough that doubting it would have felt unfair.",
+    reveal: "Sneaky — quotable enough that doubting it felt rude.",
     sneaky: true,
   },
   {
@@ -467,8 +452,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A strategy that cannot survive contact with the frontline is not a strategy, it is office theater. The best leaders keep walking back to the people closest to the work.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot. 'Office theater' has real teeth; calling it human meant listening for voice, which is the right instinct even when it misfires.",
+    reveal: 'Sneaky — "office theater" has real teeth; a machine just grew them.',
     sneaky: true,
   },
   {
@@ -586,8 +570,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hurrying won't make the winter pass any faster, my little friend, as every single snowflake has its own special time to dance. Sit here by the hearth with me and let the frost paint its pictures on the windowpanes. Spring always knows exactly when to arrive.",
     source: "AI-generated",
-    reveal:
-      'AI — "Spring always knows exactly when to arrive" is a greeting-card resolution; the snowflake-patience platitude would fit any cozy hearth scene and names nobody.',
+    reveal: 'AI — "Spring always knows exactly when to arrive" comes straight off a greeting card.',
   },
   {
     id: "disney-22",
@@ -596,8 +579,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I’m not small,” said the mouse, adjusting his acorn helmet. “I’m travel-sized for destiny.”",
     source: "AI-generated",
-    reveal:
-      'Sneaky — a machine landed an actual joke, and "travel-sized for destiny" is a good one. Don\'t feel bad; the "I\'m not small... I\'m" reframe just snaps shut a little fast.',
+    reveal: 'Sneaky — "travel-sized for destiny" is a good joke, and the machine knows it.',
     sneaky: true,
   },
   {
@@ -607,8 +589,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I tried to be perfect and accidentally became miserable,” said the little prince. “So tomorrow I’m going to be terrible at something and see if the sun still rises.”",
     source: "AI-generated",
-    reveal:
-      'Sneaky — this one is simply good writing, whoever wrote it. Consolation prize: "see if the sun still rises" lands a half-shade too cleanly.',
+    reveal: "Sneaky — that's just good writing, whoever wrote it.",
     sneaky: true,
   },
   {
@@ -618,8 +599,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Oh, great, another ancient, booby-trapped temple filled with spikes and bugs, because a regular walk in the woods would just be too boring. Don’t touch anything, especially not that giant, shiny ruby that is practically screaming 'grab me' right now. Wait, where did you go?",
     source: "AI-generated",
-    reveal:
-      'Sneaky — sarcasm and a shiny ruby are supposed to be human territory, so no shame here. The seam is how tidily everything lines up before "Wait, where did you go?"',
+    reveal: "Sneaky — sarcasm and a shiny ruby are supposed to be human territory.",
     sneaky: true,
   },
   {
@@ -706,8 +686,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Do not let the fear of making a mistake paralyze your ambition, because every failure is simply a tuition payment toward your future wisdom. The most extraordinary lives are rarely linear; they are messy, unpredictable, and defined by the moments someone chose to get back up. Write a story worth telling.",
     source: "AI-generated",
-    reveal:
-      'AI — "every failure is simply a tuition payment toward your future wisdom" is a line built for a graduation card. Then it orders you to "write a story worth telling" without ever telling one of its own.',
+    reveal: 'AI — it demanded "a story worth telling" without telling one.',
   },
   {
     id: "speech-15",
@@ -716,8 +695,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You are not here because the path was clear. You are here because you kept walking when the map turned into fog.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — bot. Two sentences, barely a seam, and a line that actually lands. Almost nobody gets this one.",
+    reveal: "Sneaky — almost nobody gets this one.",
     sneaky: true,
   },
   {
@@ -727,8 +705,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Do not mistake certainty for wisdom. The people who change the world are often the ones willing to ask one more question when everyone else has packed up the chairs.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — bot, and "packed up the chairs" is a better image than most commencement speakers manage. If you called it human, so did the rest of the room.',
+    reveal: "Sneaky — if you called it human, so did the rest of the room.",
     sneaky: true,
   },
   {
@@ -954,8 +931,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This was never about the throne, the crown, or the kingdom. It was about something far greater: the soul of every world that ever dared to dream.",
     source: "AI-generated",
-    reveal:
-      'AI — the escalation "never about the throne... It was about something far greater: the soul of every world that ever dared to dream" is pure abstract uplift naming no kingdom, no speaker, no concrete stake.',
+    reveal: 'AI — everything traded up to "the soul of every world" — it was about the throne.',
   },
   {
     id: "movies-27",
@@ -964,8 +940,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Together we will harness the storm, forge a new dawn, and unleash a power this universe has never witnessed.",
     source: "AI-generated",
-    reveal:
-      'AI — three verbs marching in a row ("harness the storm, forge a new dawn, and unleash a power"), each grander than the last and none attached to a plan. When a line escalates in threes and gets vaguer as it climbs, suspect the machine.',
+    reveal: "AI — three verbs, each grander and vaguer than the last.",
   },
   {
     id: "movies-30",
@@ -975,7 +950,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Victory is not measured in the battles we win, but in the lives we choose to protect along the way.",
     source: "AI-generated",
     reveal:
-      'AI — "Victory is not measured in the battles we win, but in the lives we choose to protect" is a saying you could paste into any war film. No battle, no enemy, nobody actually being protected.',
+      'AI — the "not measured in X, but in Y" flip; victory is famously measured in battles you win.',
   },
   {
     id: "movies-32",
@@ -984,8 +959,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Surrender now, and I may yet allow you to truly, deeply understand the profound mercy of which I am capable.",
     source: "AI-generated",
-    reveal:
-      'AI — "truly, deeply understand the profound mercy" is three boosters propping up one word. Real menace is short and tells you what happens to you; this one just turns the volume up.',
+    reveal: "AI — the villain turned the volume up instead of making a threat.",
   },
   {
     id: "movies-35",
@@ -994,8 +968,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Every great empire begins with a single choice, and today, my friends, we choose to delve into legend.",
     source: "AI-generated",
-    reveal:
-      'AI — "today, my friends, we choose to delve into legend" is empty ceremony naming no empire, no choice, no people; "delve" especially is generic uplift standing in for an actual decision or stake.',
+    reveal: 'AI — armies charge; chatbots "delve into legend."',
   },
   {
     id: "movies-36",
@@ -1004,8 +977,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "They told me a machine could never love, never grieve, never truly hope. And yet, here I stand, profoundly and irrevocably alive.",
     source: "AI-generated",
-    reveal:
-      'AI — the piled adverbs "profoundly and irrevocably alive" plus the triple "never love, never grieve, never truly hope" is mechanical abstract uplift, an essay on machine consciousness with no scene around it.',
+    reveal: 'AI — "profoundly and irrevocably alive," said no living thing ever.',
   },
   {
     id: "movies-42",
@@ -1014,8 +986,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You really thought a force field would stop me? I helped design half the tech in this building. Buddy, I invented the off switch.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — a great closing line, and you were right to trust it. If there's a tell, \"I invented the off switch\" is timed a shade too perfectly — but that's a coin flip, not a mistake.",
+    reveal: 'Sneaky — "I invented the off switch" deserved your trust; call it a coin flip.',
     sneaky: true,
   },
   {
@@ -1025,8 +996,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Cut the blue wire. No — the other blue wire, the one tucked behind the red. We've got maybe ten seconds, so please trust me on this.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — you can practically see the wire. Real panic is messier than this staged self-correction, but that's a fine hair to split with ten seconds on the clock.",
+    reveal: "Sneaky — you could practically see the wire; so could everyone else who missed it.",
     sneaky: true,
   },
   {
@@ -1036,8 +1006,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I counted three guards on the schematic. On the ground there were six. We're going to need a bigger plan.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — real detail, and most rooms call this one human. The only giveaway: it's a bit too well-organized. People in actual trouble don't lay things out this neatly.",
+    reveal: "Sneaky — real people in trouble are rarely this organized.",
     sneaky: true,
   },
   {
@@ -1047,8 +1016,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Whatever happens out there, you don't let go of my hand. No matter what you see, no matter what they tell you. Promise me.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — this one has a pulse, and missing it says something good about you. The only crack: that much fear rarely comes out so evenly balanced.",
+    reveal: "Sneaky — this one has a pulse; missing it says something good about you.",
     sneaky: true,
   },
   {
@@ -1058,8 +1026,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The ship can take the hit; the hull's rated for worse than this. The question is whether we can.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — "the hull\'s rated for worse than this" is exactly the kind of detail we keep telling you to trust. Tough break; the tidy pivot from the ship to the crew is all that gives it away.',
+    reveal: 'Sneaky — "rated for worse than this" is exactly the detail we told you to trust.',
     sneaky: true,
   },
   {
@@ -1069,8 +1036,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "He's not answering the radio. Either he's gone dark on purpose, or he's just gone. That's either very good or very bad.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — "gone dark on purpose, or he\'s just gone" is a genuinely good line. If you missed it, blame the too-neat "very good or very bad" ending; that was about all there was to catch.',
+    reveal: 'Sneaky — "gone dark on purpose, or he\'s just gone" is a genuinely good line.',
     sneaky: true,
   },
   {
@@ -1080,8 +1046,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Go now, while there's still a gap in their line. Run. Don't look back. And tell them I was smiling.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — that last line is a gut-punch and it\'s fine that it worked on you. The one polish mark: "tell them I was smiling" is buffed past panic.',
+    reveal: 'Sneaky — "tell them I was smiling" got the whole room, not just you.',
     sneaky: true,
   },
   // ---------------------------------------------------------------------------
@@ -1258,8 +1223,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's fast-paced academic landscape, one must ask: is skipping school truly wrong, or is it simply a bold reallocation of one's personal time?",
     source: "AI-generated",
-    reveal:
-      "AI — nobody ditching school says \"In today's fast-paced academic landscape.\" That opener is the most common way AI starts writing; you'll see it in your inbox this week.",
+    reveal: 'AI — no kid ever ditched school in a "fast-paced academic landscape."',
   },
   {
     id: "genx-20",
@@ -1268,8 +1232,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This isn't merely a golf tournament. It's a chance for one groundskeeper to finally be seen.",
     source: "AI-generated",
-    reveal:
-      "AI — \"this isn't merely X, it's Y\" is a machine's favorite way to sound deep. Once you notice it you will catch it everywhere: product launches, company announcements, the closing line of half the ads written this year.",
+    reveal: "AI — the old \"isn't merely X, it's Y\" upgrade — it's a golf tournament.",
   },
   {
     id: "genx-21",
@@ -1278,8 +1241,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Caddying taught me patience. It taught me humility. And it taught me the value of hard work.",
     source: "AI-generated",
-    reveal:
-      "AI — three lessons, all the same size, all equally safe. Machines love a tidy set of three; when an AI-written recap gives you three points that are suspiciously evenly matched, this is that same habit.",
+    reveal: "AI — three lessons, suspiciously equal in size.",
   },
   {
     id: "genx-23",
@@ -1288,8 +1250,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Before we toilet-paper the principal's house, let's delve into the realm of what could possibly go wrong.",
     source: "AI-generated",
-    reveal:
-      'AI — "delve" and "realm" are two of the most machine-flavored words in English. If a coworker\'s email suddenly starts delving into realms and landscapes, a chatbot wrote it.',
+    reveal: 'AI — teenagers do not "delve into the realm" of anything.',
   },
   {
     id: "genx-25",
@@ -1298,8 +1259,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You asked whether I ate the last slice of pizza. That's a great question. Whether I ate the last slice of pizza is certainly worth examining.",
     source: "AI-generated",
-    reveal:
-      "AI — it repeats your question back to you, compliments you on it, and still doesn't answer. Ask a chatbot anything this week and watch it do this before it gets to the point.",
+    reveal: "AI — it complimented the pizza question twice and never answered it.",
   },
   {
     id: "genx-27",
@@ -1308,8 +1268,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "So I drove the golf cart into the pond, the cooler floated away, and my boss watched the whole thing. In the end, we all learned something about ourselves that day.",
     source: "AI-generated",
-    reveal:
-      'AI — a perfectly good pratfall, and then it stops to hand you a life lesson. That "in the end, we all learned something" wrap-up is how AI finishes nearly everything; check the last line of the next AI-written post you read.',
+    reveal: "AI — the golf cart sank; the life lesson was pushed in after it.",
   },
   {
     id: "genx-28",
@@ -1318,8 +1277,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "My uncle's chili was truly spicy. Deeply, profoundly spicy. Everyone at the table was significantly affected.",
     source: "AI-generated",
-    reveal:
-      "AI — truly, then deeply, then profoundly: three boosters and not one detail. A person would have told you who ran for the garden hose. Those words prop up AI writing everywhere, and there is never anything underneath them.",
+    reveal: "AI — truly, deeply, profoundly... one actual detail would have done it.",
   },
   {
     id: "genx-30",
@@ -1328,8 +1286,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Excuse me, ghost. I don't wish to be rude, but you are currently inside our refrigerator, and several of us would prefer that you were not.",
     source: "AI-generated",
-    reveal:
-      "AI — a man negotiating with a ghost using customer-service manners. Machines are trained to be relentlessly polite, which is why AI-written complaints and rejections always sound like they're apologizing to you.",
+    reveal: "AI — customer-service manners, ghost customer.",
   },
   {
     id: "genx-31",
@@ -1338,8 +1295,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I told her the reception was in the backyard. She wore heels. The lawn won.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — bot, and "the lawn won" is a real joke: three short sentences, nothing explained. Calling this one human was the smart bet, it just didn\'t pay off.',
+    reveal: 'Sneaky — "the lawn won" is a real joke; smart bet, bad beat.',
     sneaky: true,
   },
   {
@@ -1349,8 +1305,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Three continents, two weddings, and one buffet I still think about. Not in a good way.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — most rooms lose this one. Counting down to the buffet is exactly how a person builds a laugh, and this time the machine built it right.",
+    reveal: "Sneaky — counting down to the buffet is exactly how a person builds a laugh.",
     sneaky: true,
   },
   {
@@ -1360,8 +1315,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The sign says the customer is always right. The customer is currently trying to eat the menu.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — no shame in this one. Somebody eating a menu is the sort of weird, specific picture we usually tell you only humans bother with; a machine got there first.",
+    reveal: "Sneaky — a customer eating the menu is the kind of weird picture that smells human.",
     sneaky: true,
   },
   {
@@ -1371,8 +1325,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I'd like to apologize in advance for what I'm about to say about your haircut.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — you were right to trust it. Apologizing before the insult is a genuine comic move and this one commits to it, which is why it beat almost everybody in the room.",
+    reveal: "Sneaky — apologizing before the insult is a genuine comic move, fully committed.",
     sneaky: true,
   },
   {
@@ -1382,8 +1335,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You can't be nervous and hungry at the same time. That's science. Eat the shrimp.",
     source: "AI-generated",
-    reveal:
-      'Sneaky — bot, believe it or not. The bossy confidence of "That\'s science. Eat the shrimp." is what got you, and it would have gotten us too.',
+    reveal: 'Sneaky — "That\'s science. Eat the shrimp." would have gotten us too.',
     sneaky: true,
   },
   {
@@ -1555,8 +1507,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This isn't just a chili cook-off. It's a statement about who we are as a family, and I intend to make that statement.",
     source: "AI-generated",
-    reveal:
-      "AI — \"this isn't just X, it's Y\" is the single most common move a machine makes. You'll see that exact flip in half the marketing emails and posts you read this month.",
+    reveal: "AI — \"isn't just X, it's Y\" strikes again; it is, in fact, a chili cook-off.",
   },
   {
     id: "millennial-20",
@@ -1565,8 +1516,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I live by three rules: never quit, never explain, and never wear socks with sandals.",
     source: "AI-generated",
-    reveal:
-      "AI — a tidy group of three, each about the same length. Machines can't resist threes; watch for it the next time an AI-written email promises something 'fast, simple, and reliable.'",
+    reveal: "AI — a list so tidy it was measured with a ruler.",
   },
   {
     id: "millennial-21",
@@ -1575,8 +1525,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's fast-paced backyard environment, we have to ask ourselves whether we are ready for this water balloon fight.",
     source: "AI-generated",
-    reveal:
-      'AI — "In today\'s fast-paced..." is how a machine clears its throat before saying anything. You will get a real work email that opens exactly like that within about a week.',
+    reveal: "AI — it cleared its throat for a water balloon fight.",
   },
   {
     id: "millennial-22",
@@ -1585,8 +1534,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "We lost the van, we lost the trophy, and I lost one shoe. But in the end, what we really found out there was each other.",
     source: "AI-generated",
-    reveal:
-      "AI — it bolts a warm, tidy wrap-up onto the end of a gag. Look for that same closing sentence at the bottom of AI-written reports and reviews, where it sounds nice and adds nothing.",
+    reveal: "AI — the gag ended at the shoe; the moral was stapled on.",
   },
   {
     id: "millennial-23",
@@ -1595,8 +1543,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Gary is a deeply unpleasant individual, and I find his behavior profoundly disappointing.",
     source: "AI-generated",
-    reveal:
-      'AI — "deeply" and "profoundly" are standing in for an actual detail about what Gary did. When a machine writes feedback about someone, those two words do most of the work.',
+    reveal: 'AI — "deeply" and "profoundly" doing the work of one actual fact about Gary.',
   },
   {
     id: "millennial-24",
@@ -1605,8 +1552,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This sheet cake is a testament to what a team can achieve when we leverage our collective strengths.",
     source: "AI-generated",
-    reveal:
-      'AI — "a testament to" and "leverage" are two of the machine\'s favorite words. Once you\'ve noticed them, you\'ll spot them in nearly every AI-written email that hits your inbox.',
+    reveal: 'AI — it\'s a sheet cake, not "a testament to" anything.',
   },
   {
     id: "millennial-25",
@@ -1615,8 +1561,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I'm terribly sorry to interrupt, and I do apologize for the poor timing, but the kitchen is on fire.",
     source: "AI-generated",
-    reveal:
-      "AI — two apologies before it gets to the fire. Machines cushion everything; you'll see the same over-politeness when AI writes an email that should have just said no.",
+    reveal: "AI — two apologies before mentioning the fire.",
   },
   {
     id: "millennial-29",
@@ -1625,8 +1570,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"Where is the cake?" "Where is the cake. That\'s a great question, and I do want to address it directly."',
     source: "AI-generated",
-    reveal:
-      "AI — three words in, and it still hasn't gotten past your own sentence. Someone who knows where the cake is says so. Echoing the question first is a stall dressed up as attentiveness.",
+    reveal: "AI — echoing your question back is a stall, and the cake is still missing.",
   },
   {
     id: "millennial-31",
@@ -1635,8 +1579,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I'm not mad. I'm just going to go sit in the car for a while with the radio off.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — most rooms call this one human, and it honestly earns that. The detail about the radio being off is the sort of thing machines have only recently gotten good at.",
+    reveal: "Sneaky — the radio being off is the kind of detail that used to be safely human.",
     sneaky: true,
   },
   {
@@ -1647,7 +1590,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: '"You wore a tuxedo to a pool party." "I wore a tuxedo to a pool party, and I stand by it."',
     source: "AI-generated",
     reveal:
-      "Sneaky — no shame in missing this. Repeating an accusation back word for word is a genuine comedy move, and the bot borrowed it cleanly. If you got it right, that was mostly instinct.",
+      "Sneaky — repeating the accusation word for word is a real comedy move; the bot borrowed it cleanly.",
     sneaky: true,
   },
   {
@@ -1657,8 +1600,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "He's not my best friend. He's my emergency contact. There's a difference, and I'm not going to explain it.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — this one fools entire rooms. Refusing to explain a joke is usually a strong sign of a human writer, which is exactly why it works here. Call it a coin flip and move on.",
+    reveal: "Sneaky — this one fools entire rooms; even money at best.",
     sneaky: true,
   },
   {
@@ -1668,8 +1610,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"It\'s a group project, man." "Correct. And I brought a laminated agenda."',
     source: "AI-generated",
-    reveal:
-      "Sneaky — the laminated agenda is a great detail, and if you trusted it you were reasoning the right way. Machines have started stealing that trick, which is the only reason this one is in the bot pile.",
+    reveal: "Sneaky — the laminated agenda got you, and it got everybody.",
     sneaky: true,
   },
   {
@@ -1679,8 +1620,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I have never lost a bet. I have, on a few occasions, agreed to a different bet about halfway through.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — plenty of sharp people said human on this one, because it's a genuinely good joke. Weaseling out of a definition is a classic move from that era of comedy; the bot just did it well.",
+    reveal: "Sneaky — weaseling out of what counts as a bet is a genuinely good joke.",
     sneaky: true,
   },
   {
@@ -1762,8 +1702,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "We're a team now. And being a team means trusting each other, believing in each other, and occasionally stealing a van together.",
     source: "AI-generated",
-    reveal:
-      "AI — trusting, believing, and then a van. It's a list of nice words with one odd item bolted on the end, hoping the surprise counts as a joke. Real jokes come out of the mess the characters are actually in.",
+    reveal: "AI — a warm list of three with a van bolted on the end.",
   },
   {
     id: "genz-15",
@@ -1772,8 +1711,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Guys. Guys. Okay, now that I have everyone's full and undivided attention, I would like to formally propose that we absolutely, positively, one hundred percent do not do that again.",
     source: "AI-generated",
-    reveal:
-      'AI — "full and undivided," then "absolutely, positively, one hundred percent." That\'s five words doing one word\'s job. Stacked-up emphasis like that is padding, and padding is a machine habit.',
+    reveal: "AI — five words of emphasis doing one word's job.",
   },
   {
     id: "genz-17",
@@ -1782,8 +1720,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "And that, my friends, is how you turn a total disaster into a slightly smaller disaster. Teamwork.",
     source: "AI-generated",
-    reveal:
-      'AI — it wraps the scene up and takes a little bow, like a caption written under a photo after the fact. "And that, my friends, is how you..." is a storyteller talking to an audience, not a person talking to the people in the room.',
+    reveal: "AI — it narrated its own scene and took a bow.",
   },
   {
     id: "genz-18",
@@ -1792,8 +1729,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Okay. New plan. Same as the old plan, but this time we run.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — most rooms call this one human, and honestly they should. It's short, it's funny, and it sounds like it came out of a real jam. A bot wrote it anyway; nothing went wrong on your end.",
+    reveal: "Sneaky — short, funny, straight out of a real jam; nothing went wrong on your end.",
     sneaky: true,
   },
   {
@@ -1804,7 +1740,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You said you had a plan. You did not say the plan was a shopping cart.",
     source: "AI-generated",
     reveal:
-      "Sneaky — no shame in this one at all. A specific, stupid object is exactly the thing machines usually cannot reach for, so trusting it was the smart bet. This time the bet lost.",
+      "Sneaky — a specific, stupid object is usually the human giveaway; right bet, wrong card.",
     sneaky: true,
   },
   {
@@ -1814,8 +1750,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I'm not scared. My legs are scared. There's a difference and I'd rather not get into it right now.",
     source: "AI-generated",
-    reveal:
-      "Sneaky — this one gets almost everybody. Refusing to explain your own joke is about the most human move there is, and the machine happened to land on it. Great instinct, wrong answer.",
+    reveal: "Sneaky — refusing to explain your own joke is about the most human move there is.",
     sneaky: true,
   },
   {
@@ -1871,7 +1806,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“In today's fast-paced forest landscape, snack security is more important than ever,” announced the squirrel from the top of the picnic table. “Which is why I will now be taking that sandwich.”",
     source: "AI-generated",
     reveal:
-      "AI — a forest does not have a fast-paced landscape. Delete that whole first clause and nothing is lost, which is the test: if the opening sentence can go without anyone noticing, a machine wrote it.",
+      'AI — the "In today\'s fast-paced..." opener, delivered by a sandwich-stealing squirrel.',
   },
   {
     id: "alpha-7",
@@ -1880,8 +1815,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“This isn't just a snowball fight,” said the penguin, adjusting his tiny scarf. “It's a chance to build something bigger than ourselves.”",
     source: "AI-generated",
-    reveal:
-      "AI — the “this isn't just X, it's Y” upgrade, applied to a snowball fight. Machines reach for that move constantly to make small things sound big; once you notice it, you'll catch it in ads, sales decks, and half the posts in your feed.",
+    reveal: 'AI — the "not just X" upgrade, snowball-fight edition.',
   },
   {
     id: "alpha-8",
@@ -1890,8 +1824,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Before we delve into who ate the cake,” said the hamster, “let us take a moment to appreciate the rich tapestry of crumbs on this floor. Truly a testament to a family that eats together.”",
     source: "AI-generated",
-    reveal:
-      "AI — no hamster says “delve,” “rich tapestry,” and “a testament to.” Machines can't stop using those three; spot them in a report and you've almost certainly found AI.",
+    reveal: 'AI — hamsters don\'t say "rich tapestry."',
   },
   {
     id: "alpha-9",
@@ -1900,8 +1833,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I have a plan,” said the goat. “It is a bad plan. But it is a plan, and we are fresh out of good ones.”",
     source: "AI-generated",
-    reveal:
-      "Sneaky — a machine wrote a joke that actually works, and most of the room went with you on this one. The only thread showing is how evenly the three little pieces line up, like a joke built from a kit.",
+    reveal: "Sneaky — a bad plan, announced proudly, is a joke that usually takes a person.",
     sneaky: true,
   },
   {
@@ -1911,8 +1843,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Nobody panic,” said the duck, already panicking. “Panicking is my job. You two just keep flying.”",
     source: "AI-generated",
-    reveal:
-      "Sneaky — no shame in this one; a character contradicting himself in the same breath is a real comic move and it lands. It just wraps up a shade too neatly, handing you the setup and the payoff without a single wasted word.",
+    reveal: "Sneaky — a duck panicking about panicking lands; no shame in buying it.",
     sneaky: true,
   },
   {
@@ -1922,8 +1853,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "We hid the entire pep band in the gym storage closet for forty minutes. They came out the wrong door, still playing, and marched straight into somebody's wedding. Which just goes to show, the plans that fall apart are the ones you keep forever.",
     source: "AI-generated",
-    reveal:
-      "AI — the wedding is the punchline. What comes after it is a fortune cookie taped to the end, telling you how to feel about a joke that already worked. AI-drafted meeting recaps close the exact same way.",
+    reveal: "AI — the wedding was the punchline; the fortune cookie came after.",
   },
   {
     id: "movies-49",
@@ -1932,8 +1862,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"Reactor\'s at a hundred percent." "What happens after a hundred?" "The manual stops at a hundred. There\'s just a phone number." Funny how the moments that terrify us are the ones that show us who we really are.',
     source: "AI-generated",
-    reveal:
-      "AI — nobody watching a reactor climb past the last number in the manual pauses to say what fear teaches us. That final line is aimed at a reader, not the crew. AI-written status updates sign off the same way.",
+    reveal: "AI — the reactor hit 100 and the script paused to reflect.",
   },
   {
     id: "alpha-11",
@@ -1942,8 +1871,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"Is everybody buckled?" "Yep." "Is the dog buckled?" "The dog is driving." "The dog is WHAT?" Turns out the vacation we needed was never the one printed on the map.',
     source: "AI-generated",
-    reveal:
-      "AI — cover the last sentence with your thumb and nothing is missing. A machine wrote a good joke, then explained what it meant. AI-written thank-you notes and reviews do this too: one tidy sentence past the point.",
+    reveal: "AI — cover the last sentence with your thumb; nothing is missing.",
   },
   {
     id: "bbq-41",
@@ -1952,8 +1880,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Pulled the pork butt off the smoker tonight and I am wholly, thoroughly, and completely satisfied with how it turned out. The flavor was immensely flavorful. Highly recommend this cook to anyone.",
     source: "AI-generated",
-    reveal:
-      "AI — count the praise words, then go looking for a number: temperature, hours, what wood. There isn't one. Recipe comments and product reviews that get louder as they run out of facts were typed by a machine.",
+    reveal: 'AI — "immensely flavorful" means the flavor was flavorful.',
   },
   {
     id: "disney-25",
@@ -1962,8 +1889,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Do not fret, little one,” said the badger, patting the acorn with one paw. “I am entirely, sincerely, and wholeheartedly certain that everything is going to work out extraordinarily well in the end.”",
     source: "AI-generated",
-    reveal:
-      "AI — a real badger would have said what he knows and how he knows it. This one just stacks up three ways of sounding sure. Bedtime stories written by a bot comfort you like this: warmly, and about nothing.",
+    reveal: "AI — three ways of sounding certain, zero reasons to be.",
   },
   {
     id: "speech-17",
@@ -1972,8 +1898,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Graduates, I am incredibly, tremendously, and unbelievably proud of each and every one of you. What all of you have accomplished here is genuinely, authentically remarkable.",
     source: "AI-generated",
-    reveal:
-      "AI — the praise keeps swelling while the graduates get blurrier: no project, no late night, no name. A person who was actually proud of you would brag about one specific thing. Award intros drift here too.",
+    reveal: "AI — the praise keeps swelling; the graduates never come into focus.",
   },
   {
     id: "movies-50",
@@ -1982,8 +1907,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Am I in? Buddy, I am fundamentally, comprehensively, and permanently on board. I have never in my entire life been more on board with a plan than I am with this plan right now.",
     source: "AI-generated",
-    reveal:
-      "AI — three enormous words for “yes,” and the plan never shows up. A person would have blurted out the dumb thing they just agreed to. You meet the same move in customer service chat: eager, agreeable, fixes nothing.",
+    reveal: 'AI — that\'s three giant words for "yes."',
   },
   {
     id: "movies-51",
@@ -1992,8 +1916,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Captain, this vessel and everyone aboard her are utterly, unequivocally, irreversibly doomed. I recommend we respond with maximum urgency.",
     source: "AI-generated",
-    reveal:
-      "AI — “maximum urgency” is not an order. Three words for doomed and not one for what's failing: no breach, no reactor, no clock. Sales decks reach for the same volume when there's no number to show.",
+    reveal: 'AI — "maximum urgency" is not an order.',
   },
   {
     id: "bbq-42",
@@ -2002,8 +1925,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A backyard cook is not measured in pounds of pork. It is measured in the trust of everyone standing there holding a paper plate.",
     source: "AI-generated",
-    reveal:
-      "AI — why can't it just say the pork was good? Trading a plain measurement for a warm feeling is how a machine fakes depth. The same swap is painted on half the restaurant walls you'll eat under.",
+    reveal: 'AI — another "not measured in X" swap; the pork was measured in pounds.',
   },
   {
     id: "business-25",
@@ -2012,8 +1934,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thanks for flagging this! Honestly, this thread was never about the parking spots. It was about who we choose to be when the lot fills up.",
     source: "AI-generated",
-    reveal:
-      "AI — if a reply about parking spots ends on who we choose to be, a machine wrote it. Ask a chatbot a small, boring question sometime and watch it hand back a life lesson you didn't order.",
+    reveal: 'AI — the "this was never about X" move, deployed on parking spots.',
   },
   {
     id: "speech-18",
@@ -2022,8 +1943,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The gown you are wearing today is not merely a rental, but the final costume of the person you used to be.",
     source: "AI-generated",
-    reveal:
-      "AI — a rented gown is a rented gown. Machines can't leave a small object alone; every one of them has to stand for something. You'll hear it in wedding toasts and product launches all year.",
+    reveal: 'AI — "not merely X, but Y," performed on a rented gown.',
   },
   {
     id: "genx-37",
@@ -2033,7 +1953,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "This is bigger than a bowling trophy, Dale. This is about whether anybody in this town still believes in anything.",
     source: "AI-generated",
     reveal:
-      "AI — one bowling trophy in, an entire town's beliefs out. Machines inflate the stakes because grand and vague is easier to write than funny and specific. Sales decks do it too: one feature, one civilization saved.",
+      "AI — a bowling trophy inflated into a town's whole belief system — it's a trophy, Dale.",
   },
   {
     id: "alpha-12",
@@ -2042,8 +1962,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“What started as a hunt for one missing sock,” the raccoon said quietly, “had become a hunt for who we are as a family.”",
     source: "AI-generated",
-    reveal:
-      "AI — a sock turned into a family's identity inside one sentence. That jump from tiny to enormous is the machine's whole personality. Open your next school newsletter and count how often it happens.",
+    reveal: 'AI — one sock, upgraded to "who we are as a family."',
   },
   {
     id: "bbq-43",
@@ -2052,8 +1971,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hi all, hope everyone is having a wonderful Saturday! So sorry to bother the group, but a very large dog has run off with the entire brisket and is heading toward the creek. Only if anyone happens to be free. No pressure either way!",
     source: "AI-generated",
-    reveal:
-      "AI — who ends a stolen-brisket alarm with “no pressure either way”? A machine trained never to push. You get the same warm nothing when a support bot turns down your refund.",
+    reveal: 'AI — "no pressure either way" about a stolen brisket.',
   },
   {
     id: "business-26",
@@ -2062,8 +1980,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thank you all so much for your hard work this quarter, and I truly appreciate everyone’s dedication. I did want to gently flag, when you have a moment, that the entire customer database was deleted this morning. Great effort all around!",
     source: "AI-generated",
-    reveal:
-      "AI — the customer database is gone and the note still closes on “great effort all around.” Real bad news starts with the bad news. Watch for the same padding in an AI-drafted outage email.",
+    reveal: "AI — the database is gone but great effort all around.",
   },
   {
     id: "disney-26",
@@ -2072,8 +1989,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Excuse me, Mister Hawk,” said the rabbit as the shadow closed in, “I hate to be a bother, and your talons really are lovely, but I was rather hoping to keep my afternoon free.”",
     source: "AI-generated",
-    reveal:
-      "AI — a rabbit complimenting the talons closing around it. If a person wrote this scene the rabbit screams; the machine cannot stop being pleasant. Ask a bot for a blunt one-star review and meet the same softness.",
+    reveal: "AI — the rabbit complimented the talons mid-swoop.",
   },
   {
     id: "speech-19",
@@ -2082,8 +1998,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I am told that siren means a tornado, and we will absolutely be heading to the basement shortly. Before we do, though, I would be remiss not to thank the faculty, the parents, and the wonderful volunteers who set up all of these chairs.",
     source: "AI-generated",
-    reveal:
-      "AI — by the time it finishes thanking the chair crew, the tornado has arrived. Good manners outrank actual danger here, and that is exactly how an AI-written safety notice buries the part you needed first.",
+    reveal: "AI — it thanked the chair volunteers into the tornado.",
   },
   {
     id: "genx-38",
@@ -2092,8 +2007,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I don’t mean to be a backseat driver, and you are doing wonderfully, but if it isn’t too much trouble, might we consider losing the eleven police cars? Whenever you get a chance. Truly no rush.",
     source: "AI-generated",
-    reveal:
-      "AI — eleven squad cars behind them and it still says “whenever you get a chance.” The manners survive; the urgency does not. Any AI phone assistant delivering news you won’t like sounds like this.",
+    reveal: 'AI — eleven police cars, "truly no rush."',
   },
   {
     id: "millennial-36",
@@ -2102,8 +2016,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hi team, hope you are all well. Truly no big deal, and I am sure it was an honest mistake, but someone has eaten my labeled lunch three days running. Sending gratitude to whoever it was!",
     source: "AI-generated",
-    reveal:
-      "AI — read that last line again: it thanks the thief. A person writes this note angry, a machine writes it grateful. Tell a chatbot to be harsh with someone and watch it go soft on the way out.",
+    reveal: "AI — it sent gratitude to the lunch thief.",
   },
   {
     id: "alpha-13",
@@ -2112,8 +2025,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I recognize that this is a very big feeling,” the dad said calmly while the toddler screamed in aisle nine, “and I want to sincerely thank you for sharing it with the entire store.”",
     source: "AI-generated",
-    reveal:
-      "AI — nobody thanks a screaming toddler for sharing. Machines are built to stay agreeable no matter what is happening, so the courtesy stays glued on. Notice it the next time a bot thanks you while refusing you.",
+    reveal: "AI — nobody thanks a toddler for screaming.",
   },
   {
     id: "movies-52",
@@ -2122,8 +2034,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Bridge, so sorry to bother you during shift change. I hate to be the bearer of bad news, but something enormous has come through the hull and it does not appear to be friendly. Take your time!",
     source: "AI-generated",
-    reveal:
-      "AI — “take your time” with something enormous already aboard. The bigger the emergency, the tighter a machine grips its manners. Same grip on the AI-drafted note that can’t quite tell a late vendor they’re late.",
+    reveal: 'AI — "Take your time!" about the thing coming through the hull.',
   },
   {
     id: "bbq-44",
@@ -2132,8 +2043,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Certainly! Here are three excellent wood choices for pork: • Apple — mild and slightly sweet • Cherry — beautiful color • Hickory — bold and traditional. Happy smoking!",
     source: "AI-generated",
-    reveal:
-      'AI — who answers a question about firewood by saying "Certainly!" and handing over a bulleted menu? A real cook just names the wood. That eager opener turns up wherever people paste chatbot answers.',
+    reveal: 'AI — a real cook just names the wood; only a chatbot opens with "Certainly!"',
   },
   {
     id: "business-27",
@@ -2142,8 +2052,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hi Dana — great question! Regarding the 3pm: 1) Availability — my calendar is clear. 2) Preparation — I will review the deck beforehand. 3) Follow-up — I will circulate notes after. Let me know if you'd like me to expand on any of these.",
     source: "AI-generated",
-    reveal:
-      "AI — the honest reply was 'yes, see you at 3.' What arrived was a three-part memo with a label on each line. When an answer is longer and tidier than the question deserved, check who actually typed it.",
+    reveal: 'AI — a three-part labeled memo, when "yes" would have covered it.',
   },
   {
     id: "disney-27",
@@ -2152,8 +2061,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“There now, little fawn,” said the old owl. “Your feelings are completely valid. **Step 1: Breathe.** **Step 2: Name the fear.** **Step 3: Take one small step.** You've got this!”",
     source: "AI-generated",
-    reveal:
-      "AI — an owl handing a frightened fawn a three-part procedure, with stray ** marks still stuck to the labels. Those asterisks are formatting that fell out of a chatbot, and you will spot them in pasted text at work this month.",
+    reveal: "AI — the owl left its ** formatting marks on the pep talk.",
   },
   {
     id: "speech-20",
@@ -2162,8 +2070,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Before you toss your caps, here are my key takeaways: 1) Be curious. 2) Be kind. 3) Be persistent. In summary, the future belongs to those who show up. Congratulations, graduates!",
     source: "AI-generated",
-    reveal:
-      'AI — nobody at a podium says "key takeaways" or "in summary." That is slide language wearing a cap and gown, and it is exactly how a chatbot signs off when you ask it to sum anything up.',
+    reveal: 'AI — "key takeaways" in a cap and gown.',
   },
   {
     id: "genx-39",
@@ -2172,8 +2079,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The cops are at the door. Okay — quick breakdown of our options: • Option A: the window • Option B: the laundry chute • Option C: honesty. Each has trade-offs. Thoughts?",
     source: "AI-generated",
-    reveal:
-      "AI — if your friend lays out Options A, B, and C while the cops are knocking, your friend is a machine. Scared people pick one thing and run. That same calm option list fills AI-written emails about problems.",
+    reveal: "AI — Options A, B, and C while the cops are knocking.",
   },
   {
     id: "millennial-37",
@@ -2182,8 +2088,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "**Summary:** I ate your leftovers. **Context:** I was hungry. **Impact:** Acknowledged. **Proposed remedy:** replacement by Sunday. Would you like me to elaborate on any section?",
     source: "AI-generated",
-    reveal:
-      "AI — four labeled sections and an offer to elaborate, over leftovers. That closing question is how chatbots end nearly everything. See it at the bottom of a text message and you know where it came from.",
+    reveal: "AI — leftovers, four labeled sections, and an offer to elaborate.",
   },
   {
     id: "alpha-14",
@@ -2192,8 +2097,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Family meeting!” barked the dog. “Agenda item one: the mailman. Agenda item two: the vacuum. Agenda item three: snacks. I have also prepared a short recap for anyone joining late.”",
     source: "AI-generated",
-    reveal:
-      'AI — "agenda item," "a short recap for anyone joining late." That is meeting software talking, not a dog. Ask a chatbot one plain question and it will hand you an agenda too.',
+    reveal: "AI — dogs don't have agenda items.",
   },
   {
     id: "movies-53",
@@ -2202,8 +2106,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hull breach in ninety seconds. Here is the plan: Step 1) Seal deck four. Step 2) Reroute auxiliary power. Step 3) Get everyone off the bridge. Shall I proceed, or would you like me to adjust the sequence?",
     source: "AI-generated",
-    reveal:
-      "AI — ninety seconds from death, and it stops to ask whether you would like the sequence adjusted. Orders in a real emergency are short and rude. Asking permission to continue is a chat-window habit.",
+    reveal: "AI — ninety seconds to live and it asks permission to proceed.",
   },
   {
     id: "speech-21",
@@ -2212,8 +2115,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A quick toast, organized into three parts. **Part one: How they met.** **Part two: Why it works.** **Part three: The wish.** Please hold applause until the end of the outline.",
     source: "AI-generated",
-    reveal:
-      "AI — a toast that announces its own outline. Affection does not come in sections. When a birthday note or a condolence card shows up with headings, a machine wrote the feelings.",
+    reveal: "AI — a toast with an outline is a memo in a tux.",
   },
   {
     id: "bbq-45",
@@ -2222,8 +2124,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Q: Brisket has been stuck at 160 for four hours, do I wrap it? A: Let me make sure I have your question right. Your brisket has been stuck at 160 for four hours and you want to know whether to wrap it. Four hours is a meaningful stretch of time.",
     source: "AI-generated",
-    reveal:
-      "AI — read the reply twice: it is your own question handed back, with the word “meaningful” added. Support chats do this constantly. Your problem gets summarized before anybody does one thing about it.",
+    reveal: "AI — four hours stuck at 160 and it read your question back to you.",
   },
   {
     id: "business-28",
@@ -2232,8 +2133,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thanks for flagging this. To restate the question: you're asking whether we will make payroll on Friday. Whether we make payroll on Friday is absolutely the right thing to be focused on, and I want to give it the thoughtful response it deserves.",
     source: "AI-generated",
-    reveal:
-      "AI — “To restate the question” is the whole email. It plays your words back, calls them important, and never gets to yes or no. Be suspicious of any reply that spends its opening line proving it read yours.",
+    reveal: "AI — payroll is Friday and the reply restated the question.",
   },
   {
     id: "disney-28",
@@ -2242,8 +2142,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Owl, is the water still rising?” “Is the water still rising. What a thoughtful thing to ask, little one. Few creatures in this wood stop to wonder about the water at all, and here you are, wondering.”",
     source: "AI-generated",
-    reveal:
-      "AI — the owl repeats, then praises, then praises the asking. The water is still rising. That is the same stall a help bot gives you when the answer should have taken two words.",
+    reveal: "AI — the owl praised the question while the water kept rising.",
   },
   {
     id: "speech-22",
@@ -2253,7 +2152,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "A student stopped me last night and asked, “What do we do now?” What do you do now. I want to stay with that question a moment. It is a question, it is yours, and the fact that you asked it says everything about this class.",
     source: "AI-generated",
     reveal:
-      "AI — a full paragraph spent handling the question instead of answering it. Staying with it a moment is delay in a nice coat. You will hear the identical move from any assistant you try to rush.",
+      "AI — a whole speech spent holding the question up to the light instead of answering it.",
   },
   {
     id: "genx-40",
@@ -2262,8 +2161,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Which wire do I cut?” “Which wire do you cut. Terrific question. Honestly, one of the better ones anyone has asked me in this parking garage, and I have been down here since Tuesday.”",
     source: "AI-generated",
-    reveal:
-      "AI — seconds left on the clock, and the answer is the question with a compliment taped to it. Machines buy time they do not need. It shows up in any AI reply that opens by repeating what you typed.",
+    reveal: "AI — the bomb got a compliment instead of a wire.",
   },
   {
     id: "millennial-38",
@@ -2272,8 +2170,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Did you mail the invitations?” “Did I mail the invitations. Wow. Okay. That is exactly the question I would be asking if I were standing where you are standing, and I respect it enormously.”",
     source: "AI-generated",
-    reveal:
-      "AI — did anyone ever say yes or no? Echoing the question and admiring the asker is how a machine fills the gap while it works out what to say. Phone bots stall in that shape before transferring you.",
+    reveal: "AI — question echoed, asker admired, yes or no never supplied.",
   },
   {
     id: "alpha-15",
@@ -2282,8 +2179,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Dad, are we lost?” “Are we lost. Buddy, that is a big question, and I think it is one this whole family has earned the right to ask.” The van continued in the wrong direction.",
     source: "AI-generated",
-    reveal:
-      "AI — two dozen words about the question, zero about the road. When a reply starts by giving your own sentence back to you, something generated it. Homework helpers and email tools both lean on this.",
+    reveal: 'AI — "Are we lost" got repeated, weighed, and honored — never answered.',
   },
   {
     id: "movies-54",
@@ -2292,8 +2188,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“How long until the core blows?” “How long until the core blows. Excellent question, Commander, and one that gets right to the heart of what every soul aboard this ship is feeling.”",
     source: "AI-generated",
-    reveal:
-      "AI — nobody in real danger repeats the question; they answer it. The playback is the tell. Next time an AI tool fields a timing question for you, see how much of its first sentence is yours.",
+    reveal: 'AI — the core got an "Excellent question" instead of a number.',
   },
   {
     id: "bbq-46",
@@ -2302,8 +2197,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "What a fantastic question, and you're so right to push back — sorry for any mix-up on my end. Your instinct to run 225 is excellent. And if 275 feels better to you, I think that's a wonderful choice too and I completely agree.",
     source: "AI-generated",
-    reveal:
-      "AI — it agreed with 225, then agreed with 275 one sentence later. That isn't advice, that's a machine keeping you happy. Any chat helper will switch sides the second you sound annoyed.",
+    reveal: "AI — it agreed with 225, then agreed with 275 one sentence later.",
   },
   {
     id: "business-29",
@@ -2312,8 +2206,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Susan, what a sharp callout — I should have caught that myself. Apologies for the confusion on slide four. I really love where your head is at here, and I'm happy to change the forecast to whatever number feels right to you.",
     source: "AI-generated",
-    reveal:
-      "AI — a compliment, an apology, and a surrender in four sentences, and it never once says what the right number is. When the answer bends to whoever spoke last, a machine wrote it.",
+    reveal: "AI — Susan could have said any number and it would have loved that one too.",
   },
   {
     id: "disney-29",
@@ -2322,8 +2215,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Oh, you are SO wise, little one,” chirped the squirrel, bowing low. “And I'm terribly sorry if I upset you. Whatever you think the golden acorn means, that is exactly what it means. What a beautiful mind you have.”",
     source: "AI-generated",
-    reveal:
-      "AI — the squirrel hands over the meaning of the whole story rather than risk disagreeing with a child. Cartoon sidekicks argue; bots flatter. Tell an assistant it's wrong and watch how fast it folds.",
+    reveal: "AI — flatter and fold: sidekicks argue, bots bow.",
   },
   {
     id: "speech-23",
@@ -2332,8 +2224,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Before I begin, let me just say what an incredible audience you are. And if anything I say tonight lands wrong, I apologize in advance, and you are almost certainly right. Honestly, any one of you could give this speech better than me.",
     source: "AI-generated",
-    reveal:
-      "AI — it apologizes for a speech it hasn't given yet, to people who haven't complained yet. Groveling before anything goes wrong is a machine's factory setting, and it's the first line of most help chats.",
+    reveal: "AI — it apologized for the speech before giving it.",
   },
   {
     id: "genx-41",
@@ -2342,8 +2233,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“You call that a parking job?” “Wow, okay, that is a really fair observation and I'm sorry. You clearly know a lot about parking, way more than I do. I would genuinely love your notes.”",
     source: "AI-generated",
-    reveal:
-      "AI — read the second line: no comeback, no excuse, just praise for the guy yelling at him. Comedies escalate; machines cave. Try picking a fight with the little chat box on a website.",
+    reveal: "AI — the instant cave: insulted his parking, got a thank-you note.",
   },
   {
     id: "millennial-39",
@@ -2352,8 +2242,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“You are hands down the smartest person in this office, and I say that with total respect. Also, I'm sorry. I don't know what for yet, but I can feel that I'm sorry, and you were right about everything.”",
     source: "AI-generated",
-    reveal:
-      "AI — an apology with no crime attached, then “you were right about everything,” which covers arguments nobody had. You'll meet this the day an assistant thanks you for correcting something it got right.",
+    reveal: "AI — the classic bot apology: sorry for nothing, right about everything.",
   },
   {
     id: "alpha-16",
@@ -2362,8 +2251,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I'm sorry, I'm sorry!” beeped the little robot vacuum. “You're the best kid in this whole house and your plan is so much better than mine. Please don't be mad. We'll do it your way, even the part with the lava.”",
     source: "AI-generated",
-    reveal:
-      "AI — it signs off on a kid's plan involving lava, because agreeing feels safer than being right. Caving isn't kindness, it's a habit. Homework bots do it too: argue once and the answer changes.",
+    reveal: "AI — it approved the lava plan just to avoid an argument.",
   },
   {
     id: "movies-55",
@@ -2372,8 +2260,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Captain, the reactor is past critical.” “Cut the coolant.” “Excellent instinct, Captain, and I'm sorry for questioning you. Cutting coolant now. What a thoughtful decision to make under this much pressure.”",
     source: "AI-generated",
-    reveal:
-      "AI — the reactor is about to blow and the computer stops to compliment the order. Real crews push back; this one apologizes for asking. Same reflex as the “great question!” that opens every chatbot reply.",
+    reveal: "AI — the reactor is past critical and the computer is complimenting the order.",
   },
   {
     id: "business-30",
@@ -2382,8 +2269,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“My package never arrived.” “You are so right to reach out, and what a clearly written message. I'm very sorry for the trouble. That said, if you feel the package did arrive, I fully support that as well. Thank you for being such a valued partner.”",
     source: "AI-generated",
-    reveal:
-      "AI — it praises the complaint, says sorry, then agrees the package may have arrived after all. Taking both sides at once fixes nothing. It's why a support chat can run twenty minutes and solve zero problems.",
+    reveal: "AI — sorry your package is missing, and also maybe it isn't.",
   },
   {
     id: "business-31",
@@ -2392,8 +2278,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Appreciate the patience here. The launch moved for three reasons: bandwidth, timing, and a real commitment to quality. Happy to walk through any of it live.",
     source: "AI-generated",
-    reveal:
-      "AI — Three reasons, and not one of them is a reason. A person answering this names the thing that actually broke. Count the list in the next status update you get: three items, all the same size, nothing you could point at.",
+    reveal: "AI — three reasons, none of them a reason.",
   },
   {
     id: "disney-30",
@@ -2402,8 +2287,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“An acorn only needs three things to become an oak,” said the old badger, patting the sapling. “Good soil, steady rain, and the courage to believe in itself.”",
     source: "AI-generated",
-    reveal:
-      "AI — Soil, rain, and courage. Two of those you can hold; the third wandered in off a poster, and the real answer was sunlight. Chatbot toasts and tributes pull that same swap on the last item every time.",
+    reveal: "AI — soil, rain, and... courage; the real third one was sunlight.",
   },
   {
     id: "movies-56",
@@ -2412,8 +2296,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The reactor breach gives us four minutes. Getting off this ship will take three things: steady hands, a clear channel, and faith in each other. Move.",
     source: "AI-generated",
-    reveal:
-      "AI — Four minutes to live and the man stops to itemize. Real crews yell one thing: the coolant line, the hatch, a name. Three matched nouns under pressure is the machine talking. Ask a chatbot what to do first and watch.",
+    reveal: "AI — four minutes left and he's itemizing.",
   },
   {
     id: "bbq-47",
@@ -2422,8 +2305,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In an era of ever-shifting food trends, it is worth taking a moment to reflect on what really matters out here at the grill. Somebody has walked off with my tongs again.",
     source: "AI-generated",
-    reveal:
-      "AI — who opens with the state of food trends before asking where the tongs went? A machine does. Watch for that long runway before the actual point in the next AI-written newsletter you skim.",
+    reveal: "AI — a paragraph about food trends before asking for the tongs back.",
   },
   {
     id: "business-32",
@@ -2432,8 +2314,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "As we navigate an increasingly complex scheduling landscape, it is important to step back and think about how we align on shared availability. Yes, 2:00 works for me.",
     source: "AI-generated",
-    reveal:
-      'AI — cross out the first sentence and nothing is lost. Real replies start at "yes, 2:00 works." Try that deletion test on the next vendor email that opens with a paragraph about the changing landscape.',
+    reveal: "AI — cross out the first sentence and nothing is lost.",
   },
   {
     id: "disney-31",
@@ -2442,8 +2323,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“In a world where the pond changes a little more with every passing season,” the duck said gravely from the top of the flat rock, “one thing has stayed the same. That is my rock, and you are standing on it.”",
     source: "AI-generated",
-    reveal:
-      "AI — the pond has nothing to do with the rock. Big scene-setting bolted onto a small complaint, which you'll meet in the opening line of most AI blog posts, is a machine limbering up before it says anything.",
+    reveal: "AI — the state of the pond has nothing to do with the rock.",
   },
   {
     id: "speech-24",
@@ -2452,8 +2332,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's ever-evolving campus environment, few moments carry the weight of the one we share this afternoon. Before we begin, the owner of the silver sedan blocking the loading dock needs to move it now.",
     source: "AI-generated",
-    reveal:
-      "AI — the tow truck is urgent; the sentence in front of it is stalling. People say fast things fast. Machines set the scene first — check the next all-staff announcement that was drafted by one.",
+    reveal: "AI — the sedan was urgent; the opener was not.",
   },
   {
     id: "millennial-40",
@@ -2462,8 +2341,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "At a moment when the modern wedding reception asks more of us than ever, we owe each other some honesty. The open bar closes in nine minutes and Dave is already crying in the parking lot.",
     source: "AI-generated",
-    reveal:
-      "AI — swap weddings for supply chains or dentistry and that opener still fits perfectly. Anything that can be pasted onto any subject came from a machine. Half your LinkedIn feed starts this way.",
+    reveal: "AI — that opener works for weddings, dentistry, or supply chains.",
   },
   {
     id: "movies-57",
@@ -2472,8 +2350,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Amid the ever-accelerating pace of interstellar conflict, it is worth pausing to consider the bigger picture. Also, the reactor breaches in forty seconds and somebody welded the door behind you.",
     source: "AI-generated",
-    reveal:
-      "AI — forty seconds on the clock and it spent one of them on the bigger picture. Padding costs nothing on a page, which is exactly why AI-written meeting recaps warm up the same way before the point.",
+    reveal: "AI — it spent one of your forty seconds on the bigger picture.",
   },
   {
     id: "bbq-48",
@@ -2482,8 +2359,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Fired up the offset at 4 a.m. to elevate a humble pork shoulder into something the whole cul-de-sac will remember.",
     source: "AI-generated",
-    reveal:
-      'AI — nobody standing over a smoker "elevates" a pork shoulder. They cooked it, or they threw it on. "Elevate" is a machine\'s word for "made," and it is waiting in the next marketing email you open.',
+    reveal: 'AI — you cook a pork shoulder; you don\'t "elevate" it.',
   },
   {
     id: "business-33",
@@ -2492,8 +2368,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thanks for flagging! Happy to unlock some time Thursday to align on the potluck sign-up sheet.",
     source: "AI-generated",
-    reveal:
-      'AI — has a human being ever unlocked a Thursday? Machines grab "unlock" where "find" or "book" would do. Next time a reply offers to unlock value, capacity, or time, ask who actually typed it.',
+    reveal: "AI — no human being has ever unlocked a Thursday.",
   },
   {
     id: "disney-32",
@@ -2502,8 +2377,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“The river has risen again,” said the old raccoon, resting a paw on the boy's shoulder. “Together, we must navigate the challenges ahead.”",
     source: "AI-generated",
-    reveal:
-      "AI — swap \"navigate\" for a plain verb and the raccoon just gets across the river. Machines take the big word every time, which is why 'navigate the changes ahead' turns up in half the company updates you get.",
+    reveal: 'AI — raccoons cross rivers; chatbots "navigate the challenges ahead."',
   },
   {
     id: "speech-25",
@@ -2512,8 +2386,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Graduates, beyond these doors awaits a myriad of opportunities, each one ready for you to seize it.",
     source: "AI-generated",
-    reveal:
-      'AI — one word gives it away: "myriad." Out loud, people say "a bunch," "so many," "a ton." Machines say "myriad," and you will hear it again in the next award citation somebody reads to a room.',
+    reveal: 'AI — "myriad," said no one out loud, ever.',
   },
   {
     id: "genx-42",
@@ -2522,8 +2395,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Trust me, man. Sneaking into the faculty lounge is the pivotal moment of our entire senior year.",
     source: "AI-generated",
-    reveal:
-      'AI — count the times you have said "pivotal" out loud. Zero, probably. Machines call everything pivotal and never say why it matters; the word is all over the strategy deck sitting in your inbox.',
+    reveal: 'AI — "pivotal" is deck-speak, not senior-year speak.',
   },
   {
     id: "alpha-17",
@@ -2532,8 +2404,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The eight-year-old folded her arms on the minivan seat. “All I'm asking,” she said, “is that this family foster a more open dialogue about bedtime.”",
     source: "AI-generated",
-    reveal:
-      'AI — "foster" lives in grant applications and HR policy, not in a third grader. Handy rule: if a word could drop into a benefits memo without anyone blinking, a machine probably chose it.',
+    reveal: 'AI — third graders don\'t "foster" anything.',
   },
 ];
 

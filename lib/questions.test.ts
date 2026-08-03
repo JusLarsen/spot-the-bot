@@ -82,9 +82,15 @@ describe("question bank — structure", () => {
 });
 
 describe("question bank — reveal copy", () => {
-  it("every reveal fits a phone screen", () => {
-    // Read on a team's phone with the clock running; long ones get skipped,
-    // which defeats the teaching. One lesson per reveal keeps this honest.
+  it("every reveal fits a phone screen; bot reveals are a one-line wink", () => {
+    // Playtested: a two-sentence explanation is a claim, and claims invite
+    // arguments at the table. Bot reveals are a single short gotcha — the
+    // quoted tic does the teaching. Human reveals are provenance strings.
+    for (const q of BOT) {
+      expect(q.reveal.length, `${q.id} reveal is ${q.reveal.length} chars`).toBeLessThanOrEqual(
+        110,
+      );
+    }
     for (const q of FULL_QUESTIONS) {
       expect(q.reveal.length, `${q.id} reveal is ${q.reveal.length} chars`).toBeLessThanOrEqual(
         240,
