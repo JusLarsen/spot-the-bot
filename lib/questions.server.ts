@@ -64,7 +64,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Sure, I was poor. But barbecue has never been a rich man's pleasure. It's always been a culture of thrift.",
     source: "Aaron Franklin, Franklin Barbecue: A Meat-Smoking Manifesto (2015)",
     reveal:
-      'The self-deprecating "Sure, I was poor" opener and the offhand aside about growing up read like a real person remembering, not a line written to be quoted.',
+      'He says "Sure, I was poor" like it costs him nothing, then turns it straight into pride. Owning the unflattering part first is something people do and slogans never do.',
   },
   {
     id: "bbq-8",
@@ -115,7 +115,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "There is a saying in my industry, you buy the meat, not the sauce.",
     source: 'Danielle "Diva Q" Bennett, exclusive interview with Mashed (2021)',
     reveal:
-      'She calls it an industry saying and immediately riffs on it ("sauce can hide a lot of barbecue sins"). That\'s shop talk, not a clean quote.',
+      "She isn't coining it, she's repeating it — \"a saying in my industry.\" People pass along the shop talk they picked up; a machine would have made up its own clever line instead.",
   },
   {
     id: "bbq-13",
@@ -496,7 +496,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "People don't buy what you do; they buy why you do it.",
     source: "Simon Sinek, Start with Why: How Great Leaders Inspire Everyone to Take Action (2009)",
     reveal:
-      "It's one of those punchy, almost-too-tidy sayings people repeat from a business book — and it's slightly misremembered, which is very human.",
+      "It's tidy enough to look machine-made, and that's the trap. This one got tidy the slow way: a guy repeating himself on stage until the extra words fell off.",
   },
   {
     id: "business-13",
