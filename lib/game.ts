@@ -35,9 +35,20 @@ export function shuffledIndices(n: number, seed: number): number[] {
   return a;
 }
 
-/** Ranking score: correct answers first, then lower total answer time. */
-export function composite(t: Pick<Team, "correct" | "totalMs">): number {
-  return (t.correct || 0) * 1e9 - (t.totalMs || 0);
+/** Net score: right answers count, wrong answers cost. This is what makes
+ * churning worthless — random guessing on a binary choice is ~50% accurate,
+ * so a team tapping through 200 questions nets ~0 while a careful team nets
+ * its real margin. Ranking by raw `correct` let spam beat honest play 2:1. */
+export function netScore(t: Pick<Team, "correct" | "wrong">): number {
+  return (t.correct || 0) - (t.wrong || 0);
+}
+
+/** Ranking score: net (right − wrong) first; among equal nets, more correct
+ * answers win (rewards playing more, not answering less); then lower total
+ * answer time. Tiers are spaced so none can bleed into the next: |net| and
+ * correct are ≤ the bank size (~hundreds), totalMs ≤ the game clock (<1e7). */
+export function composite(t: Pick<Team, "correct" | "wrong" | "totalMs">): number {
+  return netScore(t) * 1e12 + (t.correct || 0) * 1e7 - (t.totalMs || 0);
 }
 
 /** Teams sorted best-first by composite (does not mutate the input). */

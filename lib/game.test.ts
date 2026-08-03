@@ -5,6 +5,7 @@ import {
   mulberry32,
   shuffledIndices,
   composite,
+  netScore,
   rankTeams,
   nextUnansweredPos,
   fmtClock,
@@ -151,29 +152,47 @@ describe("shuffledIndices", () => {
 // ---------------------------------------------------------------------------
 
 describe("composite", () => {
-  it("higher correct count always outranks lower correct count, regardless of time", () => {
-    const more = composite({ correct: 5, totalMs: 999_999 }); // slow but more correct
-    const fewer = composite({ correct: 4, totalMs: 1 }); // fast but fewer correct
-    expect(more).toBeGreaterThan(fewer);
+  it("higher NET score always outranks lower net, regardless of volume or time", () => {
+    const careful = composite({ correct: 30, wrong: 10, totalMs: 999_999 }); // net 20
+    const churner = composite({ correct: 100, wrong: 95, totalMs: 1 }); // net 5, huge volume
+    expect(careful).toBeGreaterThan(churner);
   });
 
-  it("among equal correct counts, lower totalMs yields a higher composite", () => {
-    const fast = composite({ correct: 3, totalMs: 1_000 });
-    const slow = composite({ correct: 3, totalMs: 5_000 });
+  it("random-guess churn loses to careful play (the exploit this scoring kills)", () => {
+    // Coin-flipping 200 questions at ~50% used to beat everyone under raw
+    // `correct` ranking (100 vs ~45). Under net scoring it collapses to ~0.
+    const spammer = composite({ correct: 101, wrong: 99, totalMs: 500_000 }); // net 2
+    const honest = composite({ correct: 45, wrong: 15, totalMs: 550_000 }); // net 30
+    expect(honest).toBeGreaterThan(spammer);
+  });
+
+  it("among equal nets, more correct answers win (playing more beats answering less)", () => {
+    const played = composite({ correct: 12, wrong: 2, totalMs: 9_000 }); // net 10
+    const cautious = composite({ correct: 10, wrong: 0, totalMs: 1_000 }); // net 10
+    expect(played).toBeGreaterThan(cautious);
+  });
+
+  it("among equal nets and equal corrects, lower totalMs yields a higher composite", () => {
+    const fast = composite({ correct: 3, wrong: 1, totalMs: 1_000 });
+    const slow = composite({ correct: 3, wrong: 1, totalMs: 5_000 });
     expect(fast).toBeGreaterThan(slow);
   });
 
-  it("equal correct and equal totalMs produce identical composite scores", () => {
-    expect(composite({ correct: 2, totalMs: 3000 })).toBe(composite({ correct: 2, totalMs: 3000 }));
+  it("equal stats produce identical composite scores", () => {
+    expect(composite({ correct: 2, wrong: 1, totalMs: 3000 })).toBe(
+      composite({ correct: 2, wrong: 1, totalMs: 3000 }),
+    );
   });
 
-  it("treats missing/zero correct as 0 correct", () => {
-    // correct=0 should produce the same score as correct=undefined-like (0)
-    expect(composite({ correct: 0, totalMs: 0 })).toBe(0);
+  it("treats missing/zero fields as 0", () => {
+    expect(composite({ correct: 0, wrong: 0, totalMs: 0 })).toBe(0);
+    expect(netScore({ correct: 0, wrong: 0 })).toBe(0);
   });
 
-  it("treats missing/zero totalMs as 0ms", () => {
-    expect(composite({ correct: 1, totalMs: 0 })).toBe(1e9);
+  it("netScore can go negative and still ranks below a zero team", () => {
+    const under = composite({ correct: 1, wrong: 5, totalMs: 1 }); // net -4
+    const zero = composite({ correct: 0, wrong: 0, totalMs: 0 });
+    expect(under).toBeLessThan(zero);
   });
 });
 
@@ -187,11 +206,19 @@ function makeTeam(id: string, correct: number, totalMs: number, wrong = 0): Team
 }
 
 describe("rankTeams", () => {
-  it("returns best team first (highest correct)", () => {
+  it("returns best team first (highest net score)", () => {
     const teams = [makeTeam("b", 2, 1000), makeTeam("a", 5, 5000)];
     const ranked = rankTeams(teams);
     expect(ranked[0].id).toBe("a");
     expect(ranked[1].id).toBe("b");
+  });
+
+  it("ranks a careful team above a high-volume guesser", () => {
+    const teams = [
+      makeTeam("spammer", 101, 500_000, 99), // 200 answers, coin-flip accuracy
+      makeTeam("careful", 45, 550_000, 15), // 60 answers, 75% accuracy
+    ];
+    expect(rankTeams(teams)[0].id).toBe("careful");
   });
 
   it("breaks ties on totalMs (lower is better)", () => {

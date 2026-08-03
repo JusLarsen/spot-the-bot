@@ -70,7 +70,7 @@ export default async function ResultsPage({ params }: { params: Promise<{ code: 
 
         <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
           {teams.length
-            ? "Highest correct wins; ties broken by total answer time."
+            ? "Right answers score, wrong ones cost; ties broken by total answer time."
             : "No teams played this round."}
         </p>
         <Link className="btn btn-ghost mt-3" href="/">

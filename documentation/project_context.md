@@ -6,7 +6,7 @@
 live event or training session. A room of ~24–30 teams each grab one device, pick a team
 name, and work through a shuffled bank of 231 text samples deciding **human vs AI**
 together. The host runs a single shared countdown (host-selectable length, default
-10 min). When it ends, the team with the most correct answers wins — ties broken by
+10 min). When it ends, the highest net score (right +1, wrong -1) wins — ties broken by
 least total answer time, so there's one clean trophy winner.
 
 It is fundamentally a **training tool**: most AI samples are deliberately "obvious"

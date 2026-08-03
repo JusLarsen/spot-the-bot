@@ -93,7 +93,7 @@ export function FinalBoard({ teams, myId, isHost, sessionCode, onReset }: FinalB
 
       <p className="text-muted mt-4 text-center font-mono text-[11px] leading-[1.5]">
         {teams.length
-          ? "Highest correct wins; ties broken by total answer time."
+          ? "Right answers score, wrong ones cost; ties broken by total answer time."
           : "No teams played."}
       </p>
 

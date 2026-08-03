@@ -50,8 +50,8 @@ export function Join({ onJoin, live = false }: JoinProps) {
       </h1>
       <p className="text-muted mt-2 text-sm leading-[1.4]">
         Put your heads together. For each text sample, decide: <b className="text-human">human</b>{" "}
-        or <b className="text-bot">AI</b>? Most correct calls before the clock runs out takes the
-        trophy.
+        or <b className="text-bot">AI</b>? Right answers score, wrong ones cost — highest score when
+        the clock runs out takes the trophy.
       </p>
       {live && (
         <p className="text-acid mt-2 font-mono text-[12px] leading-[1.4]">

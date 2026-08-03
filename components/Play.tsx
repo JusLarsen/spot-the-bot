@@ -31,6 +31,7 @@ export function Play({
 }: PlayProps) {
   const correct = me?.correct ?? 0;
   const wrong = me?.wrong ?? 0;
+  const pts = correct - wrong;
   const timerFraction = Math.max(0, Math.min(1, timeLeftMs / Math.max(1, durationMs)));
   const isLow = timeLeftMs <= LOW_CLOCK_MS;
   const hasAnswered = lastResult !== null;
@@ -76,7 +77,7 @@ export function Play({
         <div className="roundbar">
           <span className="rno">{heading}</span>
           <span className="score">
-            {correct} correct · {wrong} wrong
+            {pts} pts · {correct} right · {wrong} wrong
           </span>
         </div>
         <TimerBar fraction={timerFraction} />
@@ -99,7 +100,9 @@ export function Play({
           <span className="rno">Sample {hasAnswered ? answeredCount : answeredCount + 1}</span>
         </span>
         <span className="score">
-          {hasAnswered ? `${correct} correct · ${wrong} wrong` : `${correct} correct`}
+          {hasAnswered || wrong > 0
+            ? `${pts} pts · ${correct} right · ${wrong} wrong`
+            : `${pts} pts`}
         </span>
       </div>
 
