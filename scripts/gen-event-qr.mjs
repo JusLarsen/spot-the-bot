@@ -38,13 +38,24 @@ const rand = mulberry32(20260802);
 const SIZE = 2200;
 const C = SIZE / 2;
 
-// ---- splatter blob: smooth closed curve with jittered radius, spiky every few points ----
-function blobPath(points, rMin, rMax, spikeEvery, spikeBoost) {
+// Distance from center to the card's edge along a given angle. Letting the
+// blob's radius floor follow the CARD (rather than a circle) is what keeps the
+// border tight: a square card inside a round blob forces a huge orange margin
+// along the card's flat sides.
+function cardEdge(angle, halfW, halfH) {
+  const dx = Math.abs(Math.cos(angle));
+  const dy = Math.abs(Math.sin(angle));
+  return Math.min(dx > 1e-6 ? halfW / dx : Infinity, dy > 1e-6 ? halfH / dy : Infinity);
+}
+
+// ---- splatter blob: hugs the card with a thin margin, then flings tendrils ----
+function blobPath(points, halfW, halfH, margin, jitter, spikeEvery, spikeBoost) {
   const pts = [];
   for (let i = 0; i < points; i++) {
     const angle = (i / points) * Math.PI * 2;
-    let r = rMin + rand() * (rMax - rMin);
-    if (i % spikeEvery === 0) r += spikeBoost * (0.6 + rand() * 0.8);
+    let r = cardEdge(angle, halfW, halfH) + margin + rand() * jitter;
+    if (i % spikeEvery === 0) r += spikeBoost * (0.6 + rand() * 1.1);
+    r = Math.min(r, C - 30);
     pts.push([C + Math.cos(angle) * r, C + Math.sin(angle) * r]);
   }
   // Catmull-Rom -> cubic bezier for a smooth organic outline
@@ -62,18 +73,22 @@ function blobPath(points, rMin, rMax, spikeEvery, spikeBoost) {
 }
 
 // ---- droplets flung around the blob ----
-function droplets(count, dMin, dMax, rMin, rMax) {
+function droplets(count, halfW, halfH, throwMin, throwMax, rMin, rMax) {
   let out = "";
   for (let i = 0; i < count; i++) {
     const angle = rand() * Math.PI * 2;
-    const dist = dMin + rand() * (dMax - dMin);
     const r = rMin + rand() * (rMax - rMin);
+    // fling from just past the local blob edge, capped inside the canvas
+    const dist = Math.min(
+      cardEdge(angle, halfW, halfH) + throwMin + rand() * (throwMax - throwMin),
+      C - r - 12,
+    );
     const x = C + Math.cos(angle) * dist;
     const y = C + Math.sin(angle) * dist;
     // stretch some droplets along their fling direction for a real splatter feel
     if (rand() > 0.5) {
       const deg = (angle * 180) / Math.PI;
-      out += `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${(r * 1.7).toFixed(1)}" ry="${r.toFixed(1)}" fill="${ACID}" transform="rotate(${deg.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;
+      out += `<ellipse cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" rx="${(r * (1.5 + rand())).toFixed(1)}" ry="${r.toFixed(1)}" fill="${ACID}" transform="rotate(${deg.toFixed(1)} ${x.toFixed(1)} ${y.toFixed(1)})"/>`;
     } else {
       out += `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${ACID}"/>`;
     }
@@ -105,8 +120,8 @@ for (let row = 0; row < n; row++) {
 }
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${SIZE}" height="${SIZE}" viewBox="0 0 ${SIZE} ${SIZE}">
-  <path d="${blobPath(26, 880, 960, 5, 110)}" fill="${ACID}"/>
-  ${droplets(22, 990, 1070, 8, 34)}
+  <path d="${blobPath(34, CARD_W / 2, CARD_H / 2, 55, 100, 3, 190)}" fill="${ACID}"/>
+  ${droplets(34, CARD_W / 2, CARD_H / 2, 130, 420, 6, 28)}
   <rect x="${cardX}" y="${cardY}" width="${CARD_W}" height="${CARD_H}" rx="44" fill="${CARD}"/>
   ${modules}
   <text x="${C}" y="${cardY + CARD_W + CAPTION_H * 0.42}" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="58" fill="${RUST}">spot-the-bot-psi.vercel.app</text>
