@@ -2,7 +2,7 @@
 import { useState, useEffect, useRef } from "react";
 import type { Team } from "@/lib/types";
 import { LOW_CLOCK_MS, RESET_CONFIRM_MESSAGE } from "@/lib/types";
-import { fmtClock } from "@/lib/game";
+import { fmtClock, netScore } from "@/lib/game";
 import { ConfirmDialog } from "./ConfirmDialog";
 import { Avatar } from "./Avatar";
 
@@ -154,10 +154,10 @@ function TeamRow({
       <div className="lb-name">
         {team.name || "(unnamed)"}
         <div className="lb-meta">
-          <span className="text-rust">{wrong} wrong</span> · {totalSecs}s
+          {correct} right · <span className="text-rust">{wrong} wrong</span> · {totalSecs}s
         </div>
       </div>
-      <div className="lb-pts text-acid">{correct} correct</div>
+      <div className="lb-pts text-acid">{netScore(team)} pts</div>
     </div>
   );
 }
