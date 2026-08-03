@@ -2008,7 +2008,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     category: "millennial",
     answer: "human",
     body: "No one knows what it means, but it's provocative. It gets the people going.",
-    source: "Blades of Glory (2007) — Coach",
+    source: "Blades of Glory (2007) — Chazz Michael Michaels",
     reveal:
       "He admits nobody understands it and then argues for it anyway. Doubling down on a bad case is a very human thing to write into a scene.",
   },
@@ -2307,10 +2307,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     reveal:
       "Yes, this one reads like a poster — but look at the ending. Rather than stopping on the clean line, he tacks on the awkward, specific \"especially when we don't know what's going on.\" That's a real person adding the part that actually matters to him.",
   },
-  // gives "Strengths: Fearless. Climbing. Speed. Boomerang. Smoldering intensity."
-  // while another source renders it "Strengths, fearless, speed, smoldering
-  // intensity." Confirm against a subtitle rip or the 4K clip before shipping,
-  // or cut this record.
   {
     id: "genz-11",
     type: "text",
