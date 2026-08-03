@@ -38,6 +38,30 @@ describe("question bank — anti-cheat boundary", () => {
   });
 });
 
+describe("question bank — the easy tier's 10×10 tell design", () => {
+  // Every easy AI sample is built around exactly one nameable AI habit, ten
+  // samples per habit. This was previously only true by construction — the
+  // mapping lived in deleted one-shot scripts — so nothing stopped an edit
+  // from silently unbalancing it. Now the record carries its tell.
+  it("every easy bot sample declares its tell; nothing else does", () => {
+    for (const q of EASY) {
+      expect(q.tell, `${q.id} is an easy bot sample with no tell`).toBeTruthy();
+    }
+    for (const q of [...HUMAN, ...SNEAKY]) {
+      expect(q.tell, `${q.id} should not carry a tell`).toBeUndefined();
+    }
+  });
+
+  it("is exactly 10 tells × 10 samples", () => {
+    const counts = new Map<string, number>();
+    for (const q of EASY) counts.set(q.tell!, (counts.get(q.tell!) ?? 0) + 1);
+    expect(counts.size, `tells: ${[...counts.keys()].join(", ")}`).toBe(10);
+    for (const [tell, n] of counts) {
+      expect(n, `tell "${tell}" has ${n} samples, expected 10`).toBe(10);
+    }
+  });
+});
+
 describe("question bank — structure", () => {
   it("has no duplicate ids", () => {
     const ids = FULL_QUESTIONS.map((q) => q.id);

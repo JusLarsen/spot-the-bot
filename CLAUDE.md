@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Reset mints a new session.** `/api/host` `reset` creates a fresh `sessions/<CODE>` and repoints `currentSessionCode`; it does **not** delete the old session node, so its saved leaderboard at `/r/<CODE>` persists. `end` just flips the current session to `ended` — the session node itself is the durable archive.
 - **Late join**: teams may join an in-progress session while `> LATE_JOIN_CUTOFF_MS` (60s) remain on the clock; inside the final minute joining is blocked (see `canJoin`/`wrappingUp` in `app/page.tsx`).
 - **Scoped RTDB subscriptions.** To keep fan-out linear for a full room, team devices subscribe to the `currentSessionCode` pointer + `sessions/<CODE>/state` + their own `sessions/<CODE>/teams/<id>` during `live`, and to all teams (`subscribeSessionTeams`) only in `lobby`/`ended`; the host subscribes to all teams. See `lib/use-game.ts` and `subscribeSessionTeams`/`subscribeKey` in `lib/firebase-client.ts`.
-- **Question bank**: 258 samples across 9 categories (`bbq`, `business`, `disney`, `speech`, `movies`, plus the comedy cohorts `genx`, `millennial`, `genz`, `alpha`). `category` is **organizational only** — never shown to players, never affects ordering. Most AI samples deliberately show common AI tells (training moments); a minority carry the server-only `sneaky` flag, surfaced in `AnswerResponse` so `Play.tsx` can frame the reveal — "even the pros miss these" on a miss, "you caught it" on a hit. See the content rules below before editing any sample.
+- **Question bank**: 231 samples across 9 categories (`bbq`, `business`, `disney`, `speech`, `movies`, plus the comedy cohorts `genx`, `millennial`, `genz`, `alpha`). `category` is **organizational only** — never shown to players, never affects ordering. Most AI samples deliberately show common AI tells (training moments); a minority carry the server-only `sneaky` flag, surfaced in `AnswerResponse` so `Play.tsx` can frame the reveal — "even the pros miss these" on a miss, "you caught it" on a hit. See the content rules below before editing any sample.
 - **Team avatars**: ~104 pixel-art BBQ-food/veggie icons in `public/avatars/`, listed in the client-safe manifest `lib/avatars.ts` (regenerate both icons + manifest with `npm run gen:avatars`, which calls the PixelLab API — needs `PIXELLAB_API_KEY`). A team **chooses** its avatar on the join screen (random default) — sent in `JoinRequest.avatar` and honored by `/api/join` if it passes `isValidAvatar`, else random — and can keep changing it in the **lobby** via the validated `/api/avatar` route. **Avatars lock once the game starts**: it's UI-locked (the play screen shows the read-only `Avatar`, not the editable `AvatarChooser`) AND server-enforced (`/api/avatar` 409s unless `state.phase === "lobby"`). The requested name must exist in the manifest, and the write `update()`s only the `avatar` field so it never clobbers scores. The picker UI is `AvatarChooser` (button + state) wrapping `AvatarPicker` (the grid modal); `Avatar` is the read-only display. Voting-button sprites (`lib/sprites.ts`) are a separate, unrelated set.
 - **Session identity persists across reloads, split by scope.** Team identity (`stb_team` = `{id, name, sessionId, avatar}`) is **device-scoped in `localStorage`** so a reload or dropped phone resumes the same team. Host role + token (`stb_role` = "host", `stb_host_token`) are **tab-scoped in `sessionStorage`** so two tabs of one browser don't share a role — one tab can be host while another is a team, and opening/reloading a tab can't silently promote it. `restoreSession()` purges any legacy `localStorage` `stb_role`/`stb_host_token` (the old shared-localStorage design trapped every tab as host). Anything that mints a team ID or changes role must keep the right storage tier in sync — see the storage-key comments in `lib/use-game.ts`.
 
@@ -105,10 +105,14 @@ survive the test because a person would never write them — they aren't true of
 person. Before adding a tell, ask: would a competent human writer plausibly produce
 this? If yes, it teaches the room to suspect the wrong things.
 
-Before adding a sample, check the tell isn't already used twice. When generating a
-batch across categories, **partition the tell list per category** — handing the same
-list to parallel authors produces one-to-one clone sets (`genx-19…30` and
-`millennial-19…30` are twelve matched pairs teaching the same twelve lessons).
+Every easy bot sample carries a **`tell` field** (the `Tell` union in `lib/types.ts`)
+naming which habit it teaches; human and sneaky samples must not. The 10 tells × 10
+samples balance is enforced by `lib/questions.test.ts`, so adding or removing an easy
+sample means rebalancing its tell group — the tests will tell you. The field is
+server-side metadata only; the anti-cheat test proves it never reaches the browser.
+When generating a batch with parallel authors, **give each author ONE tell** — handing
+the same list to several produces one-to-one clone sets (the twelve matched
+`genx`/`millennial` pairs were exactly this).
 
 **Difficulty tiers.** Non-sneaky = spotted in ~2 seconds, gets a laugh, free win.
 If a sample has real checkable specifics or genuinely good writing, it belongs in the
