@@ -70,11 +70,23 @@ real life ("you'll see this in your inbox"). Two distinct classes:
   machine vocabulary (delve/tapestry/testament to), hedge-everything, tidy uplifting
   closer, no concrete specifics. **Heavily over-represented; don't add more.**
 - _Chatbot-interface tells_ — "Certainly! Here's…", the "want me to expand this?"
-  sign-off, polite refusal + redirect, fabricated statistics ("studies show 73%"),
-  misattributed famous quotes, sycophancy ("you're absolutely right"), emoji
-  sprinkling, "First… Second… Finally…", "In summary", "As you know", therapy-speak,
-  knowledge-cutoff leaks, em-dash stuffing. **These are what the audience actually
+  sign-off, polite refusal + redirect, sycophancy ("you're absolutely right"),
+  knowledge-cutoff leaks ("I don't have access to real-time information"), "I have no
+  personal experiences, but research suggests…", answering a yes/no question with
+  balanced pros-and-cons and refusing to pick. **These are what the audience actually
   meets in a forwarded email, and the bank under-uses them.**
+
+**A tell must be _discriminating_ — something AI does that humans rarely do.** This is
+the rule `business-16` broke, and it is easy to break again because plenty of bad
+writing habits merely _feel_ machine-made. Rejected on these grounds, all of which
+humans do as much or more: fabricated statistics (marketers invent numbers daily),
+misattributed famous quotes (fake Einstein quotes long predate LLMs), emoji sprinkling,
+marketing superlatives ("elevate", "game-changing", "seamless"), "In summary" /
+"First… Second… Finally…" signposting, "As you know" exposition (a deliberate
+screenwriting device), therapy-speak, and em-dash stuffing. The interface tells above
+survive the test because a person would never write them — they aren't true of a
+person. Before adding a tell, ask: would a competent human writer plausibly produce
+this? If yes, it teaches the room to suspect the wrong things.
 
 Before adding a sample, check the tell isn't already used twice. When generating a
 batch across categories, **partition the tell list per category** — handing the same
