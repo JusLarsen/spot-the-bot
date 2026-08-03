@@ -23,7 +23,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Life is too short for bad BBQ!",
     source: 'Danielle "Diva Q" Bennett, Traeger Grills ambassador profile (traeger.com/diva-q)',
     reveal:
-      "It's a punchy, slightly cheeky personal motto a real pitmaster would put on merch — not the kind of neutral phrasing a bot invents.",
+      "Six words and an exclamation point, ending on a joke at nobody's expense. Someone put this on a T-shirt because they meant it, and you can hear that.",
   },
   {
     id: "bbq-3",
@@ -199,26 +199,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "AI — it turned a question into a numbered handout with a label on every point. Nobody talks in numbered steps. When a reply arrives pre-formatted like this, something generated it.",
   },
   {
-    id: "bbq-22",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "Smoke rings are pretty, but flavor pays the rent. If your bark has pepper bite, fat shimmer, and that campfire depth, nobody’s asking for a microscope.",
-    source: "AI-generated",
-    reveal:
-      'AI — "flavor pays the rent" sounds folksy, but the bark checklist (pepper bite, fat shimmer, campfire depth) is generic sensory filler with nothing a real cook would name, like a specific rub or wood.',
-  },
-  {
-    id: "bbq-23",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "A pork shoulder is basically a trust exercise wrapped in butcher paper. Somewhere around hour six, it looks like nothing is happening, which means everything is happening.",
-    source: "AI-generated",
-    reveal:
-      'AI — "a pork shoulder is basically a trust exercise" is metaphor-as-definition, then it over-explains itself with the tidy paradox "nothing is happening, which means everything is happening."',
-  },
-  {
     id: "bbq-24",
     type: "text",
     category: "bbq",
@@ -227,16 +207,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — watch the list: "salt, pepper, heat, smoke, and restraint." Four real things, then a virtue. It slides from the pit to the poster, and closes on the tidy reward "get you invited back."',
-  },
-  {
-    id: "bbq-25",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "Burgers need confidence, not choreography. Hot grate, cold meat, one good flip, and cheese melted just enough to start looking dangerous.",
-    source: "AI-generated",
-    reveal:
-      'AI — "confidence, not choreography" is a clever contrast carrying no real technique; "cheese melted just enough to start looking dangerous" is mood, not a doneness cue an actual cook would give.',
   },
   {
     id: "bbq-26",
@@ -250,16 +220,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     sneaky: true,
   },
   {
-    id: "bbq-27",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "The secret to good chicken thighs is patience and not poking at them every twelve seconds like a raccoon with a badge. Let the skin render, let the edges crisp, then bring in the glaze.",
-    source: "AI-generated",
-    reveal:
-      'AI — the "raccoon with a badge" simile is a strained showpiece, and "let the skin render, let the edges crisp, then bring in the glaze" gives sequence without a single temp, time, or thigh count.',
-  },
-  {
     id: "bbq-28",
     type: "text",
     category: "bbq",
@@ -269,26 +229,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     reveal:
       "Sneaky — a well-read bot: oak for beef and apple for pork is exactly right. Calling this human meant rewarding real knowledge, which is usually the right bet.",
     sneaky: true,
-  },
-  {
-    id: "bbq-29",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "If you’re looking at your watch, you’re doing it all wrong. Real Texas brisket doesn't care about your schedule, it only cares about the wood, the smoke, and the internal temp. Pull it when it jiggles like Jell-O and let it rest for at least two hours, period.",
-    source: "AI-generated",
-    reveal:
-      "AI — it says the clock doesn't matter, then tells you to rest it exactly two hours. When a sample argues with its own advice, that's the machine.",
-  },
-  {
-    id: "bbq-30",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "That bark right there isn't burnt, it’s pure flavor built up over twelve hours of post oak smoke. The secret is keeping the fire clean and the rub heavy on the coarse black pepper. Slice it thick and let the juice do the talking.",
-    source: "AI-generated",
-    reveal:
-      'AI — "twelve hours of post oak" and "coarse black pepper" sound right, but "let the juice do the talking" is an ad line any brisket clip could end on.',
   },
   {
     id: "bbq-31",
@@ -302,16 +242,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     sneaky: true,
   },
   {
-    id: "bbq-32",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "Sunday mornings start at 4:00 AM around here, getting the firebox stoked and the ambient temp locked right at 225. There’s something peaceful about watching the smoke roll while the rest of the neighborhood is still asleep. Grab a coffee, it's gonna be a long, beautiful day.",
-    source: "AI-generated",
-    reveal:
-      "AI — real details up front (4 AM, 225), then it dissolves into mood and ends on a greeting card. Specifics first, uplift last, is a common machine shape.",
-  },
-  {
     id: "bbq-33",
     type: "text",
     category: "bbq",
@@ -323,16 +253,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     sneaky: true,
   },
   {
-    id: "bbq-34",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "We are officially locked and loaded for the weekend crowd, and these pork shoulders are already looking incredible. The fat cap is rendering down perfectly, basting the meat from the inside out. Get down here before the sold-out sign goes up.",
-    source: "AI-generated",
-    reveal:
-      'AI — it can\'t pick a voice: "locked and loaded... before the sold-out sign goes up" is hype copy, but "basting the meat from the inside out" stops to explain food science mid-shout. Real posts don\'t teach and sell in the same breath.',
-  },
-  {
     id: "bbq-35",
     type: "text",
     category: "bbq",
@@ -341,16 +261,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — "tinfoil is a crutch" and "trust the process" are stock motivational phrasing, and the wrap is over-explained ("breathes just enough") rather than tied to any actual cook or temp.',
-  },
-  {
-    id: "bbq-36",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "You can buy the most expensive rig on the market, but you can’t buy patience. True barbecue is an art form of minor adjustments, feeling the heat, and listening to the sizzle on the deflector plate. Fire up the pits and let’s get to work.",
-    source: "AI-generated",
-    reveal:
-      'AI — "you can buy the most expensive rig, but you can\'t buy patience" is a fridge-magnet line: true, tidy, and about nobody. It never names a rig or a cook, and "feeling the heat, listening to the sizzle" is a movie montage, not advice.',
   },
   {
     id: "bbq-37",
@@ -371,16 +281,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — "patience, respect, and an unwavering devotion to the craft" lists virtues, not technique; it\'s a brisket sentence with zero brisket in it, fitting any craft equally well.',
-  },
-  {
-    id: "bbq-39",
-    type: "text",
-    category: "bbq",
-    answer: "bot",
-    body: "What separates a good pitmaster from a great one? The answer is simple: an unrelenting commitment to the fire.",
-    source: "AI-generated",
-    reveal:
-      'AI — it\'s a self-answering rhetorical question ("What separates a good pitmaster... The answer is simple") that resolves to the empty abstraction "an unrelenting commitment to the fire."',
   },
   {
     id: "bbq-40",
@@ -499,16 +399,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "It's tidy enough to look machine-made, and that's the trap. This one got tidy the slow way: a guy repeating himself on stage until the extra words fell off.",
   },
   {
-    id: "business-13",
-    type: "text",
-    category: "business",
-    answer: "bot",
-    body: "True operational scale isn’t about working harder; it’s about decoupling your revenue growth from your headcount. When leaders focus on building repeatable frameworks rather than firefighting daily anomalies, the entire organization aligns. Focus on systems that empower autonomy, not bottlenecks that require permission.",
-    source: "AI-generated",
-    reveal:
-      "AI — consultant-speak stacked thick: 'decoupling your revenue growth from your headcount,' 'repeatable frameworks,' 'systems that empower autonomy.' A real operator would have named a company, a number, or one actual situation.",
-  },
-  {
     id: "business-14",
     type: "text",
     category: "business",
@@ -519,16 +409,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "AI — 'Stay paranoid, stay curious, and keep executing' is a motivational sign-off, and the business-school phrases around it never land on a real example. A real leader would tell you which past win they gave up.",
   },
   {
-    id: "business-15",
-    type: "text",
-    category: "business",
-    answer: "bot",
-    body: "Resilience isn't an innate personality trait; it’s an organizational muscle developed through navigating ambiguity. When milestones are missed, the instinct is often to assign blame, but the highest-performing cultures treat failures as data points for iterative improvement. Turn your post-mortems into launchpads.",
-    source: "AI-generated",
-    reveal:
-      'AI — it argues from definitions instead of memory: resilience recast as "an organizational muscle," failures recast as "data points." A bot defines the terms because it never sat through the post-mortem.',
-  },
-  {
     id: "business-16",
     type: "text",
     category: "business",
@@ -537,26 +417,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — four compliments and an apology for a mistake nobody mentioned, before a single actual idea. "You\'re absolutely right" is a machine folding, not agreeing. Push back on a chatbot and watch it cave either way.',
-  },
-  {
-    id: "business-17",
-    type: "text",
-    category: "business",
-    answer: "bot",
-    body: "True leadership isn't validated by how many decisions you make, but by how many leaders you develop to make them instead. If your department paralyzes the moment you go on vacation, you haven’t built a team, you’ve built a dependency. Step back so your people can step up.",
-    source: "AI-generated",
-    reveal:
-      "AI — 'Step back so your people can step up' is a slogan, and the vacation example never happened to anyone. It says 'if your department paralyzes' — a hypothetical standing in for a real story.",
-  },
-  {
-    id: "business-18",
-    type: "text",
-    category: "business",
-    answer: "bot",
-    body: "We often mistake frantic activity for progress, but velocity without a clear direction is just noise. The best executives I’ve worked with spend more time listening to frontline friction than reviewing high-level slide decks. If you want to fix your culture, start by fixing the small things that drain your team's daily energy.",
-    source: "AI-generated",
-    reveal:
-      "AI — 'The best executives I've worked with' claims firsthand experience but names no one and no moment, and 'frontline friction' versus 'high-level slide decks' is borrowed consultant shorthand, not a remembered scene.",
   },
   {
     id: "business-19",
@@ -745,56 +605,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "short, but the word 'fun' reframes difficulty as play; an offhand real remark, not a committee-written poster.",
   },
   {
-    id: "disney-13",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "You see, a heart isn't judged by how much you love, but by how much you are loved by others in return. Even when the shadows grow long and the path ahead seems completely lost, that warmth will always show you the way home. Just take my hand and don't be afraid.",
-    source: "AI-generated",
-    reveal:
-      "AI — the first line is lifted almost word for word from The Wizard of Oz, then drifts into stock comfort about nobody. It borrows a great line and can't keep it up.",
-  },
-  {
-    id: "disney-14",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "It doesn't matter if you're made of tin, or wood, or fluff and stuffing, because real magic comes from what's beating inside your chest. When you love someone, you give them a piece of yourself that can never be broken or taken away. That's a promise that lasts forever.",
-    source: "AI-generated",
-    reveal:
-      'AI — "real magic comes from what\'s beating inside your chest" is a self-explaining moral, and "a piece of yourself that can never be broken" is generic warmth attached to no story or speaker.',
-  },
-  {
-    id: "disney-15",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "Change can be a little scary at first, kind of like stepping outside into a big, loud thunderstorm without an umbrella. But if we never let the rain fall, the flowers in the valley would never get a chance to grow. I think it’s time for us to see what’s waiting out there.",
-    source: "AI-generated",
-    reveal:
-      'AI — the rain-and-flowers parable explains its own lesson ("if we never let the rain fall, the flowers... would never grow") and names no speaker or situation; pure portable metaphor.',
-  },
-  {
-    id: "disney-16",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "They can take away our crowns, lock us in the highest towers, and banish us to the edge of the map, but they can never steal our dreams. As long as we have each other, we have a spark that can light up the darkest night. Now, let’s go show them what we're made of.",
-    source: "AI-generated",
-    reveal:
-      'AI — "a spark that can light up the darkest night" is mechanical uplift, and the crowns/towers/map imagery stays storybook-generic, naming no actual kingdom, captor, or villain.',
-  },
-  {
-    id: "disney-17",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "The stars up there look so small, but I think they’re actually giant windows looking into all the places we haven't discovered yet. If we fly fast enough, maybe we can find a way right through them. We just have to hold on tight and never look down.",
-    source: "AI-generated",
-    reveal:
-      'AI — "giant windows looking into all the places we haven\'t discovered yet" is over-poetic abstraction stacked on nothing concrete: no ship, no destination, no character, just mood.',
-  },
-  {
     id: "disney-18",
     type: "text",
     category: "disney",
@@ -803,36 +613,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — "Spring always knows exactly when to arrive" is a greeting-card resolution; the snowflake-patience platitude would fit any cozy hearth scene and names nobody.',
-  },
-  {
-    id: "disney-19",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "“Home isn’t the door,” the candle said, flickering proudly. “It’s who leaves a light on when you’re late.”",
-    source: "AI-generated",
-    reveal:
-      "AI — fortune-cookie wisdom assigned to an object: a candle delivering the tidy, self-contained life-lesson \"Home isn't the door... It's who leaves a light on.\"",
-  },
-  {
-    id: "disney-20",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "“The forest doesn’t give maps to people who already know everything,” the fox said. “It prefers the lost ones. They listen better.”",
-    source: "AI-generated",
-    reveal:
-      'AI — it arrives pre-polished, like a quote card: "It prefers the lost ones. They listen better." Real characters ramble, argue, get interrupted. This one hands you the moral with a bow on it.',
-  },
-  {
-    id: "disney-21",
-    type: "text",
-    category: "disney",
-    answer: "bot",
-    body: "“Your song is still in there,” the whale murmured beneath the silver waves. “It just got buried under everyone else’s noise.”",
-    source: "AI-generated",
-    reveal:
-      'AI — self-help in animal costume: the whale\'s "your song... got buried under everyone else\'s noise" is a find-your-voice platitude, with "silver waves" as decorative filler and no real story.',
   },
   {
     id: "disney-22",
@@ -949,36 +729,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "He's quoting the Whole Earth Catalog's farewell line back to the graduates as a wish for himself — borrowing someone else's words, not inventing a slogan.",
   },
   {
-    id: "speech-9",
-    type: "text",
-    category: "speech",
-    answer: "bot",
-    body: "As you walk across this stage today, remember that your degree is not a final destination, but rather a key to doors you haven't even envisioned yet. The world doesn't need you to fit into the existing molds; it desperately needs you to shatter them and build something better. Go out there and make kindness your loudest attribute.",
-    source: "AI-generated",
-    reveal:
-      'AI — stacked stock metaphors ("a key to doors you haven\'t even envisioned," "shatter the molds") that name no school, year, or person, resolving into the greeting-card imperative "make kindness your loudest attribute."',
-  },
-  {
-    id: "speech-10",
-    type: "text",
-    category: "speech",
-    answer: "bot",
-    body: "We often spend our youth waiting for the perfect moment to start, waiting for a sign that we are finally ready to make our mark. The truth is, perfection is an illusion designed to keep you comfortable in the harbor of safety. Row away from the shore, embrace the storms, and realize you were ready all along.",
-    source: "AI-generated",
-    reveal:
-      'AI — it over-explains its own moral ("perfection is an illusion designed to keep you comfortable") then piles on nautical clichés, ordering you to "row away from the shore" with no real boat, harbor, or memory behind it.',
-  },
-  {
-    id: "speech-11",
-    type: "text",
-    category: "speech",
-    answer: "bot",
-    body: "Look around this room at the people who supported you, wept with you, and pushed you to reach this milestone. No one achieves greatness in a vacuum, and our success is always a collective tapestry woven by those who believed in us. Carry their belief into the world and become that pillar for someone else.",
-    source: "AI-generated",
-    reveal:
-      'AI — "a collective tapestry woven by those who believed in us" is a stock metaphor pointing at nobody specific; a real speaker would name the mentor or parent, not tell you to "become that pillar for someone else."',
-  },
-  {
     id: "speech-12",
     type: "text",
     category: "speech",
@@ -987,26 +737,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — "every failure is simply a tuition payment toward your future wisdom" is a line built for a graduation card. Then it orders you to "write a story worth telling" without ever telling one of its own.',
-  },
-  {
-    id: "speech-13",
-    type: "text",
-    category: "speech",
-    answer: "bot",
-    body: "Your education has given you a voice, and with that voice comes the profound responsibility to speak for those who are currently unheard. Do not use your talents merely to climb the ladders of corporate success; use them to widen the base so more people can climb with you. True legacy is measured by what you give back.",
-    source: "AI-generated",
-    reveal:
-      'AI — it\'s all "you," never "I." A real speaker would say who they lost, what they built, when they failed. This one declares "true legacy is measured by what you give back" and never once shows up in its own speech.',
-  },
-  {
-    id: "speech-14",
-    type: "text",
-    category: "speech",
-    answer: "bot",
-    body: "Today marks the end of a chapter, but the pen is now entirely in your hands for the rest of the book. Do not let the cynicism of the world dampen the fierce optimism that brought you to this very moment. Be bold, stay curious, and never apologize for dreaming too big.",
-    source: "AI-generated",
-    reveal:
-      'AI — "the pen is now entirely in your hands for the rest of the book" is a stock metaphor, and the closing trio "be bold, stay curious, and never apologize" is hollow uplift that would fit any graduation anywhere.',
   },
   {
     id: "speech-15",
@@ -1266,16 +996,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       'the joke treats "then" as a place you can drive past and miss. Wordplay that silly is a writer having fun; a machine plays it straight.',
   },
   {
-    id: "movies-25",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "In the end, the galaxy will not remember our weapons or our fleets. It will remember whether we chose to stand together when the darkness came.",
-    source: "AI-generated",
-    reveal:
-      'AI — names no galaxy, no enemy, no character: "whether we chose to stand together when the darkness came" is interchangeable grandeur that could close literally any space epic, anchored to no actual scene.',
-  },
-  {
     id: "movies-26",
     type: "text",
     category: "movies",
@@ -1296,26 +1016,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       'AI — three verbs marching in a row ("harness the storm, forge a new dawn, unleash a power"), each grander than the last and none attached to a plan. When a line escalates in threes and gets vaguer as it climbs, suspect the machine.',
   },
   {
-    id: "movies-28",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "You ask what makes a hero. I will tell you: not the strength of the arm, but the courage of the heart that refuses to break.",
-    source: "AI-generated",
-    reveal:
-      'AI — the self-answering setup "You ask what makes a hero. I will tell you" plus a definitional "not the strength of the arm, but the courage of the heart" is a teaching device, not dialogue tied to any moment.',
-  },
-  {
-    id: "movies-29",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "What began as a simple delivery run became a journey across the stars, and ultimately a reckoning with the very meaning of who we are.",
-    source: "AI-generated",
-    reveal:
-      'AI — "a reckoning with the very meaning of who we are" dissolves a concrete delivery run into abstract self-discovery, naming no destination, person, or event a real scene would ground itself in.',
-  },
-  {
     id: "movies-30",
     type: "text",
     category: "movies",
@@ -1326,16 +1026,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       'AI — "Victory is not measured in the battles we win, but in the lives we choose to protect" is a saying you could paste into any war film. No battle, no enemy, nobody actually being protected.',
   },
   {
-    id: "movies-31",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "I have walked through fire, through shadow, and through the quiet despair that comes when hope itself begins to fade.",
-    source: "AI-generated",
-    reveal:
-      'AI — "through fire, through shadow, and through the quiet despair" piles metaphor on metaphor naming no actual ordeal, place, or foe; it\'s mood without a single specific thing the speaker survived.',
-  },
-  {
     id: "movies-32",
     type: "text",
     category: "movies",
@@ -1344,26 +1034,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — the over-stuffed intensifiers "truly, deeply understand the profound mercy" are the tell; real menace is specific and lean, while this villain threatens in vague abstractions naming no captive or consequence.',
-  },
-  {
-    id: "movies-33",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "Look around you. This is not merely a rebellion. This is the dawn of an age where the oppressed will rise and never again kneel.",
-    source: "AI-generated",
-    reveal:
-      'AI — "the dawn of an age where the oppressed will rise and never again kneel" is hollow manifesto: it names no oppressor, no place, no people, sweeping grandeur that would fit any rebellion anywhere.',
-  },
-  {
-    id: "movies-34",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "The question is not whether we can win, but whether we are willing to become the kind of people who deserve to.",
-    source: "AI-generated",
-    reveal:
-      'AI — "The question is not whether we can win, but whether..." is the fake-question move: pose a question only to reject it for a loftier one. Watch for lines that correct your question instead of answering it.',
   },
   {
     id: "movies-35",
@@ -1384,56 +1054,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — the piled adverbs "profoundly and irrevocably alive" plus the triple "never love, never grieve, never truly hope" is mechanical abstract uplift, an essay on machine consciousness with no scene around it.',
-  },
-  {
-    id: "movies-37",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "Heroes are not born in moments of triumph. They are forged in the silent, unseen battles no one will ever know.",
-    source: "AI-generated",
-    reveal:
-      'AI — read it again and notice nobody is actually in it. Heroes "are forged" — by who? In what fight? Real lines have someone doing something; this one just floats.',
-  },
-  {
-    id: "movies-38",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "This power was never meant to be controlled. It was meant to be unleashed, and through it, the cosmos itself reborn.",
-    source: "AI-generated",
-    reveal:
-      'AI — "the cosmos itself reborn" is mechanical cosmic grandiosity; "power... meant to be unleashed" names no source, wielder, or target, pure abstract scale with no specific moment behind it.',
-  },
-  {
-    id: "movies-39",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "What is courage, if not fear that has chosen to stand? And what is sacrifice, if not love made visible in its final, fearless act?",
-    source: "AI-generated",
-    reveal:
-      'AI — two stacked self-answering definitions, "What is courage, if not..." and "what is sacrifice, if not love made visible," are a philosophy lecture, not a line a character says inside an actual scene.',
-  },
-  {
-    id: "movies-40",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "We did not come here to be remembered. We came here to make sure there was someone left to do the remembering.",
-    source: "AI-generated",
-    reveal:
-      'AI — "someone left to do the remembering" is engineered grandeur that names no "here," no enemy, no mission; the clever inversion has no concrete situation underneath it the way a real line would.',
-  },
-  {
-    id: "movies-41",
-    type: "text",
-    category: "movies",
-    answer: "bot",
-    body: "So this is how it ends: not with the roar of cannons, but with the whisper of a promise kept.",
-    source: "AI-generated",
-    reveal:
-      "AI — it borrows the shape of a famous last line and fills in the blanks. Sounds momentous, but ask the obvious questions and nothing answers: which promise? Made to who? Ending what?",
   },
   {
     id: "movies-42",
@@ -1728,16 +1348,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "AI — three lessons, all the same size, all equally safe. Machines love a tidy set of three; when an AI-written recap gives you three points that are suspiciously evenly matched, this is that same habit.",
   },
   {
-    id: "genx-22",
-    type: "text",
-    category: "genx",
-    answer: "bot",
-    body: "I'm going to jump this car over the ravine. It's important to note that results may vary and that proper preparation is recommended.",
-    source: "AI-generated",
-    reveal:
-      'AI — "It\'s important to note that" is a disclaimer wedged into a stunt. That exact phrase shows up constantly in AI-written reports and support replies, almost always right before something completely obvious.',
-  },
-  {
     id: "genx-23",
     type: "text",
     category: "genx",
@@ -1748,16 +1358,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       'AI — "delve" and "realm" are two of the most machine-flavored words in English. If a coworker\'s email suddenly starts delving into realms and landscapes, a chatbot wrote it.',
   },
   {
-    id: "genx-24",
-    type: "text",
-    category: "genx",
-    answer: "bot",
-    body: "Some might say the couch does not belong on the roof. Others may argue that it can be, in certain circumstances, an arguably reasonable place for it.",
-    source: "AI-generated",
-    reveal:
-      'AI — "some might say," "may argue," "can be," "arguably": four escape hatches in two sentences, because a machine hates committing to anything. When an AI answer refuses to just say yes or no, this is exactly what it looks like.',
-  },
-  {
     id: "genx-25",
     type: "text",
     category: "genx",
@@ -1766,16 +1366,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       "AI — it repeats your question back to you, compliments you on it, and still doesn't answer. Ask a chatbot anything this week and watch it do this before it gets to the point.",
-  },
-  {
-    id: "genx-26",
-    type: "text",
-    category: "genx",
-    answer: "bot",
-    body: "Whether you're a jock, a nerd, or someone who simply enjoys detention, this Saturday truly has something for everyone.",
-    source: "AI-generated",
-    reveal:
-      "AI — \"whether you're X or Y, there's something for everyone\" is filler a machine reaches for when it has no idea who it's talking to. You will find it in AI-written newsletters and event invites all day long.",
   },
   {
     id: "genx-27",
@@ -1796,16 +1386,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — "truly, deeply, profoundly" are doing the job one real detail should do; a person would have told you who ran for the garden hose. Those words prop up AI writing everywhere, and there is never anything underneath them.',
-  },
-  {
-    id: "genx-29",
-    type: "text",
-    category: "genx",
-    answer: "bot",
-    body: "High school was a memorable time filled with various experiences, several friends, and a number of teachers who made an impact.",
-    source: "AI-generated",
-    reveal:
-      'AI — try to picture one single thing in it. No name, no year, no class. "Various experiences" and "a number of teachers" is what a machine writes when it doesn\'t actually know anything, and it\'s why AI-written bios feel like fog.',
   },
   {
     id: "genx-30",
@@ -2123,36 +1703,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "AI — two apologies before it gets to the fire. Machines cushion everything; you'll see the same over-politeness when AI writes an email that should have just said no.",
   },
   {
-    id: "millennial-26",
-    type: "text",
-    category: "millennial",
-    answer: "bot",
-    body: "You should have seen the party. Something happened, people reacted, and it turned into a memorable experience for everyone involved.",
-    source: "AI-generated",
-    reveal:
-      "AI — no name, no number, no place, no actual event. AI-written recaps do this all the time: several confident sentences reporting that nothing happened to nobody.",
-  },
-  {
-    id: "millennial-27",
-    type: "text",
-    category: "millennial",
-    answer: "bot",
-    body: "Falling into the pool in a rented tuxedo can often be seen as somewhat embarrassing, and some might say it was arguably my fault.",
-    source: "AI-generated",
-    reveal:
-      'AI — "often," "somewhat," "some might say," "arguably": four ways of refusing to commit in one sentence. Machines do this whenever the honest answer is short and blunt.',
-  },
-  {
-    id: "millennial-28",
-    type: "text",
-    category: "millennial",
-    answer: "bot",
-    body: "It's important to note that I did not steal the golf cart. I merely relocated it.",
-    source: "AI-generated",
-    reveal:
-      'AI — "It\'s important to note that" is pure filler; delete it and the sentence means the same thing. It opens paragraphs in AI-written reports constantly.',
-  },
-  {
     id: "millennial-29",
     type: "text",
     category: "millennial",
@@ -2160,17 +1710,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: '"Where is the cake?" "Where is the cake. That\'s a great question, and I do want to address it directly."',
     source: "AI-generated",
     reveal:
-      "AI — it repeats your question back at you before answering. Ask a chatbot anything and watch it restate what you just asked; it's one of the most reliable tells there is.",
-  },
-  {
-    id: "millennial-30",
-    type: "text",
-    category: "millennial",
-    answer: "bot",
-    body: "Whether you're a seasoned boater or a complete beginner, this boat is on fire and we have no paddles.",
-    source: "AI-generated",
-    reveal:
-      'AI — "whether you\'re X or Y" is how a machine talks to a crowd instead of to a person. That opener shows up in AI-written newsletters and product pages everywhere.',
+      "AI — three words in, and it still hasn't gotten past your own sentence. Someone who knows where the cake is says so. Echoing the question first is a stall dressed up as attentiveness.",
   },
   {
     id: "millennial-31",
@@ -2308,26 +1848,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "Yes, it reads like a poster — but look at the ending. He doesn't stop on the clean line; he tacks on \"especially when we don't know what's going on.\" That's a person.",
   },
   {
-    id: "genz-11",
-    type: "text",
-    category: "genz",
-    answer: "bot",
-    body: "Look, we all have a role to play here. You're the brains, he's the muscle, and I'm the one who asks the questions that make everyone uncomfortable — which is also a valuable role, in its own way.",
-    source: "AI-generated",
-    reveal:
-      "AI — the joke ends, then the line keeps going to explain why it was good. When a line pauses to compliment its own punchline, suspect the machine.",
-  },
-  {
-    id: "genz-12",
-    type: "text",
-    category: "genz",
-    answer: "bot",
-    body: "This is either the best idea we have ever had or the worst idea we have ever had, and honestly, at this point, it is impossible to tell the difference.",
-    source: "AI-generated",
-    reveal:
-      'AI — count the two halves: "the best idea we have ever had" and "the worst idea we have ever had" are matched word for word. Nobody balances a sentence that neatly while panicking, but machines love a matched pair.',
-  },
-  {
     id: "genz-13",
     type: "text",
     category: "genz",
@@ -2338,16 +1858,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
       "AI — trusting, believing, and then a van. It's a list of nice words with one odd item bolted on the end, hoping the surprise counts as a joke. Real jokes come out of the mess the characters are actually in.",
   },
   {
-    id: "genz-14",
-    type: "text",
-    category: "genz",
-    answer: "bot",
-    body: "I have been training my whole life for a moment exactly like this one, and I have to tell you, it is somehow both better and worse than I imagined.",
-    source: "AI-generated",
-    reveal:
-      "AI — ask what the moment actually is and nothing answers: no place, no plan, no thing about to happen. Real characters are always stuck in something specific; this one is just standing in a mood.",
-  },
-  {
     id: "genz-15",
     type: "text",
     category: "genz",
@@ -2356,16 +1866,6 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     source: "AI-generated",
     reveal:
       'AI — "full and undivided," then "absolutely, positively, one hundred percent." That\'s five words doing one word\'s job. Stacked-up emphasis like that is padding, and padding is a machine habit.',
-  },
-  {
-    id: "genz-16",
-    type: "text",
-    category: "genz",
-    answer: "bot",
-    body: "I want you to know that I am feeling a lot of complicated emotions right now, and I genuinely do not have the vocabulary for most of them.",
-    source: "AI-generated",
-    reveal:
-      "AI — the character files a report on its own feelings instead of showing them. Overwhelmed people say something sideways, or nothing at all; they don't announce that their emotions are complicated.",
   },
   {
     id: "genz-17",
@@ -2468,7 +1968,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“In today's fast-paced forest landscape, snack security is more important than ever,” announced the squirrel from the top of the picnic table. “Which is why I will now be taking that sandwich.”",
     source: "AI-generated",
     reveal:
-      "AI — nobody in a movie has ever opened with “In today's fast-paced [anything] landscape.” That opener is the single most common AI giveaway: you'll see it at the top of half the AI-written emails and LinkedIn posts you get this year.",
+      "AI — a forest does not have a fast-paced landscape. Delete that whole first clause and nothing is lost, which is the test: if the opening sentence can go without anyone noticing, a machine wrote it.",
   },
   {
     id: "alpha-7",
@@ -2511,6 +2011,626 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     reveal:
       "Sneaky — no shame in this one; a character contradicting himself in the same breath is a real comic move and it lands. It just wraps up a shade too neatly, handing you the setup and the payoff without a single wasted word.",
     sneaky: true,
+  },
+  {
+    id: "genx-36",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "We hid the entire pep band in the gym storage closet for forty minutes. They came out the wrong door, still playing, and marched straight into somebody's wedding. Which just goes to show, the plans that fall apart are the ones you keep forever.",
+    source: "AI-generated",
+    reveal:
+      "AI — the wedding is the punchline. What comes after it is a fortune cookie taped to the end, telling you how to feel about a joke that already worked. AI-drafted meeting recaps close the exact same way.",
+  },
+  {
+    id: "movies-49",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: '"Reactor\'s at a hundred percent." "What happens after a hundred?" "The manual stops at a hundred. There\'s just a phone number." Funny how the moments that terrify us are the ones that show us who we really are.',
+    source: "AI-generated",
+    reveal:
+      "AI — nobody watching a reactor climb past the last number in the manual pauses to say what fear teaches us. That final line is aimed at a reader, not the crew. AI-written status updates sign off the same way.",
+  },
+  {
+    id: "alpha-11",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: '"Is everybody buckled?" "Yep." "Is the dog buckled?" "The dog is driving." "The dog is WHAT?" Turns out the vacation we needed was never the one printed on the map.',
+    source: "AI-generated",
+    reveal:
+      "AI — cover the last sentence with your thumb and nothing is missing. A machine wrote a good joke, then explained what it meant. AI-written thank-you notes and reviews do this too: one tidy sentence past the point.",
+  },
+  {
+    id: "bbq-41",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "Pulled the pork butt off the smoker tonight and I am wholly, thoroughly, and completely satisfied with how it turned out. The flavor was immensely flavorful. Highly recommend this cook to anyone.",
+    source: "AI-generated",
+    reveal:
+      "AI — count the praise words, then go looking for a number: temperature, hours, what wood. There isn't one. Recipe comments and product reviews that get louder as they run out of facts were typed by a machine.",
+  },
+  {
+    id: "disney-25",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“Do not fret, little one,” said the badger, patting the acorn with one paw. “I am entirely, sincerely, and wholeheartedly certain that everything is going to work out extraordinarily well in the end.”",
+    source: "AI-generated",
+    reveal:
+      "AI — a real badger would have said what he knows and how he knows it. This one just stacks up three ways of sounding sure. Bedtime stories written by a bot comfort you like this: warmly, and about nothing.",
+  },
+  {
+    id: "speech-17",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "Graduates, I am incredibly, tremendously, and unbelievably proud of each and every one of you. What all of you have accomplished here is genuinely, authentically remarkable.",
+    source: "AI-generated",
+    reveal:
+      "AI — the praise keeps swelling while the graduates get blurrier: no project, no late night, no name. A person who was actually proud of you would brag about one specific thing. Award intros drift here too.",
+  },
+  {
+    id: "movies-50",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "Am I in? Buddy, I am fundamentally, comprehensively, and permanently on board. I have never in my entire life been more on board with a plan than I am with this plan right now.",
+    source: "AI-generated",
+    reveal:
+      "AI — three enormous words for “yes,” and the plan never shows up. A person would have blurted out the dumb thing they just agreed to. You meet the same move in customer service chat: eager, agreeable, fixes nothing.",
+  },
+  {
+    id: "movies-51",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "Captain, this vessel and everyone aboard her are utterly, unequivocally, irreversibly doomed. I recommend we respond with maximum urgency.",
+    source: "AI-generated",
+    reveal:
+      "AI — “maximum urgency” is not an order. Three words for doomed and not one for what's failing: no breach, no reactor, no clock. Sales decks reach for the same volume when there's no number to show.",
+  },
+  {
+    id: "bbq-42",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "A backyard cook is not measured in pounds of pork. It is measured in the trust of everyone standing there holding a paper plate.",
+    source: "AI-generated",
+    reveal:
+      "AI — why can't it just say the pork was good? Trading a plain measurement for a warm feeling is how a machine fakes depth. The same swap is painted on half the restaurant walls you'll eat under.",
+  },
+  {
+    id: "business-25",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Thanks for flagging this! Honestly, this thread was never about the parking spots. It was about who we choose to be when the lot fills up.",
+    source: "AI-generated",
+    reveal:
+      "AI — if a reply about parking spots ends on who we choose to be, a machine wrote it. Ask a chatbot a small, boring question sometime and watch it hand back a life lesson you didn't order.",
+  },
+  {
+    id: "speech-18",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "The gown you are wearing today is not merely a rental, but the final costume of the person you used to be.",
+    source: "AI-generated",
+    reveal:
+      "AI — a rented gown is a rented gown. Machines can't leave a small object alone; every one of them has to stand for something. You'll hear it in wedding toasts and product launches all year.",
+  },
+  {
+    id: "genx-37",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "This is bigger than a bowling trophy, Dale. This is about whether anybody in this town still believes in anything.",
+    source: "AI-generated",
+    reveal:
+      "AI — one bowling trophy in, an entire town's beliefs out. Machines inflate the stakes because grand and vague is easier to write than funny and specific. Sales decks do it too: one feature, one civilization saved.",
+  },
+  {
+    id: "alpha-12",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: "“What started as a hunt for one missing sock,” the raccoon said quietly, “had become a hunt for who we are as a family.”",
+    source: "AI-generated",
+    reveal:
+      "AI — a sock turned into a family's identity inside one sentence. That jump from tiny to enormous is the machine's whole personality. Open your next school newsletter and count how often it happens.",
+  },
+  {
+    id: "bbq-43",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "Hi all, hope everyone is having a wonderful Saturday! So sorry to bother the group, but a very large dog has run off with the entire brisket and is heading toward the creek. Only if anyone happens to be free. No pressure either way!",
+    source: "AI-generated",
+    reveal:
+      "AI — who ends a stolen-brisket alarm with “no pressure either way”? A machine trained never to push. You get the same warm nothing when a support bot turns down your refund.",
+  },
+  {
+    id: "business-26",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Thank you all so much for your hard work this quarter, and I truly appreciate everyone’s dedication. I did want to gently flag, when you have a moment, that the entire customer database was deleted this morning. Great effort all around!",
+    source: "AI-generated",
+    reveal:
+      "AI — the customer database is gone and the note still closes on “great effort all around.” Real bad news starts with the bad news. Watch for the same padding in an AI-drafted outage email.",
+  },
+  {
+    id: "disney-26",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“Excuse me, Mister Hawk,” said the rabbit as the shadow closed in, “I hate to be a bother, and your talons really are lovely, but I was rather hoping to keep my afternoon free.”",
+    source: "AI-generated",
+    reveal:
+      "AI — a rabbit complimenting the talons closing around it. If a person wrote this scene the rabbit screams; the machine cannot stop being pleasant. Ask a bot for a blunt one-star review and meet the same softness.",
+  },
+  {
+    id: "speech-19",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "I am told that siren means a tornado, and we will absolutely be heading to the basement shortly. Before we do, though, I would be remiss not to thank the faculty, the parents, and the wonderful volunteers who set up all of these chairs.",
+    source: "AI-generated",
+    reveal:
+      "AI — by the time it finishes thanking the chair crew, the tornado has arrived. Good manners outrank actual danger here, and that is exactly how an AI-written safety notice buries the part you needed first.",
+  },
+  {
+    id: "genx-38",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "I don’t mean to be a backseat driver, and you are doing wonderfully, but if it isn’t too much trouble, might we consider losing the eleven police cars? Whenever you get a chance. Truly no rush.",
+    source: "AI-generated",
+    reveal:
+      "AI — eleven squad cars behind them and it still says “whenever you get a chance.” The manners survive; the urgency does not. Any AI phone assistant delivering news you won’t like sounds like this.",
+  },
+  {
+    id: "millennial-36",
+    type: "text",
+    category: "millennial",
+    answer: "bot",
+    body: "Hi team, hope you are all well. Truly no big deal, and I am sure it was an honest mistake, but someone has eaten my labeled lunch three days running. Sending gratitude to whoever it was!",
+    source: "AI-generated",
+    reveal:
+      "AI — read that last line again: it thanks the thief. A person writes this note angry, a machine writes it grateful. Tell a chatbot to be harsh with someone and watch it go soft on the way out.",
+  },
+  {
+    id: "alpha-13",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: "“I recognize that this is a very big feeling,” the dad said calmly while the toddler screamed in aisle nine, “and I want to sincerely thank you for sharing it with the entire store.”",
+    source: "AI-generated",
+    reveal:
+      "AI — nobody thanks a screaming toddler for sharing. Machines are built to stay agreeable no matter what is happening, so the courtesy stays glued on. Notice it the next time a bot thanks you while refusing you.",
+  },
+  {
+    id: "movies-52",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "Bridge, so sorry to bother you during shift change. I hate to be the bearer of bad news, but something enormous has come through the hull and it does not appear to be friendly. Take your time!",
+    source: "AI-generated",
+    reveal:
+      "AI — “take your time” with something enormous already aboard. The bigger the emergency, the tighter a machine grips its manners. Same grip on the AI-drafted note that can’t quite tell a late vendor they’re late.",
+  },
+  {
+    id: "bbq-44",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "Certainly! Here are three excellent wood choices for pork: • Apple — mild and slightly sweet • Cherry — beautiful color • Hickory — bold and traditional. Happy smoking!",
+    source: "AI-generated",
+    reveal:
+      'AI — who answers a question about firewood by saying "Certainly!" and handing over a bulleted menu? A real cook just names the wood. That eager opener turns up wherever people paste chatbot answers.',
+  },
+  {
+    id: "business-27",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Hi Dana — great question! Regarding the 3pm: 1) Availability — my calendar is clear. 2) Preparation — I will review the deck beforehand. 3) Follow-up — I will circulate notes after. Let me know if you'd like me to expand on any of these.",
+    source: "AI-generated",
+    reveal:
+      'AI — the honest reply was "yes, see you at 3." What arrived was a three-part memo with a label on each line. When an answer is longer and tidier than the question deserved, check who actually typed it.',
+  },
+  {
+    id: "disney-27",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“There now, little fawn,” said the old owl. “Your feelings are completely valid. **Step 1: Breathe.** **Step 2: Name the fear.** **Step 3: Take one small step.** You've got this!”",
+    source: "AI-generated",
+    reveal:
+      "AI — an owl handing a frightened fawn a three-part procedure, with stray ** marks still stuck to the labels. Those asterisks are formatting that fell out of a chatbot, and you will spot them in pasted text at work this month.",
+  },
+  {
+    id: "speech-20",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "Before you toss your caps, here are my key takeaways: 1) Be curious. 2) Be kind. 3) Be persistent. In summary, the future belongs to those who show up. Congratulations, graduates!",
+    source: "AI-generated",
+    reveal:
+      'AI — nobody at a podium says "key takeaways" or "in summary." That is slide language wearing a cap and gown, and it is exactly how a chatbot signs off when you ask it to sum anything up.',
+  },
+  {
+    id: "genx-39",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "The cops are at the door. Okay — quick breakdown of our options: • Option A: the window • Option B: the laundry chute • Option C: honesty. Each has trade-offs. Thoughts?",
+    source: "AI-generated",
+    reveal:
+      "AI — if your friend lays out Options A, B, and C while the cops are knocking, your friend is a machine. Scared people pick one thing and run. That same calm option list fills AI-written emails about problems.",
+  },
+  {
+    id: "millennial-37",
+    type: "text",
+    category: "millennial",
+    answer: "bot",
+    body: "**Summary:** I ate your leftovers. **Context:** I was hungry. **Impact:** Acknowledged. **Proposed remedy:** replacement by Sunday. Would you like me to elaborate on any section?",
+    source: "AI-generated",
+    reveal:
+      "AI — four labeled sections and an offer to elaborate, over leftovers. That closing question is how chatbots end nearly everything. See it at the bottom of a text message and you know where it came from.",
+  },
+  {
+    id: "alpha-14",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: "“Family meeting!” barked the dog. “Agenda item one: the mailman. Agenda item two: the vacuum. Agenda item three: snacks. I have also prepared a short recap for anyone joining late.”",
+    source: "AI-generated",
+    reveal:
+      'AI — "agenda item," "a short recap for anyone joining late." That is meeting software talking, not a dog. Ask a chatbot one plain question and it will hand you an agenda too.',
+  },
+  {
+    id: "movies-53",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "Hull breach in ninety seconds. Here is the plan: Step 1) Seal deck four. Step 2) Reroute auxiliary power. Step 3) Get everyone off the bridge. Shall I proceed, or would you like me to adjust the sequence?",
+    source: "AI-generated",
+    reveal:
+      "AI — ninety seconds from death, and it stops to ask whether you would like the sequence adjusted. Orders in a real emergency are short and rude. Asking permission to continue is a chat-window habit.",
+  },
+  {
+    id: "speech-21",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "A quick toast, organized into three parts. **Part one: How they met.** **Part two: Why it works.** **Part three: The wish.** Please hold applause until the end of the outline.",
+    source: "AI-generated",
+    reveal:
+      "AI — a toast that announces its own outline. Affection does not come in sections. When a birthday note or a condolence card shows up with headings, a machine wrote the feelings.",
+  },
+  {
+    id: "bbq-45",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "Q: Brisket has been stuck at 160 for four hours, do I wrap it? A: Let me make sure I have your question right. Your brisket has been stuck at 160 for four hours and you want to know whether to wrap it. Four hours is a meaningful stretch of time.",
+    source: "AI-generated",
+    reveal:
+      "AI — read the reply twice: it is your own question handed back, with the word “meaningful” added. Support chats do this constantly. Your problem gets summarized before anybody does one thing about it.",
+  },
+  {
+    id: "business-28",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Thanks for flagging this. To restate the question: you're asking whether we will make payroll on Friday. Whether we make payroll on Friday is absolutely the right thing to be focused on, and I want to give it the thoughtful response it deserves.",
+    source: "AI-generated",
+    reveal:
+      "AI — “To restate the question” is the whole email. It plays your words back, calls them important, and never gets to yes or no. Be suspicious of any reply that spends its opening line proving it read yours.",
+  },
+  {
+    id: "disney-28",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“Owl, is the water still rising?” “Is the water still rising. What a thoughtful thing to ask, little one. Few creatures in this wood stop to wonder about the water at all, and here you are, wondering.”",
+    source: "AI-generated",
+    reveal:
+      "AI — the owl repeats, then praises, then praises the asking. The water is still rising. That is the same stall a help bot gives you when the answer should have taken two words.",
+  },
+  {
+    id: "speech-22",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "A student stopped me last night and asked, “What do we do now?” What do you do now. I want to stay with that question a moment. It is a question, it is yours, and the fact that you asked it says everything about this class.",
+    source: "AI-generated",
+    reveal:
+      "AI — a full paragraph spent handling the question instead of answering it. Staying with it a moment is delay in a nice coat. You will hear the identical move from any assistant you try to rush.",
+  },
+  {
+    id: "genx-40",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "“Which wire do I cut?” “Which wire do you cut. Terrific question. Honestly, one of the better ones anyone has asked me in this parking garage, and I have been down here since Tuesday.”",
+    source: "AI-generated",
+    reveal:
+      "AI — seconds left on the clock, and the answer is the question with a compliment taped to it. Machines buy time they do not need. It shows up in any AI reply that opens by repeating what you typed.",
+  },
+  {
+    id: "millennial-38",
+    type: "text",
+    category: "millennial",
+    answer: "bot",
+    body: "“Did you mail the invitations?” “Did I mail the invitations. Wow. Okay. That is exactly the question I would be asking if I were standing where you are standing, and I respect it enormously.”",
+    source: "AI-generated",
+    reveal:
+      "AI — did anyone ever say yes or no? Echoing the question and admiring the asker is how a machine fills the gap while it works out what to say. Phone bots stall in that shape before transferring you.",
+  },
+  {
+    id: "alpha-15",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: "“Dad, are we lost?” “Are we lost. Buddy, that is a big question, and I think it is one this whole family has earned the right to ask.” The van continued in the wrong direction.",
+    source: "AI-generated",
+    reveal:
+      "AI — two dozen words about the question, zero about the road. When a reply starts by giving your own sentence back to you, something generated it. Homework helpers and email tools both lean on this.",
+  },
+  {
+    id: "movies-54",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "“How long until the core blows?” “How long until the core blows. Excellent question, Commander, and one that gets right to the heart of what every soul aboard this ship is feeling.”",
+    source: "AI-generated",
+    reveal:
+      "AI — nobody in real danger repeats the question; they answer it. The playback is the tell. Next time an AI tool fields a timing question for you, see how much of its first sentence is yours.",
+  },
+  {
+    id: "bbq-46",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "What a fantastic question, and you're so right to push back — sorry for any mix-up on my end. Your instinct to run 225 is excellent. And if 275 feels better to you, I think that's a wonderful choice too and I completely agree.",
+    source: "AI-generated",
+    reveal:
+      "AI — it agreed with 225, then agreed with 275 one sentence later. That isn't advice, that's a machine keeping you happy. Any chat helper will switch sides the second you sound annoyed.",
+  },
+  {
+    id: "business-29",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Susan, what a sharp callout — I should have caught that myself. Apologies for the confusion on slide four. I really love where your head is at here, and I'm happy to change the forecast to whatever number feels right to you.",
+    source: "AI-generated",
+    reveal:
+      "AI — a compliment, an apology, and a surrender in four sentences, and it never once says what the right number is. When the answer bends to whoever spoke last, a machine wrote it.",
+  },
+  {
+    id: "disney-29",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“Oh, you are SO wise, little one,” chirped the squirrel, bowing low. “And I'm terribly sorry if I upset you. Whatever you think the golden acorn means, that is exactly what it means. What a beautiful mind you have.”",
+    source: "AI-generated",
+    reveal:
+      "AI — the squirrel hands over the meaning of the whole story rather than risk disagreeing with a child. Cartoon sidekicks argue; bots flatter. Tell an assistant it's wrong and watch how fast it folds.",
+  },
+  {
+    id: "speech-23",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "Before I begin, let me just say what an incredible audience you are. And if anything I say tonight lands wrong, I apologize in advance, and you are almost certainly right. Honestly, any one of you could give this speech better than me.",
+    source: "AI-generated",
+    reveal:
+      "AI — it apologizes for a speech it hasn't given yet, to people who haven't complained yet. Groveling before anything goes wrong is a machine's factory setting, and it's the first line of most help chats.",
+  },
+  {
+    id: "genx-41",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "“You call that a parking job?” “Wow, okay, that is a really fair observation and I'm sorry. You clearly know a lot about parking, way more than I do. I would genuinely love your notes.”",
+    source: "AI-generated",
+    reveal:
+      "AI — read the second line: no comeback, no excuse, just praise for the guy yelling at him. Comedies escalate; machines cave. Try picking a fight with the little chat box on a website.",
+  },
+  {
+    id: "millennial-39",
+    type: "text",
+    category: "millennial",
+    answer: "bot",
+    body: "“You are hands down the smartest person in this office, and I say that with total respect. Also, I'm sorry. I don't know what for yet, but I can feel that I'm sorry, and you were right about everything.”",
+    source: "AI-generated",
+    reveal:
+      "AI — an apology with no crime attached, then “you were right about everything,” which covers arguments nobody had. You'll meet this the day an assistant thanks you for correcting something it got right.",
+  },
+  {
+    id: "alpha-16",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: "“I'm sorry, I'm sorry!” beeped the little robot vacuum. “You're the best kid in this whole house and your plan is so much better than mine. Please don't be mad. We'll do it your way, even the part with the lava.”",
+    source: "AI-generated",
+    reveal:
+      "AI — it signs off on a kid's plan involving lava, because agreeing feels safer than being right. Caving isn't kindness, it's a habit. Homework bots do it too: argue once and the answer changes.",
+  },
+  {
+    id: "movies-55",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "“Captain, the reactor is past critical.” “Cut the coolant.” “Excellent instinct, Captain, and I'm sorry for questioning you. Cutting coolant now. What a thoughtful decision to make under this much pressure.”",
+    source: "AI-generated",
+    reveal:
+      "AI — the reactor is about to blow and the computer stops to compliment the order. Real crews push back; this one apologizes for asking. Same reflex as the “great question!” that opens every chatbot reply.",
+  },
+  {
+    id: "business-30",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "“My package never arrived.” “You are so right to reach out, and what a clearly written message. I'm very sorry for the trouble. That said, if you feel the package did arrive, I fully support that as well. Thank you for being such a valued partner.”",
+    source: "AI-generated",
+    reveal:
+      "AI — it praises the complaint, says sorry, then agrees the package may have arrived after all. Taking both sides at once fixes nothing. It's why a support chat can run twenty minutes and solve zero problems.",
+  },
+  {
+    id: "business-31",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Appreciate the patience here. The launch moved for three reasons: bandwidth, timing, and a real commitment to quality. Happy to walk through any of it live.",
+    source: "AI-generated",
+    reveal:
+      "AI — Three reasons, and not one of them is a reason. A person answering this names the thing that actually broke. Count the list in the next status update you get: three items, all the same size, nothing you could point at.",
+  },
+  {
+    id: "disney-30",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“An acorn only needs three things to become an oak,” said the old badger, patting the sapling. “Good soil, steady rain, and the courage to believe in itself.”",
+    source: "AI-generated",
+    reveal:
+      "AI — Soil, rain, and courage. Two of those you can hold; the third wandered in off a poster, and the real answer was sunlight. Chatbot toasts and tributes pull that same swap on the last item every time.",
+  },
+  {
+    id: "movies-56",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "The reactor breach gives us four minutes. Getting off this ship will take three things: steady hands, a clear channel, and faith in each other. Move.",
+    source: "AI-generated",
+    reveal:
+      "AI — Four minutes to live and the man stops to itemize. Real crews yell one thing: the coolant line, the hatch, a name. Three matched nouns under pressure is the machine talking. Ask a chatbot what to do first and watch.",
+  },
+  {
+    id: "bbq-47",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "In an era of ever-shifting food trends, it is worth taking a moment to reflect on what really matters out here at the grill. Somebody has walked off with my tongs again.",
+    source: "AI-generated",
+    reveal:
+      "AI — who opens with the state of food trends before asking where the tongs went? A machine does. Watch for that long runway before the actual point in the next AI-written newsletter you skim.",
+  },
+  {
+    id: "business-32",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "As we navigate an increasingly complex scheduling landscape, it is important to step back and think about how we align on shared availability. Yes, 2:00 works for me.",
+    source: "AI-generated",
+    reveal:
+      'AI — cross out the first sentence and nothing is lost. Real replies start at "yes, 2:00 works." Try that deletion test on the next vendor email that opens with a paragraph about the changing landscape.',
+  },
+  {
+    id: "disney-31",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“In a world where the pond changes a little more with every passing season,” the duck said gravely from the top of the flat rock, “one thing has stayed the same. That is my rock, and you are standing on it.”",
+    source: "AI-generated",
+    reveal:
+      "AI — the pond has nothing to do with the rock. Big scene-setting bolted onto a small complaint, which you'll meet in the opening line of most AI blog posts, is a machine limbering up before it says anything.",
+  },
+  {
+    id: "speech-24",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "In today's ever-evolving campus environment, few moments carry the weight of the one we share this afternoon. Before we begin, the owner of the silver sedan blocking the loading dock needs to move it now.",
+    source: "AI-generated",
+    reveal:
+      "AI — the tow truck is urgent; the sentence in front of it is stalling. People say fast things fast. Machines set the scene first — check the next all-staff announcement that was drafted by one.",
+  },
+  {
+    id: "millennial-40",
+    type: "text",
+    category: "millennial",
+    answer: "bot",
+    body: "At a moment when the modern wedding reception asks more of us than ever, we owe each other some honesty. The open bar closes in nine minutes and Dave is already crying in the parking lot.",
+    source: "AI-generated",
+    reveal:
+      "AI — swap weddings for supply chains or dentistry and that opener still fits perfectly. Anything that can be pasted onto any subject came from a machine. Half your LinkedIn feed starts this way.",
+  },
+  {
+    id: "movies-57",
+    type: "text",
+    category: "movies",
+    answer: "bot",
+    body: "Amid the ever-accelerating pace of interstellar conflict, it is worth pausing to consider the bigger picture. Also, the reactor breaches in forty seconds and somebody welded the door behind you.",
+    source: "AI-generated",
+    reveal:
+      "AI — forty seconds on the clock and it spent one of them on the bigger picture. Padding costs nothing on a page, which is exactly why AI-written meeting recaps warm up the same way before the point.",
+  },
+  {
+    id: "bbq-48",
+    type: "text",
+    category: "bbq",
+    answer: "bot",
+    body: "Fired up the offset at 4 a.m. to elevate a humble pork shoulder into something the whole cul-de-sac will remember.",
+    source: "AI-generated",
+    reveal:
+      'AI — nobody standing over a smoker "elevates" a pork shoulder. They cooked it, or they threw it on. "Elevate" is a machine\'s word for "made," and it is waiting in the next marketing email you open.',
+  },
+  {
+    id: "business-33",
+    type: "text",
+    category: "business",
+    answer: "bot",
+    body: "Thanks for flagging! Happy to unlock some time Thursday to align on the potluck sign-up sheet.",
+    source: "AI-generated",
+    reveal:
+      'AI — has a human being ever unlocked a Thursday? Machines grab "unlock" where "find" or "book" would do. Next time a reply offers to unlock value, capacity, or time, ask who actually typed it.',
+  },
+  {
+    id: "disney-32",
+    type: "text",
+    category: "disney",
+    answer: "bot",
+    body: "“The river has risen again,” said the old raccoon, resting a paw on the boy's shoulder. “Together, we must navigate the challenges ahead.”",
+    source: "AI-generated",
+    reveal:
+      'AI — swap "navigate" for a plain verb and the raccoon just gets across the river. Machines take the big word every time, which is why "navigate the changes ahead" turns up in half the company updates you get.',
+  },
+  {
+    id: "speech-25",
+    type: "text",
+    category: "speech",
+    answer: "bot",
+    body: "Graduates, beyond these doors awaits a myriad of opportunities, each one ready for you to seize it.",
+    source: "AI-generated",
+    reveal:
+      'AI — one word gives it away: "myriad." Out loud, people say "a bunch," "so many," "a ton." Machines say "myriad," and you will hear it again in the next award citation somebody reads to a room.',
+  },
+  {
+    id: "genx-42",
+    type: "text",
+    category: "genx",
+    answer: "bot",
+    body: "Trust me, man. Sneaking into the faculty lounge is the pivotal moment of our entire senior year.",
+    source: "AI-generated",
+    reveal:
+      'AI — count the times you have said "pivotal" out loud. Zero, probably. Machines call everything pivotal and never say why it matters; the word is all over the strategy deck sitting in your inbox.',
+  },
+  {
+    id: "alpha-17",
+    type: "text",
+    category: "alpha",
+    answer: "bot",
+    body: "The eight-year-old folded her arms on the minivan seat. “All I'm asking,” she said, “is that this family foster a more open dialogue about bedtime.”",
+    source: "AI-generated",
+    reveal:
+      'AI — "foster" lives in grant applications and HR policy, not in a third grader. Handy rule: if a word could drop into a benefits memo without anyone blinking, a machine probably chose it.',
   },
 ];
 
