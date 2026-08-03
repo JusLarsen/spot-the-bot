@@ -15,6 +15,7 @@
     "gen:qr": "node scripts/gen-event-qr.mjs",
     "deploy:rules": "npx --yes firebase-tools@15 deploy --only database",
     "check:rules": "node scripts/check-rules.mjs",
+    "load:test": "node scripts/load-test.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
