@@ -278,7 +278,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "If you’re looking at your watch, you’re doing it all wrong. Real Texas brisket doesn't care about your schedule, it only cares about the wood, the smoke, and the internal temp. Pull it when it jiggles like Jell-O and let it rest for at least two hours, period.",
     source: "AI-generated",
     reveal:
-      'AI — it declares the clock irrelevant ("if you\'re looking at your watch, you\'re doing it all wrong") and then prescribes exactly two hours of rest. Watch for samples that contradict their own advice, and for tidy trios like "the wood, the smoke, and the internal temp."',
+      "AI — it says the clock doesn't matter, then tells you to rest it exactly two hours. When a sample argues with its own advice, that's the machine.",
   },
   {
     id: "bbq-30",
@@ -309,7 +309,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Sunday mornings start at 4:00 AM around here, getting the firebox stoked and the ambient temp locked right at 225. There’s something peaceful about watching the smoke roll while the rest of the neighborhood is still asleep. Grab a coffee, it's gonna be a long, beautiful day.",
     source: "AI-generated",
     reveal:
-      'AI — the 4 AM firebox and the locked-in 225 are convincing, then the middle dissolves into mood ("something peaceful about watching the smoke roll") and the closer turns into a greeting card. Specifics up front, uplift at the end, is a common machine shape.',
+      "AI — real details up front (4 AM, 225), then it dissolves into mood and ends on a greeting card. Specifics first, uplift last, is a common machine shape.",
   },
   {
     id: "bbq-33",
@@ -752,7 +752,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "You see, a heart isn't judged by how much you love, but by how much you are loved by others in return. Even when the shadows grow long and the path ahead seems completely lost, that warmth will always show you the way home. Just take my hand and don't be afraid.",
     source: "AI-generated",
     reveal:
-      'AI — the first sentence is lifted almost word for word from The Wizard of Oz. Then it drifts into stock comfort — "when the shadows grow long," "show you the way home" — that isn\'t about anyone, or any real danger. It borrows a great line and can\'t keep it up.',
+      "AI — the first line is lifted almost word for word from The Wizard of Oz, then drifts into stock comfort about nobody. It borrows a great line and can't keep it up.",
   },
   {
     id: "disney-14",
@@ -1705,7 +1705,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "In today's fast-paced academic landscape, one must ask: is skipping school truly wrong, or is it simply a bold reallocation of one's personal time?",
     source: "AI-generated",
     reveal:
-      'AI — nobody ditching school opens with "In today\'s fast-paced academic landscape." That "In today\'s world" opener is the single most common way AI starts writing, and you will see it at the top of half the AI-written emails and posts that hit your inbox this year.',
+      "AI — nobody ditching school says \"In today's fast-paced academic landscape.\" That opener is the most common way AI starts writing; you'll see it in your inbox this week.",
   },
   {
     id: "genx-20",
@@ -2305,7 +2305,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "The only thing I do know is that we have to be kind. Please, be kind, especially when we don't know what's going on.",
     source: "Everything Everywhere All at Once (2022) — Waymond Wang",
     reveal:
-      "Yes, this one reads like a poster — but look at the ending. Rather than stopping on the clean line, he tacks on the awkward, specific \"especially when we don't know what's going on.\" That's a real person adding the part that actually matters to him.",
+      "Yes, it reads like a poster — but look at the ending. He doesn't stop on the clean line; he tacks on \"especially when we don't know what's going on.\" That's a person.",
   },
   {
     id: "genz-11",
@@ -2315,7 +2315,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "Look, we all have a role to play here. You're the brains, he's the muscle, and I'm the one who asks the questions that make everyone uncomfortable — which is also a valuable role, in its own way.",
     source: "AI-generated",
     reveal:
-      'AI — the joke ends, then the line keeps going to explain why the joke was good ("which is also a valuable role, in its own way"). When a line pauses to compliment its own punchline, suspect the machine; people just say the funny part and move on.',
+      "AI — the joke ends, then the line keeps going to explain why it was good. When a line pauses to compliment its own punchline, suspect the machine.",
   },
   {
     id: "genz-12",
@@ -2488,7 +2488,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     body: "“Before we delve into who ate the cake,” said the hamster, “let us take a moment to appreciate the rich tapestry of crumbs on this floor. Truly a testament to a family that eats together.”",
     source: "AI-generated",
     reveal:
-      "AI — “delve,” “rich tapestry,” and “a testament to” are three words the machines cannot stop using. No hamster talks like that, and neither does anyone you work with: spot those three in a report or a cover letter and you have almost certainly found AI.",
+      "AI — no hamster says “delve,” “rich tapestry,” and “a testament to.” Machines can't stop using those three; spot them in a report and you've almost certainly found AI.",
   },
   {
     id: "alpha-9",
