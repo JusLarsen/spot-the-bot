@@ -4,7 +4,7 @@
 
 **Spot the Bot** is a live, team-based human-vs-AI detection game built for a Traeger
 live event or training session. A room of ~24–30 teams each grab one device, pick a team
-name, and work through a shuffled bank of 258 text samples deciding **human vs AI**
+name, and work through a shuffled bank of 231 text samples deciding **human vs AI**
 together. The host runs a single shared countdown (host-selectable length, default
 10 min). When it ends, the team with the most correct answers wins — ties broken by
 least total answer time, so there's one clean trophy winner.
@@ -24,9 +24,9 @@ server-authoritative API routes so clients can never write to the database or se
 answers before they guess. Load-tested at 30 concurrent connections. 55 passing Vitest
 unit tests over the pure game logic.
 
-Question bank: 258 samples across 9 categories — **movies** (46), **genx** (38), **bbq** (36,
-Traeger influencers like Diva Q / Matt Pittman), **millennial** (36), **business** (27),
-**disney** (24), **speech** (20), **alpha** (17), **genz** (14).
+Question bank: 231 samples across 9 categories — **movies** (39), **millennial** (36), **genx**
+(34), **bbq** (32, Traeger influencers like Diva Q / Matt Pittman), **business** (22),
+**disney** (21), **speech** (18), **alpha** (15), **genz** (14).
 Each category mixes authentic human quotes with AI-generated imitations.
 
 ## Key decisions (and why)
@@ -94,6 +94,6 @@ See `README.md` for setup, env vars, and component/data-flow diagrams.
   (world-open rules); hidden host unlock; sudden-death scoring; ~70 phones.
 - **v3 (current)**: full rewrite to Next.js App Router on Vercel; server-authoritative
   API routes + Admin SDK; client-write-denied RTDB rules; anti-cheat question split;
-  team format with host-selectable shared clock; 258-question training corpus across 9
+  team format with host-selectable shared clock; 231-question training corpus across 9
   categories; run-capped per-team order; scoped subscriptions; in-UI dialogs; live on
   Vercel.
