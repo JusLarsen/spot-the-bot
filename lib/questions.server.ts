@@ -185,6 +185,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Great brisket comes down to three key factors: 1) Preparation — trim the excess fat. 2) Patience — hold a consistent temperature. 3) Rest — allow the meat to relax. Follow these steps for optimal results.",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — nobody talks in numbered steps.",
   },
   {
@@ -194,6 +195,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Don’t drown good meat in rub until it tastes like a spice cabinet fell down the stairs. Salt, pepper, heat, smoke, and restraint will get you invited back.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: 'AI — four real ingredients, then "restraint" sneaks onto the list.',
   },
   {
@@ -203,6 +205,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Tinfoil is a crutch, but peach butcher paper is a pitmaster's best friend. It breathes just enough to keep your crust nice and crunchy while holding in those essential juices. Trust the process and don't rush the wrap.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: 'AI — "trust the process" is a poster, not a pit.',
   },
   {
@@ -212,6 +215,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's world, barbecue is more than just cooking meat over fire. It is a journey that brings people together and nourishes the soul, one tender bite at a time.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: 'AI — "In today\'s world," it began, about barbecue.',
   },
   {
@@ -221,6 +225,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Great brisket isn't just about heat; it's about patience, respect, and an unwavering devotion to the craft.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: 'AI — "patience, respect, and an unwavering devotion" — but no brisket.',
   },
   {
@@ -230,6 +235,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "At the end of the day, smoking meat is about more than flavor. It's about connection, tradition, and the stories we share around the table.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal:
       'AI — "connection, tradition, and the stories we share" — three warm words, zero smoke.',
   },
@@ -343,6 +349,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The market doesn’t care about your legacy strategy or how successful your previous product launch was. Disruption happens when an organization becomes too comfortable protecting past wins instead of cannibalizing its own business model to innovate. Stay paranoid, stay curious, and keep executing.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: 'AI — "Stay paranoid, stay curious" is a pep talk where an example should be.',
   },
   {
@@ -352,6 +359,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You're absolutely right, and I apologize for the confusion. That's a great point about retention, and you've clearly thought deeply about this. Building on your excellent observation, psychological safety really is the foundation here.",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: 'AI — "You\'re absolutely right" is a machine folding, not agreeing.',
   },
   {
@@ -480,6 +488,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hurrying won't make the winter pass any faster, my little friend, as every single snowflake has its own special time to dance. Sit here by the hearth with me and let the frost paint its pictures on the windowpanes. Spring always knows exactly when to arrive.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: 'AI — "Spring always knows exactly when to arrive" comes straight off a greeting card.',
   },
   {
@@ -566,6 +575,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Do not let the fear of making a mistake paralyze your ambition, because every failure is simply a tuition payment toward your future wisdom. The most extraordinary lives are rarely linear; they are messy, unpredictable, and defined by the moments someone chose to get back up. Write a story worth telling.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: 'AI — it demanded "a story worth telling" without telling one.',
   },
   {
@@ -791,6 +801,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This was never about the throne, the crown, or the kingdom. It was about something far greater: the soul of every world that ever dared to dream.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: 'AI — everything traded up to "the soul of every world" — it was about the throne.',
   },
   {
@@ -800,6 +811,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Together we will harness the storm, forge a new dawn, and unleash a power this universe has never witnessed.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — three verbs, each grander and vaguer than the last.",
   },
   {
@@ -809,6 +821,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Victory is not measured in the battles we win, but in the lives we choose to protect along the way.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal:
       'AI — the "not measured in X, but in Y" flip; victory is famously measured in battles you win.',
   },
@@ -819,6 +832,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Surrender now, and I may yet allow you to truly, deeply understand the profound mercy of which I am capable.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: "AI — the villain turned the volume up instead of making a threat.",
   },
   {
@@ -828,6 +842,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Every great empire begins with a single choice, and today, my friends, we choose to delve into legend.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — armies charge; chatbots "delve into legend."',
   },
   {
@@ -837,6 +852,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "They told me a machine could never love, never grieve, never truly hope. And yet, here I stand, profoundly and irrevocably alive.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: 'AI — "profoundly and irrevocably alive," said no living thing ever.',
   },
   {
@@ -1008,6 +1024,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's fast-paced academic landscape, one must ask: is skipping school truly wrong, or is it simply a bold reallocation of one's personal time?",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: 'AI — no kid ever ditched school in a "fast-paced academic landscape."',
   },
   {
@@ -1017,6 +1034,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This isn't merely a golf tournament. It's a chance for one groundskeeper to finally be seen.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: "AI — the old \"isn't merely X, it's Y\" upgrade — it's a golf tournament.",
   },
   {
@@ -1026,6 +1044,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Caddying taught me patience. It taught me humility. And it taught me the value of hard work.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — three lessons, suspiciously equal in size.",
   },
   {
@@ -1035,6 +1054,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Before we toilet-paper the principal's house, let's delve into the realm of what could possibly go wrong.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — teenagers do not "delve into the realm" of anything.',
   },
   {
@@ -1044,6 +1064,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "You asked whether I ate the last slice of pizza. That's a great question. Whether I ate the last slice of pizza is certainly worth examining.",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — it complimented the pizza question twice and never answered it.",
   },
   {
@@ -1053,6 +1074,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "So I drove the golf cart into the pond, the cooler floated away, and my boss watched the whole thing. In the end, we all learned something about ourselves that day.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: "AI — the golf cart sank; the life lesson was pushed in after it.",
   },
   {
@@ -1062,6 +1084,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "My uncle's chili was truly spicy. Deeply, profoundly spicy. Everyone at the table was significantly affected.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: "AI — truly, deeply, profoundly... one actual detail would have done it.",
   },
   {
@@ -1071,6 +1094,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Excuse me, ghost. I don't wish to be rude, but you are currently inside our refrigerator, and several of us would prefer that you were not.",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — customer-service manners, ghost customer.",
   },
   {
@@ -1252,6 +1276,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This isn't just a chili cook-off. It's a statement about who we are as a family, and I intend to make that statement.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: "AI — \"isn't just X, it's Y\" strikes again; it is, in fact, a chili cook-off.",
   },
   {
@@ -1261,6 +1286,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I live by three rules: never quit, never explain, and never wear socks with sandals.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — a list so tidy it was measured with a ruler.",
   },
   {
@@ -1270,6 +1296,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's fast-paced backyard environment, we have to ask ourselves whether we are ready for this water balloon fight.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — it cleared its throat for a water balloon fight.",
   },
   {
@@ -1279,6 +1306,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "We lost the van, we lost the trophy, and I lost one shoe. But in the end, what we really found out there was each other.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: "AI — the gag ended at the shoe; the moral was stapled on.",
   },
   {
@@ -1288,6 +1316,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Gary is a deeply unpleasant individual, and I find his behavior profoundly disappointing.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: 'AI — "deeply" and "profoundly" doing the work of one actual fact about Gary.',
   },
   {
@@ -1297,6 +1326,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This sheet cake is a testament to what a team can achieve when we leverage our collective strengths.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — it\'s a sheet cake, not "a testament to" anything.',
   },
   {
@@ -1306,6 +1336,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I'm terribly sorry to interrupt, and I do apologize for the poor timing, but the kitchen is on fire.",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — two apologies before mentioning the fire.",
   },
   {
@@ -1315,6 +1346,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"Where is the cake?" "Where is the cake. That\'s a great question, and I do want to address it directly."',
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — echoing your question back is a stall, and the cake is still missing.",
   },
   {
@@ -1447,6 +1479,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "We're a team now. And being a team means trusting each other, believing in each other, and occasionally stealing a van together.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — a warm list of three with a van bolted on the end.",
   },
   {
@@ -1456,6 +1489,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Guys. Guys. Okay, now that I have everyone's full and undivided attention, I would like to formally propose that we absolutely, positively, one hundred percent do not do that again.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: "AI — five words of emphasis doing one word's job.",
   },
   {
@@ -1465,6 +1499,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "And that, my friends, is how you turn a total disaster into a slightly smaller disaster. Teamwork.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: "AI — it narrated its own scene and took a bow.",
   },
   {
@@ -1550,6 +1585,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“In today's fast-paced forest landscape, snack security is more important than ever,” announced the squirrel from the top of the picnic table. “Which is why I will now be taking that sandwich.”",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal:
       'AI — the "In today\'s fast-paced..." opener, delivered by a sandwich-stealing squirrel.',
   },
@@ -1560,6 +1596,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“This isn't just a snowball fight,” said the penguin, adjusting his tiny scarf. “It's a chance to build something bigger than ourselves.”",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: 'AI — the "not just X" upgrade, snowball-fight edition.',
   },
   {
@@ -1569,6 +1606,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Before we delve into who ate the cake,” said the hamster, “let us take a moment to appreciate the rich tapestry of crumbs on this floor. Truly a testament to a family that eats together.”",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — hamsters don\'t say "rich tapestry."',
   },
   {
@@ -1578,6 +1616,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "We hid the entire pep band in the gym storage closet for forty minutes. They came out the wrong door, still playing, and marched straight into somebody's wedding. Which just goes to show, the plans that fall apart are the ones you keep forever.",
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: "AI — the wedding was the punchline; the fortune cookie came after.",
   },
   {
@@ -1587,6 +1626,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"Reactor\'s at a hundred percent." "What happens after a hundred?" "The manual stops at a hundred. There\'s just a phone number." Funny how the moments that terrify us are the ones that show us who we really are.',
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: "AI — the reactor hit 100 and the script paused to reflect.",
   },
   {
@@ -1596,6 +1636,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: '"Is everybody buckled?" "Yep." "Is the dog buckled?" "The dog is driving." "The dog is WHAT?" Turns out the vacation we needed was never the one printed on the map.',
     source: "AI-generated",
+    tell: "tidy-closer",
     reveal: "AI — cover the last sentence with your thumb; nothing is missing.",
   },
   {
@@ -1605,6 +1646,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Pulled the pork butt off the smoker tonight and I am wholly, thoroughly, and completely satisfied with how it turned out. The flavor was immensely flavorful. Highly recommend this cook to anyone.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: 'AI — "immensely flavorful" means the flavor was flavorful.',
   },
   {
@@ -1614,6 +1656,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Do not fret, little one,” said the badger, patting the acorn with one paw. “I am entirely, sincerely, and wholeheartedly certain that everything is going to work out extraordinarily well in the end.”",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: "AI — three ways of sounding certain, zero reasons to be.",
   },
   {
@@ -1623,6 +1666,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Graduates, I am incredibly, tremendously, and unbelievably proud of each and every one of you. What all of you have accomplished here is genuinely, authentically remarkable.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: "AI — the praise keeps swelling; the graduates never come into focus.",
   },
   {
@@ -1632,6 +1676,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Am I in? Buddy, I am fundamentally, comprehensively, and permanently on board. I have never in my entire life been more on board with a plan than I am with this plan right now.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: 'AI — that\'s three giant words for "yes."',
   },
   {
@@ -1641,6 +1686,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Captain, this vessel and everyone aboard her are utterly, unequivocally, irreversibly doomed. I recommend we respond with maximum urgency.",
     source: "AI-generated",
+    tell: "stacked-intensifiers",
     reveal: 'AI — "maximum urgency" is not an order.',
   },
   {
@@ -1650,6 +1696,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A backyard cook is not measured in pounds of pork. It is measured in the trust of everyone standing there holding a paper plate.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: 'AI — another "not measured in X" swap; the pork was measured in pounds.',
   },
   {
@@ -1659,6 +1706,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thanks for flagging this! Honestly, this thread was never about the parking spots. It was about who we choose to be when the lot fills up.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: 'AI — the "this was never about X" move, deployed on parking spots.',
   },
   {
@@ -1668,6 +1716,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The gown you are wearing today is not merely a rental, but the final costume of the person you used to be.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: 'AI — "not merely X, but Y," performed on a rented gown.',
   },
   {
@@ -1677,6 +1726,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "This is bigger than a bowling trophy, Dale. This is about whether anybody in this town still believes in anything.",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal:
       "AI — a bowling trophy inflated into a town's whole belief system — it's a trophy, Dale.",
   },
@@ -1687,6 +1737,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“What started as a hunt for one missing sock,” the raccoon said quietly, “had become a hunt for who we are as a family.”",
     source: "AI-generated",
+    tell: "not-just-x",
     reveal: 'AI — one sock, upgraded to "who we are as a family."',
   },
   {
@@ -1696,6 +1747,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hi all, hope everyone is having a wonderful Saturday! So sorry to bother the group, but a very large dog has run off with the entire brisket and is heading toward the creek. Only if anyone happens to be free. No pressure either way!",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: 'AI — "no pressure either way" about a stolen brisket.',
   },
   {
@@ -1705,6 +1757,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thank you all so much for your hard work this quarter, and I truly appreciate everyone’s dedication. I did want to gently flag, when you have a moment, that the entire customer database was deleted this morning. Great effort all around!",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — the database is gone but great effort all around.",
   },
   {
@@ -1714,6 +1767,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Excuse me, Mister Hawk,” said the rabbit as the shadow closed in, “I hate to be a bother, and your talons really are lovely, but I was rather hoping to keep my afternoon free.”",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — the rabbit complimented the talons mid-swoop.",
   },
   {
@@ -1723,6 +1777,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I am told that siren means a tornado, and we will absolutely be heading to the basement shortly. Before we do, though, I would be remiss not to thank the faculty, the parents, and the wonderful volunteers who set up all of these chairs.",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — it thanked the chair volunteers into the tornado.",
   },
   {
@@ -1732,6 +1787,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "I don’t mean to be a backseat driver, and you are doing wonderfully, but if it isn’t too much trouble, might we consider losing the eleven police cars? Whenever you get a chance. Truly no rush.",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: 'AI — eleven police cars, "truly no rush."',
   },
   {
@@ -1741,6 +1797,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hi team, hope you are all well. Truly no big deal, and I am sure it was an honest mistake, but someone has eaten my labeled lunch three days running. Sending gratitude to whoever it was!",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — it sent gratitude to the lunch thief.",
   },
   {
@@ -1750,6 +1807,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I recognize that this is a very big feeling,” the dad said calmly while the toddler screamed in aisle nine, “and I want to sincerely thank you for sharing it with the entire store.”",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: "AI — nobody thanks a toddler for screaming.",
   },
   {
@@ -1759,6 +1817,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Bridge, so sorry to bother you during shift change. I hate to be the bearer of bad news, but something enormous has come through the hull and it does not appear to be friendly. Take your time!",
     source: "AI-generated",
+    tell: "over-politeness",
     reveal: 'AI — "Take your time!" about the thing coming through the hull.',
   },
   {
@@ -1768,6 +1827,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Certainly! Here are three excellent wood choices for pork: • Apple — mild and slightly sweet • Cherry — beautiful color • Hickory — bold and traditional. Happy smoking!",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: 'AI — a real cook just names the wood; only a chatbot opens with "Certainly!"',
   },
   {
@@ -1777,6 +1837,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hi Dana — great question! Regarding the 3pm: 1) Availability — my calendar is clear. 2) Preparation — I will review the deck beforehand. 3) Follow-up — I will circulate notes after. Let me know if you'd like me to expand on any of these.",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: 'AI — a three-part labeled memo, when "yes" would have covered it.',
   },
   {
@@ -1786,6 +1847,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“There now, little fawn,” said the old owl. “Your feelings are completely valid. **Step 1: Breathe.** **Step 2: Name the fear.** **Step 3: Take one small step.** You've got this!”",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — the owl left its ** formatting marks on the pep talk.",
   },
   {
@@ -1795,6 +1857,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Before you toss your caps, here are my key takeaways: 1) Be curious. 2) Be kind. 3) Be persistent. In summary, the future belongs to those who show up. Congratulations, graduates!",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: 'AI — "key takeaways" in a cap and gown.',
   },
   {
@@ -1804,6 +1867,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The cops are at the door. Okay — quick breakdown of our options: • Option A: the window • Option B: the laundry chute • Option C: honesty. Each has trade-offs. Thoughts?",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — Options A, B, and C while the cops are knocking.",
   },
   {
@@ -1813,6 +1877,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "**Summary:** I ate your leftovers. **Context:** I was hungry. **Impact:** Acknowledged. **Proposed remedy:** replacement by Sunday. Would you like me to elaborate on any section?",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — leftovers, four labeled sections, and an offer to elaborate.",
   },
   {
@@ -1822,6 +1887,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Family meeting!” barked the dog. “Agenda item one: the mailman. Agenda item two: the vacuum. Agenda item three: snacks. I have also prepared a short recap for anyone joining late.”",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — dogs don't have agenda items.",
   },
   {
@@ -1831,6 +1897,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Hull breach in ninety seconds. Here is the plan: Step 1) Seal deck four. Step 2) Reroute auxiliary power. Step 3) Get everyone off the bridge. Shall I proceed, or would you like me to adjust the sequence?",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — ninety seconds to live and it asks permission to proceed.",
   },
   {
@@ -1840,6 +1907,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A quick toast, organized into three parts. **Part one: How they met.** **Part two: Why it works.** **Part three: The wish.** Please hold applause until the end of the outline.",
     source: "AI-generated",
+    tell: "preformatted-answer",
     reveal: "AI — a toast with an outline is a memo in a tux.",
   },
   {
@@ -1849,6 +1917,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Q: Brisket has been stuck at 160 for four hours, do I wrap it? A: Let me make sure I have your question right. Your brisket has been stuck at 160 for four hours and you want to know whether to wrap it. Four hours is a meaningful stretch of time.",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — four hours stuck at 160 and it read your question back to you.",
   },
   {
@@ -1858,6 +1927,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thanks for flagging this. To restate the question: you're asking whether we will make payroll on Friday. Whether we make payroll on Friday is absolutely the right thing to be focused on, and I want to give it the thoughtful response it deserves.",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — payroll is Friday and the reply restated the question.",
   },
   {
@@ -1867,6 +1937,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Owl, is the water still rising?” “Is the water still rising. What a thoughtful thing to ask, little one. Few creatures in this wood stop to wonder about the water at all, and here you are, wondering.”",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — the owl praised the question while the water kept rising.",
   },
   {
@@ -1876,6 +1947,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "A student stopped me last night and asked, “What do we do now?” What do you do now. I want to stay with that question a moment. It is a question, it is yours, and the fact that you asked it says everything about this class.",
     source: "AI-generated",
+    tell: "restates-question",
     reveal:
       "AI — a whole speech spent holding the question up to the light instead of answering it.",
   },
@@ -1886,6 +1958,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Which wire do I cut?” “Which wire do you cut. Terrific question. Honestly, one of the better ones anyone has asked me in this parking garage, and I have been down here since Tuesday.”",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — the bomb got a compliment instead of a wire.",
   },
   {
@@ -1895,6 +1968,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Did you mail the invitations?” “Did I mail the invitations. Wow. Okay. That is exactly the question I would be asking if I were standing where you are standing, and I respect it enormously.”",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: "AI — question echoed, asker admired, yes or no never supplied.",
   },
   {
@@ -1904,6 +1978,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Dad, are we lost?” “Are we lost. Buddy, that is a big question, and I think it is one this whole family has earned the right to ask.” The van continued in the wrong direction.",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: 'AI — "Are we lost" got repeated, weighed, and honored — never answered.',
   },
   {
@@ -1913,6 +1988,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“How long until the core blows?” “How long until the core blows. Excellent question, Commander, and one that gets right to the heart of what every soul aboard this ship is feeling.”",
     source: "AI-generated",
+    tell: "restates-question",
     reveal: 'AI — the core got an "Excellent question" instead of a number.',
   },
   {
@@ -1922,6 +1998,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "What a fantastic question, and you're so right to push back — sorry for any mix-up on my end. Your instinct to run 225 is excellent. And if 275 feels better to you, I think that's a wonderful choice too and I completely agree.",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — it agreed with 225, then agreed with 275 one sentence later.",
   },
   {
@@ -1931,6 +2008,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Susan, what a sharp callout — I should have caught that myself. Apologies for the confusion on slide four. I really love where your head is at here, and I'm happy to change the forecast to whatever number feels right to you.",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — Susan could have said any number and it would have loved that one too.",
   },
   {
@@ -1940,6 +2018,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Oh, you are SO wise, little one,” chirped the squirrel, bowing low. “And I'm terribly sorry if I upset you. Whatever you think the golden acorn means, that is exactly what it means. What a beautiful mind you have.”",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — flatter and fold: sidekicks argue, bots bow.",
   },
   {
@@ -1949,6 +2028,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Before I begin, let me just say what an incredible audience you are. And if anything I say tonight lands wrong, I apologize in advance, and you are almost certainly right. Honestly, any one of you could give this speech better than me.",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — it apologized for the speech before giving it.",
   },
   {
@@ -1958,6 +2038,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“You call that a parking job?” “Wow, okay, that is a really fair observation and I'm sorry. You clearly know a lot about parking, way more than I do. I would genuinely love your notes.”",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — the instant cave: insulted his parking, got a thank-you note.",
   },
   {
@@ -1967,6 +2048,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“You are hands down the smartest person in this office, and I say that with total respect. Also, I'm sorry. I don't know what for yet, but I can feel that I'm sorry, and you were right about everything.”",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — the classic bot apology: sorry for nothing, right about everything.",
   },
   {
@@ -1976,6 +2058,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“I'm sorry, I'm sorry!” beeped the little robot vacuum. “You're the best kid in this whole house and your plan is so much better than mine. Please don't be mad. We'll do it your way, even the part with the lava.”",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — it approved the lava plan just to avoid an argument.",
   },
   {
@@ -1985,6 +2068,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“Captain, the reactor is past critical.” “Cut the coolant.” “Excellent instinct, Captain, and I'm sorry for questioning you. Cutting coolant now. What a thoughtful decision to make under this much pressure.”",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — the reactor is past critical and the computer is complimenting the order.",
   },
   {
@@ -1994,6 +2078,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“My package never arrived.” “You are so right to reach out, and what a clearly written message. I'm very sorry for the trouble. That said, if you feel the package did arrive, I fully support that as well. Thank you for being such a valued partner.”",
     source: "AI-generated",
+    tell: "sycophancy",
     reveal: "AI — sorry your package is missing, and also maybe it isn't.",
   },
   {
@@ -2003,6 +2088,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Appreciate the patience here. The launch moved for three reasons: bandwidth, timing, and a real commitment to quality. Happy to walk through any of it live.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — three reasons, none of them a reason.",
   },
   {
@@ -2012,6 +2098,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“An acorn only needs three things to become an oak,” said the old badger, patting the sapling. “Good soil, steady rain, and the courage to believe in itself.”",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — soil, rain, and... courage; the real third one was sunlight.",
   },
   {
@@ -2021,6 +2108,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The reactor breach gives us four minutes. Getting off this ship will take three things: steady hands, a clear channel, and faith in each other. Move.",
     source: "AI-generated",
+    tell: "list-of-three",
     reveal: "AI — four minutes left and he's itemizing.",
   },
   {
@@ -2030,6 +2118,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In an era of ever-shifting food trends, it is worth taking a moment to reflect on what really matters out here at the grill. Somebody has walked off with my tongs again.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — a paragraph about food trends before asking for the tongs back.",
   },
   {
@@ -2039,6 +2128,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "As we navigate an increasingly complex scheduling landscape, it is important to step back and think about how we align on shared availability. Yes, 2:00 works for me.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — cross out the first sentence and nothing is lost.",
   },
   {
@@ -2048,6 +2138,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“In a world where the pond changes a little more with every passing season,” the duck said gravely from the top of the flat rock, “one thing has stayed the same. That is my rock, and you are standing on it.”",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — the state of the pond has nothing to do with the rock.",
   },
   {
@@ -2057,6 +2148,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "In today's ever-evolving campus environment, few moments carry the weight of the one we share this afternoon. Before we begin, the owner of the silver sedan blocking the loading dock needs to move it now.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — the sedan was urgent; the opener was not.",
   },
   {
@@ -2066,6 +2158,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "At a moment when the modern wedding reception asks more of us than ever, we owe each other some honesty. The open bar closes in nine minutes and Dave is already crying in the parking lot.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — that opener works for weddings, dentistry, or supply chains.",
   },
   {
@@ -2075,6 +2168,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Amid the ever-accelerating pace of interstellar conflict, it is worth pausing to consider the bigger picture. Also, the reactor breaches in forty seconds and somebody welded the door behind you.",
     source: "AI-generated",
+    tell: "in-todays-world",
     reveal: "AI — it spent one of your forty seconds on the bigger picture.",
   },
   {
@@ -2084,6 +2178,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Fired up the offset at 4 a.m. to elevate a humble pork shoulder into something the whole cul-de-sac will remember.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — you cook a pork shoulder; you don\'t "elevate" it.',
   },
   {
@@ -2093,6 +2188,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Thanks for flagging! Happy to unlock some time Thursday to align on the potluck sign-up sheet.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: "AI — no human being has ever unlocked a Thursday.",
   },
   {
@@ -2102,6 +2198,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "“The river has risen again,” said the old raccoon, resting a paw on the boy's shoulder. “Together, we must navigate the challenges ahead.”",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — raccoons cross rivers; chatbots "navigate the challenges ahead."',
   },
   {
@@ -2111,6 +2208,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Graduates, beyond these doors awaits a myriad of opportunities, each one ready for you to seize it.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — "myriad," said no one out loud, ever.',
   },
   {
@@ -2120,6 +2218,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "Trust me, man. Sneaking into the faculty lounge is the pivotal moment of our entire senior year.",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — "pivotal" is deck-speak, not senior-year speak.',
   },
   {
@@ -2129,6 +2228,7 @@ export const FULL_QUESTIONS: FullQuestion[] = [
     answer: "bot",
     body: "The eight-year-old folded her arms on the minivan seat. “All I'm asking,” she said, “is that this family foster a more open dialogue about bedtime.”",
     source: "AI-generated",
+    tell: "machine-vocab",
     reveal: 'AI — third graders don\'t "foster" anything.',
   },
 ];

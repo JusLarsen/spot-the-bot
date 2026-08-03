@@ -105,10 +105,14 @@ survive the test because a person would never write them — they aren't true of
 person. Before adding a tell, ask: would a competent human writer plausibly produce
 this? If yes, it teaches the room to suspect the wrong things.
 
-Before adding a sample, check the tell isn't already used twice. When generating a
-batch across categories, **partition the tell list per category** — handing the same
-list to parallel authors produces one-to-one clone sets (`genx-19…30` and
-`millennial-19…30` are twelve matched pairs teaching the same twelve lessons).
+Every easy bot sample carries a **`tell` field** (the `Tell` union in `lib/types.ts`)
+naming which habit it teaches; human and sneaky samples must not. The 10 tells × 10
+samples balance is enforced by `lib/questions.test.ts`, so adding or removing an easy
+sample means rebalancing its tell group — the tests will tell you. The field is
+server-side metadata only; the anti-cheat test proves it never reaches the browser.
+When generating a batch with parallel authors, **give each author ONE tell** — handing
+the same list to several produces one-to-one clone sets (the twelve matched
+`genx`/`millennial` pairs were exactly this).
 
 **Difficulty tiers.** Non-sneaky = spotted in ~2 seconds, gets a laugh, free win.
 If a sample has real checkable specifics or genuinely good writing, it belongs in the

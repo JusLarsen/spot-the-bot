@@ -25,12 +25,27 @@ export interface PublicQuestion {
   body: string;
 }
 
+/** The ten AI habits the easy tier teaches — exactly 10 samples each,
+ * enforced by lib/questions.test.ts. Server-side metadata only. */
+export type Tell =
+  | "sycophancy" // "you're absolutely right" — flatter and fold
+  | "preformatted-answer" // numbered steps / "Certainly!" / bolded labels
+  | "restates-question" // echoes the question back before (never) answering
+  | "over-politeness" // customer-service manners in a crisis
+  | "in-todays-world" // grand scene-setting opener before the point
+  | "machine-vocab" // delve, tapestry, testament to, unlock, navigate…
+  | "not-just-x" // "isn't just X, it's Y" — the upgrade flip
+  | "list-of-three" // three items, evenly sized, one usually a virtue
+  | "stacked-intensifiers" // truly/deeply/profoundly doing a fact's job
+  | "tidy-closer"; // a warm moral bolted onto the end
+
 /** Full record, SERVER ONLY (see lib/questions.server.ts). */
 export interface FullQuestion extends PublicQuestion {
   answer: Answer;
   source: string;
   reveal: string;
   sneaky?: boolean; // an AI sample designed to be hard to catch (for "don't feel bad" messaging)
+  tell?: Tell; // REQUIRED on easy bot samples (answer:"bot", no sneaky); absent otherwise
 }
 
 /** State for a single game session, stored at `sessions/<code>/state`. */
