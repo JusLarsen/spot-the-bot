@@ -151,6 +151,7 @@ sentence.
 - `npm run gen:questions` — Regenerate `lib/questions.public.ts` from the server bank
 - `npm run gen:avatars` — Regenerate the team-avatar icon set + `lib/avatars.ts` manifest via PixelLab (resumable; needs `PIXELLAB_API_KEY`)
 - `npm run gen:qr` — Regenerate the event QR poster (`public/event-qr.svg`/`.png`) — splatter design in the app's Traeger-orange palette, seeded so output is reproducible
+- `npm run load:test` — Load-test the LIVE app end-to-end with N simulated teams (default 100; needs `HOST_TOKEN` in env or `.env.local`). Resets the session before and after.
 - `npm run check:rules` — Probe the live RTDB for anonymous read access (exit 1 if rules are blocking). Run before any live session.
 - `npm run deploy:rules` — Publish `database.rules.json` via `firebase-tools` (project in `.firebaserc`)
 
