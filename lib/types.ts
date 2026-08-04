@@ -14,7 +14,8 @@ export type Category =
   | "genx"
   | "millennial"
   | "genz"
-  | "alpha";
+  | "alpha"
+  | "ai-generated";
 export type QuestionType = "text" | "image";
 
 /** Prompt shipped to the browser — deliberately has NO answer/reveal/source. */
